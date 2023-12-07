@@ -6,6 +6,236 @@
     <title>My-Holst - Студия печати</title>
 </head>
 <body>
-    header.page-header>nav.-nav>a.-logo>img.-logo-img^ul.-nav-list>li.-nav-list-item*4>a.-nav-link^^.-contacts>ul.-contacts-list>li.-contacts-list-item*3>span.visually-hidden+a*2|bem
+    <header class="page-header">
+        <img class="page-header__logo-img" src="" alt="Логотип My-Holst">
+        <nav class="page-header__nav">
+            <ul class="page-header__nav-list">
+                <li class="page-header__nav-list-item">
+                    <a class="page-header__nav-link" href="#">Популярные размеры</a>
+                </li>
+                <li class="page-header__nav-list-item">
+                    <a class="page-header__nav-link" href="#">Наши работы</a>
+                </li>
+                <li class="page-header__nav-list-item">
+                    <a class="page-header__nav-link" href="#">Отзывы</a>
+                </li>
+                <li class="page-header__nav-list-item">
+                    <a class="page-header__nav-link" href="#">Как нас найти</a>
+                </li>
+            </ul>
+            <div class="page-header__contacts">
+                <ul class="page-header__contacts-list">
+                    <li class="page-header__contacts-list-item">
+                        <span class="visually-hidden">Номера телефонов</span>
+                        <a class="page-header__contacts-list-text" href="tel:+74832300970">30-09-70</a>
+                        <a class="page-header__contacts-list-text" href="tel:+74832301005">30-10-05</a>
+                    </li>
+                    <li class="page-header__contacts-list-item">
+                        <span class="visually-hidden">График работы</span>
+                        <p class="page-header__contacts-list-text">ПН - ПТ: 10 - 19</p>
+                        <p class="page-header__contacts-list-text">СБ: 10 - 14</p>
+                    <li class="page-header__contacts-list-item">
+                        <span class="visually-hidden">Адрес</span>
+                        <address class="page-header__contacts-list-text">г. Брянск, ул. Бежицкая, 286 к1, 1 этаж, офис 101</address>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="first-screen">
+            <section class="hero">
+                <!-- Ярлык со звездами и ссылкой на накрту -->
+                    <a class="hero__yandex-maps-rating" href="https://yandex.ru/maps/org/my_holst/238731789792/reviews/?ll=34.306535%2C53.286342&z=17" target="_blank">
+                        <span class="visually-hidden">Оценка студии на Яндекс картах</span>
+                    </a>
+                    <h1 class="hero__title">Студия печати My-holst</h1>
+                    <p class="hero__subtitle">8 лет радуем людей!</p>
+                    <ul class="hero__services-list">
+                        <li class="hero__services-item">печать фото на холсте</li>
+                        <li class="hero__services-item">стилизованные портреты</li>
+                        <li class="hero__services-item">модульные картины</li>
+                    </ul>
+                    <p class="hero__adventage">собственное производство</p>
+                    <dl class="hero__statistics">
+                        <dt class="hero__statistics-title">изготовленных картин</dt>
+                        <dd class="hero__statistics-description">20 000+</dd>
+                        <dt class="hero__statistics-title">счастливых клиентов</dt>
+                        <dd class="hero__statistics-description">5 000+</dd>
+                        <dt class="hero__statistics-title">положительных отзывов</dt>
+                        <dd class="hero__statistics-description">1 100+</dd>
+                    </dl>
+                    <a class="hero__order-button" href="">Заказать</a>
+                    <div class="hero__subscribers">
+                        <ul class="hero__subscribers-avatars-list">
+                            <li class="hero__subscribers-avatars-item"><img class="hero__subscriber-avatar" src="" alt="Аватар подписчика"></li>
+                            <li class="hero__subscribers-avatars-item"><img class="hero__subscriber-avatar" src="" alt="Аватар подписчика"></li>
+                            <li class="hero__subscribers-avatars-item"><img class="hero__subscriber-avatar" src="" alt="Аватар подписчика"></li>
+                            <p class="hero__subscribers-count">25К+</p>
+                            <p class="hero__subscribers-count-description">подписчиков</p>
+                        </ul>
+                    </div>
+            </section>
+            <section class="slider">
+                <h2 class="visually-hidden">Слайдер</h2>
+                    <ul class="slider__slides-list">
+                        <li class="slider__slide-item">
+                            <a class="slider__slide" href="">
+                                <img class="slider__slide-img" src="" alt="Фото девушки в обработке Dream Art">
+                                <p class="slider__slide-description">Dream Art</p>
+                            </a>
+                        </li>
+                        <li class="slider__slide-item">
+                            <a class="slider__slide" href="">
+                                <img class="slider__slide-img" src="" alt="Пример макета детской метрики">
+                                <p class="slider__slide-description">Детская метрика</p>
+                            </a>
+                        </li>
+                        <li class="slider__slide-item">
+                            <a class="slider__slide" href="">
+                                <img class="slider__slide-img" src="" alt="">
+                                <p class="slider__slide-description"></p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="slider__slider-butons">
+                        <button class="slider__slider-button-left" type="button"><span class="visually-hidden">Влево</span></button>
+                        <button class="slider__slider-button-right" type="button"><span class="visually-hidden">Вправо</span></button>
+                    </div>
+            </section>
+        </div>
+        <section class="advantages">
+            <h2 class="visually-hidden">Наши преимущества</h2>
+            <ul class="advantages__list">
+                <li class="advantages__item">
+                    <h3 class="advantages__advantage-title">Японские краски и оборудование</h3>
+                    <p class="advantages__advantage-description">Высокая детализация и яркие цвета</p>
+                </li>
+                <li class="advantages__item">
+                    <h3 class="advantages__advantage-title">Готовая картина от 4х часов</h3>
+                    <p class="advantages__advantage-description">При срочной печати без обработки</p>
+                </li>
+                <li class="advantages__item">
+                    <h3 class="advantages__advantage-title">Натуральный холст</h3>
+                    <p class="advantages__advantage-description">100% хлопковый  матовый холст</p>
+                </li>
+                <li class="advantages__item">
+                    <h3 class="advantages__advantage-title">Любые размеры</h3>
+                    <p class="advantages__advantage-description">От 10х10 до 200х200, любых пропорций</p>
+                </li>
+                <li class="advantages__item">
+                    <h3 class="advantages__advantage-title">Доставка почтой 
+                        по стране</h3>
+                    <p class="advantages__advantage-description">Отправляем во все населенные пункты</p>
+                </li>
+                <li class="advantages__item">
+                    <h3 class="advantages__advantage-title">Гарантия 10 лет</h3>
+                    <p class="advantages__advantage-description">Яркость цветов сохранится навсегда</p>
+                </li>
+            </ul>
+        </section>
+        <section class="steps">
+            <h2 class="steps__title">Как подарить счастье</h2>
+            <ol class="steps__list">
+                <li class="steps__item">
+                    <div class="__img-group">
+                        <img class="__img" src="" alt="Ноутбук с открытым клиентом почты">
+                        <img class="__img" src="" alt="Смартфон с открытым диалогом Вконтакте">
+                    </div>
+                    <div class="__marker">1</div> <!-- Обернуть в div для группировки flex -->
+                    <h3 class="__title">Предоставить оригинал фото</h3>
+                    <p class="__text">Любым удобным способом</p>
+                    <ul class="__contacts-list">
+                        <li class="__contacts-item">
+                            <a class="__contact-link" href="https://yandex.ru/profile/238731789792">
+                                <span class="visually-hidden">Адрес</span>
+                            </a>
+                        </li>
+                        <li class="__contacts-item">
+                            <a class="__contact-link" href="https://vk.com/im?media=&sel=-44153834" target="_blank">
+                                <span class="visually-hidden">Вконтакте</span>
+                            </a>
+                        </li>
+                        <li class="__contacts-item">
+                            <a class="__contact-link" href="mailto:my-holst@mail.ru">
+                                <span class="visually-hidden">Электронная почта</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="__text">Качество фото очень важно!</p>
+                    <p class="__text">Чем выше качество - тем красивее получится картина</p>
+                </li>
+               
+                <li class="steps__item">
+                    <h3 class="__title">Согласовать вид обработки и макет</h3>
+                    <p class="__text">Выбрать  простую печать или понравившуюся обработку.</p>
+                    <p class="__text">Утвердить конечный вариант.</p>
+                    <div class="__marker">2</div>
+                </li>
+                <li class="steps__item"></li>
+                <li class="steps__item"></li>
+                <li class="steps__item"></li>
+            </ol>
+        </section>
+        <section class="popular-sizes">
+            <h2 class="popular-sizes__title">Популярные размеры</h2>
+            <ul class="popular-sizes__list">
+                <li class="popular-sizes__item">
+                    <img class="popular-sizes__img" src="" alt="Девушка с картиной 20 на 30">
+                    <p class="popular-sizes__size-value">20x30</p>
+                </li>
+                <li class="popular-sizes__item">
+                    <img class="popular-sizes__img" src="" alt="Девушка с картиной 30 на 40">
+                    <p class="popular-sizes__size-value">30x40</p>
+                </li>
+                <li class="popular-sizes__item">
+                    <img class="popular-sizes__img" src="" alt="Девушка с картиной 40 на 60">
+                    <p class="popular-sizes__size-value">40х60</p>
+                </li>
+                <li class="popular-sizes__item">
+                    <img class="popular-sizes__img" src="" alt="Девушка с картиной 50 на 50">
+                    <p class="popular-sizes__size-value">50х50</p>
+                </li>
+                <li class="popular-sizes__item">
+                    <img class="popular-sizes__img" src="" alt="Девушка с картиной 50 на 75">
+                    <p class="popular-sizes__size-value">50х75</p>
+                </li>
+                <li class="popular-sizes__item">
+                    <img class="popular-sizes__img" src="" alt="Девушка с картиной 60 на 90">
+                    <p class="popular-sizes__size-value">60х90</p>
+                </li>
+            </ul>
+        </section>
+        <section class="contacts">
+            <h2 class="contacts__title">Как нас найти</h2>
+            <div class="contacts__map">
+                <img class="contacts__map-img" src="" alt="">
+                <img class="contacts__location-icon" src="" alt="">
+            </div>
+            <dl class="contacts__list">
+                <dt class="contacts__item-title visually-hidden">Местоположение</dt>
+                <dd class="contacts__item-description"><address class="contacts__address">ул. Бежицкая, 286 к1, 1 этаж, офис 101</address></dd>
+                <dd class="contacts__item-description">ост. Памятник Болгарским патриотам</dd> <!-- todo добавить кнопку Вообще ее можно сюда добавить? Ссылка на проезд https://yandex.ru/maps/191/bryansk/?ll=34.351932%2C53.256462&mode=routes&no-distribution=1&profile-mode=1&rtext=~53.286182%2C34.306370&rtt=mt&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D238731789792&source=wizbiz_new_map_single&z=13.6 -->
+                <dt class="contacts__item-title">Время работы</dt>
+                <dd class="contacts__item-description">ПН - ПТ: 10:00 - 19:00</dd>
+                <dd class="contacts__item-description">СБ: 10:00 - 14:00</dd>
+                <dt class="contacts__item-title">Телефоны</dt>
+                <dd class="contacts__item-description"><a class="contacts__phone" href="tel:+74832300970">8(4832) 300-970</dd>
+                <dd class="contacts__item-description"><a class="contacts__phone" href="tel:+74832301005">8(4832) 301-005</dd>
+            </dl>
+            <ul class="contacts__social-list">
+                <li class="contacts__social-item">
+                    <a class="social-link" href="https://web.whatsapp.com/" target="_blank"><span class="visually-hidden">Whatsapp</span></a></li> <!-- todo Какую ссылку подставлять на мобилках/планшетах? -->
+                <li class="contacts__social-item"><a class="social-link" href="https://vk.com/im?media=&sel=-44153834" target="_blank"><span class="visually-hidden">Вконтакте</span></a></li>
+                <li class="contacts__social-item"><a class="social-link" href="mailto:my-holst@mail.ru"><span class="visually-hidden">Электронная почта</span></a></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <img class="page-footer__logo" src="" alt="Логотип студии">
+        <p class="page-footer__copyright">© 2015-2023 Студия печати “My-Holst” </p>
+        <a class="page-footer__developer-link">Design & Develop Sergey Luzik</a> <!-- to do ссылка на сайт-портфолио -->
+    </footer>
 </body>
 </html>
+<!-- Main на лендинге это включая header и  footer? Ведь страница одна, они тоже не повторяются -->
