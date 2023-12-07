@@ -11,16 +11,16 @@
         <nav class="page-header__nav">
             <ul class="page-header__nav-list">
                 <li class="page-header__nav-list-item">
-                    <a class="page-header__nav-link" href="#">Популярные размеры</a>
+                    <a class="page-header__nav-link" href="#popular-sizes">Популярные размеры</a>
                 </li>
                 <li class="page-header__nav-list-item">
-                    <a class="page-header__nav-link" href="#">Наши работы</a>
+                    <a class="page-header__nav-link" href="#works">Наши работы</a>
                 </li>
                 <li class="page-header__nav-list-item">
-                    <a class="page-header__nav-link" href="#">Отзывы</a>
+                    <a class="page-header__nav-link" href="#feedback">Отзывы</a>
                 </li>
                 <li class="page-header__nav-list-item">
-                    <a class="page-header__nav-link" href="#">Как нас найти</a>
+                    <a class="page-header__nav-link" href="#contacts">Как нас найти</a>
                 </li>
             </ul>
             <div class="page-header__contacts">
@@ -65,7 +65,7 @@
                         <dt class="hero__statistics-title">положительных отзывов</dt>
                         <dd class="hero__statistics-description">1 100+</dd>
                     </dl>
-                    <a class="hero__order-button" href="">Заказать</a>
+                    <a class="order-button" href="https://vk.com/im?media=&sel=-44153834">Заказать</a>
                     <div class="hero__subscribers">
                         <ul class="hero__subscribers-avatars-list">
                             <li class="hero__subscribers-avatars-item"><img class="hero__subscriber-avatar" src="" alt="Аватар подписчика"></li>
@@ -142,42 +142,145 @@
                         <img class="__img" src="" alt="Ноутбук с открытым клиентом почты">
                         <img class="__img" src="" alt="Смартфон с открытым диалогом Вконтакте">
                     </div>
-                    <div class="__marker">1</div> <!-- Обернуть в div для группировки flex -->
-                    <h3 class="__title">Предоставить оригинал фото</h3>
-                    <p class="__text">Любым удобным способом</p>
-                    <ul class="__contacts-list">
-                        <li class="__contacts-item">
-                            <a class="__contact-link" href="https://yandex.ru/profile/238731789792">
-                                <span class="visually-hidden">Адрес</span>
-                            </a>
+                    <div class="marker">1</div>
+                    <div class="__text-group">
+                        <h3 class="__title">Предоставить оригинал фото</h3>
+                        <p class="__text">Любым удобным способом</p>
+                        <ul class="__contacts-list">
+                            <li class="__contacts-item">
+                                <a class="__contact-link" href="https://yandex.ru/profile/238731789792">
+                                    <span class="visually-hidden">Адрес</span>
+                                </a>
+                            </li>
+                            <li class="__contacts-item">
+                                <a class="__contact-link" href="https://vk.com/im?media=&sel=-44153834" target="_blank">
+                                    <span class="visually-hidden">Вконтакте</span>
+                                </a>
+                            </li>
+                            <li class="__contacts-item">
+                                <a class="__contact-link" href="mailto:my-holst@mail.ru">
+                                    <span class="visually-hidden">Электронная почта</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="__text">Качество фото очень важно!</p>
+                        <p class="__text">Чем выше качество - тем красивее получится картина</p>
+                    </div>
+                </li>
+                <li class="steps__item">
+                    <div class="__text-group">
+                        <h3 class="__title">Согласовать вид обработки и макет</h3>
+                        <p class="__text">Выбрать простую печать или понравившуюся обработку.</p>
+                        <p class="__text">Утвердить конечный вариант.</p>
+                    </div>
+                    <div class="marker">2</div>
+                    <ul class="services-list">
+                        <li class="services-list__item">
+                            <article class="card">
+                                <img class="card__img" src="" alt="Отретушированное старое фото женщины">
+                                <h4 class="card__title">Ретушь фото</h4>
+                                <p class="card__text">Сканирование оригиналов фото в высоком разрешении, замена фона, восстановление повреждений, раскрашивание, цветокоррекция.</p>
+                            </article>
                         </li>
-                        <li class="__contacts-item">
-                            <a class="__contact-link" href="https://vk.com/im?media=&sel=-44153834" target="_blank">
-                                <span class="visually-hidden">Вконтакте</span>
-                            </a>
+                        <li class="services-list__item">
+                            <article class="card">
+                                <img class="card__img" src="" alt="Сравнение фото до и после обработки">
+                                <h4 class="card__title">25 видов художественной обработки</h4>
+                                <p class="card__text">Подберем индивидуально под Вас, предложим несколько вариантов.</p>
+                            </article>
                         </li>
-                        <li class="__contacts-item">
-                            <a class="__contact-link" href="mailto:my-holst@mail.ru">
-                                <span class="visually-hidden">Электронная почта</span>
-                            </a>
+                        <li class="services-list__item">
+                            <article class="card card_revers">
+                                <img class="card__img" src="" alt="Модльная картина на стене">
+                                <h4 class="card__title">Модульные картины</h4>
+                                <p class="card__text">Уникальны, и прекрасно вписываются в интерьер.
+                                    Подберем с Вами качественное фото, предложим разные варианты сочетания модулей.</p>
+                            </article>
+                        </li>
+                        <li class="services-list__item">
+                            <article class="card card_revers">
+                                <img class="card__img" src="" alt="Композиция на стене">
+                                <h4 class="card__title">Композиции</h4>
+                                <p class="card__text">Прекрасно подходят для семейных фото.
+                                    Отличный способ наполнить дом теплыми воспоминаниями о самых важных событиях Вашей жизни.</p>
+                            </article>
                         </li>
                     </ul>
-                    <p class="__text">Качество фото очень важно!</p>
-                    <p class="__text">Чем выше качество - тем красивее получится картина</p>
                 </li>
-               
                 <li class="steps__item">
-                    <h3 class="__title">Согласовать вид обработки и макет</h3>
-                    <p class="__text">Выбрать  простую печать или понравившуюся обработку.</p>
-                    <p class="__text">Утвердить конечный вариант.</p>
-                    <div class="__marker">2</div>
+                    <ul class="services-list">
+                        <li class="services-list__item">
+                            <article class="card">
+                                <img class="card__img" src="" alt="Нанесение кистью лака на картинку">
+                                <h4 class="card__title">Покрытие лаком</h4>
+                                <p class="card__text">Придаёт цветам насыщенность. 
+                                    Защищает от влаги, пыли, грязи, механических повреждений, выцветания и ультрафиолета.</p>
+                            </article>
+                        </li>
+                        <li class="services-list__item">
+                            <article class="card">
+                                <img class="card__img" src="" alt="Картина покрытая текстурным гелем">
+                                <h4 class="card__title">Покрытие гелем</h4>
+                                <p class="card__text">Наносится после лака.
+                                    Придает большую реалистичность репродукциям с крупными мазками за счет объема и текстуры геля.</p>
+                            </article>
+                        </li>
+                        <li class="services-list__item">
+                            <article class="card card_revers">
+                                <img class="card__img" src="" alt="Образцы багетных рам на стене">
+                                <h4 class="card__title">Оформление в багет</h4>
+                                <p class="card__text">Более 144 видов в наличии.
+                                    Эффектно подчеркивает уникальность и красоту Вашей картины. 
+                                    Визуально увеличивает размер.</p>
+                            </article>
+                        </li>
+                        <li class="services-list__item">
+                            <article class="card card_revers">
+                                <img class="card__img" src="" alt="Картины в разной упаковке">
+                                <h4 class="card__title">Подарочная упаковка</h4>
+                                <p class="card__text">Состоит из крафт бумаги, узкой или широкой ленточки на выбор и бантика. Подберем красивое сочетание, учитывая Ваши пожелания.</p>
+                            </article>
+                        </li>
+                    </ul>
+                    <div class="marker">3</div>
+                    <div class="__text-group">
+                        <h3 class="__title">Выбрать дополнительные опции</h3>
+                        <p class="__text">У нас есть все, чтобы сделать Вашу картину еще лучше!</p>
+                    </div>
                 </li>
-                <li class="steps__item"></li>
-                <li class="steps__item"></li>
-                <li class="steps__item"></li>
+                <li class="steps__item">
+                    <div class="__text-group">
+                        <h3 class="__title">Немного подождать</h3>
+                        <p class="__text">Печать и сборка картины в обычном порядке занимает</p>
+                        <p class="__text"><strong class="steps__text-aсcent">1-2 дня</strong></p>
+                    </div>
+                    <div class="marker">4</div>
+                    <div class="__img-group">
+                        <img class="__img" src="" alt="Натяжка холста на подрамник">
+                        <img class="__img" src="" alt="Печать на холсте">
+                    </div>
+                </li>
+                <li class="steps__item">
+                    <div class="__img-group">
+                        <img class="__img" src="" alt="Офис студии">
+                        <img class="__img" src="" alt="Фасад бизнес-центра ">
+                        <img class="__img" src="" alt="Логотип почты России">
+                        <img class="__img" src="" alt="Логотип Яндекс такси">
+                    </div>
+                    <div class="marker">5</div>
+                    <div class="__text-group">
+                        <h3 class="__title">Получить в удобное время</h3>
+                        <ul class="__receipt-list">
+                            <li class="__receipt-item">в нашем офисе</li>
+                            <li class="__receipt-item">на почте по всей стране</li>
+                            <li class="__receipt-item">заказать доставку курьером</li>
+                        </ul>
+                    </div>
+                </li>
             </ol>
+            <a class="order-button" href="https://vk.com/im?media=&sel=-44153834">Заказать</a>
         </section>
-        <section class="popular-sizes">
+        <section class="popular-sizes" id="popular-sizes">
             <h2 class="popular-sizes__title">Популярные размеры</h2>
             <ul class="popular-sizes__list">
                 <li class="popular-sizes__item">
@@ -206,7 +309,53 @@
                 </li>
             </ul>
         </section>
-        <section class="contacts">
+        <section class="works" id="works">
+            <h2 class="works__title">Наши работы</h2>
+            <ul class="works__list">
+                <li class="works__item">
+                    <img class="works__img" src="" alt="">
+                </li>
+            </ul>
+        </section>
+        <section class="feedback" id="feedback">
+            <h2 class="feedback__title">Отзывы</h2>
+            <div class="feedback__slider">
+                <button class="feedback__button-right" type="button">
+                    <span class="visually-hidden">Влево</span>
+                </button>
+                <ul class="feedback__list">
+                    <li class="feedback__item">
+                        <article class="feedback-card">
+                            <img class="feedback-card__img" src="" alt="Картина на стене">
+                            <header class="feedback-card__header">
+                                <img class="feedback-card__avatar" src="" alt="Селфи девушки">
+                                <h3 class="feedback-card__full-name">Анастасия Бурцева</h3>
+                                <time class="feedback-card__date" datetime="2023-03-21T13:10:00">21 мар 2023 в 13:10</time>
+                            </header>
+                            <p class="feedback-card__text">Спасибо большое за такую красоту картина просто идеальная Вы лучшие</p>
+                            <a class="feedback-card__link" href="">Посмотреть в</a>
+                        </article>
+                    </li>
+                    <li class="feedback__item">
+                        <article class="feedback-card">
+                            <img class="feedback-card__img" src="" alt="">
+                            <header class="feedback-card__header">
+                                <img class="feedback-card__avatar" src="" alt="">
+                                <h3 class="feedback-card__full-name"></h3>
+                                <time class="feedback-card__date" datetime="2023-03-21T13:10:00">21 мар 2023 в 13:10</time>
+                            </header>
+                            <p class="feedback-card__text"></p>
+                            <a class="feedback-card__link" href="">Посмотреть в</a>
+                        </article>
+                    </li>
+                </ul>
+                <button class="feedback__button-right" type="button">
+                    <span class="visually-hidden">Вправо</span>
+                </button>
+            </div>
+            <a class="order-button" href="https://vk.com/im?media=&sel=-44153834">Заказать</a>
+        </section> <!-- todo добавить datetime и обертку header? -->
+        <section class="contacts" id="contacts">
             <h2 class="contacts__title">Как нас найти</h2>
             <div class="contacts__map">
                 <img class="contacts__map-img" src="" alt="">
