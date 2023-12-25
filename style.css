@@ -1,0 +1,564 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito-VariableFont_wght.woff2") format("woff2-variations");
+  /*font-weight: 125 950;
+  font-stretch: 75% 125%;
+  font-style: normal;*/
+}
+
+/*Обнуление*/
+
+/**
+  Нормализация блочной модели
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a[class] {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding-left: 0;
+  margin-block: 0;
+}
+
+/* Упрощаем работу с изображениями  */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* НОРМАЛИЗАЦИЯ ИЗ ВИДЕО */
+
+/**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+  */
+
+/**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+  */
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  height: 100%;
+  /**
+     Плавный скролл
+    */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  min-height: 100%;
+  /**
+     Унифицированный интерлиньяж
+    
+  line-height: 1.5;
+  */
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*Переменные*/
+
+:root {
+  --white: #fff;
+  --black: #344054;
+  --grey: #85888e;
+  --primary: linear-gradient(180deg, #941b81 0%, #801f82 45.83%, #672383 100%);
+  --primary-light: #b24fa3;
+  --primary-alpha: rgba(121, 32, 130, 0.7);
+  --secondary: linear-gradient(
+    180deg,
+    #e5007b 0%,
+    #de0568 48.96%,
+    #d70a55 100%
+  );
+  --secondary-light: #ef77b2;
+}
+/*Загрузка вариативных шрифтов 
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_fonts/Variable_fonts_guide
+https://htmlacademy.ru/blog/html/fonts-loading?ysclid=lpwd5pxucm72828863
+
+*/
+
+/* Утилитарные классы */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Основные стили */
+
+body {
+  font-family: "Nunito", "Arial", sans-serif;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+/* todo актуализировать */
+[class*="_color_primary"] {
+  background: var(--primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* HEADER */
+
+.page-header,
+.page-main,
+.page-footer {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-light);
+  margin-block-end: 24px;
+}
+
+.page-header__nav-list,
+.page-header__contacts-list,
+.page-header__contacts-list-item,
+.page-header__contacts-list-item-wrap {
+  display: flex;
+}
+
+page-header__contacts-list,
+.page-header__contacts-list-item {
+  align-items: center;
+}
+
+.page-header__nav-list,
+.page-header__contacts-list {
+  gap: 24px;
+}
+
+.page-header__nav-list {
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  font-weight: 700;
+}
+
+.page-header__contacts-list {
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 500;
+}
+
+.page-header__contacts-list-item {
+  gap: 8px;
+}
+.page-header__contacts-list-item-wrap {
+  flex-direction: column;
+
+  /*  todo для лого в псевдоэлементе задать current color - он ссылается на цвет контейнера
+ также для псевдо элемента  общие правила для позиционирования и отдельно каждому элементу картинку*/
+}
+.page-header__contacts-list-item::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.page-header__contacts-list-item:first-child::before {
+  background-image: url("../icons/phone.svg");
+}
+
+.page-header__contacts-list-item:nth-child(2)::before {
+  background-image: url("../icons/time.svg");
+}
+
+.page-header__contacts-list-item:last-child::before {
+  background-image: url("../icons/location.svg");
+}
+
+.page-header__contacts-list-text {
+  margin-block: 0;
+}
+
+.page-header__contacts-list-text:last-child {
+  max-width: 180px;
+  font-style: normal;
+}
+
+/*  HERO */
+
+.hero {
+  display: flex;
+}
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 24px;
+}
+
+.promo__yandex-maps-rating::before {
+  content: "";
+  display: block;
+  width: 142px;
+  height: 40px;
+  background-image: url("../icons/rating.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.promo__title {
+  font-size: clamp(1.5rem, 0.5rem + 2.5vw, 3rem);
+  font-weight: 800;
+  line-height: 125%;
+
+  margin-block: 0;
+}
+
+.promo__subtitle {
+  position: relative;
+  font-size: clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem);
+  font-weight: 800;
+  line-height: 125%;
+  margin-block: 0;
+}
+
+.promo__subtitle::before {
+  z-index: -1;
+  position: absolute;
+  top: 56%;
+  left: 16%;
+  content: "";
+  display: block;
+  width: 106px;
+  height: 16px;
+  background-image: url("../icons/underline.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.promo__services-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  font-weight: 600;
+  text-align: left;
+}
+
+.promo__services-item::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-image: url("../icons/сheckbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.promo__adventage {
+  position: relative;
+  margin-block: 0;
+  transform: rotate(-0.765deg);
+  font-size: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--white);
+}
+
+.promo__adventage::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 494px;
+  height: 48px;
+  background-image: url("../icons/ink-stroke.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.promo__statistics {
+  display: flex;
+  gap: 16px;
+}
+
+.promo__statistics-item {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.promo__statistics-description {
+  font-size: clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--primary-light);
+  margin-inline: 0;
+}
+
+.promo__statistics-title {
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 700;
+}
+
+.promo_footer {
+  display: flex;
+}
+
+a.order-button {
+  display: inline-block;
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  background: var(--primary);
+  border-radius: 10% / 31%;
+}
+
+.promo__subscribers {
+  margin-inline-start: 16px;
+}
+
+.promo__subscribers-avatars-list {
+  display: flex;
+  align-items: center;
+}
+.promo__subscribers-avatars-item {
+}
+
+.promo__subscribers-avatars-item:nth-child(1) {
+  z-index: 1;
+}
+.promo__subscribers-avatars-item:nth-child(2) {
+  z-index: 2;
+  margin-inline-start: -8px;
+}
+.promo__subscribers-avatars-item:nth-child(3) {
+  z-index: 3;
+  margin-inline-start: -8px;
+}
+
+.promo__subscriber-avatar {
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.promo__subscribers-count {
+  z-index: 4;
+  margin-inline-start: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  aspect-ratio: 1;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--secondary-light);
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 800;
+  color: var(--white);
+}
+
+.promo__subscribers-count-description {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+  padding-block-end: 2px;
+  margin-inline-start: 4px;
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem);
+  font-weight: 700;
+  color: var(--secondary-light);
+}
+
+.promo__subscribers-count-description::after {
+  display: inline-block;
+  content: "";
+  background: url("icons/vk.svg");
+  width: 26px;
+  height: 14px;
+  margin-block-end: 3px;
+}
+
+.slider__slides-list {
+  display: flex;
+  gap: 16px;
+}
+
+.slider__slide-item_active {
+  transform: scale(1.129);
+  padding-inline: 8px;
+}
+
+.slider__slide {
+  position: relative;
+}
+.slider__slide-img {
+  border-radius: 3% / 2%;
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.03))
+    drop-shadow(0px 20px 24px rgba(0, 0, 0, 0.08));
+}
+
+/* todo оформления карточек разного размера (разные классы для активной и остальных,
+   либо оформить обычные а большой задать scale  */
+.slider__slide-description {
+  z-index: 2;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: inline-block;
+  margin-block: 0;
+  padding-inline: 8px;
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 700;
+  color: var(--white);
+  background: var(--primary-alpha);
+  border-radius: 6% / 37.5%;
+}
+
+.slider__slider-butons {
+  display: flex;
+  gap: 8px;
+  margin-block-start: 20px;
+}
+
+.slider__slider-button {
+  width: 40px;
+  aspect-ratio: 1;
+  background: url("icons/arrow.svg");
+  padding: 0;
+  border: none;
+}
+
+.slider__slider-button_right {
+  transform: rotate(180deg);
+}
+
+.advantages__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: 35px;
+}
+
+.advantages__item {
+  text-align: center;
+}
+
+.advantages__advantage-title::before {
+  content: "";
+  display: block;
+  width: 80px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  margin-block-end: 4px;
+}
+
+.advantages__item:nth-child(1) .advantages__advantage-title::before {
+  background: url("icons/advantages/japan.svg");
+}
+
+.advantages__item:nth-child(2) .advantages__advantage-title::before {
+  background: url("icons/advantages/rocket.svg");
+}
+
+.advantages__item:nth-child(3) .advantages__advantage-title::before {
+  background: url("icons/advantages/canvas.svg");
+}
+
+.advantages__item:nth-child(4) .advantages__advantage-title::before {
+  background: url("icons/advantages/sizes.svg");
+}
+
+.advantages__item:nth-child(5) .advantages__advantage-title::before {
+  background: url("icons/advantages/russia.svg");
+}
+
+.advantages__item:nth-child(6) .advantages__advantage-title::before {
+  background: url("icons/advantages/guarantee.svg");
+}
+
+.advantages__advantage-title {
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  font-weight: 700;
+  line-height: 125%;
+  margin-block: 0 4px;
+}
+
+.advantages__advantage-description {
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem);
+  font-weight: 400;
+  line-height: 143%;
+  margin-block: 4px 0;
+}
