@@ -595,6 +595,23 @@ a.order-button {
   color: var(--white);
 }
 
+.contacts__map {
+  position: relative;
+}
+
+.contacts__map::after {
+  content: "";
+  position: absolute;
+  top: 42.62%;
+  left: 45.97%;
+  width: 56px;
+  height: 72px;
+  background: url("icons/map-pin.svg");
+}
+.contacts__map-img {
+  border-radius: 2.873% / 4.098%;
+}
+
 .page-footer {
   display: flex;
   justify-content: space-between;
