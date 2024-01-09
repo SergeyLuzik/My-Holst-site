@@ -589,6 +589,7 @@ a.order-button {
   line-height: 120%;
   padding-inline: 16px;
   padding-block: 4px;
+  margin-block: 20px 0;
   background: var(--primary-light);
   border-radius: 13.186% / 37.5%;
   color: var(--white);
