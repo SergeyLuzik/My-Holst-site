@@ -571,6 +571,17 @@ a.order-button {
   margin-block: 4px 0;
 }
 
+.popular-sizes__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular-sizes__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .popular-sizes__size-value {
   display: inline-block;
   font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
