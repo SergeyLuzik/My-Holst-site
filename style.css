@@ -562,3 +562,15 @@ a.order-button {
   line-height: 143%;
   margin-block: 4px 0;
 }
+
+.popular-sizes__size-value {
+  display: inline-block;
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 120%;
+  padding-inline: 16px;
+  padding-block: 4px;
+  background: var(--primary-light);
+  border-radius: 13.186% / 37.5%;
+  color: var(--white);
+}
