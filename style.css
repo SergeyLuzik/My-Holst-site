@@ -613,18 +613,15 @@ a.order-button {
 
 .contacts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "title title"
-    "map contacts-list";
 }
 
 .contacts__title {
-  grid-area: title;
+  grid-column: 1 / 3;
 }
 
 .contacts__map {
-  grid-area: map;
+  grid-column: 1 / 2;
+  grid-row: 2;
   position: relative;
 }
 
@@ -642,7 +639,8 @@ a.order-button {
 }
 
 .contacts__list {
-  grid-area: contacts-list;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .contacts__item-title {
@@ -665,6 +663,11 @@ a.order-button {
   font-weight: 700;
   line-height: 120%;
   color: var(--primary-light);
+}
+
+.contacts__social-list {
+  grid-column: 2;
+  grid-row: 3;
 }
 
 .page-footer {
