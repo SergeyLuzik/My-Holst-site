@@ -571,6 +571,20 @@ a.order-button {
   margin-block: 4px 0;
 }
 
+.steps__item-title {
+  font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 114.286%;
+  margin-block: 0 8px;
+}
+
+.steps__text {
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  font-weight: 700;
+  line-height: 150%;
+  margin-block: 0;
+}
+
 .popular-sizes__list {
   display: flex;
   justify-content: space-between;
