@@ -609,7 +609,20 @@ a.order-button {
   color: var(--white);
 }
 
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "map contacts-list";
+}
+
+.contacts__title {
+  grid-area: title;
+}
+
 .contacts__map {
+  grid-area: map;
   position: relative;
 }
 
@@ -624,6 +637,10 @@ a.order-button {
 }
 .contacts__map-img {
   border-radius: 2.873% / 4.098%;
+}
+
+.contacts__list {
+  grid-area: contacts-list;
 }
 
 .page-footer {
