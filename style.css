@@ -36,6 +36,10 @@ img {
   max-width: 100%;
 }
 
+dd[class] {
+  margin-inline-start: 0;
+}
+
 /* НОРМАЛИЗАЦИЯ ИЗ ВИДЕО */
 
 /**
@@ -58,9 +62,7 @@ body,
 
 
 
-:where(dd[class]) {
-  margin-left: 0;
-}
+
 
   */
 
@@ -641,6 +643,28 @@ a.order-button {
 
 .contacts__list {
   grid-area: contacts-list;
+}
+
+.contacts__item-title {
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  font-weight: 700;
+  line-height: 125%;
+  margin-inline-start: 8px;
+}
+
+.contacts__item-description:nth-child(-n + 2) {
+  font-weight: 600;
+}
+
+.contacts__address {
+  font-style: normal;
+}
+
+.contacts__item-description:nth-child(n + 3) {
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 120%;
+  color: var(--primary-light);
 }
 
 .page-footer {
