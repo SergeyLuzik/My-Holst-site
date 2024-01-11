@@ -619,7 +619,7 @@ a.order-button {
     "map contacts-list"
     "map social-list"
     / 696px 1fr;
-  /*todo как уменьшить высоту contacts-list */
+  /*todo как уменьшить высоту contacts-list (dd block - не работает grid) */
 }
 
 .contacts__title {
@@ -646,16 +646,18 @@ a.order-button {
 
 .contacts__list {
   grid-area: contacts-list;
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+  line-height: 120%;
 }
 
 .contacts__item-title {
   font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
   font-weight: 700;
   line-height: 125%;
-  margin-inline-start: 8px;
+  margin-block-end: 8px;
 }
 
-.contacts__item-description:nth-child(-n + 2) {
+.contacts__item-description:nth-of-type(-n + 2) {
   font-weight: 600;
 }
 
@@ -663,10 +665,8 @@ a.order-button {
   font-style: normal;
 }
 
-.contacts__item-description:nth-child(n + 3) {
-  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+.contacts__item-description:nth-of-type(n + 3) {
   font-weight: 700;
-  line-height: 120%;
   color: var(--primary-light);
 }
 
