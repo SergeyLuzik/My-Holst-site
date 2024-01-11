@@ -602,10 +602,11 @@ a.order-button {
 .card {
   display: grid;
   grid-template:
-    "img title"
-    "img text";
+    "img title" auto
+    "img text" 1fr;
   row-gap: 2px;
   column-gap: 16px;
+  grid-auto-rows: auto;
 }
 .card__img {
   grid-area: img;
