@@ -587,6 +587,42 @@ a.order-button {
   margin-block: 0;
 }
 
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(384px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  display: grid;
+  grid-template:
+    "img title"
+    "img text";
+  row-gap: 2px;
+  column-gap: 16px;
+}
+.card__img {
+  grid-area: img;
+  border-radius: 6.25%;
+}
+
+.card__title {
+  grid-area: title;
+  font-size: clamp(1rem, 0.5rem + 2.5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 120%;
+  color: var(--primary-light);
+  margin-block: 0;
+}
+
+.card__text {
+  grid-area: text;
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 0.875rem);
+  font-weight: 500;
+  line-height: 142.857%;
+  margin-block: 0;
+}
+
 .popular-sizes__list {
   display: flex;
   justify-content: space-between;
