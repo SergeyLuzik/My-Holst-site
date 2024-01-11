@@ -573,6 +573,12 @@ a.order-button {
   margin-block: 4px 0;
 }
 
+.steps__list {
+  display: flex;
+  flex-direction: column;
+  gap: 128px;
+}
+
 .steps__item-title {
   font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.75rem);
   font-weight: 700;
