@@ -613,15 +613,21 @@ a.order-button {
 
 .contacts {
   display: grid;
+  column-gap: 32px;
+  grid-template:
+    "title title"
+    "map contacts-list"
+    "map social-list"
+    / 696px 1fr;
+  /*todo как уменьшить высоту contacts-list */
 }
 
 .contacts__title {
-  grid-column: 1 / 3;
+  grid-area: title;
 }
 
 .contacts__map {
-  grid-column: 1 / 2;
-  grid-row: 2;
+  grid-area: map;
   position: relative;
 }
 
@@ -639,8 +645,7 @@ a.order-button {
 }
 
 .contacts__list {
-  grid-column: 2;
-  grid-row: 2;
+  grid-area: contacts-list;
 }
 
 .contacts__item-title {
@@ -666,8 +671,7 @@ a.order-button {
 }
 
 .contacts__social-list {
-  grid-column: 2;
-  grid-row: 3;
+  grid-area: social-list;
 }
 
 .page-footer {
