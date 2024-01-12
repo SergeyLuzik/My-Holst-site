@@ -462,14 +462,17 @@ a.order-button {
   margin-block-end: 3px;
 }
 
-.slider__slides-list {
-  display: flex;
-  gap: 16px;
+.slider {
+  margin-block-start: 16px;
 }
 
-.slider__slide-item_active {
-  transform: scale(1.129);
-  padding-inline: 8px;
+.slider__slides-list {
+  display: flex;
+  gap: 20px;
+}
+
+.slider__slide-item_active .slider__slide-img {
+  /*transform: scale(1.129);*/
 }
 
 .slider__slide {
