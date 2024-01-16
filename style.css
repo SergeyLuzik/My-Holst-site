@@ -477,20 +477,6 @@ a.order-button {
   padding-block-start: 16px;
 }
 
-.slider__slide-item.slider__slide-item_active {
-  padding-block-start: 0;
-  /*transform: scale(1.129);*/
-}
-
-.slider__slide-item_active .slider__slide-img {
-  /*transform: scale(1.129);*/
-  /*todo overflow-x?*/
-  width: 344px;
-  height: 516px;
-}
-
-/*todo стили для плашки на увеличенном слайде*/
-
 .slider__slide {
   position: relative; /*todo убрать?*/
 }
@@ -512,15 +498,36 @@ a.order-button {
   padding-inline: 8px;
   font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
   font-weight: 700;
+  line-height: 125%;
   color: var(--white);
   background: var(--primary-alpha);
   border-radius: 6% / 37.5%; /*todo убрать % при разных размерах текста разный угол (привязать в viewport?)*/
 }
 
+.slider__slide-item.slider__slide-item_active {
+  padding-block-start: 0;
+  /*transform: scale(1.129);*/
+}
+
+.slider__slide-item_active .slider__slide-img {
+  /*transform: scale(1.129);*/
+  /*todo overflow-x?*/
+  width: 344px;
+  height: 516px;
+}
+
+/*todo стили для плашки на увеличенном слайде*/
+.slider__slide-item_active .slider__slide-description {
+  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+}
+
 .slider__slider-butons {
   display: flex;
   gap: 8px;
-  margin-block-start: 20px;
+  position: relative;
+  bottom: 52px;
+  left: 344px;
+  padding-inline-start: 20px;
 }
 
 .slider__slider-button {
