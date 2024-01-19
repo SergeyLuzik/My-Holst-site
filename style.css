@@ -680,6 +680,41 @@ a.order-button {
   color: var(--white);
 }
 
+/*todo 
+
+min-content - выставляет размер в зависимости от размера изображения
+    grid-template-columns: repeat(10, min-content);
+    grid-template-rows: repeat(10, min-content);
+
+todo: ограничивать размером изображений и размером колонок в fr или %
+todo: добавить grid-auto-rows: min-content; чтобы залетали новые ячейки
+todo: data атрибуты может в них закладывать или названиями классов
+todo: определять span с помощью ::nth-child по какому-то паттерну, чтобы не пришлось каждому эл-ту задавать  
+    можно ли ставить просто span для любого элемента добавлять классом или атрибутом
+*/
+
+.works__list {
+  display: grid;
+  /* grid-template-columns: 16.42% 12.35% 12.35% 12.5% 12.5% 12.35% 8.28% 8.28%;
+  grid-template-rows: 1fr 0.07fr 0.12fr 0.44fr 0.638fr;*/
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+
+  /*justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  grid-auto-flow: dense;*/
+}
+
+/* todo через attr не получилось, можно значения data атрибутов добавлять через js стилям*/
+.works__item {
+}
+
+.works__img {
+  /* margin: 12px;*/
+  border-radius: 15px;
+}
+
 .contacts {
   display: grid;
   column-gap: 32px;
