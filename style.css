@@ -703,6 +703,10 @@ todo: определять span с помощью ::nth-child по какому-
 .works__item {
 }
 
+[class*="_border"] {
+  border: 1px solid grey;
+}
+
 [class*="_cols_2"] {
   grid-column: span 2;
 }
@@ -715,6 +719,9 @@ todo: определять span с помощью ::nth-child по какому-
 }
 [class*="_cols_5"] {
   grid-column: span 5;
+}
+[class*="_cols_6"] {
+  grid-column: span 6;
 }
 [class*="_cols_9"] {
   grid-column: span 9;
@@ -733,7 +740,9 @@ todo: определять span с помощью ::nth-child по какому-
 }
 
 .works__img {
-  /* margin: 12px;*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 15px;
 }
 
