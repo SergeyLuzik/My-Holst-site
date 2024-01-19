@@ -695,19 +695,41 @@ todo: определять span с помощью ::nth-child по какому-
 
 .works__list {
   display: grid;
-  /* grid-template-columns: 16.42% 12.35% 12.35% 12.5% 12.5% 12.35% 8.28% 8.28%;
-  grid-template-rows: 1fr 0.07fr 0.12fr 0.44fr 0.638fr;*/
-  gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(50px, auto));
-
-  /*justify-content: center;
-  margin: 0 auto;
-  padding: 0;
-  grid-auto-flow: dense;*/
+  grid-template-columns: repeat(32, 1fr);
+  grid-template-rows: repeat(14, 1fr);
 }
 
 /* todo через attr не получилось, можно значения data атрибутов добавлять через js стилям*/
 .works__item {
+}
+
+[class*="_cols_2"] {
+  grid-column: span 2;
+}
+
+[class*="_cols_3"] {
+  grid-column: span 3;
+}
+[class*="_cols_4"] {
+  grid-column: span 4;
+}
+[class*="_cols_5"] {
+  grid-column: span 5;
+}
+[class*="_cols_9"] {
+  grid-column: span 9;
+}
+[class*="_rows_3"] {
+  grid-row: span 3;
+}
+[class*="_rows_4"] {
+  grid-row: span 4;
+}
+[class*="_rows_5"] {
+  grid-row: span 5;
+}
+[class*="_rows_6"] {
+  grid-row: span 6;
 }
 
 .works__img {
