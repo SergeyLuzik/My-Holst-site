@@ -750,6 +750,11 @@ todo: определять span с помощью ::nth-child по какому-
   border-radius: 15px;
 }
 
+.feedback-card__avatar {
+  width: ;
+  border: 8px solid var(--white);
+  border-radius: 50%;
+}
 .contacts {
   display: grid;
   column-gap: 32px;
