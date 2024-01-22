@@ -750,10 +750,55 @@ todo: определять span с помощью ::nth-child по какому-
   border-radius: 15px;
 }
 
+.feedback-card__img {
+  border-radius: 7.81%;
+}
+
+.feedback-card__full-name {
+  font-size: clamp(1rem, 0.5rem + 2.5vw, 0.875rem);
+  font-weight: 800;
+  line-height: 115%;
+  margin-block: 0;
+}
+
 .feedback-card__avatar {
-  width: ;
+  width: 80px;
+  height: 80px;
   border: 8px solid var(--white);
   border-radius: 50%;
+}
+
+.feedback-card__date {
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 600;
+  line-height: 100%;
+}
+.feedback-card__text {
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 700;
+  line-height: 133.33%;
+  margin-block: 0;
+}
+a.feedback-card__link {
+  /*todo занести общие св-ва в .button (color: white и пр. */
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 700;
+  line-height: 100%;
+  padding-block: 8px;
+  padding-inline: 12px;
+  color: var(--white);
+  background-color: var(--secondary-light);
+  border-radius: 10px;
+}
+.feedback-card__link::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background: url("icons/vk.svg");
+  margin-inline-start: 8px;
+  margin-block-start: 2px;
 }
 .contacts {
   display: grid;
