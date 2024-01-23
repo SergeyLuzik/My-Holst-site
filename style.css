@@ -749,8 +749,19 @@ todo: определять span с помощью ::nth-child по какому-
   object-fit: cover;
   border-radius: 15px;
 }
+
+.feedback {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  grid-template-rows: min-content 1fr min-content;
+  column-gap: 72px;
+}
+.feedback__title {
+  grid-column: span 3;
+}
 .feedback__button {
   display: block;
+  align-self: center;
   width: 40px;
   height: 40px;
   background: url(icons/arrow.svg); /*todo странные размеры фона*/
@@ -759,6 +770,15 @@ todo: определять span с помощью ::nth-child по какому-
 
 .feedback__button_next {
   transform: rotate(180deg);
+}
+
+/*todo исправить ширину, переситать ее в %, иначе шире заданного*/
+.feedback__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 16px;
+  row-gap: 24px;
 }
 .feedback-card {
   display: grid;
@@ -838,6 +858,12 @@ a.feedback-card__link {
   background: url("icons/vk.svg");
   margin-inline-start: 8px;
   margin-block-start: 2px;
+}
+
+.feedback__order-button {
+  grid-column: span 3;
+  justify-self: center;
+  margin-block-start: 48px;
 }
 .contacts {
   display: grid;
