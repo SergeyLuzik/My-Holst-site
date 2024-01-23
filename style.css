@@ -749,7 +749,17 @@ todo: определять span с помощью ::nth-child по какому-
   object-fit: cover;
   border-radius: 15px;
 }
+.feedback__button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(icons/arrow.svg); /*todo странные размеры фона*/
+  border: none;
+}
 
+.feedback__button_next {
+  transform: rotate(180deg);
+}
 .feedback-card {
   display: grid;
   grid-template-columns: 256px;
