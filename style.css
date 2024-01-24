@@ -729,6 +729,13 @@ a.order-button {
   margin-block: 0;
 }
 
+.services-list__item:nth-child(n + 3) .card {
+  /*todo исправить сетку */
+  grid-template-areas:
+    "title img"
+    "text img";
+}
+
 .steps__receipt-list {
   padding-inline-start: 16px;
 }
