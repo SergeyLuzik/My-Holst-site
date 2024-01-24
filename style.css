@@ -606,8 +606,14 @@ a.order-button {
 }
 
 .steps__item {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  /*display: grid;
+  grid-template-columns: auto 1fr auto;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.steps__item:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 /*todo нечетные реверсить*/
@@ -627,6 +633,10 @@ a.order-button {
   color: var(--primary-light);
 }
 
+.steps__text-group {
+  width: 20%;
+}
+
 .steps__item-title {
   font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.75rem);
   font-weight: 700;
@@ -641,8 +651,42 @@ a.order-button {
   margin-block: 0;
 }
 
+.steps__item:first-child .steps__text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  gap: 8px;
+}
+
+.steps__contacts-list {
+  display: flex;
+  gap: 12px;
+}
+
+.steps__contact-link {
+  display: block;
+  width: 36px; /*todo можно ли как-то обойтись без ручного указания размера? через тег svg?*/
+  height: 36px;
+}
+
+.steps__contact-link_adress {
+  background-image: url("icons/location.svg"); /*todo исправить повтор фона*/
+  width: 28px;
+}
+
+/*todo перекрасить иконки*/
+.steps__contact-link_vk {
+  background-image: url("icons/vk-bubble.svg");
+}
+
+.steps__contact-link_e-mail {
+  background-image: url("icons/e-mail.svg");
+}
+
 .services-list {
   display: grid;
+  width: 60%;
   grid-template-columns: repeat(2, minmax(384px, 1fr));
   gap: 32px;
 }
