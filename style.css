@@ -130,6 +130,7 @@ body {
     #d70a55 100%
   );
   --secondary-light: #ef77b2;
+  --section-margin: 160px;
 }
 /*Загрузка вариативных шрифтов 
 
@@ -268,6 +269,7 @@ page-header__contacts-list,
 .hero {
   display: flex;
   gap: clamp(16px, 0.5rem + 2.5vw, 64px);
+  margin-block-end: 52px;
 }
 
 .promo {
@@ -544,6 +546,10 @@ a.order-button {
   transform: rotate(180deg);
 }
 
+.advantages {
+  margin-block-end: var(--section-margin);
+}
+
 .advantages__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
@@ -599,6 +605,10 @@ a.order-button {
   font-weight: 400;
   line-height: 143%;
   margin-block: 4px 0;
+}
+
+.steps {
+  margin-block-end: var(--section-margin);
 }
 
 .steps__list {
@@ -756,6 +766,10 @@ a.order-button {
   background-image: url("icons/checkbox.svg");
   background-size: contain;
 }
+
+.popular-sizes {
+  margin-block-end: var(--section-margin);
+}
 .popular-sizes__list {
   display: flex;
   justify-content: space-between;
@@ -792,6 +806,10 @@ todo: data атрибуты может в них закладывать или �
 todo: определять span с помощью ::nth-child по какому-то паттерну, чтобы не пришлось каждому эл-ту задавать  
     можно ли ставить просто span для любого элемента добавлять классом или атрибутом
 */
+
+.works {
+  margin-block-end: var(--section-margin);
+}
 
 .works__list {
   display: grid;
@@ -855,6 +873,7 @@ todo: определять span с помощью ::nth-child по какому-
   grid-template-columns: 40px 1fr 40px;
   grid-template-rows: min-content 1fr min-content;
   column-gap: 72px;
+  margin-block-end: var(--section-margin);
 }
 .feedback__title {
   grid-column: span 3;
@@ -974,6 +993,7 @@ a.feedback-card__link {
     "map social-list" 1fr
     / 696px 1fr;
   /*todo как уменьшить высоту contacts-list (dd block - не работает grid) */
+  margin-block-end: var(--section-margin);
 }
 
 .contacts__title {
