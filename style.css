@@ -263,6 +263,8 @@ page-header__contacts-list,
 
 /*  HERO */
 
+/*todo исправить высоту блока (внизу немного больше)*/
+
 .hero {
   display: flex;
   gap: clamp(16px, 0.5rem + 2.5vw, 64px);
@@ -271,7 +273,7 @@ page-header__contacts-list,
 .promo {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   gap: 24px;
 }
 
@@ -299,6 +301,7 @@ page-header__contacts-list,
   font-size: clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem);
   font-weight: 800;
   line-height: 125%;
+  text-align: center;
   margin-block: 0;
 }
 
@@ -331,7 +334,7 @@ page-header__contacts-list,
   display: block;
   width: 28px;
   height: 28px;
-  background-image: url("../icons/сheckbox.svg");
+  background-image: url("../icons/checkbox.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -344,26 +347,25 @@ page-header__contacts-list,
   font-size: clamp(1rem, 0.5rem + 2.5vw, 2rem);
   font-weight: 600;
   color: var(--white);
+  margin-inline-end: 10%;
 }
 
 .promo__adventage::before {
   position: absolute;
   z-index: -1;
   content: "";
-  display: block;
-  top: 0;
-  left: 0;
-  width: 494px;
-  height: 48px;
+  top: -12%;
+  left: -10%;
+  width: 130%;
+  height: 122%;
   background-image: url("../icons/ink-stroke.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .promo__statistics {
   display: flex;
   gap: 16px;
+  margin-block: 0;
 }
 
 .promo__statistics-item {
