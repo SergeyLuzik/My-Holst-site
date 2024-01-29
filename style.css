@@ -720,7 +720,7 @@ a.order-button {
   margin-block: 0;
 }
 
-.steps__item:first-child .steps__text-group {
+.steps__item:nth-child(1) .steps__text-group {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -728,8 +728,24 @@ a.order-button {
   gap: 8px;
 }
 
-.steps__item:first-child .steps__item-title {
+.steps__item:nth-child(1) .steps__item-title {
   margin-block-end: 0;
+}
+.steps__item:nth-child(1) .steps__img-group {
+  display: grid;
+  /*todo исправить сетку*/
+  grid-template-columns: 78% 1fr;
+  grid-template-rows: 26% 1fr;
+  /*  grid-template-columns: 24vw 1fr;
+  grid-template-rows: 5vw 1fr;*/
+}
+.steps__item:nth-child(1) .steps__img:first-child {
+  grid-column: 1 / 3;
+}
+
+.steps__item:nth-child(1) .steps__img:last-child {
+  grid-column-start: 2;
+  grid-row-start: 2;
 }
 
 .steps__contacts-list {
@@ -800,6 +816,39 @@ a.order-button {
   grid-template-areas:
     "title img"
     "text img";
+}
+
+.steps__item:nth-child(4) .steps__img-group {
+  display: grid;
+  grid-template-columns: 7vw 1fr;
+  grid-template-rows: 7vw 1fr;
+}
+
+.steps__item:nth-child(4) .steps__img {
+  border-radius: 10px;
+}
+.steps__item:nth-child(4) .steps__img:first-child {
+  grid-column-start: 2;
+  grid-row: 1 / 3;
+}
+
+.steps__item:nth-child(4) .steps__img:last-child {
+  grid-column: 1 / 3;
+  grid-row-start: 2;
+}
+
+/**/
+.steps__item:nth-child(5) .steps__img-group {
+  display: grid;
+  grid-template-columns: 66% 1fr;
+  gap: 20px;
+}
+
+.steps__item:nth-child(5) .steps__img:nth-child(-n + 2) {
+  border-radius: 10px;
+}
+.steps__item:nth-child(5) .steps__img:first-child {
+  grid-row: 1 / span 3;
 }
 
 .steps__receipt-list {
