@@ -1,1 +1,12 @@
 https://css-tricks.com/full-width-containers-limited-width-parents/
+
+В чем разница между grid flow row и column?
+Слайдер на гридах, чтобы легко ресайзить кнопки управления
+
+Пропустить svg через https://jakearchibald.github.io/svgomg/
+
+https://developer.mozilla.org/ru/docs/Web/SVG/Tutorial/Introduction
+https://doka.guide/html/svg/
+
+Охрененная анимауия рукописания 
+https://htmlacademy.ru/blog/html/a-guide-to-svg-on-web
