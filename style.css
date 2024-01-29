@@ -131,6 +131,11 @@ body {
   );
   --secondary-light: #ef77b2;
   --section-margin: 160px;
+  --content-width: 1440px;
+  --slide-width: clamp(200px, 15vw, 300px);
+  --slide-height: calc(var(--slide-width) / (2 / 3));
+  --active-slide-width: clamp(250px, 18vw, 350px);
+  --active-slide-height: calc(var(--active-slide-width) / (2 / 3));
 }
 /*Загрузка вариативных шрифтов 
 
@@ -160,6 +165,13 @@ body {
   font-family: "Nunito", "Arial", sans-serif;
   color: var(--black);
   background-color: var(--white);
+  margin: 0;
+  display: grid;
+  grid-template-columns:
+    minmax(16px, 1fr)
+    minmax(min-content, var(--content-width))
+    minmax(16px, 1fr);
+  grid-auto-rows: min-content;
 }
 
 /* todo актуализировать */
@@ -178,14 +190,33 @@ body {
   text-align: center;
 }
 
-/* HEADER */
+.page-header,
+.page-footer {
+  max-width: var(--content-width);
+  height: 100px;
+  grid-column-start: 2;
+}
 
+.page-main {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns:
+    minmax(16px, 1fr)
+    repeat(2, minmax(min-content, calc(var(--content-width) / 2)))
+    minmax(16px, 1fr);
+  /*var(--content-width) / 2
+  repeat(2, minmax(min-content, 720px))*/
+  justify-items: start;
+}
+
+/* HEADER */
+/*
 .page-header,
 .page-main,
 .page-footer {
   max-width: 1440px;
   margin-inline: auto;
-}
+}*/
 
 .page-header {
   display: flex;
@@ -273,6 +304,7 @@ page-header__contacts-list,
 }
 
 .promo {
+  grid-column: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -468,21 +500,37 @@ a.order-button {
 }
 
 .slider {
-  margin-inline-end: -50vw;
-  min-width: 50vw;
+  /* margin-inline-end: -50vw;
+  min-width: 50vw;*/
+  grid-column: 3 / span 2;
+  /*  overflow-x: hidden;*/
+  display: grid;
+  grid-template-columns: var(--active-slide-width) 1fr;
+  grid-template-rows: var(--slide-height) calc(
+      var(--active-slide-height) - var(--slide-height)
+    );
+  overflow: hidden;
 }
 
 .slider__slides-list {
-  display: flex;
+  /*display: flex;
+  gap: 20px;*/
+  grid-column: span 2;
+  /* display: flex;
+  gap: 20px;*/
+  display: grid;
+  grid-auto-flow: column;
   gap: 20px;
 }
 
 .slider__slide-item {
-  padding-block-start: 16px;
+  /*padding-block-start: 16px;*/
 }
 
 .slider__slide {
-  position: relative; /*todo убрать?*/
+  /*position: relative; /*todo убрать?*/
+  width: var(--slide-width);
+  aspect-ratio: 2 / 3;
 }
 .slider__slide-img {
   border-radius: 3% / 2%;
@@ -509,15 +557,16 @@ a.order-button {
 }
 
 .slider__slide-item.slider__slide-item_active {
-  padding-block-start: 0;
+  /*padding-block-start: 0;*/
   /*transform: scale(1.129);*/
+  width: var(--active-slide-width);
 }
 
 .slider__slide-item_active .slider__slide-img {
   /*transform: scale(1.129);*/
   /*todo overflow-x?*/
-  width: 344px;
-  height: 516px;
+  /*width: 344px;
+  height: 516px;*/
 }
 
 /*todo стили для плашки на увеличенном слайде*/
@@ -526,11 +575,13 @@ a.order-button {
 }
 
 .slider__slider-butons {
+  grid-column-start: 2;
+  align-self: center;
   display: flex;
   gap: 8px;
-  position: relative;
+  /* position: relative;
   bottom: 52px;
-  left: 344px;
+  left: 344px;*/
   padding-inline-start: 20px;
 }
 
@@ -547,11 +598,13 @@ a.order-button {
 }
 
 .advantages {
+  grid-column: 2 / span 2;
   margin-block-end: var(--section-margin);
 }
 
 .advantages__list {
   display: grid;
+  grid-auto-flow: column; /*todo почему без него выстраивается в стобик*/
   grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
   gap: 35px;
 }
@@ -608,6 +661,7 @@ a.order-button {
 }
 
 .steps {
+  grid-column: 2 / span 2;
   margin-block-end: var(--section-margin);
 }
 
@@ -768,6 +822,8 @@ a.order-button {
 }
 
 .popular-sizes {
+  grid-column: 2 / span 2;
+  width: 100%;
   margin-block-end: var(--section-margin);
 }
 .popular-sizes__list {
@@ -808,13 +864,21 @@ todo: определять span с помощью ::nth-child по какому-
 */
 
 .works {
+  grid-column: 1 / span 4;
   margin-block-end: var(--section-margin);
 }
 .works__list {
   display: grid;
-  grid-template-columns: repeat(32, 3.125%);
-  grid-template-rows: repeat(14, 3.125vw);
+  /* grid-template-columns: repeat(32, 3.125%);
+  grid-template-rows: repeat(14, 3.125vw);*/
+  /*todo поравить значение, неправильные пропорции*/
+  grid-template-columns: repeat(
+    32,
+    calc((100% - 372px) / 32)
+  ); /*todo завести переменную (деление таблицы)?*/
+  grid-template-rows: repeat(14, calc((100vw - 156px) / 32));
   grid-auto-flow: dense;
+  gap: 12px;
 }
 
 [class*="_border"] {
@@ -878,6 +942,8 @@ todo: определять span с помощью ::nth-child по какому-
 }
 
 .feedback {
+  grid-column: 2 / span 2;
+  width: 100%;
   display: grid;
   grid-template-columns: 40px 1fr 40px;
   grid-template-rows: min-content 1fr min-content;
@@ -994,6 +1060,8 @@ a.feedback-card__link {
   margin-block-start: 48px;
 }
 .contacts {
+  grid-column: 2 / span 2;
+  width: 100%;
   display: grid;
   column-gap: 32px;
   grid-template:
