@@ -599,7 +599,7 @@ a.order-button {
 
 .advantages {
   grid-column: 2 / span 2;
-  margin-block-end: var(--section-margin);
+  margin-block: 52px var(--section-margin);
 }
 
 .advantages__list {
@@ -758,24 +758,24 @@ a.order-button {
 }
 
 .steps__contact-link {
-  display: block;
+  /*display: block;
   width: 36px; /*todo можно ли как-то обойтись без ручного указания размера? через тег svg?*/
-  height: 36px;
+  /* height: 36px;*/
 }
-
-.steps__contact-link_adress {
-  background-image: url("icons/location.svg"); /*todo исправить повтор фона*/
+/* todo убрать при ненадобности*/
+/*.steps__contact-link_adress {
+  background-image: url("icons/location.svg"); todo исправить повтор фона
   width: 28px;
-}
+}*/
 
 /*todo перекрасить иконки*/
-.steps__contact-link_vk {
+/*.steps__contact-link_vk {
   background-image: url("icons/vk-bubble.svg");
-}
+}*/
 
-.steps__contact-link_e-mail {
+/*.steps__contact-link_e-mail {
   background-image: url("icons/e-mail.svg");
-}
+}*/
 
 .services-list {
   display: grid;
@@ -845,6 +845,8 @@ a.order-button {
 .steps__item:nth-child(5) .steps__img-group {
   display: grid;
   grid-template-columns: 66% 1fr;
+  /*grid-template-rows: repeat(3, 1fr);*/
+  /*todo отступы внизу картинок*/
   gap: 20px;
 }
 
