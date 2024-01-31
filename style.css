@@ -789,7 +789,7 @@ a.order-button {
   display: grid;
   grid-template:
     "img title" auto
-    "img text" 1fr;
+    "img text" 1fr / auto 1fr;
   row-gap: 2px;
   column-gap: 16px;
   grid-auto-rows: auto;
@@ -818,9 +818,9 @@ a.order-button {
 
 .services-list__item:nth-child(n + 3) .card {
   /*todo исправить сетку */
-  grid-template-areas:
-    "title img"
-    "text img";
+  grid-template:
+    "title img" auto
+    "text img" 1fr/ 1fr auto;
 }
 
 .steps__item:nth-child(4) .steps__img-group {
