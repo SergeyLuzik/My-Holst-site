@@ -5,8 +5,14 @@ https://css-tricks.com/full-width-containers-limited-width-parents/
 
 Пропустить svg через https://jakearchibald.github.io/svgomg/
 
+https://dzen.ru/a/XL2M9pdGiACzdil8?experiment=948515
+
 https://developer.mozilla.org/ru/docs/Web/SVG/Tutorial/Introduction
 https://doka.guide/html/svg/
 
 Охрененная анимауия рукописания 
 https://htmlacademy.ru/blog/html/a-guide-to-svg-on-web
+
+
+Относительные единицы
+https://learn.javascript.ru/css-units?ysclid=ls1a21b8y2295483921
