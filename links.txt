@@ -16,3 +16,5 @@ https://htmlacademy.ru/blog/html/a-guide-to-svg-on-web
 
 Относительные единицы
 https://learn.javascript.ru/css-units?ysclid=ls1a21b8y2295483921
+
+codeium university посмотреть что там по фишкам
