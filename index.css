@@ -1,0 +1,13 @@
+@import './styles/normalize.css';
+@import './styles/variables.css';
+@import './styles/utilities.css';
+@import './styles/base.css';
+@import './styles/header.css';
+@import './styles/hero.css';
+@import './styles/advantages.css';
+@import './styles/steps.css';
+@import './styles/popular-sizes.css';
+@import './styles/works.css';
+@import './styles/feedback.css';
+@import './styles/contacts.css';
+@import './styles/footer.css';

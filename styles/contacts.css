@@ -1,0 +1,65 @@
+.contacts {
+    grid-column: 2 / span 2;
+    width: 100%;
+    display: grid;
+    column-gap: 32px;
+    grid-template:
+      "title title"
+      "map contacts-list" auto
+      "map social-list" 1fr
+      / 696px 1fr;
+    /*todo как уменьшить высоту contacts-list (dd block - не работает grid) */
+    margin-block-end: var(--section-margin);
+  }
+  
+  .contacts__title {
+    grid-area: title;
+  }
+  
+  .contacts__map {
+    grid-area: map;
+    position: relative;
+  }
+  
+  .contacts__map::after {
+    content: "";
+    position: absolute;
+    top: 42.62%;
+    left: 45.97%;
+    width: 56px;
+    height: 72px;
+    background: url("icons/map-pin.svg");
+  }
+  .contacts__map-img {
+    border-radius: 2.873% / 4.098%;
+  }
+  
+  .contacts__list {
+    grid-area: contacts-list;
+    font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+    line-height: 120%;
+  }
+  
+  .contacts__item-title {
+    font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+    font-weight: 700;
+    line-height: 125%;
+    margin-block-end: 8px;
+  }
+  
+  .contacts__item-description:nth-of-type(-n + 2) {
+    font-weight: 600;
+  }
+  
+  .contacts__address {
+    font-style: normal;
+  }
+  
+  .contacts__item-description:nth-of-type(n + 3) {
+    font-weight: 700;
+    color: var(--primary-light);
+  }
+  
+  .contacts__social-list {
+    grid-area: social-list;
+  }
