@@ -26,27 +26,27 @@
   }
   
   .advantages__item:nth-child(1) .advantages__advantage-title::before {
-    background: url("../icons/advantages/japan.svg");
+    background: url("../assets/icons.svg#volcano");
   }
   
   .advantages__item:nth-child(2) .advantages__advantage-title::before {
-    background: url("../icons/advantages/rocket.svg");
+    background: url("../assets/icons.svg#rocket");
   }
   
   .advantages__item:nth-child(3) .advantages__advantage-title::before {
-    background: url("../icons/advantages/canvas.svg");
+    background: url("../assets/icons.svg#canvas");
   }
   
   .advantages__item:nth-child(4) .advantages__advantage-title::before {
-    background: url("../icons/advantages/sizes.svg");
+    background: url("../assets/icons.svg#sizes");
   }
   
   .advantages__item:nth-child(5) .advantages__advantage-title::before {
-    background: url("../icons/advantages/russia.svg");
+    background: url("../assets/icons.svg#russia");
   }
   
   .advantages__item:nth-child(6) .advantages__advantage-title::before {
-    background: url("../icons/advantages/guarantee.svg");
+    background: url("../assets/icons.svg#guarantee");
   }
   
   .advantages__advantage-title {
