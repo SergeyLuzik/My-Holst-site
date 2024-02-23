@@ -17,6 +17,7 @@
       minmax(min-content, var(--content-width))
       minmax(16px, 1fr);
     grid-auto-rows: min-content;
+    overflow-x: hidden;
   }
   
   /* todo актуализировать */
