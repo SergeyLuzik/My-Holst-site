@@ -12,7 +12,7 @@
       #d70a55 100%
     );
     --secondary-light: #ef77b2;
-    --section-margin: 160px;
+    --section-margin: 100px;
     --content-width: 1440px;
     --slide-width: clamp(200px, 15vw, 300px);
     --slide-height: calc(var(--slide-width) / (2 / 3));
