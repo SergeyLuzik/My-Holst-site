@@ -228,6 +228,7 @@
   display: grid;
   grid-auto-flow: column;
   gap: 20px;
+  transition: transform 0.5s ease;
 }
 
 .slider__slide-item {
@@ -236,7 +237,6 @@
   transition: transform 0.3s ease;
   /*padding-block-start: 16px;*/
 }
-
 
 .slider__slide-item:hover {
   transform: scale(1.05);
@@ -308,12 +308,20 @@
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+}
+
+.slider__slider-button:active {
+  transform: scale(0.8);
 }
 
 .slider__slider-button_right {
   transform: rotate(180deg);
+}
+
+.slider__slider-button_right:active {
+  transform: rotate(180deg) scale(0.8);
 }
 
 .slider__slider-button:hover {

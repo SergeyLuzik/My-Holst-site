@@ -5,31 +5,11 @@
   grid-template-columns: 40px 1fr 40px;
   grid-template-rows: min-content 1fr min-content;
   column-gap: 72px;
+  align-items: center;
   margin-block-end: var(--section-margin);
 }
 .feedback__title {
   grid-column: span 3;
-}
-.feedback__button {
-  display: block;
-  align-self: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--primary-light);
-  mask: url(../assets/icons.svg#arrow);
-  -webkit-mask: url(../assets/icons.svg#arrow);
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.feedback__button:hover {
-  background-color: var(--secondary-light);
-  /*todo вынести курсор в общее правило, что-то вроде *:hover*/
-  cursor: pointer;
-}
-
-.feedback__button_next {
-  transform: rotate(180deg);
 }
 
 /*todo исправить ширину, переситать ее в %, иначе шире заданного*/
