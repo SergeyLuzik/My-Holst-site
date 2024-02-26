@@ -12,7 +12,10 @@
 
 
 
+при движении влево  сначала opacity: 0, потом scale(0) чтобы он уменьшался до нуля, если можно анимировать
+потом убрать его в конец
 
+когда вправо то наоборот появление из opacity 0 и scale(1)
 
 
 
@@ -21,19 +24,37 @@
 const slider = document.querySelector(".slider__slides-list");
 const slides = document.querySelectorAll(".slider__slide-item");
 const activeSlideWidth = document.querySelector(
-  ".slider__slide-item_active"
+  ".slider__slide-item_active",
 ).offsetWidth;
 let currentIndex = 0;
 
-function updateSlider() {
+function updateSlider(direction) {
+  const fadingSlide =
+    direction === "left" ? slider.firstElementChild : slider.lastElementChild;
+  fadingSlide.style.opacity = 0;
+  fadingSlide.style.transform = "scale(0.3)";
+  // todo реализовать матрицей? (она совмещает разные свойства)
   slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
+  fadingSlide.classList.remove("slider__slide-item_active");
+  slides[1].classList.add("slider__slide-item_active");
+
+  /*todo requestAnimationFrame 
+  https://learn.javascript.ru/js-animation?ysclid=lt2m3fks4k156106724
+  https://habr.com/ru/companies/timeweb/articles/587908/
+  
+
+  /*
+  slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
+
+
   slides.forEach((slide, index) => {
-    if (index === currentIndex) {
+    if (slide !== fadingSlide && index === currentIndex) {
       slide.classList.add("slider__slide-item_active");
+      slide.style.opacity = 1;
     } else {
       slide.classList.remove("slider__slide-item_active");
     }
-  });
+  });*/
 }
 
 function moveFirstToEnd() {
@@ -51,21 +72,48 @@ function moveLastToStart() {
 }
 
 document.querySelector(".slider-button_left").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  moveLastToStart();
-  updateSlider();
-
-  console.log("left");
+  currentIndex++;
+  updateSlider("left");
+  setTimeout(() => {
+    moveLastToStart();
+  }, 350);
 });
 
 document.querySelector(".slider-button_right").addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider("right");
   moveFirstToEnd();
-
-  updateSlider();
-
-  console.log("right");
 });
+
+/*function updateSlider() {
+  slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
+  slides.forEach((slide, index) => {
+    if (index === currentIndex) {
+      slide.classList.add("slider__slide-item_active");
+    } else {
+      slide.classList.remove("slider__slide-item_active");
+    }
+  });
+}*/
+
+/*
+function updateSlider(direction) {
+  const fadingSlide =
+    direction === "left" ? slider.firstElementChild : slider.lastElementChild;
+
+  slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
+  fadingSlide.style.opacity = 0;
+
+  slides.forEach((slide, index) => {
+    if (slide !== fadingSlide && index === currentIndex) {
+      slide.classList.add("slider__slide-item_active");
+      slide.style.opacity = 1;
+    } else {
+      slide.classList.remove("slider__slide-item_active");
+    }
+  });
+}
+*/
 
 /*
 document

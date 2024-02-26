@@ -234,7 +234,10 @@
 .slider__slide-item {
   width: var(--slide-width);
   aspect-ratio: 2 / 3;
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    scale 0.3s ease;
   /*padding-block-start: 16px;*/
 }
 
@@ -308,7 +311,9 @@
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
 }
 
