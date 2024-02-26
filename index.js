@@ -17,6 +17,8 @@
 
 когда вправо то наоборот появление из opacity 0 и scale(1)
 
+вместо класса active делать смещение самого слайда и scale одновременно, чтобы получить тот же эффект
+
 
 
 */
@@ -24,7 +26,7 @@
 const slider = document.querySelector(".slider__slides-list");
 const slides = document.querySelectorAll(".slider__slide-item");
 const activeSlideWidth = document.querySelector(
-  ".slider__slide-item_active",
+  ".slider__slide-item_active"
 ).offsetWidth;
 let currentIndex = 0;
 
@@ -42,6 +44,9 @@ function updateSlider(direction) {
   https://learn.javascript.ru/js-animation?ysclid=lt2m3fks4k156106724
   https://habr.com/ru/companies/timeweb/articles/587908/
   
+
+  Ставить translate 0 при удалении слайда 
+  https://stackoverflow.com/questions/73764110/how-to-create-infinite-carousel-in-javascript
 
   /*
   slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
@@ -74,9 +79,9 @@ function moveLastToStart() {
 document.querySelector(".slider-button_left").addEventListener("click", () => {
   currentIndex++;
   updateSlider("left");
-  setTimeout(() => {
+  /* setTimeout(() => {
     moveLastToStart();
-  }, 350);
+  }, 350);*/
 });
 
 document.querySelector(".slider-button_right").addEventListener("click", () => {
