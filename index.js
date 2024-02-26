@@ -36,28 +36,46 @@ function updateSlider() {
   });
 }
 
+function moveFirstToEnd() {
+  const firstItem = slider.firstElementChild;
+  console.log(firstItem);
+  slider.removeChild(firstItem);
+  slider.appendChild(firstItem);
+}
+
+function moveLastToStart() {
+  const lastItem = slider.lastElementChild;
+  console.log(lastItem);
+  slider.removeChild(lastItem);
+  slider.insertBefore(lastItem, slider.firstElementChild);
+}
+
 document.querySelector(".slider-button_left").addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  moveLastToStart();
   updateSlider();
+
   console.log("left");
 });
 
 document.querySelector(".slider-button_right").addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % slides.length;
+  moveFirstToEnd();
+
   updateSlider();
+
   console.log("right");
 });
 
-
-
+/*
 document
   .getElementById("moveFirstToEnd")
   .addEventListener("click", moveFirstToEnd);
 document
   .getElementById("moveLastToStart")
   .addEventListener("click", moveLastToStart);
-
-  /* todo 1я реализация*/
+*/
+/* todo 1я реализация
 function moveFirstToEnd() {
   const list = document.getElementById("myList");
   const firstItem = list.firstElementChild;
@@ -71,8 +89,8 @@ function moveLastToStart() {
   list.removeChild(lastItem);
   list.insertBefore(lastItem, list.firstElementChild);
 }
-
-/* todo 2я реализация*/
+*/
+/* todo 2я реализация
 <style>
   #myList li {
     transition: transform 0.3s ease-in-out;
@@ -103,8 +121,8 @@ function moveLastToStart() {
     lastItem.classList.remove('move');
   }, 300);
 }
-
-/* todo 2я реализация*/
+*/
+/* todo 2я реализация
 
 <style>
   #myList li {
@@ -135,3 +153,4 @@ function moveLastToStart() {
     clone.style.transform = 'translateX(0)';
   });
 }
+*/
