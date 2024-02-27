@@ -26,7 +26,7 @@
 const slider = document.querySelector(".slider__slides-list");
 const slides = document.querySelectorAll(".slider__slide-item");
 const activeSlideWidth = document.querySelector(
-  ".slider__slide-item_active"
+  ".slider__slide-item_active",
 ).offsetWidth;
 let currentIndex = 0;
 
@@ -34,11 +34,22 @@ function updateSlider(direction) {
   const fadingSlide =
     direction === "left" ? slider.firstElementChild : slider.lastElementChild;
   fadingSlide.style.opacity = 0;
-  fadingSlide.style.transform = "scale(0.3)";
+  fadingSlide.style.transform = "scale(0)";
   // todo реализовать матрицей? (она совмещает разные свойства)
-  slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
+  //slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
   fadingSlide.classList.remove("slider__slide-item_active");
-  slides[1].classList.add("slider__slide-item_active");
+  fadingSlide.style.width = 0;
+  slides[currentIndex].classList.add("slider__slide-item_active"); // список слайдов не обновляется при сдвиге, поэтому косяк
+  // можно в скобках заменить на currentIndex но придет переполнение
+  setTimeout(() => {
+    slider.removeChild(fadingSlide);
+    slider.appendChild(fadingSlide);
+    slider.lastElementChild.removeAttribute("style");
+  }, 200);
+
+  // можно расстояние сделать маржином, который тоже анимировать паралельно до нуля,
+  //тогда settimeout не нужен
+  // или flex/ grow
 
   /*todo requestAnimationFrame 
   https://learn.javascript.ru/js-animation?ysclid=lt2m3fks4k156106724
