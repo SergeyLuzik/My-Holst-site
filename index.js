@@ -44,9 +44,27 @@ function updateSlider(direction) {
   https://learn.javascript.ru/js-animation?ysclid=lt2m3fks4k156106724
   https://habr.com/ru/companies/timeweb/articles/587908/
   
-
+TODO!!!!!!!
   Ставить translate 0 при удалении слайда 
   https://stackoverflow.com/questions/73764110/how-to-create-infinite-carousel-in-javascript
+
+  что такое событие transitionend?
+
+  https://medium.com/@claudiaconceic/infinite-plain-javascript-slider-click-and-touch-events-540c8bd174f2
+  https://dev.to/arindam1997007/creating-an-infinite-looping-image-carousel-with-css-and-javascript-4pao
+  
+
+  Еще варианты:
+  https://itecnote.com/tecnote/javascript-an-infinite-carousel-with-vanilla-javascript/
+  https://stackblitz.com/edit/js-pwu9v8?file=index.js
+  https://forum.freecodecamp.org/t/how-to-infinite-loop-auto-carousel/543830  carousel.scrollTo
+  https://dev.to/technikhil314/an-infinite-circular-with-css-flex-and-little-js-2a44 mandatory
+  https://www.cssscript.com/demo/minimal-infinite-carousel/ left
+
+  https://www.youtube.com/watch?v=iiFB6oDTdm8 animation
+  https://www.youtube.com/watch?v=3Z780EOzIQs градиентные тени и transformZ!
+  https://www.youtube.com/watch?v=0YMntQg-WIk непонятная хрень
+
 
   /*
   slider.style.transform = `translateX(${-currentIndex * activeSlideWidth}px)`;
