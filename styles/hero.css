@@ -35,6 +35,7 @@
   background-position: center;
   background-size: contain;
   transition: transform 0.3s ease;
+  margin-block-start: 6px;
 }
 
 .promo__yandex-maps-rating:hover {
@@ -216,6 +217,7 @@
   grid-template-rows: var(--slide-height) calc(
       var(--active-slide-height) - var(--slide-height)
     );
+  margin-block-start: 16px;
   /*overflow: hidden;*/
 }
 
@@ -229,14 +231,19 @@
   display: grid;
   grid-auto-flow: column;
   gap: 32px;
-  transition: transform 0.5s ease;
+  /*transition: transform 0.5s ease;*/
 }
 
 .slider__slide-item {
   width: var(--slide-width);
   aspect-ratio: 2 / 3;
-  transition: transform 0.3s ease, opacity 0.3s ease, scale 0.3s ease,
+  /* transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    scale 0.3s ease,
     width 0.3s ease;
+    */
+  transition: transform 0.3s ease;
   /*padding-block-start: 16px;*/
 }
 
@@ -245,7 +252,7 @@
 }
 
 .slider__slide {
-  /*position: relative; /*todo убрать?*/
+  position: relative;
 }
 .slider__slide-img {
   width: 100%;
@@ -259,9 +266,9 @@
 /* todo отдельно класс для описания активной карточки и в нем переопределять left и bottom  */
 .slider__slide-description {
   z-index: 2;
-  position: relative;
-  left: 18px;
-  bottom: 32px;
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
   display: inline-block;
   margin-block: 0;
   padding-inline: 8px;
@@ -286,10 +293,11 @@
     height: 516px;*/
 }
 
-/*todo стили для плашки на увеличенном слайде*/
+/*todo стили для плашки на увеличенном слайде
 .slider__slide-item_active .slider__slide-description {
   font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
 }
+*/
 
 .slider__slider-butons {
   grid-column-start: 2;
@@ -310,7 +318,9 @@
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
 }
 

@@ -20,6 +20,33 @@ body {
   overflow-x: hidden;
 }
 
+.section-title {
+  font-size: clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 111.111%;
+  margin-block: 0 48px;
+  text-align: center;
+}
+
+.page-header,
+.page-footer {
+  max-width: var(--content-width);
+  height: 100px;
+  grid-column-start: 2;
+}
+
+.page-main {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns:
+    minmax(16px, 1fr)
+    repeat(2, minmax(min-content, calc(var(--content-width) / 2)))
+    minmax(16px, 1fr);
+  /*var(--content-width) / 2
+  repeat(2, minmax(min-content, 720px))*/
+  justify-items: start;
+}
+
 /* todo актуализировать */
 [class*="_color_primary"] {
   background: var(--primary);
@@ -52,7 +79,9 @@ a.order-button:hover {
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
 }
 
@@ -70,31 +99,4 @@ a.order-button:hover {
 
 .slider-button:hover {
   background-color: var(--secondary-light);
-}
-
-.section-title {
-  font-size: clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem);
-  font-weight: 700;
-  line-height: 111.111%;
-  margin-block: 0 48px;
-  text-align: center;
-}
-
-.page-header,
-.page-footer {
-  max-width: var(--content-width);
-  height: 100px;
-  grid-column-start: 2;
-}
-
-.page-main {
-  grid-column: span 3;
-  display: grid;
-  grid-template-columns:
-    minmax(16px, 1fr)
-    repeat(2, minmax(min-content, calc(var(--content-width) / 2)))
-    minmax(16px, 1fr);
-  /*var(--content-width) / 2
-  repeat(2, minmax(min-content, 720px))*/
-  justify-items: start;
 }

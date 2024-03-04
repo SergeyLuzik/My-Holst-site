@@ -9,6 +9,7 @@ const slidesWrapper = document.querySelector(".slider__slides-list"),
   slideWidth = slides[0].offsetWidth,
   offset = slideWidth + gapValue,
   transitionTime = "0.3s",
+  slideScale = "translate(-10%, 6.5%) scale(1.2)",
   left = document.querySelector(".slider-button_left"),
   right = document.querySelector(".slider-button_right");
 
@@ -18,7 +19,7 @@ let inAction = false;
 slidesWrapper.style.transform = `translateX(${-offset}px)`;
 slides[0].style.opacity = 0;
 //slides[0].style.transform = "translate(0) scale(0.3)";
-slides[1].style.transform = "translate(-8.75%,8.75%) scale(1.175)";
+slides[1].style.transform = slideScale;
 //slides[0].style.transitionTimingFunction = "ease-in";
 
 function movLeft(slidesWrapper, offset) {
@@ -40,7 +41,7 @@ function movLeft(slidesWrapper, offset) {
   slides[1].style.transform = "translate(0)"; // scale(0.3)
 
   slides[2].style.transition = transitionTime;
-  slides[2].style.transform = "translate(-8.75%,8.75%) scale(1.175)";
+  slides[2].style.transform = slideScale;
   slides[2].style.transitionTimingFunction = "ease-in";
 }
 function movRight(slidesWrapper) {
@@ -60,7 +61,7 @@ function movRight(slidesWrapper) {
 
   slides[0].style.transition = transitionTime;
   slides[0].style.opacity = 1;
-  slides[0].style.transform = "translate(-8.75%,8.75%) scale(1.175)";
+  slides[0].style.transform = slideScale;
   slides[0].style.transitionTimingFunction = "ease-in";
 
   slides[1].style.transition = transitionTime;
