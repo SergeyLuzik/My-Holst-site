@@ -66,7 +66,7 @@ function movRight(slidesWrapper) {
 
   slides[1].style.transition = transitionTime;
   slides[1].style.transform = "translate(0) scale(1)";
-  slides[1].style.transitionTimingFunction = "cubic-bezier(0,0,.17,1)";
+  slides[1].style.transitionTimingFunction = "cubic-bezier(0,0,.02,1)";
 }
 
 left.onclick = (_) => {

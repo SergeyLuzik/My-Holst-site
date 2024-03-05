@@ -243,11 +243,12 @@
     scale 0.3s ease,
     width 0.3s ease;
     */
-  transition: transform 0.3s ease;
-  /*padding-block-start: 16px;*/
+  /*transition: transform 0.3s ease;
+  padding-block-start: 16px;*/
 }
 
 .slider__slide-item:hover {
+  transition: transform 0.3s ease;
   transform: scale(1.05);
 }
 
@@ -318,9 +319,7 @@
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
