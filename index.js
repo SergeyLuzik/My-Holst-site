@@ -42,7 +42,7 @@ function movLeft(slidesWrapper, offset) {
 
   slides[2].style.transition = transitionTime;
   slides[2].style.transform = slideScale;
-  slides[2].style.transitionTimingFunction = "ease-in";
+  slides[2].style.transitionTimingFunction = "cubic-bezier(.72,.07,.95,.7)"; //.75,0,1,.02 ease-in
 }
 function movRight(slidesWrapper) {
   slidesWrapper.ontransitionend = (_) => {
@@ -66,7 +66,7 @@ function movRight(slidesWrapper) {
 
   slides[1].style.transition = transitionTime;
   slides[1].style.transform = "translate(0) scale(1)";
-  slides[1].style.transitionTimingFunction = "cubic-bezier(0,0,.02,1)";
+  slides[1].style.transitionTimingFunction = "cubic-bezier(0,.75,.02,1)"; //0,.75,.02,1  // 0,0,.02,1 // .75,0,1,.02
 }
 
 left.onclick = (_) => {
