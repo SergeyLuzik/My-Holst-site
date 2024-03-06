@@ -12,6 +12,10 @@
   grid-column: span 3;
 }
 
+.feedback__list-wraper {
+  overflow-x: hidden;
+}
+
 /*todo исправить ширину, переситать ее в %, иначе шире заданного*/
 .feedback__list {
   display: grid;
