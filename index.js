@@ -72,12 +72,12 @@
   left.onclick = (_) => {
     if (inAction) return;
     inAction = true;
-    movLeft(slidesWrapper, offset);
+    movRight(slidesWrapper);
   };
   right.onclick = (_) => {
     if (inAction) return;
     inAction = true;
-    movRight(slidesWrapper);
+    movLeft(slidesWrapper, offset);
   };
 })();
 
@@ -88,23 +88,32 @@
     slides = slidesWrapper.children,
     slideWidth = slides[0].offsetWidth,
     offset = slideWidth + gapValue,
-    transitionTime = "0.3s",
+    transitionTime = "1s",
     slideScale = "translate(-10%, 6.5%) scale(1.2)",
     left = document.querySelector(".feedback >.slider-button_left"),
     right = document.querySelector(".feedback > .slider-button_right");
   //todo переименовать кнопки слайдера, или в селекторе использовать вложенность?
   let inAction = false;
-  left.onclick = (_) => {
+
+  // Initialize slider start position -100%
+  slidesWrapper.style.transform = `translateX(-100%)`;
+  //todo учитывать gap!
+  //todo как высчитать сколько листов? (ширину окна делить на ширину карточки без остатка и потом высчитывать сколько карточек на сколько листов?)
+  right.onclick = (_) => {
     console.log("left");
     if (inAction) return;
-    inAction = true;
+    // inAction = true;
     // movLeft(slidesWrapper, offset);
+    slidesWrapper.style.transition = transitionTime;
+    slidesWrapper.style.transform = `translateX(-100%)`;
   };
-  right.onclick = (_) => {
+  left.onclick = (_) => {
     console.log("right");
     if (inAction) return;
+    slidesWrapper.style.transition = transitionTime;
+    slidesWrapper.style.transform = `translateX(0px)`;
 
-    inAction = true;
+    //inAction = true;
     // movRight(slidesWrapper);
   };
 })();
