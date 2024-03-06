@@ -82,3 +82,29 @@
 })();
 
 // FEEDBACK SLIDER
+(() => {
+  const slidesWrapper = document.querySelector(".feedback__list"),
+    gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
+    slides = slidesWrapper.children,
+    slideWidth = slides[0].offsetWidth,
+    offset = slideWidth + gapValue,
+    transitionTime = "0.3s",
+    slideScale = "translate(-10%, 6.5%) scale(1.2)",
+    left = document.querySelector(".feedback >.slider-button_left"),
+    right = document.querySelector(".feedback > .slider-button_right");
+  //todo переименовать кнопки слайдера, или в селекторе использовать вложенность?
+  let inAction = false;
+  left.onclick = (_) => {
+    console.log("left");
+    if (inAction) return;
+    inAction = true;
+    // movLeft(slidesWrapper, offset);
+  };
+  right.onclick = (_) => {
+    console.log("right");
+    if (inAction) return;
+
+    inAction = true;
+    // movRight(slidesWrapper);
+  };
+})();
