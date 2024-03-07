@@ -87,6 +87,9 @@
     gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
     slides = slidesWrapper.children,
     slideWidth = slides[0].offsetWidth,
+    slideWindowWidth = slidesWrapper.offsetWidth,
+    amoundSlidesOnList = slideWindowWidth / slideWidth,
+    slideListsAmount = Math.ceil(slides.length / amoundSlidesOnList),
     offset = slideWidth + gapValue,
     transitionTime = "1s",
     slideScale = "translate(-10%, 6.5%) scale(1.2)",
@@ -94,11 +97,18 @@
     right = document.querySelector(".feedback > .slider-button_right");
   //todo переименовать кнопки слайдера, или в селекторе использовать вложенность?
   let inAction = false;
+  console.log(slideWidth);
+  console.log(slideWindowWidth);
+  console.log(slides.length);
+  console.log(slidesWrapper.offsetWidth / slideWidth);
+  console.log(slideListsAmount);
 
   // Initialize slider start position -100%
   slidesWrapper.style.transform = `translateX(-100%)`;
   //todo учитывать gap!
   //todo как высчитать сколько листов? (ширину окна делить на ширину карточки без остатка и потом высчитывать сколько карточек на сколько листов?)
+  //todo крутить slideListsAmount как index с перескоком при достижении края index = ++index % slides.length;
+
   right.onclick = (_) => {
     console.log("left");
     if (inAction) return;
