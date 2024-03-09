@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 40px 84.444% 40px;
   grid-template-rows: repeat(3, min-content); /*min-content 1fr min-content;*/
-  column-gap: 72px;
+  column-gap: 5% /*72px*/;
   align-items: center;
   margin-block-end: var(--section-margin);
 }
@@ -14,28 +14,44 @@
 
 .feedback__list-wraper {
   overflow-x: hidden;
+  /*border: 1px solid black;*/
 }
 
 /*todo исправить ширину, переситать ее в %, иначе шире заданного*/
 .feedback__list {
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: repeat(4, 21.052%);
+  grid-auto-columns: 21.052%;
+  /* display: flex;*/
+  gap: 5.263%;
+  /*
   grid-template-columns: repeat(4, 25%);
   grid-auto-columns: 25%;
-  column-gap: 16px;
-  row-gap: 24px;
+
+  /* grid-template-columns: repeat(
+    auto-fit,
+    minmax(256px, 1fr)
+  ); repeat(4, 24.25%);
+  /*grid-auto-columns: 24.25%;
+  gap: 1%;
+  /*row-gap: 24px;*/
 }
 .feedback-card {
   display: grid;
   grid-template-columns: 256px;
   /* grid-template-columns: 80px 176px;*/
-  grid-template-rows: 224px 80px /*36px 44px*/ 68px 32px;
+  /*grid-template-rows: 224px 80px /*36px 44px*/ /*68px 32px;*/
+  grid-template-rows: 55.445% 19.801% 16.831% 7.92%;
 }
 
 .feedback-card__header {
   display: grid;
+  grid-template-columns: 31.25% 68.75%;
+  grid-template-rows: 67.496% 32.53%;
+  /*
   grid-template-columns: 80px 176px;
-  grid-template-rows: 56px 27px;
+  grid-template-rows: 56px 27px;*/
   /*display: flex;
     margin-block-start: -32px;*/
 }

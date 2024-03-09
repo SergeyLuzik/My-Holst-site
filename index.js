@@ -1,7 +1,5 @@
 // HERO FEEDBACK SLIDER
 
-//todo
-// листает задом наперед от обычных
 (() => {
   const slidesWrapper = document.querySelector(".slider__slides-list"),
     gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
@@ -44,7 +42,7 @@
     slides[2].style.transform = slideScale;
     slides[2].style.transitionTimingFunction = "cubic-bezier(.72,.07,.95,.7)"; //.75,0,1,.02 ease-in
   }
-  function movRight(slidesWrapper) {
+  function movRight(slidesWrapper, offset) {
     slidesWrapper.ontransitionend = (_) => {
       slidesWrapper.ontransitionend = null;
       slidesWrapper.style.transition = "none";
@@ -72,7 +70,7 @@
   left.onclick = (_) => {
     if (inAction) return;
     inAction = true;
-    movRight(slidesWrapper);
+    movRight(slidesWrapper, offset);
   };
   right.onclick = (_) => {
     if (inAction) return;
@@ -82,48 +80,83 @@
 })();
 
 // FEEDBACK SLIDER
+
 (() => {
   const slidesWrapper = document.querySelector(".feedback__list"),
-    gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
     slides = slidesWrapper.children,
     slideWidth = slides[0].offsetWidth,
     slideWindowWidth = slidesWrapper.offsetWidth,
-    amoundSlidesOnList = slideWindowWidth / slideWidth,
-    slideListsAmount = Math.ceil(slides.length / amoundSlidesOnList),
-    offset = slideWidth + gapValue,
+    gapValue =
+      (slideWindowWidth / 100) *
+      parseFloat(getComputedStyle(slidesWrapper).gap),
+    amountSlidesOnList = slideWindowWidth / slideWidth,
+    slideListsAmount = Math.ceil(slides.length / amountSlidesOnList),
+    offset = slideWindowWidth + gapValue,
     transitionTime = "1s",
-    slideScale = "translate(-10%, 6.5%) scale(1.2)",
     left = document.querySelector(".feedback >.slider-button_left"),
     right = document.querySelector(".feedback > .slider-button_right");
-  //todo переименовать кнопки слайдера, или в селекторе использовать вложенность?
+
   let inAction = false;
-  console.log(slideWidth);
-  console.log(slideWindowWidth);
-  console.log(slides.length);
-  console.log(slidesWrapper.offsetWidth / slideWidth);
-  console.log(slideListsAmount);
+
+  console.log("gapValue " + gapValue);
+  console.log("slideWindowWidth " + slideWindowWidth);
+  console.log(slides);
+  console.log("slides.length " + slides.length);
+  console.log("slideListsAmount " + slideListsAmount);
+  console.log("amountSlidesOnList " + amountSlidesOnList);
 
   // Initialize slider start position -100%
-  slidesWrapper.style.transform = `translateX(-100%)`;
+  //slidesWrapper.style.transform = `translateX(-${offset}px)`;
   //todo учитывать gap!
   //todo как высчитать сколько листов? (ширину окна делить на ширину карточки без остатка и потом высчитывать сколько карточек на сколько листов?)
   //todo крутить slideListsAmount как index с перескоком при достижении края index = ++index % slides.length;
 
+  // Initialize slider start position
+  slidesWrapper.style.transform = `translateX(${-offset}px)`;
+
+  function movLeft(slidesWrapper, offset) {
+    slidesWrapper.ontransitionend = (_) => {
+      slidesWrapper.ontransitionend = null;
+      slidesWrapper.style.transition = "none";
+
+      for (let i = 1; i < amountSlidesOnList; i++) {
+        slidesWrapper.append(slides[0]);
+      }
+      slidesWrapper.style.transform = `translateX(${-offset}px)`;
+
+      inAction = false;
+    };
+    slidesWrapper.style.transition = transitionTime;
+    slidesWrapper.style.transform = `translateX(${-offset * 2}px)`;
+  }
+  function movRight(slidesWrapper, offset) {
+    slidesWrapper.ontransitionend = (_) => {
+      slidesWrapper.ontransitionend = null;
+      slidesWrapper.style.transition = "none";
+
+      for (let i = 1; i < amountSlidesOnList; i++) {
+        slidesWrapper.prepend(slidesWrapper.lastElementChild);
+      }
+      slidesWrapper.style.transform = `translateX(${-offset}px)`;
+
+      inAction = false;
+    };
+
+    slidesWrapper.style.transition = transitionTime;
+    slidesWrapper.style.transform = `translateX(0px)`;
+  }
+
   right.onclick = (_) => {
     console.log("left");
     if (inAction) return;
-    // inAction = true;
-    // movLeft(slidesWrapper, offset);
-    slidesWrapper.style.transition = transitionTime;
-    slidesWrapper.style.transform = `translateX(-100%)`;
+    inAction = true;
+    movLeft(slidesWrapper, offset);
   };
   left.onclick = (_) => {
     console.log("right");
     if (inAction) return;
-    slidesWrapper.style.transition = transitionTime;
-    slidesWrapper.style.transform = `translateX(0px)`;
 
-    //inAction = true;
-    // movRight(slidesWrapper);
+    inAction = true;
+    movRight(slidesWrapper, offset);
   };
 })();
