@@ -93,7 +93,7 @@
       parseFloat(getComputedStyle(slidesWrapper).gap),
     amountSlidesOnList = slideWindowWidth / slideWidth,
     slideListsAmount = Math.ceil(slides.length / amountSlidesOnList),
-    offset = slideWindowWidth + gapValue,
+    offset = slideWindowWidth - 2 * gapValue, //slideWindowWidth + gapValue,
     transitionTime = "1s",
     left = document.querySelector(".feedback >.slider-button_left"),
     right = document.querySelector(".feedback > .slider-button_right");
@@ -145,7 +145,7 @@
     };
 
     slidesWrapper.style.transition = transitionTime;
-    slidesWrapper.style.transform = `translateX(0px)`;
+    slidesWrapper.style.transform = `translateX(${gapValue}px)`;
   }
 
   right.onclick = (_) => {

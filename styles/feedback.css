@@ -2,9 +2,9 @@
   grid-column: 2 / span 2;
   width: 100%;
   display: grid;
-  grid-template-columns: 40px 84.444% 40px;
+  grid-template-columns: 40px 92.444% 40px;
   grid-template-rows: repeat(3, min-content); /*min-content 1fr min-content;*/
-  column-gap: 5% /*72px*/;
+  column-gap: 1% /*72px*/;
   align-items: center;
   margin-block-end: var(--section-margin);
 }
@@ -28,10 +28,10 @@
 .feedback__list {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(4, 21.052%);
-  grid-auto-columns: 21.052%;
+  grid-template-columns: repeat(4, 19.23%);
+  grid-auto-columns: 19.23%;
   /* display: flex;*/
-  gap: 5.263%;
+  gap: 4.615%;
   /*
   grid-template-columns: repeat(4, 25%);
   grid-auto-columns: 25%;
