@@ -81,6 +81,8 @@
 
 // FEEDBACK SLIDER
 
+//todo расширить обертку на размер gap между слайдами чтобы можно было внутрь положить размытие и слайды менялись без резкой полосы
+
 (() => {
   const slidesWrapper = document.querySelector(".feedback__list"),
     slides = slidesWrapper.children,
@@ -89,9 +91,9 @@
     gapValue =
       (slideWindowWidth / 100) *
       parseFloat(getComputedStyle(slidesWrapper).gap),
-    amountSlidesOnList = slideWindowWidth / slideWidth,
+    amountSlidesOnList = Math.floor(slideWindowWidth / (slideWidth + gapValue)),
     slideListsAmount = Math.ceil(slides.length / amountSlidesOnList),
-    offset = slideWindowWidth + gapValue,
+    offset = slideWindowWidth - 2 * gapValue, //slideWindowWidth + gapValue,
     transitionTime = "1s",
     left = document.querySelector(".feedback >.slider-button_left"),
     right = document.querySelector(".feedback > .slider-button_right");
@@ -119,7 +121,7 @@
       slidesWrapper.ontransitionend = null;
       slidesWrapper.style.transition = "none";
 
-      for (let i = 1; i < amountSlidesOnList; i++) {
+      for (let i = 0; i < amountSlidesOnList; i++) {
         slidesWrapper.append(slides[0]);
       }
       slidesWrapper.style.transform = `translateX(${-offset}px)`;
@@ -127,14 +129,14 @@
       inAction = false;
     };
     slidesWrapper.style.transition = transitionTime;
-    slidesWrapper.style.transform = `translateX(${-offset * 2}px)`;
+    slidesWrapper.style.transform = `translateX(${-offset * 2 - gapValue}px)`;
   }
   function movRight(slidesWrapper, offset) {
     slidesWrapper.ontransitionend = (_) => {
       slidesWrapper.ontransitionend = null;
       slidesWrapper.style.transition = "none";
 
-      for (let i = 1; i < amountSlidesOnList; i++) {
+      for (let i = 0; i < amountSlidesOnList; i++) {
         slidesWrapper.prepend(slidesWrapper.lastElementChild);
       }
       slidesWrapper.style.transform = `translateX(${-offset}px)`;
@@ -143,17 +145,17 @@
     };
 
     slidesWrapper.style.transition = transitionTime;
-    slidesWrapper.style.transform = `translateX(0px)`;
+    slidesWrapper.style.transform = `translateX(${gapValue}px)`;
   }
 
   right.onclick = (_) => {
-    console.log("left");
+    console.log("right");
     if (inAction) return;
     inAction = true;
     movLeft(slidesWrapper, offset);
   };
   left.onclick = (_) => {
-    console.log("right");
+    console.log("left");
     if (inAction) return;
 
     inAction = true;
