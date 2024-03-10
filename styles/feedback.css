@@ -14,6 +14,13 @@
 
 .feedback__list-wraper {
   overflow-x: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent 100%
+  );
   /*border: 1px solid black;*/
 }
 

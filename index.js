@@ -81,6 +81,8 @@
 
 // FEEDBACK SLIDER
 
+//todo расширить обертку на размер gap между слайдами чтобы можно было внутрь положить размытие и слайды менялись без резкой полосы
+
 (() => {
   const slidesWrapper = document.querySelector(".feedback__list"),
     slides = slidesWrapper.children,
