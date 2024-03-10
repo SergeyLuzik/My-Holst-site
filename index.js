@@ -91,7 +91,7 @@
     gapValue =
       (slideWindowWidth / 100) *
       parseFloat(getComputedStyle(slidesWrapper).gap),
-    amountSlidesOnList = slideWindowWidth / slideWidth,
+    amountSlidesOnList = Math.floor(slideWindowWidth / (slideWidth + gapValue)),
     slideListsAmount = Math.ceil(slides.length / amountSlidesOnList),
     offset = slideWindowWidth - 2 * gapValue, //slideWindowWidth + gapValue,
     transitionTime = "1s",
@@ -121,7 +121,7 @@
       slidesWrapper.ontransitionend = null;
       slidesWrapper.style.transition = "none";
 
-      for (let i = 1; i < amountSlidesOnList; i++) {
+      for (let i = 0; i < amountSlidesOnList; i++) {
         slidesWrapper.append(slides[0]);
       }
       slidesWrapper.style.transform = `translateX(${-offset}px)`;
@@ -129,14 +129,14 @@
       inAction = false;
     };
     slidesWrapper.style.transition = transitionTime;
-    slidesWrapper.style.transform = `translateX(${-offset * 2}px)`;
+    slidesWrapper.style.transform = `translateX(${-offset * 2 - gapValue}px)`;
   }
   function movRight(slidesWrapper, offset) {
     slidesWrapper.ontransitionend = (_) => {
       slidesWrapper.ontransitionend = null;
       slidesWrapper.style.transition = "none";
 
-      for (let i = 1; i < amountSlidesOnList; i++) {
+      for (let i = 0; i < amountSlidesOnList; i++) {
         slidesWrapper.prepend(slidesWrapper.lastElementChild);
       }
       slidesWrapper.style.transform = `translateX(${-offset}px)`;
@@ -149,13 +149,13 @@
   }
 
   right.onclick = (_) => {
-    console.log("left");
+    console.log("right");
     if (inAction) return;
     inAction = true;
     movLeft(slidesWrapper, offset);
   };
   left.onclick = (_) => {
-    console.log("right");
+    console.log("left");
     if (inAction) return;
 
     inAction = true;
