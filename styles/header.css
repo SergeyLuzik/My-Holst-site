@@ -89,3 +89,39 @@ page-header__contacts-list,
   max-width: 180px;
   font-style: normal;
 }
+
+.page-header__burger-menu {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.page-header__burger-menu-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.page-header__burger-menu-icon::before,
+.page-header__burger-menu-icon,
+.page-header__burger-menu-icon::after {
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--primary-light);
+}
+
+.page-header__burger-menu-icon::before {
+  position: absolute;
+  content: "";
+  top: 12px;
+}
+
+.page-header__burger-menu-icon::after {
+  position: absolute;
+  content: "";
+  bottom: 12px;
+}
