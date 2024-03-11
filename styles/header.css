@@ -112,6 +112,7 @@ page-header__contacts-list,
   height: 5px;
   border-radius: 5px;
   background-color: var(--primary-light);
+  transition: all 1s ease;
 }
 
 .page-header__burger-menu::before {
@@ -124,4 +125,18 @@ page-header__contacts-list,
   position: absolute;
   content: "";
   bottom: 0;
+}
+
+.page-header__burger-menu:active .page-header__burger-menu-icon {
+  opacity: 0;
+}
+
+.page-header__burger-menu:active::before {
+  top: 41%;
+  transform: rotate(45deg);
+}
+
+.page-header__burger-menu:active::after {
+  bottom: 41%;
+  transform: rotate(-45deg);
 }
