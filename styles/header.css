@@ -99,9 +99,12 @@ page-header__contacts-list,
   padding: 0;
 }
 
+.page-header__burger-menu:hover {
+  cursor: pointer;
+}
+
 .page-header__burger-menu-icon {
   position: relative;
-  cursor: pointer;
 }
 
 .page-header__burger-menu-icon::before,
