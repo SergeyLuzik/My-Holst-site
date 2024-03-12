@@ -147,3 +147,23 @@ page-header__contacts-list,
   top: 50%;
   transform: rotate(-45deg);
 }
+
+.page-header {
+  position: relative;
+}
+
+.page-header__nav {
+  position: absolute;
+  right: 0;
+  width: 70vw;
+  height: 100vh;
+  background-color: lightblue;
+  z-index: 1;
+  /*transform: translateX(100%);*/
+  transition: transform 0.5s ease;
+}
+
+.page-header__nav-list {
+  flex-direction: column;
+  align-items: center;
+}
