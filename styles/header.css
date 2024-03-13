@@ -148,6 +148,10 @@ page-header__contacts-list,
   transform: rotate(-45deg);
 }
 
+.page-header__burger-menu {
+  display: none;
+}
+
 /* обрнуть nav и ul в div.header__menu чтобы проше было их на мобильном вместе позиционировать 
   сначала просто nav вырываем fixed, потом весь div fixed, 
   класс burger-menu с fixed и стилями применять сначала к nav потом к всему div?
