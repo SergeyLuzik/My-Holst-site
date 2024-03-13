@@ -1,23 +1,22 @@
 .page-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 12px;
-  }
-  
-  .page-footer__copyright {
-    font-size: clamp(0.5rem, 0.5rem + 2.5vw, 1rem);
-    font-weight: 700;
-    line-height: 125%;
-    margin-block: 0;
-  }
-  
-  a.page-footer__developer-link {
-    font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
-    font-weight: 400;
-    line-height: 133.333%;
-    text-align: center;
-    margin-block: 0;
-    color: var(--grey);
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-block: 12px;*/
+}
+
+.page-footer__copyright {
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 1rem);
+  font-weight: 700;
+  line-height: 125%;
+  margin-block: 0;
+}
+
+a.page-footer__developer-link {
+  font-size: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+  font-weight: 400;
+  line-height: 133.333%;
+  text-align: center;
+  margin-block: 0;
+  color: var(--grey);
+}

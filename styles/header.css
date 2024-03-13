@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   color: var(--primary-light);
-  margin-block-end: 24px;
+  /* margin-block-end: 24px;*/
 }
 
 .page-header__nav-list,
