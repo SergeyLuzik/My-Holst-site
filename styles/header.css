@@ -153,7 +153,7 @@ page-header__contacts-list,
   класс burger-menu с fixed и стилями применять сначала к nav потом к всему div?
   (все по левому краю, между ссылками и nav отступ, который их разделяет
 */
-
+/*
 .page-header__nav {
   position: fixed;
   top: 124px;
@@ -161,7 +161,7 @@ page-header__contacts-list,
   background-color: var(--white);
   z-index: 10;
   /*transform: translateX(100%);*/
-  transition: transform 0.5s ease;
+/* transition: transform 0.5s ease;
 }
 
 ul.page-header__nav-list {
@@ -179,3 +179,4 @@ ul.page-header__contacts-list {
   padding: 1em;
   flex-direction: column-reverse;
 }
+*/
