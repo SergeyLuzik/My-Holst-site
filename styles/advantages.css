@@ -4,13 +4,20 @@
 }
 
 .advantages__list {
-  display: grid;
-  grid-auto-flow: column; /*todo почему без него выстраивается в стобик*/
-  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
-  gap: 35px;
+  /* display: grid;
+  grid-auto-flow: column; /*todo почему без него выстраивается в стобик, для исправление width 100% на section*/
+  /* grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: 35px;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3vw;
 }
 
 .advantages__item {
+  display: flex;
+  flex-basis: 176px;
+  flex-direction: column;
   text-align: center;
 }
 
