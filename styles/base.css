@@ -14,7 +14,7 @@ body {
   display: grid;
   grid-template-columns:
     minmax(16px, 1fr)
-    minmax(min-content, var(--content-width))
+    minmax(300px, var(--content-width))
     minmax(16px, 1fr);
   grid-auto-rows: min-content;
   overflow-x: hidden;
@@ -41,7 +41,7 @@ body {
   display: grid;
   grid-template-columns:
     minmax(16px, 1fr)
-    repeat(2, minmax(min-content, calc(var(--content-width) / 2)))
+    repeat(2, minmax(150px, calc(var(--content-width) / 2)))
     minmax(16px, 1fr);
   /*var(--content-width) / 2
   repeat(2, minmax(min-content, 720px))*/
