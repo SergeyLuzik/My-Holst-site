@@ -151,36 +151,3 @@ page-header__contacts-list,
 .page-header__burger-menu {
   display: none;
 }
-
-/* обрнуть nav и ul в div.header__menu чтобы проше было их на мобильном вместе позиционировать 
-  сначала просто nav вырываем fixed, потом весь div fixed, 
-  класс burger-menu с fixed и стилями применять сначала к nav потом к всему div?
-  (все по левому краю, между ссылками и nav отступ, который их разделяет
-*/
-/*
-.page-header__nav {
-  position: fixed;
-  top: 124px;
-  right: 0;
-  background-color: var(--white);
-  z-index: 10;
-  /*transform: translateX(100%);*/
-/* transition: transform 0.5s ease;
-}
-
-ul.page-header__nav-list {
-  flex-direction: column;
-  align-items: center;
-  padding: 1em;
-}
-
-ul.page-header__contacts-list {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  background-color: bisque;
-  padding: 1em;
-  flex-direction: column-reverse;
-}
-*/
