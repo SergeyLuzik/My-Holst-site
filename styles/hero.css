@@ -51,7 +51,6 @@
 }
 
 .promo__subtitle {
-  position: relative;
   font-size: clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem);
   font-weight: 800;
   line-height: 125%;
@@ -59,15 +58,19 @@
   margin-block: 0;
 }
 
-.promo__subtitle::before {
-  z-index: -1;
-  position: absolute;
-  top: 56%;
-  left: 16%;
+.promo__subtitle-underline {
+  position: relative;
+}
+
+.promo__subtitle-underline::before {
   content: "";
   display: block;
-  width: 106px;
-  height: 16px;
+  z-index: -1;
+  position: absolute;
+  bottom: 7%;
+  left: -11%;
+  width: 120%;
+  height: 40%;
   background-image: url("../assets/icons.svg#underline");
   background-repeat: no-repeat;
   background-position: center;
