@@ -58,12 +58,12 @@ body {
 
 a.order-button {
   display: inline-block;
-  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1.25rem);
   font-weight: 800;
   text-transform: uppercase;
   color: var(--white);
-  padding-inline: 2rem;
-  padding-block: 1rem;
+  padding-inline: 2em;
+  padding-block: 1em;
   background: var(--primary);
   border-radius: 10% / 31%;
 }
