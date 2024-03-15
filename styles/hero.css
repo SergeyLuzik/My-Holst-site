@@ -316,11 +316,11 @@
   /* position: relative;
     bottom: 52px;
     left: 344px;*/
-  padding-inline-start: 32px;
+  padding-inline-start: 6%;
 }
-
+/*
 .slider__slider-button {
-  width: 40px;
+  width: clamp(32px, 2.5vw, 40px);
   aspect-ratio: 1;
   background-color: var(--primary-light);
   mask: url(../assets/icons.svg#arrow);
@@ -348,3 +348,4 @@
 .slider__slider-button:hover {
   background-color: var(--secondary-light);
 }
+*/
