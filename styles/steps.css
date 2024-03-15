@@ -10,7 +10,7 @@
 .steps__list {
   display: flex;
   flex-direction: column;
-  gap: 128px;
+  gap: 12vh;
 }
 
 .steps__item {
