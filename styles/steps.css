@@ -230,6 +230,7 @@
 
 /**/
 .steps__item:nth-child(5) .steps__img-group {
+  width: 54%;
   display: grid;
   grid-template-columns: 66% 1fr;
   /*grid-template-rows: repeat(3, 1fr);*/
