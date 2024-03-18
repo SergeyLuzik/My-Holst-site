@@ -227,6 +227,7 @@
 .steps__item:nth-child(4) .steps__img:last-child {
   grid-column: 1 / 3;
   grid-row-start: 2;
+  width: auto;
 }
 
 /**/
