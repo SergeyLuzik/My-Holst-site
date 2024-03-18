@@ -212,8 +212,9 @@
 
 .steps__item:nth-child(4) .steps__img-group {
   display: grid;
-  grid-template-columns: 7vw 1fr;
-  grid-template-rows: 7vw 1fr;
+  grid-template-columns: 15% 1fr;
+  grid-template-rows: 30% 1fr;
+  aspect-ratio: 2;
 }
 
 .steps__item:nth-child(4) .steps__img {
