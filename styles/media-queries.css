@@ -1,3 +1,9 @@
+@media (max-width: 1320px) {
+  /* .services-list {
+    grid-template-columns: 384px;
+  }*/
+}
+
 @media (max-width: 1200px) {
   .page-header__burger-menu {
     display: block;
