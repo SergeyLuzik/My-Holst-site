@@ -48,7 +48,8 @@
 }
 
 .steps__item-title {
-  font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.5rem + 0.5vw, 1.75rem);
+  /*font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.75rem);*/
   font-weight: 700;
   line-height: 114.286%;
   text-align: center;
@@ -57,7 +58,8 @@
 
 .steps__text,
 .steps__receipt-item {
-  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  /*font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);*/
+  font-size: clamp(0.75rem, 0.3rem + 0.5vw, 1rem);
   font-weight: 700;
   line-height: 150%;
   text-align: center;
@@ -168,7 +170,8 @@
 .services-list {
   display: grid;
   width: 60%;
-  grid-template-columns: repeat(2, minmax(384px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  /*grid-template-columns: repeat(2, minmax(384px, 1fr));*/
   gap: 1.666vw; /*32px*/
 }
 
@@ -176,7 +179,7 @@
   display: grid;
   grid-template:
     "img title" auto
-    "img text" 1fr / auto 1fr;
+    "img text" 1fr / 40% 1fr;
   row-gap: 2px;
   column-gap: 0.833vw; /*16px*/
   /*grid-auto-rows: auto;*/
@@ -184,11 +187,17 @@
 .card__img {
   grid-area: img;
   border-radius: 6.25%;
+  width: 100%;
+  height: auto;
 }
 
 .card__title {
   grid-area: title;
-  font-size: clamp(1rem, 0.5rem + 2.5vw, 1.25rem);
+  font-size: clamp(
+    0.5rem,
+    0.5rem + 0.75vw,
+    1.25rem
+  ); /*font-size: clamp(1rem, 0.5rem + 2.5vw, 1.25rem);*/
   font-weight: 700;
   line-height: 120%;
   color: var(--primary-light);
@@ -197,7 +206,11 @@
 
 .card__text {
   grid-area: text;
-  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 0.875rem);
+  font-size: clamp(
+    0.5rem,
+    0.4em + 0.5vw,
+    1rem
+  ); /*font-size: clamp(0.75rem, 0.5rem + 2.5vw, 0.875rem);*/
   font-weight: 500;
   line-height: 142.857%;
   margin-block: 0;
@@ -207,7 +220,7 @@
   /*todo исправить сетку */
   grid-template:
     "title img" auto
-    "text img" 1fr/ 1fr auto;
+    "text img" 1fr/ 1fr 40%;
 }
 
 .steps__item:nth-child(4) .steps__img-group {
