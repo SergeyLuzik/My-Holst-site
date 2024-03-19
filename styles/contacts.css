@@ -40,13 +40,13 @@ ul.contacts__list {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem);
+  font-size: var(--fs-md) /*clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem)*/;
   line-height: 120%;
   margin-block-start: 20px;
 }
 
 .contacts__item-title {
-  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  font-size: var(--fs-base) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
   line-height: 125%;
   margin-block: 0 8px;
@@ -86,7 +86,7 @@ ul.contacts__list {
 }
 
 a.contacts__route-button {
-  font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  font-size: var(--fs-base) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   color: var(--white);
   font-weight: 700;
   line-height: 100%;

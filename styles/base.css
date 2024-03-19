@@ -21,7 +21,7 @@ body {
 }
 
 .section-title {
-  font-size: clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem);
+  font-size: var(--fs-xl) /*clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem)*/;
   font-weight: 700;
   line-height: 111.111%;
   margin-block: 0 48px;
@@ -58,7 +58,7 @@ body {
 
 a.order-button {
   display: inline-block;
-  font-size: clamp(0.5rem, 0.3rem + 1.5vw, 1.25rem);
+  font-size: var(--fs-md) /*clamp(0.5rem, 0.3rem + 1.5vw, 1.25rem)*/;
   font-weight: 800;
   text-transform: uppercase;
   color: var(--white);
