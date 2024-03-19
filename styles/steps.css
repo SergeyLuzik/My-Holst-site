@@ -48,7 +48,7 @@
 }
 
 .steps__item-title {
-  font-size: clamp(1rem, 0.825rem + 0.875vw, 1.875rem);
+  font-size: var(--fs-md) /*clamp(1rem, 0.825rem + 0.875vw, 1.875rem)*/;
   /*font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.75rem);*/
   font-weight: 700;
   line-height: 114.286%;
@@ -59,7 +59,7 @@
 .steps__text,
 .steps__receipt-item {
   /*font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);*/
-  font-size: clamp(0.75rem, 0.675rem + 0.375vw, 1.125rem);
+  font-size: var(--fs-base) /*clamp(0.75rem, 0.675rem + 0.375vw, 1.125rem)*/;
   font-weight: 700;
   line-height: 150%;
   text-align: center;

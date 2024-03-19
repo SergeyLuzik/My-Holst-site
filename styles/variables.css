@@ -12,6 +12,25 @@
     #d70a55 100%
   );
   --secondary-light: #ef77b2;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fs-sm: clamp(0.6rem, 0.27vw + 0.52rem, 0.84rem);
+  --fs-base: clamp(0.75rem, 0.42vw + 0.63rem, 1.13rem);
+  --fs-md: clamp(0.94rem, 0.62vw + 0.75rem, 1.5rem);
+  --fs-lg: clamp(1.17rem, 0.92vw + 0.9rem, 2rem);
+  --fs-xl: clamp(1.46rem, 1.33vw + 1.06rem, 2.66rem);
+  --fs-xxl: clamp(1.83rem, 1.91vw + 1.26rem, 3.55rem);
+  --fs-xxxl: clamp(2.29rem, 2.72vw + 1.47rem, 4.73rem);
+
+  --lh-sm: 1.25;
+  --lh-md: clamp(1.125rem, 0.338vw + 1.057rem, 1.463rem);
+  --lh-lg: 1.75;
+  --lh-xl: 2;
+  --lh-xxl: 2.25;
+  --lh-xxxl: 2.5;
+
   --section-margin: 10vh;
   --content-width: 1440px;
   --slide-width: clamp(200px, 15vw, 300px);
