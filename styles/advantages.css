@@ -62,7 +62,7 @@
 }
 
 .advantages__advantage-description {
-  font-size: var(--fs-base) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)*/;
   font-weight: 400;
   line-height: 143%;
   margin-block: 4px 0;

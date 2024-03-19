@@ -17,15 +17,30 @@
   --fw-medium: 500;
   --fw-bold: 700;
 
+  /*
+   --fs-sm: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
+clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
+  --fs-bs: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);
+  --fs-md: clamp(0.75rem, 0.675rem + 0.375vw, 1.125rem);
+  --fs-lg: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  --fs-xl: clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem);
+  --fs-xxl: clamp(1.5rem, 0.5rem + 2.5vw, 3rem)*/
+
+  /* todo 
+    sm - слишком маленький
+    advantages title и description одного размера (нужен промежуточный?)
+    md большеват для nav 
+  */
+
   --fs-sm: clamp(0.5rem, 0.27vw + 0.42rem, 0.75rem);
-  --fs-base: clamp(0.63rem, 0.41vw + 0.51rem, 1rem);
+  --fs-bs: clamp(0.63rem, 0.41vw + 0.51rem, 1rem);
   --fs-md: clamp(0.78rem, 0.6vw + 0.61rem, 1.33rem);
   --fs-lg: clamp(0.98rem, 0.88vw + 0.72rem, 1.78rem);
   --fs-xl: clamp(1.22rem, 1.26vw + 0.86rem, 2.37rem);
   --fs-xxl: clamp(1.53rem, 1.79vw + 1.01rem, 3.16rem);
 
   /*--fs-sm: clamp(0.6rem, 0.27vw + 0.52rem, 0.84rem);
-  --fs-base: clamp(0.75rem, 0.42vw + 0.63rem, 1.13rem);
+  --fs-bs: clamp(0.75rem, 0.42vw + 0.63rem, 1.13rem);
   --fs-md: clamp(0.94rem, 0.62vw + 0.75rem, 1.5rem);
   --fs-lg: clamp(1.17rem, 0.92vw + 0.9rem, 2rem);
   --fs-xl: clamp(1.46rem, 1.33vw + 1.06rem, 2.66rem);

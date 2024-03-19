@@ -207,7 +207,7 @@
 
 .card__text {
   grid-area: text;
-  font-size: var(--fs-base) /*clamp(
+  font-size: var(--fs-bs) /*clamp(
     0.5rem,
     0.4em + 0.5vw,
     1rem

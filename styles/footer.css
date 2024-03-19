@@ -6,7 +6,7 @@
 }
 
 .page-footer__copyright {
-  font-size: var(--fs-base) /*clamp(0.5rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
   line-height: 125%;
   margin-block: 0;
