@@ -31,6 +31,8 @@
   --fs-xl: clamp(1.46rem, 1.2vw + 1.22rem, 2.66rem);
   --fs-xxl: clamp(1.83rem, 1.72vw + 1.49rem, 3.55rem);*/
 
+  /*https://www.fluid-type-scale.com/calculate?minFontSize=12&minWidth=480&minRatio=1.125&maxFontSize=16&maxWidth=1800&maxRatio=1.2&steps=xs%2Csm%2Cbs%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl%2Cxxxxl&baseStep=bs&prefix=fs&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1920
+  */
   --fs-xs: clamp(0.59rem, 0.12vw + 0.56rem, 0.69rem);
   --fs-sm: clamp(0.67rem, 0.2vw + 0.61rem, 0.83rem);
   --fs-bs: clamp(0.75rem, 0.3vw + 0.66rem, 1rem);
