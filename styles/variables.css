@@ -30,6 +30,18 @@
   --fs-lg: clamp(1.17rem, 0.83vw + 1.01rem, 2rem);
   --fs-xl: clamp(1.46rem, 1.2vw + 1.22rem, 2.66rem);
   --fs-xxl: clamp(1.83rem, 1.72vw + 1.49rem, 3.55rem);*/
+
+  --fs-xs: clamp(0.59rem, 0.12vw + 0.56rem, 0.69rem);
+  --fs-sm: clamp(0.67rem, 0.2vw + 0.61rem, 0.83rem);
+  --fs-bs: clamp(0.75rem, 0.3vw + 0.66rem, 1rem);
+  --fs-md: clamp(0.84rem, 0.43vw + 0.71rem, 1.2rem);
+  --fs-lg: clamp(0.95rem, 0.59vw + 0.77rem, 1.44rem);
+  --fs-xl: clamp(1.07rem, 0.8vw + 0.83rem, 1.73rem);
+  --fs-xxl: clamp(1.2rem, 1.06vw + 0.88rem, 2.07rem);
+  --fs-xxxl: clamp(1.35rem, 1.38vw + 0.94rem, 2.49rem);
+  --fs-xxxxl: clamp(1.52rem, 1.78vw + 0.99rem, 2.99rem);
+
+  /*посденяя нормальная
   --fs-sm: clamp(0.6rem, 0.27vw + 0.52rem, 0.84rem);
   --fs-bs: clamp(0.75rem, 0.42vw + 0.63rem, 1.13rem);
   --fs-md: clamp(0.94rem, 0.62vw + 0.75rem, 1.5rem);

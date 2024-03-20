@@ -16,7 +16,7 @@
 
 .popular-sizes__size-value {
   display: inline-block;
-  font-size: var(--fs-md) /*clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem)*/;
+  font-size: var(--fs-lg) /*clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem)*/;
   font-weight: 700;
   line-height: 120%;
   padding-inline: 16px;

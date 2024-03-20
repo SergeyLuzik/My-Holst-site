@@ -104,14 +104,14 @@
 .feedback-card__date {
   grid-row-start: 2;
   grid-column-start: 2;
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 600;
   line-height: 100%;
 }
 .feedback-card__text {
   /*grid-row-start: 4;
     grid-column: span 2;*/
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
   line-height: 133.33%;
   margin-block: 0;
@@ -125,7 +125,7 @@ a.feedback-card__link {
   align-items: center;
   gap: 8px;
   /*todo занести общие св-ва в .button (color: white и пр. */
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
   line-height: 100%;
   padding-block: 8px;

@@ -43,7 +43,7 @@
 }
 
 .promo__title {
-  font-size: var(--fs-xxl) /*clamp(1.5rem, 0.5rem + 2.5vw, 3rem)*/;
+  font-size: var(--fs-xxxxl) /*clamp(1.5rem, 0.5rem + 2.5vw, 3rem)*/;
   font-weight: 800;
   line-height: 125%;
 
@@ -51,7 +51,7 @@
 }
 
 .promo__subtitle {
-  font-size: var(--fs-xl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
+  font-size: var(--fs-xxl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
   font-weight: 800;
   line-height: 125%;
   text-align: center;
@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--fs-lg) /*clamp(1rem, 0.5rem + 1.5vw, 2rem)*/;
+  font-size: var(--fs-xl) /*clamp(1rem, 0.5rem + 1.5vw, 2rem)*/;
   font-weight: 600;
   text-align: left;
 }
@@ -100,7 +100,7 @@
   position: relative;
   margin-block: 0;
   transform: rotate(-0.765deg);
-  font-size: var(--fs-lg) /*clamp(1rem, 0.5rem + 1.5vw, 2rem)*/;
+  font-size: var(--fs-xl) /*clamp(1rem, 0.5rem + 1.5vw, 2rem)*/;
   font-weight: 600;
   color: var(--white);
   margin-inline-end: 10%;
@@ -130,14 +130,14 @@
   text-align: center;
 }
 .promo__statistics-description {
-  font-size: var(--fs-xl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
+  font-size: var(--fs-xxl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
   font-weight: 800;
   color: var(--primary-light);
   margin-inline: 0;
 }
 
 .promo__statistics-title {
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
 }
 
@@ -184,7 +184,7 @@
   border: 1px solid var(--white);
   border-radius: 50%;
   background-color: var(--secondary-light);
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 800;
   color: var(--white);
 }
@@ -195,7 +195,7 @@
   align-items: center;
   padding-block-end: 2px;
   margin-inline-start: 4px;
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)*/;
   font-weight: 700;
   color: var(--secondary-light);
 }
@@ -281,7 +281,7 @@
   display: inline-block;
   margin-block: 0;
   padding-inline: 8px;
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
   line-height: 125%;
   color: var(--white);

@@ -37,7 +37,7 @@
   height: 56px;
   border: 6px solid var(--primary-light);
   border-radius: 50%;
-  font-size: var(--fs-xl) /*clamp(1.75rem, 0.5rem + 2.5vw, 2.5rem)*/;
+  font-size: var(--fs-xxl) /*clamp(1.75rem, 0.5rem + 2.5vw, 2.5rem)*/;
   font-weight: 700;
   line-height: 100%;
   color: var(--primary-light);
@@ -48,7 +48,7 @@
 }
 
 .steps__item-title {
-  font-size: var(--fs-lg) /*clamp(1rem, 0.825rem + 0.875vw, 1.875rem)*/;
+  font-size: var(--fs-xl) /*clamp(1rem, 0.825rem + 0.875vw, 1.875rem)*/;
   /*font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.75rem);*/
   font-weight: 700;
   line-height: 114.286%;
@@ -59,7 +59,7 @@
 .steps__text,
 .steps__receipt-item {
   /*font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);*/
-  font-size: var(--fs-md) /*clamp(0.75rem, 0.675rem + 0.375vw, 1.125rem)*/;
+  font-size: var(--fs-lg) /*clamp(0.75rem, 0.675rem + 0.375vw, 1.125rem)*/;
   font-weight: 700;
   line-height: 150%;
   text-align: center;
@@ -193,7 +193,7 @@
 
 .card__title {
   grid-area: title;
-  font-size: var(--fs-md)
+  font-size: var(--fs-lg)
     /*clamp(
     0.5rem,
     0.5rem + 0.75vw,
@@ -207,7 +207,7 @@
 
 .card__text {
   grid-area: text;
-  font-size: var(--fs-bs) /*clamp(
+  font-size: var(--fs-md) /*clamp(
     0.5rem,
     0.4em + 0.5vw,
     1rem
