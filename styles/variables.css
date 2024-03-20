@@ -26,12 +26,22 @@ clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
   --fs-xl: clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem);
   --fs-xxl: clamp(1.5rem, 0.5rem + 2.5vw, 3rem)*/
 
+  /*https://css-tricks.com/consistent-fluidly-scaling-type-and-spacing/
+  --fs-sm: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+  --fs-bs: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+  --fs-md: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  --fs-lg: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
+  --fs-xl: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
+  --fs-xxl: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+  --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+  --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
+*/
   /* todo 
     sm - слишком маленький
     advantages title и description одного размера (нужен промежуточный?)
     md большеват для nav 
   */
-
+  /* last used*/
   --fs-sm: clamp(0.5rem, 0.27vw + 0.42rem, 0.75rem);
   --fs-bs: clamp(0.63rem, 0.41vw + 0.51rem, 1rem);
   --fs-md: clamp(0.78rem, 0.6vw + 0.61rem, 1.33rem);
