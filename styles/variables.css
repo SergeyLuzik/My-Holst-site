@@ -17,6 +17,33 @@
   --fw-medium: 500;
   --fw-bold: 700;
 
+  /* todo 
+    sm - слишком маленький
+    advantages title и description одного размера (нужен промежуточный?)
+    md большеват для nav 
+  */
+
+  /*https://www.fluid-type-scale.com/calculate?minFontSize=12&minWidth=480&minRatio=1.25&maxFontSize=18&maxWidth=1920&maxRatio=1.333&steps=sm%2Cbs%2Cmd%2Clg%2Cxl%2Cxxl&baseStep=bs&prefix=fs&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1280*/
+  /* --fs-sm: clamp(0.6rem, 0.24vw + 0.55rem, 0.84rem);
+  --fs-bs: clamp(0.75rem, 0.38vw + 0.68rem, 1.13rem);
+  --fs-md: clamp(0.94rem, 0.56vw + 0.83rem, 1.5rem);
+  --fs-lg: clamp(1.17rem, 0.83vw + 1.01rem, 2rem);
+  --fs-xl: clamp(1.46rem, 1.2vw + 1.22rem, 2.66rem);
+  --fs-xxl: clamp(1.83rem, 1.72vw + 1.49rem, 3.55rem);*/
+  --fs-sm: clamp(0.6rem, 0.27vw + 0.52rem, 0.84rem);
+  --fs-bs: clamp(0.75rem, 0.42vw + 0.63rem, 1.13rem);
+  --fs-md: clamp(0.94rem, 0.62vw + 0.75rem, 1.5rem);
+  --fs-lg: clamp(1.17rem, 0.92vw + 0.9rem, 2rem);
+  --fs-xl: clamp(1.46rem, 1.33vw + 1.06rem, 2.66rem);
+  --fs-xxl: clamp(1.83rem, 1.91vw + 1.26rem, 3.55rem);
+  /* last used
+  --fs-sm: clamp(0.5rem, 0.27vw + 0.42rem, 0.75rem);
+  --fs-bs: clamp(0.63rem, 0.41vw + 0.51rem, 1rem);
+  --fs-md: clamp(0.78rem, 0.6vw + 0.61rem, 1.33rem);
+  --fs-lg: clamp(0.98rem, 0.88vw + 0.72rem, 1.78rem);
+  --fs-xl: clamp(1.22rem, 1.26vw + 0.86rem, 2.37rem);
+  --fs-xxl: clamp(1.53rem, 1.79vw + 1.01rem, 3.16rem);
+
   /*
    --fs-sm: clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem);
 clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
@@ -36,18 +63,6 @@ clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
   --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
   --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
 */
-  /* todo 
-    sm - слишком маленький
-    advantages title и description одного размера (нужен промежуточный?)
-    md большеват для nav 
-  */
-  /* last used*/
-  --fs-sm: clamp(0.5rem, 0.27vw + 0.42rem, 0.75rem);
-  --fs-bs: clamp(0.63rem, 0.41vw + 0.51rem, 1rem);
-  --fs-md: clamp(0.78rem, 0.6vw + 0.61rem, 1.33rem);
-  --fs-lg: clamp(0.98rem, 0.88vw + 0.72rem, 1.78rem);
-  --fs-xl: clamp(1.22rem, 1.26vw + 0.86rem, 2.37rem);
-  --fs-xxl: clamp(1.53rem, 1.79vw + 1.01rem, 3.16rem);
 
   /*--fs-sm: clamp(0.6rem, 0.27vw + 0.52rem, 0.84rem);
   --fs-bs: clamp(0.75rem, 0.42vw + 0.63rem, 1.13rem);
