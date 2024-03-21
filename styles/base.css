@@ -74,7 +74,7 @@ a.order-button:hover {
 
 .slider-button {
   /* width: 40px;*/
-  width: clamp(32px, 2.5vw, 40px);
+  width: var(--round-size);
   aspect-ratio: 1;
   background-color: var(--primary-light);
   mask: url(../assets/icons.svg#arrow);

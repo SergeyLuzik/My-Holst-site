@@ -117,8 +117,10 @@
 
 .steps__contact-link {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: var(--round-size);
+  height: var(--round-size);
+  /*width: 36px;
+  height: 36px;*/
   background: var(--secondary);
 }
 
@@ -160,7 +162,7 @@
 .steps__contact-link_address {
   mask: url(../assets/icons.svg#location);
   -webkit-mask: url(../assets/icons.svg#location);
-  width: 28px;
+  width: clamp(26px, 2.3vw, 31px);
 }
 
 .steps__contact-link_vk {
