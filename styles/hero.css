@@ -181,7 +181,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
+  width: var(--round-size);
   aspect-ratio: 1;
   border: 1px solid var(--white);
   border-radius: 50%;
