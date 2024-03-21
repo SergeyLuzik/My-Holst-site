@@ -136,8 +136,10 @@ a.contacts__route-button {
 
 .social-link {
   display: block;
-  width: 36px;
-  height: 36px;
+  /*width: 36px;
+  height: 36px;*/
+  width: var(--round-size);
+  aspect-ratio: 1;
   background: var(--primary);
 }
 
