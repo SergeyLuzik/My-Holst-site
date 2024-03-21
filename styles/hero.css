@@ -132,7 +132,7 @@
   text-align: center;
 }
 .promo__statistics-description {
-  font-size: var(--fs-xxl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
+  font-size: var(--fs-xxxl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
   font-weight: 800;
   color: var(--primary-light);
   margin-inline: 0;
