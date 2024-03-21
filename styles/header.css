@@ -32,12 +32,12 @@ page-header__contacts-list,
 }
 
 .page-header__nav-list {
-  font-size: var(--fs-md) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
 }
 
 .page-header__contacts-list {
-  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 500;
 }
 

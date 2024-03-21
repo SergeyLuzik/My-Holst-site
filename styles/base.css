@@ -58,7 +58,7 @@ body {
 
 a.order-button {
   display: inline-block;
-  font-size: var(--fs-lg) /*clamp(0.5rem, 0.3rem + 1.5vw, 1.25rem)*/;
+  font-size: var(--fs-md) /*clamp(0.5rem, 0.3rem + 1.5vw, 1.25rem)*/;
   font-weight: 800;
   text-transform: uppercase;
   color: var(--white);
@@ -81,7 +81,9 @@ a.order-button:hover {
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
 }
 

@@ -46,7 +46,7 @@ ul.contacts__list {
 }
 
 .contacts__item-title {
-  font-size: var(--fs-base) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
   line-height: 125%;
   margin-block: 0 8px;
@@ -86,7 +86,7 @@ ul.contacts__list {
 }
 
 a.contacts__route-button {
-  font-size: var(--fs-base) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-bs) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   color: var(--white);
   font-weight: 700;
   line-height: 100%;

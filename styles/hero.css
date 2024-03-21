@@ -51,7 +51,7 @@
 }
 
 .promo__subtitle {
-  font-size: var(--fs-xxl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
+  font-size: var(--fs-xxxl) /*clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem)*/;
   font-weight: 800;
   line-height: 125%;
   text-align: center;
@@ -184,7 +184,7 @@
   border: 1px solid var(--white);
   border-radius: 50%;
   background-color: var(--secondary-light);
-  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 800;
   color: var(--white);
 }
@@ -281,7 +281,7 @@
   display: inline-block;
   margin-block: 0;
   padding-inline: 8px;
-  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
   line-height: 125%;
   color: var(--white);
