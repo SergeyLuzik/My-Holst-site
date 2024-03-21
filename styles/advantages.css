@@ -16,7 +16,7 @@
 
 .advantages__item {
   display: flex;
-  flex-basis: 176px;
+  flex-basis: 317px; /*176px*/
   flex-direction: column;
   text-align: center;
 }
