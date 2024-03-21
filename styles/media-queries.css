@@ -2,6 +2,9 @@
   /* .services-list {
     grid-template-columns: 384px;
   }*/
+  .advantages__item {
+    flex-basis: 220px;
+  }
 }
 
 @media (max-width: 1200px) {
