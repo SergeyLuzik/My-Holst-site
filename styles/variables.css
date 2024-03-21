@@ -93,6 +93,7 @@ clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
   --lh-xxl: 2.25;
   --lh-xxxl: 2.5;
 
+  --section-title-margin: 5vh;
   --section-margin: 10vh;
   --content-width: 1440px;
   --slide-width: clamp(200px, 15vw, 300px);

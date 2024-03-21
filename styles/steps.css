@@ -3,14 +3,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: var(--section-title-margin);
   margin-block-end: var(--section-margin);
+}
+
+.section-title.steps__title {
+  margin: 0;
 }
 
 .steps__list {
   display: flex;
   flex-direction: column;
-  gap: 12vh;
+  gap: 20vh;
 }
 
 .steps__item {
