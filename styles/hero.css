@@ -27,8 +27,10 @@
 */
 .promo__yandex-maps-rating {
   display: block;
-  width: 25%;
-  height: 27%;
+  /*width: 25%;
+  height: 27%;*/
+  width: 7.2vw;
+  aspect-ratio: 4.733;
   transform: rotate(-4.55deg);
   background-image: url("../assets/icons.svg#rating");
   background-repeat: no-repeat;
