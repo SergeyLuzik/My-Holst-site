@@ -51,3 +51,10 @@
     left: 44.97%;
   }
 }
+
+@media (max-width: 650px) {
+  .page-header__contacts-list {
+    display: none;
+    /*todo перенести в мобильную версию*/
+  }
+}
