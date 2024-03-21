@@ -50,7 +50,7 @@
 }
 
 .steps__text-group {
-  width: 20%;
+  width: 25%;
 }
 
 .steps__item-title {
@@ -271,7 +271,7 @@
 }
 
 .steps__receipt-list {
-  padding-inline-start: 16px;
+  margin-inline-start: 6%;
 }
 
 .steps__receipt-item {
@@ -283,6 +283,7 @@
 .steps__receipt-item::before {
   content: "";
   display: block;
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
   background-color: var(--primary-light);
