@@ -6,6 +6,10 @@
     font-style: normal;*/
 }
 
+html {
+  overflow-x: hidden; /*fix devtools adaptive preview scroll bug*/
+}
+
 body {
   font-family: "Nunito", "Arial", sans-serif;
   color: var(--black);
@@ -81,9 +85,7 @@ a.order-button:hover {
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
