@@ -239,7 +239,7 @@
   display: grid;
   grid-template-columns: 20% 18% 1fr;
   grid-template-rows: 37% 1fr 7%;
-  aspect-ratio: 1.97;
+  aspect-ratio: 1.98;
 }
 
 .steps__item:nth-child(4) .steps__img {
