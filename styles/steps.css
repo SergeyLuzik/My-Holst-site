@@ -12,16 +12,19 @@
 }
 
 .steps__list {
-  display: flex;
-  flex-direction: column;
-  gap: 20vh;
+  /*display: flex;
+  flex-direction: column;*/
+  display: grid;
+  /*grid-template-rows: repeat(5, 1fr);*/
+  grid-template-rows: repeat(5, 17%);
+  gap: 3.75%;
 }
 
 .steps__item {
   /*display: grid;
     grid-template-columns: auto 1fr auto;*/
   display: flex;
-  height: 37vh;
+  /*height: 37vh;*/
   justify-content: space-between;
   align-items: center;
 }
@@ -179,7 +182,7 @@
 .services-list {
   display: grid;
   height: 100%;
-  width: 59%;
+  /*width: 59%;*/
   /* width: 60%;*/
   aspect-ratio: 2.4;
   /*grid-template-columns: repeat(2, 1fr);
