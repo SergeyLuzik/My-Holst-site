@@ -179,20 +179,25 @@
 .services-list {
   display: grid;
   height: 100%;
+  width: 59%;
   /* width: 60%;*/
   aspect-ratio: 2.4;
-  grid-template-columns: repeat(2, 1fr);
+  /*grid-template-columns: repeat(2, 1fr);
   /*grid-template-columns: repeat(2, minmax(384px, 1fr));*/
-  gap: 1.666vw; /*32px*/
+  /*gap: 1.666vw; 32px*/
+  grid-template-columns: repeat(2, 48.503%);
+  grid-template-rows: repeat(2, 46.4115%);
+  row-gap: 7.177%;
+  column-gap: 2.994%;
 }
 
 .card {
   display: grid;
   grid-template:
     "img title" auto
-    "img text" 1fr / 40% 1fr;
-  row-gap: 2px;
-  column-gap: 0.833vw; /*16px*/
+    "img text" 1fr /39.5% 1fr;
+  row-gap: 1.213%; /*2px;*/
+  column-gap: 3.086%; /*0.833vw; /*16px*/
   /*grid-auto-rows: auto;*/
 }
 .card__img {
@@ -232,7 +237,7 @@
   /*todo исправить сетку */
   grid-template:
     "title img" auto
-    "text img" 1fr/ 1fr 40%;
+    "text img" 1fr/ 1fr 39.5%;
 }
 
 .steps__item:nth-child(4) .steps__img-group {
