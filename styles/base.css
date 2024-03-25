@@ -49,7 +49,7 @@ body {
     minmax(16px, 1fr);
   /*var(--content-width) / 2
   repeat(2, minmax(min-content, 720px))*/
-  justify-items: start;
+  /*justify-items: start;*/
 }
 
 /* todo актуализировать */
@@ -85,7 +85,9 @@ a.order-button:hover {
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
 }
 
