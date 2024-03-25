@@ -19,7 +19,8 @@
   /*grid-template-rows: repeat(5, 1fr);*/
   /*grid-template-rows: repeat(5, 17%);
   gap: 3.75%;*/
-  grid-template-rows: repeat(5, 18.542vw);
+  /*grid-template-rows: repeat(5, 18.542vw);*/
+  grid-template-rows: repeat(5, 22.55em);
   gap: 25vh;
 }
 
@@ -197,9 +198,12 @@
   grid-template-rows: repeat(2, 162px);
   /*row-gap: 7.177%;
   column-gap: 2.994%;*/
-  grid-template-columns: repeat(2, 21.354vw);
+  /*grid-template-columns: repeat(2, 21.354vw);
   grid-template-rows: repeat(2, 8.437vw);
-  gap: 1.666vw;
+  gap: 1.666vw;*/
+  grid-template-columns: repeat(2, 26.625em);
+  grid-template-rows: repeat(2, 10.525em);
+  gap: 1.5em;
 }
 
 .card {
