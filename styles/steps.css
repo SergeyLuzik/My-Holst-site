@@ -21,7 +21,7 @@
   gap: 3.75%;*/
   /*grid-template-rows: repeat(5, 18.542vw);*/
   /*grid-template-rows: repeat(5, 342px);*/
-  grid-template-rows: repeat(5, clamp(320px, calc(100vw * (2 / 3.45)), 342px));
+  grid-template-rows: repeat(5, clamp(310px, calc(10.5vw + 191px), 342px));
   gap: 25vh;
 }
 /*
@@ -192,7 +192,7 @@ x = 1045302.150 / (4496.413 - y)
 .services-list {
   display: grid;
   height: 100%;
-  aspect-ratio: 2.43;
+  aspect-ratio: 2.52;
   grid-template-columns: repeat(2, 48.503%);
   grid-template-rows: repeat(2, 46.4115%);
   row-gap: 7.177%;
@@ -203,7 +203,7 @@ x = 1045302.150 / (4496.413 - y)
   display: grid;
   grid-template:
     "img title" auto
-    "img text" 1fr /39.5% 1fr;
+    "img text" 1fr /38% 1fr;
   row-gap: 1.213%; /*2px;*/
   column-gap: 3.086%; /*0.833vw; /*16px*/
   /*grid-auto-rows: auto;*/
@@ -245,7 +245,7 @@ x = 1045302.150 / (4496.413 - y)
   /*todo исправить сетку */
   grid-template:
     "title img" auto
-    "text img" 1fr/ 1fr 39.5%;
+    "text img" 1fr/ 1fr 38%;
 }
 
 .steps__item:nth-child(4) .steps__img-group {
