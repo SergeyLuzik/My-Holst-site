@@ -5,7 +5,8 @@
 }
 @media (max-width: 1300px) {
   .steps__list {
-    grid-template-rows: repeat(5, 592px);
+    /*grid-template-rows: repeat(5, 592px);*/
+    grid-template-rows: repeat(5, clamp(440px, calc(38.7vw + 90px), 592px));
   }
   .steps__list > .steps__item {
     flex-direction: column-reverse;
