@@ -12,16 +12,9 @@
 }
 
 .steps__list {
-  /*display: flex;
-  flex-direction: column;*/
   width: 100%;
   display: grid;
-  /*grid-template-rows: repeat(5, 1fr);*/
-  /*grid-template-rows: repeat(5, 17%);
-  gap: 3.75%;*/
-  /*grid-template-rows: repeat(5, 18.542vw);*/
-  /*grid-template-rows: repeat(5, 342px);*/
-  grid-template-rows: repeat(5, clamp(310px, calc(10.5vw + 191px), 342px));
+  grid-template-rows: repeat(5, 342px);
   gap: 25vh;
 }
 /*
