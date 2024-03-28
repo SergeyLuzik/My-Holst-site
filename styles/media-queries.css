@@ -98,6 +98,16 @@
   }
 }
 
+@media (max-width: 815px) {
+  .contacts {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "contacts-list"
+      "map";
+  }
+}
+
 @media (max-width: 650px) {
   .page-header__contacts-list {
     display: none;

@@ -6,7 +6,7 @@
   grid-template:
     "title title"
     "map contacts-list" auto
-    "map social-list" 1fr
+    "map contacts-list" 1fr
     / 696px 1fr;
   /*todo как уменьшить высоту contacts-list (dd block - не работает grid) */
   margin-block-end: var(--section-margin);
@@ -129,7 +129,7 @@ a.contacts__route-button {
 }
 
 .contacts__social-list {
-  grid-area: social-list;
+  /*grid-area: social-list;*/
   display: flex;
   gap: 8px;
 }
