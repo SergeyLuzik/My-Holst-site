@@ -2,6 +2,9 @@
   .hero {
     gap: clamp(10px, calc(68vw - 745px), 282px);
   }
+  .promo {
+    gap: clamp(8px, 1.5vw, 24px);
+  }
   .steps__list {
     grid-template-rows: repeat(5, clamp(310px, calc(10.5vw + 191px), 342px));
   }
