@@ -1,4 +1,7 @@
 @media (max-width: 1482px) {
+  .hero {
+    gap: clamp(10px, calc(68vw - 745px), 282px);
+  }
   .steps__list {
     grid-template-rows: repeat(5, clamp(310px, calc(10.5vw + 191px), 342px));
   }
