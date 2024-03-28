@@ -106,6 +106,23 @@
       "contacts-list"
       "map";
   }
+
+  ul.contacts__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-block: 0 20px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .contacts__list-item:nth-child(1) {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts__list-item:nth-child(3) {
+    order: 4;
+  }
 }
 
 @media (max-width: 650px) {
