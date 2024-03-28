@@ -4,7 +4,8 @@
   grid-column: 2 / 4;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 19.6%;
+  /*gap: 19.6%;*/
+  gap: clamp(10px, calc(68.54vw - 741px), 282px);
 }
 
 .promo {
