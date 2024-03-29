@@ -7,7 +7,7 @@
   /*gap: 19.6%;*/
   /*gap: clamp(10px, calc(68.54vw - 741px), 282px);*/
   /*gap: clamp(10px, calc(68vw - 745px), 282px);*/
-  gap: 282px;
+  gap: 280px;
 }
 
 .promo {
@@ -32,9 +32,9 @@
 */
 .promo__yandex-maps-rating {
   display: block;
-  /*width: 25%;
-  height: 27%;*/
-  width: 7.2vw;
+  width: 25%;
+  /*height: 27%;
+  width: 7.2vw;*/
   aspect-ratio: 4.733;
   transform: rotate(-4.55deg);
   background-image: url("../assets/icons.svg#rating");

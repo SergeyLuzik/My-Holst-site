@@ -1,6 +1,6 @@
 @media (max-width: 1482px) {
   .hero {
-    gap: clamp(20px, calc(68vw - 745px), 282px);
+    gap: clamp(20px, calc(68vw - 745px), 280px);
   }
   .promo {
     gap: clamp(8px, 1.5vw, 24px);
@@ -133,7 +133,7 @@
   }
 
   .promo__yandex-maps-rating {
-    width: 10vw;
+    /*width: 10vw;*/
     margin-block-end: 6px;
     /* margin: 0 auto;
     transform: rotate(0deg);*/
