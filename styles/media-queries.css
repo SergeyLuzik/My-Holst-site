@@ -98,7 +98,7 @@
   }
 }
 
-@media (max-width: 1130px) {
+@media (/*max-width: 1130px*/) {
   .hero {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);

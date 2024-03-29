@@ -1,5 +1,5 @@
 // HERO FEEDBACK SLIDER
-if (document.querySelector(".page-main").offsetWidth > 1130) {
+if (true /*document.querySelector(".page-main").offsetWidth > 1130*/) {
   (() => {
     const slidesWrapper = document.querySelector(".slider__slides-list"),
       gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
