@@ -87,7 +87,8 @@
 .promo__services-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  /*gap: 8px;*/
+  gap: 0.244em;
   font-size: var(--fs-xxl) /*clamp(1rem, 0.5rem + 1.5vw, 2rem)*/;
   font-weight: 600;
   text-align: left;
@@ -96,8 +97,10 @@
 .promo__services-item::before {
   content: "";
   display: block;
-  width: 28px;
-  height: 28px;
+  /*width: 28px;
+  height: 28px;*/
+  width: 1em;
+  aspect-ratio: 1;
   background-color: var(--primary-light);
   mask: url(../assets/icons.svg#check-box);
   -webkit-mask: url(../assets/icons.svg#check-box);
