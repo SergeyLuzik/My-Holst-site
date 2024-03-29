@@ -103,13 +103,23 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
-}
   }
 
   .promo__yandex-maps-rating {
-    width: 12vw;
-    margin: 0 auto;
-    transform: rotate(0deg);
+    width: 10vw;
+    margin-block-end: 6px;
+    /* margin: 0 auto;
+    transform: rotate(0deg);*/
+  }
+
+  .slider__slides-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .slider__slide-item {
+    scroll-snap-align: start;
   }
 }
 
