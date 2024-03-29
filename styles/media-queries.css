@@ -98,6 +98,21 @@
   }
 }
 
+@media (max-width: 1130px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+}
+  }
+
+  .promo__yandex-maps-rating {
+    width: 12vw;
+    margin: 0 auto;
+    transform: rotate(0deg);
+  }
+}
+
 @media (max-width: 815px) {
   .contacts {
     grid-template-columns: 1fr;
