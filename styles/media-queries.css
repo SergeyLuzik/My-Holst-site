@@ -101,7 +101,7 @@
 @media (max-width: 1130px) {
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     justify-items: center;
   }
 
@@ -112,7 +112,14 @@
     transform: rotate(0deg);*/
   }
 
+  .hero__slider {
+    margin-block-start: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
   .slider__slides-list {
+    margin-inline-start: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -120,6 +127,9 @@
   }
   .slider__slide-item {
     scroll-snap-align: start;
+  }
+  .slider__slider-butons {
+    display: none;
   }
 }
 
