@@ -108,6 +108,25 @@
   }
 }
 
+@media (max-width: 960px) {
+  .steps__list {
+    grid-template-rows: repeat(5, 462px);
+  }
+  .services-list {
+    width: 743px;
+  }
+  .steps__item:nth-child(1) .steps__img-group {
+    width: 420px;
+    height: 250px;
+  }
+  .steps__item:nth-child(4) .steps__img-group {
+    width: 579px;
+  }
+  .steps__item:nth-child(5) .steps__img-group {
+    width: 543px;
+  }
+}
+
 @media (max-width: 815px) {
   .contacts {
     grid-template-columns: 1fr;
