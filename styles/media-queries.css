@@ -189,6 +189,29 @@
   }
 }
 
+@media (max-width: 773px) {
+  .steps__list {
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .services-list {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  /* .steps__list {
+    grid-template-rows: repeat(5, max-content);
+  }
+  .services-list {
+    width: 410px;
+    grid-template-columns: 330px;
+    grid-template-rows: repeat(4, 1fr);
+    gap: none;
+  }*/
+}
+
 @media (max-width: 650px) {
   .page-header__contacts-list {
     display: none;
