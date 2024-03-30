@@ -16,8 +16,8 @@
   }
   .steps__list > .steps__item {
     flex-direction: column-reverse;
-    justify-content: center;
-    gap: 25px;
+    justify-content: space-between;
+    /*gap: 25px;*/
   }
 
   .steps__item .marker {
@@ -25,6 +25,14 @@
   }
   .steps__list > .steps__item > .steps__text-group {
     width: 100%;
+  }
+
+  .steps__item:nth-child(1) .steps__text-group {
+    gap: 0.616vw;
+  }
+
+  .steps__item-title {
+    margin-block: 0 0.616vw;
   }
   .services-list {
     height: auto;
@@ -44,9 +52,11 @@
   }
   .steps__item:nth-child(4) .steps__img-group {
     width: 62.5%;
+    height: auto;
   }
   .steps__item:nth-child(5) .steps__img-group {
     width: 58.5%;
+    height: auto;
   }
   .steps__receipt-list {
     margin-inline-start: 40%;
