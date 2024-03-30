@@ -195,6 +195,7 @@
 .promo__subscribers-count {
   z-index: 4;
   margin-inline-start: -8px;
+  margin-block: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,6 +215,7 @@
   align-items: center;
   padding-block-end: 2px;
   margin-inline-start: 4px;
+  margin-block: auto;
   font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)*/;
   font-weight: 700;
   color: var(--secondary-light);
