@@ -108,6 +108,18 @@
   }
 }
 
+@media (max-width: 1088px) {
+  .popular-sizes__list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .popular-sizes__item {
+    scroll-snap-align: start;
+  }
+}
+
 @media (max-width: 960px) {
   .steps__list {
     grid-template-rows: repeat(5, 462px);
