@@ -256,6 +256,9 @@
     height: 55vw;
     aspect-ratio: unset;
   }
+  .page-footer {
+    gap: 8vw;
+  }
 }
 
 @media (max-width: 372px) {
