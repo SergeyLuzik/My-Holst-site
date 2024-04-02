@@ -31,7 +31,7 @@ todo: определять span с помощью ::nth-child по какому-
   grid-template-columns: repeat(32, 1fr);
   grid-template-rows: repeat(14, 1fr);
   grid-auto-flow: dense;
-  gap: 0.8vw/*12px*/;
+  gap: /*0.8vw*/ 12px;
 }
 
 [class*="_border"] {
@@ -91,5 +91,5 @@ todo: определять span с помощью ::nth-child по какому-
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius:  0.782vw/*15px*;
+  border-radius: /*0.782vw*/ 15px;
 }
