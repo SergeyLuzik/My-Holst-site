@@ -2,7 +2,7 @@
   grid-column: 2 / span 2;
   width: 100%;
   display: grid;
-  grid-template-columns: 40px 92.444% 40px;
+  grid-template-columns: min-content 1fr min-content; /*92.444%*/
   grid-template-rows: repeat(3, min-content); /*min-content 1fr min-content;*/
   column-gap: 1% /*72px*/;
   align-items: center;
