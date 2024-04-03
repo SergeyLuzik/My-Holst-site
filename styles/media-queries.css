@@ -121,6 +121,7 @@
   }
   .feedback__list {
     grid-template-columns: unset;
+    grid-auto-columns: clamp(190px, 5.3vw + 160px, 225px);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
