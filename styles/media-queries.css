@@ -261,6 +261,12 @@
   }
 }
 
+@media (max-width: 720px) {
+  .steps__list > .steps__item {
+    gap: 4vw;
+  }
+}
+
 @media (max-width: 773px) {
   .steps__list {
     grid-template-rows: repeat(5, 1fr);
@@ -279,7 +285,7 @@
     width: 340px;
     grid-template-columns: 100%;
     grid-template-rows: repeat(4, 1fr);
-    gap: 2vw;
+    gap: 3vw;
   }
   .services-list__item:nth-child(odd) .card {
     grid-template:
