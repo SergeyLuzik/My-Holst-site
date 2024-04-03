@@ -63,7 +63,8 @@
 .feedback-card__header {
   display: grid;
   grid-template-columns: 31.25% 68.75%;
-  grid-template-rows: 67.496% 32.53%;
+  grid-template-rows: 35% 65%;
+  /*grid-template-rows: 67.496% 32.53%;*/
   /*
   grid-template-columns: 80px 176px;
   grid-template-rows: 56px 27px;*/
@@ -79,13 +80,13 @@
 }
 
 .feedback-card__full-name {
-  /* grid-row-start: 2;
-    grid-column-start: 2;*/
-  align-self: end;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  align-self: center;
   font-size: var(--fs-bs) /*clamp(1rem, 0.5rem + 2.5vw, 0.875rem)*/;
   font-weight: 800;
   line-height: 115%;
-  margin-block: 0 4px;
+  /*margin-block: 0 4px;*/
 }
 
 .feedback-card__avatar {
