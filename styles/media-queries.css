@@ -280,6 +280,7 @@
 @media (max-width: 720px) {
   .steps__list {
     grid-template-rows: repeat(5, max-content);
+    gap: 20vh;
   }
   .services-list {
     width: 340px;
