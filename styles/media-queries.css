@@ -249,6 +249,13 @@
   .slider__slide-item {
     scroll-snap-align: start;
   }
+  .slider__slide-item:hover,
+  .slider__slide-item:nth-child(2):hover {
+    transform: unset !important;
+  }
+  .slider__slide-img {
+    filter: unset;
+  }
   .slider__slider-butons {
     display: none;
   }
