@@ -280,8 +280,11 @@ x = 1045302.150 / (4496.413 - y)
   grid-row: 1 / span 3;
 }
 
-.steps__receipt-list {
-  margin-inline-start: 6%;
+.steps__item:nth-child(5) .steps__text-group {
+  width: 27.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .steps__receipt-item {

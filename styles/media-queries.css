@@ -58,9 +58,6 @@
     width: 58.5%;
     height: auto;
   }
-  .steps__receipt-list {
-    margin-inline-start: 40%;
-  }
 }
 
 @media (max-width: 1200px) {
@@ -105,6 +102,30 @@
 
   .contacts__map::after {
     left: 44.97%;
+  }
+
+  .feedback {
+    grid-template-columns: 1fr;
+    gap: unset;
+  }
+
+  .feedback > .slider-button {
+    display: none;
+  }
+  .feedback__list-wraper {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .feedback__list {
+    grid-template-columns: unset;
+    grid-auto-columns: clamp(190px, 5.3vw + 161px, 225px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .feedback__item {
+    scroll-snap-align: start;
   }
 }
 
@@ -225,8 +246,21 @@
   .slider__slide-item {
     scroll-snap-align: start;
   }
+  .slider__slide-item:hover,
+  .slider__slide-item:nth-child(2):hover {
+    transform: unset !important;
+  }
+  .slider__slide-img {
+    filter: unset;
+  }
   .slider__slider-butons {
     display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .steps__list > .steps__item {
+    gap: 4vw;
   }
 }
 
@@ -243,12 +277,13 @@
 @media (max-width: 720px) {
   .steps__list {
     grid-template-rows: repeat(5, max-content);
+    gap: 20vh;
   }
   .services-list {
     width: 340px;
     grid-template-columns: 100%;
     grid-template-rows: repeat(4, 1fr);
-    gap: 2vw;
+    gap: 3vw;
   }
   .services-list__item:nth-child(odd) .card {
     grid-template:
