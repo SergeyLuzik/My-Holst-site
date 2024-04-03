@@ -58,9 +58,6 @@
     width: 58.5%;
     height: auto;
   }
-  .steps__receipt-list {
-    margin-inline-start: 40%;
-  }
 }
 
 @media (max-width: 1200px) {
