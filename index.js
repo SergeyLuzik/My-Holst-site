@@ -82,7 +82,9 @@ if (document.querySelector(".page-main").offsetWidth > 800) {
   // FEEDBACK SLIDER
 
   //todo расширить обертку на размер gap между слайдами чтобы можно было внутрь положить размытие и слайды менялись без резкой полосы
+}
 
+if (document.querySelector(".page-main").offsetWidth > 1200) {
   (() => {
     const slidesWrapper = document.querySelector(".feedback__list"),
       slides = slidesWrapper.children,

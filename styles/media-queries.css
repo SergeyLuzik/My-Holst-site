@@ -106,6 +106,29 @@
   .contacts__map::after {
     left: 44.97%;
   }
+
+  .feedback {
+    grid-template-columns: 1fr;
+    gap: unset;
+  }
+
+  .feedback > .slider-button {
+    display: none;
+  }
+  .feedback__list-wraper {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .feedback__list {
+    grid-template-columns: unset;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .feedback__item {
+    scroll-snap-align: start;
+  }
 }
 
 @media (max-width: 1088px) {
