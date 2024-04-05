@@ -57,13 +57,13 @@
 .advantages__advantage-title {
   font-size: var(--fs-md) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
-  line-height: 125%;
+  line-height: var(--lh-title-bs);
   margin-block: 0 4px;
 }
 
 .advantages__advantage-description {
   font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)*/;
   font-weight: 400;
-  line-height: 143%;
+  line-height: var(--lh-text-sm);
   margin-block: 4px 0;
 }
