@@ -53,7 +53,7 @@ x = 1045302.150 / (4496.413 - y)
   border-radius: 50%;
   font-size: var(--fs-xxxl) /*clamp(1.75rem, 0.5rem + 2.5vw, 2.5rem)*/;
   font-weight: 700;
-  line-height: 100%;
+  line-height: var(--lh-zero);
   color: var(--primary-light);
 }
 
@@ -75,7 +75,7 @@ x = 1045302.150 / (4496.413 - y)
   /*font-size: clamp(0.75rem, 0.5rem + 2.5vw, 1rem);*/
   font-size: var(--fs-md) /*clamp(0.75rem, 0.675rem + 0.375vw, 1.125rem)*/;
   font-weight: 700;
-  line-height: 150%;
+  line-height: var(--lh-text-bs);
   text-align: center;
   margin-block: 0;
 }
@@ -218,7 +218,7 @@ x = 1045302.150 / (4496.413 - y)
     1.25rem
   )*/; /*font-size: clamp(1rem, 0.5rem + 2.5vw, 1.25rem);*/
   font-weight: 700;
-  line-height: 120%;
+  line-height: var(--lh-title-xs);
   color: var(--primary-light);
   margin-block: 0;
 }
@@ -231,7 +231,7 @@ x = 1045302.150 / (4496.413 - y)
     1rem
   )*/; /*font-size: clamp(0.75rem, 0.5rem + 2.5vw, 0.875rem);*/
   font-weight: 500;
-  line-height: 142.857%;
+  line-height: var(--lh-text-bs);
   margin-block: 0;
 }
 
