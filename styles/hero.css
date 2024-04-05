@@ -310,7 +310,7 @@
   padding-inline: 8px;
   font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
-  line-height: 125%;
+  line-height: var(--lh-text-xs);
   color: var(--white);
   background: var(--primary-alpha);
   border-radius: 6% / 37.5%; /*todo убрать % при разных размерах текста разный угол (привязать в viewport?)*/
