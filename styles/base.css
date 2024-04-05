@@ -65,6 +65,7 @@ a.order-button {
   font-size: var(--fs-md) /*clamp(0.5rem, 0.3rem + 1.5vw, 1.25rem)*/;
   font-weight: 800;
   text-transform: uppercase;
+  line-height: var(--lh-zero);
   color: var(--white);
   padding-inline: 2em;
   padding-block: 1em;
