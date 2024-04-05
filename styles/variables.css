@@ -161,12 +161,16 @@ clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
   --fs-xxl: clamp(1.83rem, 1.91vw + 1.26rem, 3.55rem);
   --fs-xxxl: clamp(2.29rem, 2.72vw + 1.47rem, 4.73rem);
 */
-  --lh-sm: 1.25;
-  --lh-md: clamp(1.125rem, 0.338vw + 1.057rem, 1.463rem);
-  --lh-lg: 1.75;
-  --lh-xl: 2;
-  --lh-xxl: 2.25;
-  --lh-xxxl: 2.5;
+  --lh-zero: 1;
+  --lh-text-xs: 1.333;
+  --lh-text-sm: 1.43;
+  --lh-text-bs: 1.5;
+  --lh-text-lg: 1.555;
+
+  --lh-title-xs: 1.2;
+  --lh-title-sm: 1.222;
+  --lh-title-bs: 1.25;
+  --lh-title-lg: 1.266;
 
   --content-width: 1440px;
   --section-title-margin: 5vh;
