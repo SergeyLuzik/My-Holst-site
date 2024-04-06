@@ -350,6 +350,14 @@
   }
 }
 
+@media (max-width: 408px) {
+  .promo_footer {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: inherit;
+  }
+}
+
 @media (max-width: 372px) {
   .services-list {
     width: 100%;
