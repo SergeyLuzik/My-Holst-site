@@ -41,14 +41,14 @@ ul.contacts__list {
   flex-direction: column;
   gap: 28px;
   font-size: var(--fs-lg) /*clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem)*/;
-  line-height: 120%;
+  line-height: var(--lh-title-xs);
   margin-block-start: 20px;
 }
 
 .contacts__item-title {
   font-size: var(--fs-bs) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
-  line-height: 125%;
+  /*line-height: 125%;*/
   margin-block: 0 8px;
 }
 
@@ -56,12 +56,19 @@ ul.contacts__list {
   margin-block: 0;
 }
 
+.contacts__list-item:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
 .contacts__list-item:first-child > .contacts__item-text {
   display: flex;
   align-items: center;
   gap: 8px;
   font-style: normal;
-  margin-block-end: 12px;
+  /*margin-block-end: 12px;*/
   font-weight: 600;
 }
 
@@ -89,7 +96,7 @@ a.contacts__route-button {
   font-size: var(--fs-bs) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
   color: var(--white);
   font-weight: 700;
-  line-height: 100%;
+  line-height: var(--lh-zero);
   background: var(--primary);
   cursor: pointer;
   padding-inline: 8px;
