@@ -9,14 +9,14 @@
 .page-footer__copyright {
   font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
-  line-height: 125%;
+  line-height: var(--lh-text-bs);
   margin-block: 0;
 }
 
 a.page-footer__developer-link {
   font-size: var(--fs-xs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 400;
-  line-height: 133.333%;
+  line-height: var(--lh-text-xs);
   margin-block: 0;
   color: var(--grey);
 }
