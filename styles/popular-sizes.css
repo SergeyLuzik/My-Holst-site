@@ -19,9 +19,9 @@
   display: inline-block;
   font-size: var(--fs-lg) /*clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem)*/;
   font-weight: 700;
-  line-height: 120%;
+  line-height: var(--lh-zero);
   padding-inline: 16px;
-  padding-block: 4px;
+  padding-block: 6px;
   margin-block: 20px 0;
   background: var(--primary-light);
   border-radius: 13.186% / 37.5%;

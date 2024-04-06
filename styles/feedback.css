@@ -85,8 +85,8 @@
   align-self: center;
   font-size: var(--fs-bs) /*clamp(1rem, 0.5rem + 2.5vw, 0.875rem)*/;
   font-weight: 800;
-  line-height: 115%;
-  /*margin-block: 0 4px;*/
+  line-height: var(--lh-title-xs);
+  margin-block: 0;
 }
 
 .feedback-card__avatar {
@@ -114,7 +114,7 @@
     grid-column: span 2;*/
   font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
-  line-height: 133.33%;
+  line-height: var(--lh-text-xs);
   margin-block: 0;
   padding-block-end: 4px;
 }
@@ -128,7 +128,7 @@ a.feedback-card__link {
   /*todo занести общие св-ва в .button (color: white и пр. */
   font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 700;
-  line-height: 100%;
+  line-height: var(--lh-zero);
   padding-block: 8px;
   padding-inline: 12px;
   color: var(--white);
