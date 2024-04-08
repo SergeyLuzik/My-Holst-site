@@ -14,7 +14,7 @@
 .steps__list {
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(5, 342px);
+  grid-template-rows: repeat(5, 345px);
   gap: 25vh;
 }
 /*
