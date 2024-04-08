@@ -365,6 +365,33 @@
 }
 
 @media (max-width: 414px) {
+  .steps__list > .steps__item {
+    gap: 6vw;
+  }
+  .services-list {
+    width: 100%;
+    grid-template-rows: repeat(4, min-content);
+    gap: 4vw;
+  }
+  .services-list__item:nth-child(n + 1) .card {
+    grid-template:
+      "title"
+      "img"
+      "text";
+    justify-items: center;
+    gap: 2vw;
+  }
+
+  .card__title {
+    margin-block-end: 1vw;
+  }
+
+  .card__img {
+    width: 60% /*145px*/;
+  }
+  .card__text {
+    text-align: center;
+  }
 }
 
 @media (max-width: 408px) {
@@ -376,7 +403,7 @@
 }
 
 @media (max-width: 372px) {
-  .services-list {
+  /* .services-list {
     width: 100%;
-  }
+  }*/
 }
