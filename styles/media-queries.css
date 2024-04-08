@@ -343,6 +343,9 @@
     height: 55vw;
     aspect-ratio: unset;
   }
+  .page-footer {
+   /* grid-template-columns: repeat(3, 1fr);*/
+  }
 }
 
 @media (max-width: 573px) {

@@ -1,15 +1,15 @@
 .page-footer {
   display: grid /*flex*/;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 48vw 1fr;
 
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   align-items: center;
   text-align: center;
   /* padding-block: 12px;*/
 }
 
 .page-footer__copyright {
-  justify-self : start ;
+  justify-self: center;
   font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
   line-height: var(--lh-text-bs);
@@ -17,10 +17,11 @@
 }
 
 a.page-footer__developer-link {
-  justify-self : end ;
+  justify-self: end;
   font-size: var(--fs-xs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 400;
   line-height: var(--lh-text-xs);
+
   margin-block: 0;
   color: var(--grey);
 }
