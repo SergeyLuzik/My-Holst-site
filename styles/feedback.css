@@ -56,7 +56,7 @@
   /*grid-template-columns: 256px;*/
   /* grid-template-columns: 80px 176px;*/
   /*grid-template-rows: 224px 80px /*36px 44px*/ /*68px 32px;*/
-  grid-template-rows: 55.445% 19.801% 16.831% 7.92%;
+  grid-template-rows: 55.445% 19.801% 16.831% 7.92% /*170px 60px 52px 24px*/;
   aspect-ratio: 0.6214;
 }
 
@@ -98,7 +98,7 @@
   height: 80px;
   */
   /* border: 8px solid var(--white);*/
-  border: clamp(2px, 0.7vw, 8px) solid var(--white);
+  border: clamp(5px, 0.7vw, 8px) solid var(--white);
   border-radius: 50%;
 }
 

@@ -140,6 +140,9 @@
   .feedback__item {
     scroll-snap-align: start;
   }
+  .feedback-card {
+    height: clamp(305px, calc((5.3vw + 161px) / 0.6214), 362px);
+  }
 }
 
 @media (max-width: 1088px) {
