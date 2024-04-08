@@ -361,9 +361,9 @@
   }
 }
 
-@media (max-width: 452px) {
+@media (max-width: 470px) {
   .page-footer {
-    gap: 8vw;
+    gap: 4vw;
   }
 }
 
