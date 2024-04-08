@@ -1,5 +1,7 @@
 .page-footer {
-  display: flex;
+  display: grid /*flex*/;
+  grid-template-columns: repeat(3, 1fr);
+
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -7,6 +9,7 @@
 }
 
 .page-footer__copyright {
+  justify-self : start ;
   font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 1rem)*/;
   font-weight: 700;
   line-height: var(--lh-text-bs);
@@ -14,6 +17,7 @@
 }
 
 a.page-footer__developer-link {
+  justify-self : end ;
   font-size: var(--fs-xs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
   font-weight: 400;
   line-height: var(--lh-text-xs);
