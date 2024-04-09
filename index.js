@@ -1,5 +1,7 @@
-// HERO FEEDBACK SLIDER
-if (document.querySelector(".page-main").offsetWidth > 800) {
+const mainWidth = document.querySelector(".page-main").offsetWidth;
+
+// HERO  SLIDER
+if (mainWidth > 800) {
   (() => {
     const slidesWrapper = document.querySelector(".slider__slides-list"),
       gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
@@ -84,7 +86,7 @@ if (document.querySelector(".page-main").offsetWidth > 800) {
   //todo расширить обертку на размер gap между слайдами чтобы можно было внутрь положить размытие и слайды менялись без резкой полосы
 }
 
-if (document.querySelector(".page-main").offsetWidth > 1200) {
+if (mainWidth > 1200) {
   (() => {
     const slidesWrapper = document.querySelector(".feedback__list"),
       slides = slidesWrapper.children,
@@ -94,7 +96,7 @@ if (document.querySelector(".page-main").offsetWidth > 1200) {
         (slideWindowWidth / 100) *
         parseFloat(getComputedStyle(slidesWrapper).gap),
       amountSlidesOnList = Math.floor(
-        slideWindowWidth / (slideWidth + gapValue),
+        slideWindowWidth / (slideWidth + gapValue)
       ),
       slideListsAmount = Math.ceil(slides.length / amountSlidesOnList),
       offset = slideWindowWidth - 2 * gapValue, //slideWindowWidth + gapValue,
@@ -166,4 +168,16 @@ if (document.querySelector(".page-main").offsetWidth > 1200) {
       movRight(slidesWrapper, offset);
     };
   })();
+}
+
+if (mainWidth <= 1200) {
+  const burgerButton = document.querySelector(".page-header__burger-menu"),
+    headerNav = document.querySelector(".page-header__nav"),
+    contactList = document.querySelector(".page-header__contacts-list");
+
+  burgerButton.onclick = () => {
+    burgerButton.classList.toggle("page-header__burger-menu_active");
+    headerNav.classList.toggle("page-header__nav_active");
+    contactList.classList.toggle("page-header__contacts-list_active");
+  };
 }

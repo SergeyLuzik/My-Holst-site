@@ -42,7 +42,18 @@
   --fs-xxxl: clamp(1.35rem, 1.57vi + 0.72rem, 2.49rem);
   --fs-xxxxl: clamp(1.52rem, 2.02vi + 0.71rem, 2.99rem);
 */
-  /* 14 на 480px*/
+
+  /* слишком большой 
+--fs-xs: clamp(0.61rem, 0.14vi + 0.56rem, 0.69rem);
+  --fs-sm: clamp(0.73rem, 0.17vi + 0.68rem, 0.83rem);
+  --fs-bs: clamp(0.88rem, 0.21vi + 0.81rem, 1rem);
+  --fs-md: clamp(1.05rem, 0.25vi + 0.98rem, 1.2rem);
+  --fs-lg: clamp(1.26rem, 0.3vi + 1.17rem, 1.44rem);
+  --fs-xl: clamp(1.51rem, 0.36vi + 1.4rem, 1.73rem);
+  --fs-xxl: clamp(1.81rem, 0.43vi + 1.68rem, 2.07rem);
+  --fs-xxxl: clamp(2.18rem, 0.52vi + 2.02rem, 2.49rem);
+  --fs-xxxxl: clamp(2.61rem, 0.62vi + 2.43rem, 2.99rem);*/
+  /* 14 на 480px последнее*/
   --fs-xs: clamp(0.69rem, 0vi + 0.69rem, 0.69rem);
   --fs-sm: clamp(0.78rem, 0.07vi + 0.76rem, 0.83rem);
   --fs-bs: clamp(0.88rem, 0.15vi + 0.83rem, 1rem);
