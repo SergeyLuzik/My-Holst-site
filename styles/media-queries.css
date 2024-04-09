@@ -120,16 +120,16 @@
     bottom: 0;
   }
 
-  .page-header__burger-button:active .page-header__burger-button-icon {
+  .page-header__burger-button_active .page-header__burger-button-icon {
     opacity: 0;
   }
 
-  .page-header__burger-button:active::before {
+  .page-header__burger-button_active::before {
     top: 50%;
     transform: rotate(45deg);
   }
 
-  .page-header__burger-button:active::after {
+  .page-header__burger-button_active::after {
     bottom: auto;
     top: 50%;
     transform: rotate(-45deg);
