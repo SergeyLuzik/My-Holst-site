@@ -91,7 +91,7 @@ page-header__contacts-list,
   font-style: normal;
 }
 
-.page-header__burger-menu {
+.page-header__burger-button {
   position: relative;
   display: block;
   width: 32px;
@@ -101,13 +101,13 @@ page-header__contacts-list,
   padding: 0;
 }
 
-.page-header__burger-menu:hover {
+.page-header__burger-button:hover {
   cursor: pointer;
 }
 
-.page-header__burger-menu::before,
-.page-header__burger-menu-icon,
-.page-header__burger-menu::after {
+.page-header__burger-button::before,
+.page-header__burger-button-icon,
+.page-header__burger-button::after {
   display: block;
   width: 100%;
   height: 5px;
@@ -116,39 +116,39 @@ page-header__contacts-list,
   transition: all 1s ease;
 }
 
-.page-header__burger-menu-icon {
+.page-header__burger-button-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.page-header__burger-menu::before {
+.page-header__burger-button::before {
   position: absolute;
   content: "";
   top: 0;
 }
 
-.page-header__burger-menu::after {
+.page-header__burger-button::after {
   position: absolute;
   content: "";
   bottom: 0;
 }
 
-.page-header__burger-menu:active .page-header__burger-menu-icon {
+.page-header__burger-button:active .page-header__burger-button-icon {
   opacity: 0;
 }
 
-.page-header__burger-menu:active::before {
+.page-header__burger-button:active::before {
   top: 50%;
   transform: rotate(45deg);
 }
 
-.page-header__burger-menu:active::after {
+.page-header__burger-button:active::after {
   bottom: auto;
   top: 50%;
   transform: rotate(-45deg);
 }
 
-.page-header__burger-menu {
+.page-header__burger-button {
   display: none;
 }

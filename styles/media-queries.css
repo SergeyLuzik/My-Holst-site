@@ -74,12 +74,12 @@
 }
 
 @media (max-width: 1200px) {
-  .page-header__burger-menu {
+  .page-header__burger-button {
     display: block;
   }
   /* обрнуть nav и ul в div.header__menu чтобы проше было их на мобильном вместе позиционировать 
   сначала просто nav вырываем fixed, потом весь div fixed, 
-  класс burger-menu с fixed и стилями применять сначала к nav потом к всему div?
+  класс burger-button с fixed и стилями применять сначала к nav потом к всему div?
   (все по левому краю, между ссылками и nav отступ, который их разделяет
 */
 

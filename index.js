@@ -184,12 +184,12 @@ if (mainWidth > 1200) {
 }
 
 if (mainWidth <= 1200) {
-  const burgerButton = document.querySelector(".page-header__burger-menu"),
+  const burgerButton = document.querySelector(".page-header__burger-button"),
     headerNav = document.querySelector(".page-header__nav"),
     contactList = document.querySelector(".page-header__contacts-list");
 
   burgerButton.onclick = () => {
-    burgerButton.classList.toggle("page-header__burger-menu_active");
+    burgerButton.classList.toggle("page-header__burger-button_active");
     headerNav.classList.toggle("page-header__nav_active");
     contactList.classList.toggle("page-header__contacts-list_active");
   };
