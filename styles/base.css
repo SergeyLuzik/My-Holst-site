@@ -36,7 +36,7 @@ body {
 .page-footer {
   max-width: var(--content-width);
   /* height: 100px;*/
-  margin-block: clamp(8px, 2vh, 36px);
+  padding-block: clamp(8px, 2vh, 36px);
   grid-column-start: 2;
 }
 
