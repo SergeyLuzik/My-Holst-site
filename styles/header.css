@@ -1,9 +1,16 @@
 .page-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   color: var(--primary-light);
+  gap: 4vw;
   /* margin-block-end: 24px;*/
+}
+
+.page-header__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .page-header__nav-list,

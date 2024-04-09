@@ -73,7 +73,7 @@
   }*/
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .page-header__burger-button {
     display: block;
   }
@@ -161,17 +161,9 @@
     align-items: center;
     padding: 1em;
   }
+}
 
-  /*ul.page-header__contacts-list {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    background-color: bisque;
-    padding: 1em;
-    flex-direction: column-reverse;
-  }
-*/
+@media (max-width: 1200px) {
   .contacts {
     grid-template-columns: 1fr 1fr;
   }
@@ -380,9 +372,19 @@
 }
 
 @media (max-width: 650px) {
-  .page-header__contacts-list {
+  /* .page-header__contacts-list {
     display: none;
-    /*todo перенести в мобильную версию*/
+  }*/
+
+  .page-header__contacts-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background-color: bisque;
+    padding: 1em;
+    flex-direction: column-reverse;
+    transform: translateX(100%);
   }
 }
 
