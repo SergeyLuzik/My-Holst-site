@@ -245,14 +245,14 @@
   display: grid;
   grid-template-columns: var(--active-slide-width) 1fr;
   grid-template-rows: var(--slide-height) calc(
-      var(--active-slide-height) - var(--slide-height)
+      var(--active-slide-height) - var(--slide-height) - 16px
     );
   margin-block-start: 16px;
   /*overflow: hidden;*/
 }
 
 .slider__slides-list {
-  margin-inline-start: 3.125vw;
+  /*margin-inline-start: 4.59vw /*3.125vw;*/
   /*display: flex;
     gap: 20px;*/
   grid-column: span 2;
