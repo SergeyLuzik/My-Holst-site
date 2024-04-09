@@ -4,12 +4,20 @@ const mainWidth = document.querySelector(".page-main").offsetWidth;
 if (mainWidth > 800) {
   (() => {
     const slidesWrapper = document.querySelector(".slider__slides-list"),
+      activSlideWidth = parseInt(
+        getComputedStyle(
+          document.querySelector(".hero__slider"),
+        ).gridTemplateColumns.split(" ")[0],
+        10,
+      ),
       gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
       slides = slidesWrapper.children,
       slideWidth = slides[0].offsetWidth,
-      /*offset = slideWidth + gapValue,*/
+      initialOffset = slideWidth * 2 + gapValue - activSlideWidth,
+      offset = slideWidth + gapValue,
       transitionTime = "0.3s",
-      slideScale = "translate(-10%, 6.5%) scale(1.2)",
+      slideScale =
+        "translate(-12.5%, 7.5%) scale(1.25)" /*"translate(-10%, 6.5%) scale(1.2)"*/,
       left = document.querySelector(".slider-button_left"),
       right = document.querySelector(".slider-button_right");
 
@@ -17,19 +25,11 @@ if (mainWidth > 800) {
 
     // Initialize slider start position
 
-    const activSlideWidth = parseInt(
-      getComputedStyle(
-        document.querySelector(".hero__slider"),
-      ).gridTemplateColumns.split(" ")[0],
-      10,
-    );
-
-    let offset = slideWidth * 2 + gapValue - activSlideWidth;
     console.log("activSlideWidth " + activSlideWidth);
     console.log("slideWidth " + slideWidth);
-    console.log("offset " + offset);
+    console.log("initialOffset " + initialOffset);
 
-    slidesWrapper.style.transform = `translateX(${-offset}px)`;
+    slidesWrapper.style.transform = `translateX(${-initialOffset}px)`;
     slides[0].style.opacity = 0;
     //slides[0].style.transform = "translate(0) scale(0.3)";
     slides[1].style.transform = slideScale;
