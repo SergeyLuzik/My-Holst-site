@@ -142,8 +142,9 @@
 
   .page-header__nav {
     position: fixed;
-    top: 124px;
+    /*top: 124px;*/
     right: 0;
+    padding-bottom: 100vh;
     background-color: var(--white);
     z-index: 10;
     transform: translateX(100%);
