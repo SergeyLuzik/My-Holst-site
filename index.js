@@ -6,9 +6,9 @@ if (mainWidth > 800) {
     const slidesWrapper = document.querySelector(".slider__slides-list"),
       activSlideWidth = parseInt(
         getComputedStyle(
-          document.querySelector(".hero__slider")
+          document.querySelector(".hero__slider"),
         ).gridTemplateColumns.split(" ")[0],
-        10
+        10,
       ),
       gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
       slides = slidesWrapper.children,
@@ -17,7 +17,7 @@ if (mainWidth > 800) {
       offset = slideWidth + gapValue,
       transitionTime = "0.3s",
       slideScale =
-        "translate(-12.5%, 7.5%) scale(1.25)" /*"translate(-10%, 6.5%) scale(1.2)"*/,
+        "translate(-12.5%, calc(12.5% - 16px)) scale(1.25)" /*"translate(-10%, 6.5%) scale(1.2)"*/,
       left = document.querySelector(".slider-button_left"),
       right = document.querySelector(".slider-button_right");
 
@@ -109,7 +109,7 @@ if (mainWidth > 1200) {
         (slideWindowWidth / 100) *
         parseFloat(getComputedStyle(slidesWrapper).gap),
       amountSlidesOnList = Math.floor(
-        slideWindowWidth / (slideWidth + gapValue)
+        slideWindowWidth / (slideWidth + gapValue),
       ),
       slideListsAmount = Math.ceil(slides.length / amountSlidesOnList),
       offset = slideWindowWidth - 2 * gapValue, //slideWindowWidth + gapValue,

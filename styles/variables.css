@@ -189,7 +189,7 @@ clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
   --round-size: clamp(32px, 2.5vw, 40px);
   --slide-width: clamp(200px, 15vw, 300px);
   --slide-height: calc(var(--slide-width) / (2 / 3));
-  --active-slide-width: clamp(250px, 18vw, 350px);
+  --active-slide-width: clamp(250px, 18.75vw, 375px);
   --active-slide-height: calc(var(--active-slide-width) / (2 / 3));
 }
 /*Загрузка вариативных шрифтов 
