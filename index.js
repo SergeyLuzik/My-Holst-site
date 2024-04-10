@@ -28,6 +28,7 @@ if (mainWidth > 800) {
     console.log("activSlideWidth " + activSlideWidth);
     console.log("slideWidth " + slideWidth);
     console.log("initialOffset " + initialOffset);
+    console.log("offset " + offset);
 
     slidesWrapper.style.transform = `translateX(${-initialOffset}px)`;
     slides[0].style.opacity = 0;
@@ -65,12 +66,12 @@ if (mainWidth > 800) {
 
         slidesWrapper.lastElementChild.style.opacity = 0;
         slidesWrapper.prepend(slidesWrapper.lastElementChild);
-        slidesWrapper.style.transform = `translateX(${-offset}px)`;
+        slidesWrapper.style.transform = `translateX(${-initialOffset}px)`;
 
         inAction = false;
       };
       slidesWrapper.style.transition = transitionTime;
-      slidesWrapper.style.transform = `translateX(0px)`;
+      slidesWrapper.style.transform = `translateX(50px)`;
 
       slides[0].style.transition = transitionTime;
       slides[0].style.opacity = 1;
