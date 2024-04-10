@@ -17,7 +17,7 @@ if (mainWidth > 800) {
       offset = slideWidth + gapValue,
       transitionTime = "0.3s",
       slideScale =
-        "translate(-12.5%, 7.5%) scale(1.25)" /*"translate(-10%, 6.5%) scale(1.2)"*/,
+        "translate(-12.5%, calc(12.5% - 16px)) scale(1.25)" /*"translate(-10%, 6.5%) scale(1.2)"*/,
       left = document.querySelector(".slider-button_left"),
       right = document.querySelector(".slider-button_right");
 
