@@ -43,12 +43,14 @@ if (mainWidth > 800) {
         slides[0].removeAttribute("style");
 
         slidesWrapper.append(slides[0]);
-        slidesWrapper.style.transform = `translateX(${-offset}px)`;
+        slidesWrapper.style.transform = `translateX(${-initialOffset}px)`;
 
         inAction = false;
       };
       slidesWrapper.style.transition = transitionTime; //todo задавать transition через запятую всем сразу?
-      slidesWrapper.style.transform = `translateX(${-offset * 2}px)`;
+      slidesWrapper.style.transform = `translateX(${
+        -offset - initialOffset
+      }px)`;
 
       slides[1].style.transition = transitionTime;
       slides[1].style.opacity = 0;
@@ -71,7 +73,7 @@ if (mainWidth > 800) {
         inAction = false;
       };
       slidesWrapper.style.transition = transitionTime;
-      slidesWrapper.style.transform = `translateX(50px)`;
+      slidesWrapper.style.transform = `translateX(${offset - initialOffset}px)`;
 
       slides[0].style.transition = transitionTime;
       slides[0].style.opacity = 1;
