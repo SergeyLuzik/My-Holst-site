@@ -6,9 +6,9 @@ if (mainWidth > 800) {
     const slidesWrapper = document.querySelector(".slider__slides-list"),
       activSlideWidth = parseInt(
         getComputedStyle(
-          document.querySelector(".hero__slider"),
+          document.querySelector(".hero__slider")
         ).gridTemplateColumns.split(" ")[0],
-        10,
+        10
       ),
       gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
       slides = slidesWrapper.children,
@@ -110,7 +110,7 @@ if (mainWidth > 1200) {
         (slideWindowWidth / 100) *
         parseFloat(getComputedStyle(slidesWrapper).gap),
       amountSlidesOnList = Math.floor(
-        slideWindowWidth / (slideWidth + gapValue),
+        slideWindowWidth / (slideWidth + gapValue)
       ),
       slideListsAmount = Math.ceil(slides.length / amountSlidesOnList),
       offset = slideWindowWidth - 2 * gapValue, //slideWindowWidth + gapValue,
@@ -184,18 +184,25 @@ if (mainWidth > 1200) {
   })();
 }
 
-if (mainWidth <= 1200) {
+if (mainWidth <= 1250) {
   const burgerButton = document.querySelector(".page-header__burger-button"),
-    headerHeigth = document.querySelector(".page-header").offsetHeight,
-    headerNav = document.querySelector(".page-header__nav"),
-    contactList = document.querySelector(".page-header__contacts-list");
+    headerHeigth = document.querySelector(".page-header").offsetHeight;
 
   console.log("headerHeigth " + headerHeigth);
 
   burgerButton.onclick = () => {
-    burgerButton.classList.toggle("page-header__burger-button_active");
-    headerNav.style.top = `${headerHeigth}px`;
-    headerNav.classList.toggle("page-header__nav_active");
+    burgerButton.classList.toggle("page-header__burger-button_open");
+
+    if (mainWidth <= 680) {
+      const headerMenu = document.querySelector(".page-header__menu");
+      headerMenu.style.top = `${headerHeigth}px`;
+      headerMenu.classList.toggle("page-header__menu_open");
+    } else {
+      const headerNav = document.querySelector(".page-header__nav");
+      headerNav.style.top = `${headerHeigth}px`;
+      headerNav.classList.toggle("page-header__nav_open");
+    }
+
     contactList.classList.toggle("page-header__contacts-list_active");
   };
 }
