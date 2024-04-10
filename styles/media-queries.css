@@ -375,7 +375,7 @@
   }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 680px) {
   /* .page-header__contacts-list {
     display: none;
   }*/
@@ -397,7 +397,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    padding: 1em 1em 100vh;
+    padding: 2em 2em 100vh;
     flex-direction: column-reverse;
     align-items: start;
     gap: 1em;
