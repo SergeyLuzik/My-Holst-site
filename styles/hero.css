@@ -267,6 +267,7 @@
 .slider__slide-item {
   width: var(--slide-width);
   aspect-ratio: 2 / 3;
+  transition: transform 0.3s ease;
   /* transition:
     transform 0.3s ease,
     opacity 0.3s ease,
@@ -279,7 +280,7 @@
 
 .slider__slide-item:hover {
   /*todo снятие наведения РЕЗКО меняет размер, т.к. нет transition (добавить transition на все эл-ты в js чтобы просто были);*/
-  transition: transform 0.3s ease;
+  /*transition: transform 0.3s ease;*/
   transform: scale(1.05);
 }
 
