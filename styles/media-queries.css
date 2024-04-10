@@ -379,16 +379,36 @@
   /* .page-header__contacts-list {
     display: none;
   }*/
+  .page-header__nav {
+    position: static;
+    background-color: unset;
+    padding-bottom: 0;
+    transform: none;
+    transition: none;
+  }
 
-  .page-header__contacts-list {
+  ul.page-header__nav-list {
+    padding: 0;
+    align-items: start;
+  }
+
+  .page-header__menu {
+    border: 1px solid;
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 10;
-    background-color: bisque;
-    padding: 1em;
+    padding: 1em 1em 100vh;
     flex-direction: column-reverse;
-    transform: translateX(100%);
+    align-items: start;
+    gap: 1em;
+    background-color: var(--white);
+    z-index: 10;
+    /* transform: translateX(100%);*/
+    transition: transform 0.5s ease;
+  }
+
+  .page-header__contacts-list {
+    flex-direction: column-reverse;
   }
 }
 
