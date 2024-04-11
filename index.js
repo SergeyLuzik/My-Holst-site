@@ -199,12 +199,24 @@ if (mainWidth <= 1250) {
       const headerMenu = document.querySelector(".page-header__menu");
       headerMenu.style.top = `${headerHeigth}px`;
       headerMenu.classList.toggle("page-header__menu_open");
+
+      headerMenu.querySelectorAll("a").forEach((link) => {
+        link.onclick = () => {
+          headerMenu.classList.remove("page-header__menu_open");
+          burgerButton.classList.remove("page-header__burger-button_open");
+        };
+      });
+      // todo убирать обработчики при закрытии меню?
     } else {
       const headerNav = document.querySelector(".page-header__nav");
       headerNav.style.top = `${headerHeigth}px`;
       headerNav.classList.toggle("page-header__nav_open");
-    }
 
-    contactList.classList.toggle("page-header__contacts-list_active");
-  };
+      headerNav.querySelectorAll("a").forEach((link) => {
+        link.onclick = () => {
+          headerNav.classList.remove("page-header__nav_open");
+          burgerButton.classList.remove("page-header__burger-button_open");
+    }
+  });
 }
+  };
