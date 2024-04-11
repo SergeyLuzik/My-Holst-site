@@ -267,8 +267,10 @@
 .slider__slide-item {
   width: var(--slide-width);
   aspect-ratio: 2 / 3;
+  /* 
+  todo при включении вызывает сбои при нажатии на левую кнопку пролистывания
   transition: transform 0.3s ease;
-  /* transition:
+  transition:
     transform 0.3s ease,
     opacity 0.3s ease,
     scale 0.3s ease,
