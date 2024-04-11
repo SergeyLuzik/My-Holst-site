@@ -216,7 +216,8 @@ if (mainWidth <= 1250) {
         link.onclick = () => {
           headerNav.classList.remove("page-header__nav_open");
           burgerButton.classList.remove("page-header__burger-button_open");
+        };
+      });
     }
-  });
-}
   };
+}
