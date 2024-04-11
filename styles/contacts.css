@@ -19,6 +19,7 @@
 .contacts__map {
   grid-area: map;
   position: relative;
+  height: 488px;
 }
 
 .contacts__map > ymaps {
