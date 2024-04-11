@@ -26,4 +26,12 @@ export default {
       },
     ],
   },
+  devServer: {
+    static: {
+      directory: path.resolve("dist"), // Каталог для статики
+    },
+    open: true, // Автоматически открывать браузер
+  },
+
+  mode: "development",
 };
