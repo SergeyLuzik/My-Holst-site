@@ -22,7 +22,7 @@
 }
 
 .contacts__map::after {
-  content: "";
+  /*content: "";*/
   position: absolute;
   top: 42.62%;
   left: 45.97%;
