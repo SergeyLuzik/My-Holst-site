@@ -1,5 +1,7 @@
 import path from "path";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 export default {
   entry: "./index.js",
   output: {
@@ -10,6 +12,11 @@ export default {
     new MiniCssExtractPlugin({
       filename: "build.[contenthash].css",
     }),
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+      filename: "build.[contenthash].html",
+    }),
+    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
