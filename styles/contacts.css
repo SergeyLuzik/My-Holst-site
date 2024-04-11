@@ -21,6 +21,11 @@
   position: relative;
 }
 
+.contacts__map > ymaps {
+  border-radius: 2.873% / 4.098%;
+  overflow: hidden;
+}
+
 .contacts__map::after {
   /*content: "";*/
   position: absolute;
