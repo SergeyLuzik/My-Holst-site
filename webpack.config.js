@@ -1,11 +1,7 @@
-import { fileURLToPath } from "url";
-import path from "path";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-export default {
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
   node: {
     __dirname: true,
   },
@@ -24,7 +20,6 @@ export default {
       template: "./index.html",
       filename: "build.[contenthash].html",
     }),
-    new CleanWebpackPlugin(),
   ],
   devServer: {
     allowedHosts: "all",

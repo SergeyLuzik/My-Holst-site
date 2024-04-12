@@ -2,14 +2,12 @@
   "name": "my-holst-site",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "start": "webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve"
   },
   "keywords": [],
   "author": "Sergey Luzik",
