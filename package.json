@@ -7,7 +7,7 @@
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "start": "webpack serve"
+    "start": "webpack serve --mode development --open"
   },
   "keywords": [],
   "author": "Sergey Luzik",
@@ -15,6 +15,7 @@
   "devDependencies": {
     "clean-webpack-plugin": "4.0.0",
     "css-loader": "7.1.1",
+    "html-loader": "5.0.0",
     "html-webpack-plugin": "5.6.0",
     "mini-css-extract-plugin": "2.8.1",
     "webpack": "5.91.0",
