@@ -42,7 +42,8 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#662483" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
-    <script defer
+    <script
+      defer
       src="https://api-maps.yandex.ru/2.1/?apikey=65afef5f-9a60-4ba2-9ca7-9737ad9e74e9&lang=ru_RU"
       type="text/javascript"
     ></script>
@@ -138,7 +139,8 @@
               Студия печати My&#8209;Holst
             </h1>
             <p class="promo__subtitle">
-              <span class="promo__subtitle-underline">8 лет</span> радуем людей!
+              <span class="promo__subtitle-underline">18 лет</span> радуем
+              людей!
             </p>
           </header>
           <ul class="promo__services-list">
@@ -1552,14 +1554,13 @@
           Как нас найти
         </h2>
         <div class="contacts__map">
-         <!-- <img
+          <!-- <img
             class="contacts__map-img"
             width="696"
             height="488"
             src="images/map-photo.jpg"
             alt="Расположение студии на карте"
           />-->
-          
         </div>
         <ul class="contacts__list">
           <li class="contacts__list-item">
@@ -1643,21 +1644,25 @@
       >
       <!-- to do ссылка на сайт-портфолио -->
     </footer>
-   <!--<script src="index.js"></script>-->
+    <!--<script src="index.js"></script>-->
     <script type="text/javascript">
       ymaps.ready(function () {
         // Указывается идентификатор HTML-элемента.
         var myMap = new ymaps.Map(document.querySelector(".contacts__map"), {
-          center: [53.28640948197514,34.30657265882637],
+          center: [53.28640948197514, 34.30657265882637],
           zoom: 16,
         });
-        var myPlacemark = new ymaps.Placemark([53.28640948197514,34.30657265882637], {}, {
-    iconLayout: 'default#image',
-    iconImageHref: '../assets/icons.svg#map-pin',
-    iconImageSize: [56, 72],
-    iconImageOffset: [-28, -72]
-});
-myMap.geoObjects.add(myPlacemark);
+        var myPlacemark = new ymaps.Placemark(
+          [53.28640948197514, 34.30657265882637],
+          {},
+          {
+            iconLayout: "default#image",
+            iconImageHref: "../assets/icons.svg#map-pin",
+            iconImageSize: [56, 72],
+            iconImageOffset: [-28, -72],
+          }
+        );
+        myMap.geoObjects.add(myPlacemark);
       });
     </script>
   </body>
