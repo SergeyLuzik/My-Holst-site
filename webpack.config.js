@@ -22,7 +22,7 @@ export default {
       filename: "build.[contenthash].css",
     }),
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: path.resolve("index.html"),
     }),
     new CleanWebpackPlugin(),
   ],
