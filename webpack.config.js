@@ -23,7 +23,22 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|jpeg|gif|svg)$/i,
+        // почему-то не отбирает android
+        test: /favicon|android-chrome|apple-touch|safari-pinned-tab*/i,
+        type: "asset/resource",
+        generator: {
+          filename: "favicons/[name].[hash][ext]",
+        },
+      },
+      {
+        test: /\.ico$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "favicon.ico",
+        },
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
       {
