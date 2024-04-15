@@ -4,7 +4,6 @@ import path from "path";
 const __dirname = path.dirname(__filename);*/
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
 /*let test = path.resolve("dist", "assets");
 console.log(test);**/
 export default {
@@ -19,6 +18,7 @@ export default {
     path: path.resolve("dist"),
     assetModuleFilename: "images/[name].[hash][ext]",
     publicPath: "/",
+    clean: true,
   },
   module: {
     rules: [
@@ -43,7 +43,6 @@ export default {
     new HtmlWebpackPlugin({
       template: path.resolve("index.html"),
     }),
-    new CleanWebpackPlugin(),
   ],
   devServer: {
     static: {
