@@ -95,6 +95,10 @@ export default {
       ],
     }),
   ],
+  stats: {
+    children: true,
+    errorDetails: true,
+  },
   devServer: {
     static: {
       /*directory: path.join(__dirname, "dist"),*/
