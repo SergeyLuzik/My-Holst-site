@@ -4,6 +4,7 @@ import path from "path";
 const __dirname = path.dirname(__filename);*/
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 /*let test = path.resolve("dist", "assets");
 console.log(test);**/
 export default {
@@ -57,6 +58,14 @@ export default {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve("index.html"),
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve("android-chrome-192x192.png"),
+          to: path.resolve("dist/favicons/[name].[hash][ext]"),
+        },
+      ],
     }),
   ],
   devServer: {
