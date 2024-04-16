@@ -27,7 +27,7 @@ export default {
         test: /favicon|apple-touch|safari-pinned-tab*/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/images/favicons/[name].[hash][ext]",
+          filename: "assets/favicons/[name].[hash][ext]",
         },
       },
       {
@@ -40,6 +40,13 @@ export default {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /icons\.svg/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name].[hash][ext]",
+        },
       },
       {
         test: /\.html$/i,
