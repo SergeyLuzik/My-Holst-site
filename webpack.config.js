@@ -17,7 +17,7 @@ export default {
   output: {
     filename: "build.[contenthash].js",
     path: path.resolve("dist"),
-    assetModuleFilename: "assets/images/[name].[hash][ext]",
+    /*assetModuleFilename: "assets/images/[name].[hash][ext]",*/
     /*publicPath: "/",*/
     clean: true,
   },
@@ -30,22 +30,39 @@ export default {
           filename: "assets/favicons/[name].[hash][ext]",
         },
       },
-      /* {
+      {
         test: /\.ico$/i,
         type: "asset/resource",
         generator: {
           filename: "favicon.ico",
         },
-      },*/
+      },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.webmanifest$/i,
         type: "asset/resource",
+        generator: {
+          filename: "[name].[hash][ext]",
+        },
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/images/[name].[hash][ext]",
+        },
       },
       {
         test: /icons\.svg/i,
         type: "asset/resource",
         generator: {
           filename: "assets/[name].[hash][ext]",
+        },
+      },
+      {
+        test: /\.woff2$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/fonts/Nunito-VariableFont_wght.woff2",
         },
       },
       {
@@ -68,16 +85,8 @@ export default {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve("public"),
-          to: path.resolve("dist"),
-        },
-        {
           from: path.resolve("android-chrome-192x192.png"),
           to: path.resolve("dist/assets/images/favicons/[name].[hash][ext]"),
-        },
-        {
-          from: path.resolve("src/assets/fonts/Nunito-VariableFont_wght.woff2"),
-          to: path.resolve("dist/assets/fonts/Nunito-VariableFont_wght.woff2"),
         },
       ],
     }),
