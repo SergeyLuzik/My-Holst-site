@@ -24,10 +24,31 @@ export default {
   module: {
     rules: [
       {
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/images/[name].[hash][ext]",
+        },
+      },
+      {
         test: /favicon|apple-touch|safari-pinned-tab*/i,
         type: "asset/resource",
         generator: {
           filename: "assets/favicons/[name].[hash][ext]",
+        },
+      },
+      {
+        test: /icons\.svg/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name].[hash][ext]",
+        },
+      },
+      {
+        test: /\.woff2$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/fonts/[name][ext]",
         },
       },
       {
@@ -42,27 +63,6 @@ export default {
         type: "asset/resource",
         generator: {
           filename: "[name].[hash][ext]",
-        },
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-        type: "asset/resource",
-        generator: {
-          filename: "assets/images/[name].[hash][ext]",
-        },
-      },
-      {
-        test: /icons\.svg/i,
-        type: "asset/resource",
-        generator: {
-          filename: "assets/[name].[hash][ext]",
-        },
-      },
-      {
-        test: /\.woff2$/i,
-        type: "asset/resource",
-        generator: {
-          filename: "assets/fonts/Nunito-VariableFont_wght.woff2",
         },
       },
       {
@@ -85,8 +85,12 @@ export default {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve("android-chrome-192x192.png"),
-          to: path.resolve("dist/assets/images/favicons/[name].[hash][ext]"),
+          from: path.resolve("src/assets/favicons/android-chrome-192x192.png"),
+          to: path.resolve("dist/assets/favicons/[name].[hash][ext]"),
+        },
+        {
+          from: path.resolve("src/assets/favicons/android-chrome-512x512.png"),
+          to: path.resolve("dist/assets/favicons/[name].[hash][ext]"),
         },
       ],
     }),
