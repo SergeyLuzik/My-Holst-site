@@ -71,6 +71,10 @@ export default {
           from: path.resolve("android-chrome-192x192.png"),
           to: path.resolve("dist/assets/images/favicons/[name].[hash][ext]"),
         },
+        {
+          from: path.resolve("src/assets/fonts/Nunito-VariableFont_wght.woff2"),
+          to: path.resolve("dist/assets/fonts/Nunito-VariableFont_wght.woff2"),
+        },
       ],
     }),
   ],
