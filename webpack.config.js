@@ -30,13 +30,13 @@ export default {
           filename: "assets/favicons/[name].[hash][ext]",
         },
       },
-      {
+      /* {
         test: /\.ico$/i,
         type: "asset/resource",
         generator: {
           filename: "favicon.ico",
         },
-      },
+      },*/
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
@@ -67,6 +67,10 @@ export default {
     }),
     new CopyPlugin({
       patterns: [
+        {
+          from: path.resolve("public"),
+          to: path.resolve("dist"),
+        },
         {
           from: path.resolve("android-chrome-192x192.png"),
           to: path.resolve("dist/assets/images/favicons/[name].[hash][ext]"),
