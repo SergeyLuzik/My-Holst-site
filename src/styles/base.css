@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-VariableFont_wght.woff2") format("woff2-variations");
+  src: url("../assets/fonts/Nunito-VariableFont_wght.woff2")
+    format("woff2-variations");
   /*font-weight: 125 950;
     font-stretch: 75% 125%;
     font-style: normal;*/
@@ -86,9 +87,7 @@ a.order-button:hover {
   -webkit-mask: url(../assets/icons.svg#arrow);
   padding: 0;
   border: none;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 

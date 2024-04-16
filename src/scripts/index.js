@@ -1,4 +1,4 @@
-import "./index.css";
+import "../styles/index.css";
 const mainWidth = document.querySelector(".page-main").offsetWidth;
 
 // HERO  SLIDER
