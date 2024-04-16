@@ -24,8 +24,7 @@ export default {
   module: {
     rules: [
       {
-        // почему-то не отбирает android
-        test: /favicon|android-chrome|apple-touch|safari-pinned-tab*/i,
+        test: /favicon|apple-touch|safari-pinned-tab*/i,
         type: "asset/resource",
         generator: {
           filename: "favicons/[name].[hash][ext]",
