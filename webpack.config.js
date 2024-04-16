@@ -13,12 +13,12 @@ export default {
   },*/
   mode: "development",
   devtool: "inline-source-map",
-  entry: path.resolve("index.js"),
+  entry: path.resolve("src/scripts/index.js"),
   output: {
     filename: "build.[contenthash].js",
     path: path.resolve("dist"),
-    assetModuleFilename: "images/[name].[hash][ext]",
-    publicPath: "/",
+    assetModuleFilename: "assets/images/[name].[hash][ext]",
+    /*publicPath: "/",*/
     clean: true,
   },
   module: {
@@ -27,7 +27,7 @@ export default {
         test: /favicon|apple-touch|safari-pinned-tab*/i,
         type: "asset/resource",
         generator: {
-          filename: "favicons/[name].[hash][ext]",
+          filename: "assets/images/favicons/[name].[hash][ext]",
         },
       },
       {
@@ -56,13 +56,13 @@ export default {
       filename: "build.[contenthash].css",
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve("index.html"),
+      template: path.resolve("src/index.html"),
     }),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve("android-chrome-192x192.png"),
-          to: path.resolve("dist/favicons/[name].[hash][ext]"),
+          to: path.resolve("dist/assets/images/favicons/[name].[hash][ext]"),
         },
       ],
     }),
