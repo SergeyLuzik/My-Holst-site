@@ -169,18 +169,16 @@ x = 1045302.150 / (4496.413 - y)
 */
 .steps__contact-link_address {
   mask: url(../assets/icons.svg#location);
-  -webkit-mask: url(../assets/icons.svg#location);
+
   width: clamp(26px, 2.3vw, 31px);
 }
 
 .steps__contact-link_vk {
   mask: url(../assets/icons.svg#vk-bubble);
-  -webkit-mask: url(../assets/icons.svg#vk-bubble);
 }
 
 .steps__contact-link_e-mail {
   mask: url(../assets/icons.svg#e-mail);
-  -webkit-mask: url(../assets/icons.svg#e-mail);
 }
 
 .services-list {
@@ -301,5 +299,4 @@ x = 1045302.150 / (4496.413 - y)
   height: 16px;
   background-color: var(--primary-light);
   mask: url(../assets/icons.svg#check-box);
-  -webkit-mask: url(../assets/icons.svg#check-box);
 }

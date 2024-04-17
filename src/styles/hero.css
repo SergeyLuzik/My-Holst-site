@@ -104,7 +104,6 @@
   aspect-ratio: 1;
   background-color: var(--primary-light);
   mask: url(../assets/icons.svg#check-box);
-  -webkit-mask: url(../assets/icons.svg#check-box);
 }
 
 .promo__adventage {
@@ -232,7 +231,7 @@
   content: "";
   background-color: var(--secondary-light);
   mask: url(../assets/icons.svg#vk-logo);
-  -webkit-mask: url(../assets/icons.svg#vk-logo);
+
   width: 26px;
   height: 14px;
 }
@@ -354,7 +353,7 @@
   aspect-ratio: 1;
   background-color: var(--primary-light);
   mask: url(../assets/icons.svg#arrow);
-  -webkit-mask: url(../assets/icons.svg#arrow);
+  
   padding: 0;
   border: none;
   transition:

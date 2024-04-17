@@ -57,8 +57,6 @@ body {
 [class*="_color_primary"] {
   background: var(--primary);
   background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 a.order-button {
@@ -84,7 +82,7 @@ a.order-button:hover {
   aspect-ratio: 1;
   background-color: var(--primary-light);
   mask: url(../assets/icons.svg#arrow);
-  -webkit-mask: url(../assets/icons.svg#arrow);
+
   padding: 0;
   border: none;
   transition: background-color 0.3s ease, transform 0.3s ease;

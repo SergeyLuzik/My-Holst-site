@@ -143,7 +143,6 @@ a.feedback-card__link {
   height: 11px;
   background-color: var(--white);
   mask: url(../assets/icons.svg#vk-logo);
-  -webkit-mask: url(../assets/icons.svg#vk-logo);
 }
 
 .feedback__order-button {

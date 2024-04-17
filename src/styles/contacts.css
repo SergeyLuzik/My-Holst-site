@@ -85,7 +85,6 @@ ul.contacts__list {
   height: 28px;
   background: var(--primary);
   mask: url(../assets/icons.svg#location);
-  -webkit-mask: url(../assets/icons.svg#location);
 }
 
 .contacts__list-item:first-child > .contacts__item-text:nth-child(3)::before {
@@ -95,7 +94,6 @@ ul.contacts__list {
   height: 26px;
   background: var(--primary);
   mask: url(../assets/icons.svg#bus);
-  -webkit-mask: url(../assets/icons.svg#bus);
 }
 
 a.contacts__route-button {
@@ -172,15 +170,12 @@ a.contacts__route-button {
 
 .social-link_whatsapp {
   mask: url(../assets/icons.svg#whatsapp);
-  -webkit-mask: url(../assets/icons.svg#whatsapp);
 }
 
 .social-link_vk {
   mask: url(../assets/icons.svg#vk-bubble);
-  -webkit-mask: url(../assets/icons.svg#vk-bubble);
 }
 
 .social-link_e-mail {
   mask: url(../assets/icons.svg#e-mail);
-  -webkit-mask: url(../assets/icons.svg#e-mail);
 }

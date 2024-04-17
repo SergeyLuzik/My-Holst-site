@@ -186,13 +186,12 @@
   }
   .feedback__list-wraper {
     mask-image: none;
-    -webkit-mask-image: none;
   }
   .feedback__list {
     grid-template-columns: unset;
     grid-auto-columns: clamp(190px, 5.3vw + 161px, 225px);
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
   }
@@ -207,7 +206,7 @@
 @media (max-width: 1088px) {
   .popular-sizes__list {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
   }
@@ -217,7 +216,7 @@
 
   .works__wraper {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
   }
@@ -356,7 +355,7 @@
   .slider__slides-list {
     margin-inline-start: 0;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
   }

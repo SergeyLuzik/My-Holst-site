@@ -72,18 +72,15 @@ page-header__contacts-list,
 
 .page-header__contacts-list-item:first-child::before {
   mask: url(../assets/icons.svg#phone);
-  -webkit-mask: url(../assets/icons.svg#phone);
 }
 
 .page-header__contacts-list-item:nth-child(2)::before {
   mask: url(../assets/icons.svg#clock-med);
-  -webkit-mask: url(../assets/icons.svg#clock-med);
 }
 
 .page-header__contacts-list-item:last-child::before {
   width: 22px;
   mask: url(../assets/icons.svg#location);
-  -webkit-mask: url(../assets/icons.svg#location);
 }
 
 .page-header__contacts-list-text {
