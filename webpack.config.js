@@ -5,7 +5,7 @@ const __dirname = path.dirname(__filename);*/
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
-/*let test = path.resolve("dist", "assets");
+/*let test = path.resolve("docs", "assets");
 console.log(test);**/
 export default {
   /*  node: {
@@ -16,7 +16,7 @@ export default {
   entry: path.resolve("src/scripts/index.js"),
   output: {
     filename: "build.[contenthash].js",
-    path: path.resolve("dist"),
+    path: path.resolve("docs"),
     /*assetModuleFilename: "assets/images/[name].[hash][ext]",*/
     /*publicPath: "/",*/
     clean: true,
@@ -86,11 +86,11 @@ export default {
       patterns: [
         {
           from: path.resolve("src/assets/favicons/android-chrome-192x192.png"),
-          to: path.resolve("dist/assets/favicons/[name].[hash][ext]"),
+          to: path.resolve("docs/assets/favicons/[name].[hash][ext]"),
         },
         {
           from: path.resolve("src/assets/favicons/android-chrome-512x512.png"),
-          to: path.resolve("dist/assets/favicons/[name].[hash][ext]"),
+          to: path.resolve("docs/assets/favicons/[name].[hash][ext]"),
         },
       ],
     }),
@@ -101,8 +101,8 @@ export default {
   },
   devServer: {
     static: {
-      /*directory: path.join(__dirname, "dist"),*/
-      directory: path.resolve("dist"),
+      /*directory: path.join(__dirname, "docs"),*/
+      directory: path.resolve("docs"),
     },
     compress: true,
     port: 8080,
