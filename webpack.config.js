@@ -17,7 +17,7 @@ export default {
   output: {
     filename: "build.[contenthash].js",
     path: path.resolve("docs"),
-    /*assetModuleFilename: "assets/images/[name].[hash][ext]",*/
+    /*assetModuleFilename: "assets/images/[name].[contenthash][ext]",*/
     /*publicPath: "/",*/
     clean: true,
   },
@@ -56,21 +56,21 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/images/[name].[hash][ext]",
+          filename: "assets/images/[name].[contenthash][ext]",
         },
       },
       {
         test: /favicon|apple-touch|safari-pinned-tab*/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/favicons/[name].[hash][ext]",
+          filename: "assets/favicons/[name].[contenthash][ext]",
         },
       },
       {
         test: /icons\.svg/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/[name].[hash][ext]",
+          filename: "assets/[name].[contenthash][ext]",
         },
       },
       {
@@ -91,7 +91,7 @@ export default {
         test: /\.webmanifest$/i,
         type: "asset/resource",
         generator: {
-          filename: "[name].[hash][ext]",
+          filename: "[name].[contenthash][ext]",
         },
       },
     ],
@@ -107,11 +107,11 @@ export default {
       patterns: [
         {
           from: path.resolve("src/assets/favicons/android-chrome-192x192.png"),
-          to: path.resolve("docs/assets/favicons/[name].[hash][ext]"),
+          to: path.resolve("docs/assets/favicons/[name].[contenthash][ext]"),
         },
         {
           from: path.resolve("src/assets/favicons/android-chrome-512x512.png"),
-          to: path.resolve("docs/assets/favicons/[name].[hash][ext]"),
+          to: path.resolve("docs/assets/favicons/[name].[contenthash][ext]"),
         },
       ],
     }),
