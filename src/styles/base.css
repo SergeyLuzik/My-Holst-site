@@ -57,6 +57,7 @@ body {
 [class*="_color_primary"] {
   background: var(--primary);
   background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 a.order-button {
