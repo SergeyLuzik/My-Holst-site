@@ -4,7 +4,10 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
 
 export default {
-  entry: path.resolve("src/scripts/index.js"),
+  entry: [
+    path.resolve("src/scripts/index.js"),
+    path.resolve("src/styles/index.css"),
+  ],
   output: {
     filename: "build.[contenthash].js",
     path: path.resolve("docs"),
