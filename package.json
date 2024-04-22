@@ -44,5 +44,8 @@
     "not dead",
     "not kaios > 0",
     "not and_qq > 0"
-  ]
+  ],
+  "dependencies": {
+    "eruda": "^3.0.1"
+  }
 }
