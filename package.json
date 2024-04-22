@@ -1,5 +1,48 @@
 {
-  "dependencies": {
-    "serve": "^14.2.1"
-  }
+  "name": "my-holst-site",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack serve --allowed-hosts all",
+    "server": "node server.js",
+    "test": "webpack --config webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "Sergey Luzik",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "10.4.19",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "12.0.2",
+    "css-loader": "7.1.1",
+    "css-minimizer-webpack-plugin": "6.0.0",
+    "express": "4.19.2",
+    "html-loader": "5.0.0",
+    "html-webpack-plugin": "5.6.0",
+    "image-minimizer-webpack-plugin": "4.0.0",
+    "mini-css-extract-plugin": "2.8.1",
+    "postcss": "8.4.38",
+    "postcss-loader": "8.1.1",
+    "postcss-preset-env": "9.5.5",
+    "sharp": "0.33.3",
+    "webpack": "5.91.0",
+    "webpack-cli": "5.1.4",
+    "webpack-dashboard": "3.3.8",
+    "webpack-dev-middleware": "7.2.1",
+    "webpack-dev-server": "5.0.4",
+    "webpack-merge": "5.10.0"
+  },
+  "browserslist": [
+    "> 0% in RU",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not kaios > 0",
+    "not and_qq > 0"
+  ]
 }

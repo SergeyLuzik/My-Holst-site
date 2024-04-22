@@ -1,0 +1,100 @@
+.page-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  color: var(--primary-light);
+  gap: 4vw;
+  /* margin-block-end: 24px;*/
+}
+
+.page-header__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header__nav-list,
+.page-header__contacts-list,
+.page-header__contacts-list-item,
+.page-header__contacts-list-item-wrap {
+  display: flex;
+}
+
+page-header__contacts-list,
+.page-header__contacts-list-item {
+  align-items: center;
+}
+
+.page-header__nav-list,
+.page-header__contacts-list {
+  gap: 24px;
+}
+
+.page-header__nav-link {
+  transition: color 0.3s ease;
+  font-size: var(--fs-md) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  line-height: var(--lh-text-bs);
+  font-weight: 700;
+}
+
+.page-header__nav-link:hover {
+  color: var(--secondary-light);
+}
+
+.page-header__nav-list {
+  /*font-size: var(--fs-md)*/ /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem);*/
+  /*font-weight: 700;*/
+}
+
+.page-header__contacts-list-item {
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.page-header__contacts-list-item:first-child:hover,
+.page-header__contacts-list-item:last-child:hover {
+  color: var(--secondary-light);
+}
+
+.page-header__contacts-list-item-wrap {
+  flex-direction: column;
+
+  /*  todo для лого в псевдоэлементе задать current color - он ссылается на цвет контейнера
+   также для псевдо элемента  общие правила для позиционирования и отдельно каждому элементу картинку*/
+}
+.page-header__contacts-list-item::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-color: currentColor;
+}
+
+.page-header__contacts-list-item:first-child::before {
+  mask: url(../assets/icons.svg#phone);
+}
+
+.page-header__contacts-list-item:nth-child(2)::before {
+  mask: url(../assets/icons.svg#clock-med);
+}
+
+.page-header__contacts-list-item:last-child::before {
+  width: 22px;
+  mask: url(../assets/icons.svg#location);
+}
+
+.page-header__contacts-list-text {
+  margin-block: 0;
+  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-weight: 500;
+  line-height: var(--lh-text-sm);
+}
+
+.page-header__contacts-list-text:last-child {
+  max-width: 180px;
+  font-style: normal;
+}
+
+.page-header__burger-button {
+  display: none;
+}
