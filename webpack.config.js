@@ -11,7 +11,6 @@ export default {
   /*  node: {
     __dirname: true,
   },*/
-  mode: "development",
   devtool: "inline-source-map",
   entry: path.resolve("src/scripts/index.js"),
   output: {
