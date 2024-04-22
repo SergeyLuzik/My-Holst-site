@@ -5,12 +5,12 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "prod": "webpack --mode production",
+    "dev": "webpack --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js",
     "watch": "webpack --mode development --watch",
-    "start": "webpack serve --allowed-hosts all",
+    "start": "webpack serve --allowed-hosts all --config webpack.dev.js",
     "server": "node server.js",
-    "test": "webpack --config webpack.prod.js"
+    "test": "webpack serve --open --config webpack.prod.js"
   },
   "keywords": [],
   "author": "Sergey Luzik",
