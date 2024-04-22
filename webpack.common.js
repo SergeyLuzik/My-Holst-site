@@ -5,8 +5,8 @@ import CopyPlugin from "copy-webpack-plugin";
 
 export default {
   entry: [
-    path.resolve("src/scripts/index.js"),
-    path.resolve("src/styles/index.css"),
+    path.resolve("src", "scripts", "index.js"),
+    path.resolve("src", "styles", "index.css"),
   ],
   output: {
     filename: "build.[contenthash].js",
@@ -101,17 +101,37 @@ export default {
       filename: "build.[contenthash].css",
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve("src/index.html"),
+      template: path.resolve("src", "index.html"),
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve("src/assets/favicons/android-chrome-192x192.png"),
-          to: path.resolve("docs/assets/favicons/[name].[contenthash][ext]"),
+          from: path.resolve(
+            "src",
+            "assets",
+            "favicons",
+            "android-chrome-192x192.png"
+          ),
+          to: path.resolve(
+            "docs",
+            "assets",
+            "favicons",
+            "[name].[contenthash][ext]"
+          ),
         },
         {
-          from: path.resolve("src/assets/favicons/android-chrome-512x512.png"),
-          to: path.resolve("docs/assets/favicons/[name].[contenthash][ext]"),
+          from: path.resolve(
+            "src",
+            "assets",
+            "favicons",
+            "android-chrome-512x512.png"
+          ),
+          to: path.resolve(
+            "docs",
+            "assets",
+            "favicons",
+            "[name].[contenthash][ext]"
+          ),
         },
       ],
     }),
