@@ -33,6 +33,7 @@
 .promo__yandex-maps-rating {
   display: block;
   width: 25%;
+  min-width: 115px;
   /*height: 27%;
   width: 7.2vw;*/
   aspect-ratio: 4.733;
