@@ -374,6 +374,12 @@
   }
 }
 
+@media (max-width: 685px) {
+  .advantages__item {
+    flex-basis: 300px;
+  }
+}
+
 @media (max-width: 680px) {
   .page-header {
     grid-template-columns: repeat(2, auto);
