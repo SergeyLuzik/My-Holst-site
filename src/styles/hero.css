@@ -134,7 +134,9 @@
 }
 
 .promo__statistics {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   /*gap: 16px;*/
   gap: 0.9vw;
   margin-block: 0;
