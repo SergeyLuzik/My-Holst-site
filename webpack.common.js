@@ -11,7 +11,7 @@ export default {
   output: {
     filename: "build.[contenthash].js",
     path: path.resolve("docs"),
-    clean: true,
+    //clean: true,
   },
   stats: {
     depth: true,

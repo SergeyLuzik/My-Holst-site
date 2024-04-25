@@ -5,6 +5,9 @@ import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
 
 export default merge(common, {
   mode: "production",
+  output: {
+    clean: true,
+  },
 
   // devtool: false,
   optimization: {
