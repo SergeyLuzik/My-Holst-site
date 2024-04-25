@@ -203,6 +203,7 @@
   align-items: center;
   justify-content: center;
   width: var(--round-size);
+  min-width: 38px;
   aspect-ratio: 1;
   border: 1px solid var(--white);
   border-radius: 50%;
