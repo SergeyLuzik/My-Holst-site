@@ -6,7 +6,7 @@
   grid-template-rows: repeat(3, min-content); /*min-content 1fr min-content;*/
   column-gap: 1% /*72px*/;
   align-items: center;
-  margin-block-end: var(--section-margin);
+  margin-block-end: var(--section-margin-bs);
 }
 .feedback__title {
   grid-column: span 3;

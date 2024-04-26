@@ -1,6 +1,7 @@
 .advantages {
   grid-column: 2 / span 2;
-  margin-block: var(--section-margin);
+  margin-block-start: var(--section-margin-sm);
+  margin-block-end: var(--section-margin-bs);
 }
 
 .advantages__list {

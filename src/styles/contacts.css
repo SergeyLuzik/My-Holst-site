@@ -9,7 +9,7 @@
     "map contacts-list" 1fr
     / 696px 1fr;
   /*todo как уменьшить высоту contacts-list (dd block - не работает grid) */
-  margin-block-end: var(--section-margin);
+  margin-block-end: var(--section-margin-sm);
 }
 
 .contacts__title {

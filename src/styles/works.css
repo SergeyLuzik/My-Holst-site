@@ -13,7 +13,7 @@ todo: определять span с помощью ::nth-child по какому-
 
 .works {
   grid-column: 1 / span 4;
-  margin-block-end: var(--section-margin);
+  margin-block-end: var(--section-margin-bs);
 }
 .works__list {
   display: grid;

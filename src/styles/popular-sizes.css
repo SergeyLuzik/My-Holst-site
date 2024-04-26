@@ -1,7 +1,7 @@
 .popular-sizes {
   grid-column: 2 / span 2;
   width: 100%;
-  margin-block-end: var(--section-margin);
+  margin-block-end: var(--section-margin-bs);
 }
 .popular-sizes__list {
   display: flex;
