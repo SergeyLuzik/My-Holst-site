@@ -26,11 +26,25 @@ body {
 }
 
 .section-title {
+  position: relative;
+  color: var(--white);
   font-size: var(--fs-xxl) /*clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem)*/;
   font-weight: 700;
   line-height: var(--lh-title-bs);
   margin-block: 0 var(--section-title-margin);
   text-align: center;
+}
+
+.section-title::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: -10%;
+  left: -12%;
+  width: 124%;
+  height: 112%;
+  background-image: url(../assets/images/ink-stroke.png);
+  background-size: cover;
 }
 
 .page-header,
