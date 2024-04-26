@@ -226,6 +226,11 @@
   }
 }
 
+@media (max-width: 1043px) {
+  .advantages__item {
+    flex-basis: 290px;
+  }
+}
 @media (max-width: 858px) {
   .services-list {
     width: 100%;
@@ -374,9 +379,9 @@
   }
 }
 
-@media (max-width: 685px) {
+@media (max-width: 630px) {
   .advantages__item {
-    flex-basis: 300px;
+    flex-basis: 280px;
   }
 }
 
