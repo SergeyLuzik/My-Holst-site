@@ -185,7 +185,8 @@ clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
 
   --content-width: 1440px;
   --section-title-margin: 5vh;
-  --section-margin: 10vh;
+  --section-margin-sm: 10vh;
+  --section-margin-bs: 20vh;
   --round-size: clamp(32px, 2.5vw, 40px);
   --slide-width: clamp(200px, 15vw, 300px);
   --slide-height: calc(var(--slide-width) / (2 / 3));
