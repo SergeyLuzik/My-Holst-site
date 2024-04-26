@@ -39,10 +39,10 @@ body {
   position: absolute;
   z-index: -1;
   content: "";
-  top: -10%;
-  left: -12%;
-  width: 124%;
-  height: 112%;
+  top: -9%;
+  left: -15%;
+  width: 138%;
+  height: 110%;
   background-image: url(../assets/images/ink-stroke.png);
   background-size: cover;
 }
