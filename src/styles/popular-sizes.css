@@ -1,9 +1,13 @@
 .popular-sizes {
   grid-column: 2 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-block-end: var(--section-margin-bs);
 }
 .popular-sizes__list {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
