@@ -222,3 +222,29 @@ if (mainWidth <= 1250) {
     }
   };
 }
+
+function animNumber(numObj, duration) {
+  const startTime = performance.now(),
+    num = parseInt(numObj.innerHTML, 10);
+  numObj.innerHTML = 0;
+  const step = (timestamp) => {
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    console.log("progress " + progress);
+    console.log("startTime " + startTime);
+    console.log("timestamp " + timestamp);
+    let prevNum = parseInt(numObj.innerHTML, 10);
+    let summand = 0.7 * (timestamp - startTime) + 911;
+    //numObj.innerHTML = Math.floor(prevNum + summand);
+    numObj.innerHTML = Math.floor(progress * num);
+    console.log("prevNum " + prevNum);
+    console.log("progress " + progress);
+    console.log("startTime " + startTime);
+    console.log("timestamp " + timestamp);
+    console.log("summand " + summand);
+    console.log("-------------------------------");
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
