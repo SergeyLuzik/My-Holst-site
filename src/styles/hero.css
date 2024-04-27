@@ -107,7 +107,7 @@
   mask: url(../assets/icons.svg#check-box);
 }
 
-.promo__adventage {
+.promo__advantage {
   position: relative;
   margin-block: 0;
   transform: rotate(-0.765deg);
@@ -118,7 +118,7 @@
   /*margin-inline-end: 10%;*/
 }
 
-.promo__adventage::before {
+.promo__advantage::before {
   position: absolute;
   z-index: -1;
   content: "";
@@ -328,12 +328,12 @@
   width: var(--active-slide-width);
 }
 
-.slider__slide-item_active .slider__slide-img {
+/*.slider__slide-item_active .slider__slide-img {
   /*transform: scale(1.129);*/
   /*todo overflow-x?*/
   /*width: 344px;
     height: 516px;*/
-}
+/*}*/
 
 /*todo стили для плашки на увеличенном слайде
 .slider__slide-item_active .slider__slide-description {
@@ -341,7 +341,7 @@
 }
 */
 
-.slider__slider-butons {
+.slider__slider-buttons {
   grid-column-start: 2;
   align-self: center;
   display: flex;

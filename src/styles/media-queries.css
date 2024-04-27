@@ -184,7 +184,7 @@
   .feedback > .slider-button {
     display: none;
   }
-  .feedback__list-wraper {
+  .feedback__list-wrapper {
     mask-image: none;
   }
   .feedback__list {
@@ -214,7 +214,7 @@
     scroll-snap-align: start;
   }
 
-  .works__wraper {
+  .works__wrapper {
     overflow-x: auto;
 
     scroll-snap-type: x mandatory;
@@ -374,7 +374,7 @@
   .slider__slide-img {
     filter: unset;
   }
-  .slider__slider-butons {
+  .slider__slider-buttons {
     display: none;
   }
 }
@@ -444,9 +444,9 @@
     height: 55vw;
     aspect-ratio: unset;
   }
-  .page-footer {
-    /* grid-template-columns: repeat(3, 1fr);*/
-  }
+  /*.page-footer {
+    grid-template-columns: repeat(3, 1fr);
+  }*/
 }
 
 @media (max-width: 573px) {
