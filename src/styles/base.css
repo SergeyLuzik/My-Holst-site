@@ -26,6 +26,8 @@ body {
 }
 
 .section-title {
+  width: calc(8vw + 216px);
+  margin-inline: auto;
   position: relative;
   color: var(--white);
   font-size: var(--fs-xxl) /*clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem)*/;
