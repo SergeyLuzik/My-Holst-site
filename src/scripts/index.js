@@ -235,12 +235,13 @@ function animNumber(numObj, duration) {
     let prevNum = parseInt(numObj.innerHTML, 10);
     let summand = 0.7 * (timestamp - startTime) + 911;
     //numObj.innerHTML = Math.floor(prevNum + summand);
-    numObj.innerHTML = Math.floor(progress * num);
+    numObj.innerHTML = Math.floor(progress * num) + "+";
     console.log("prevNum " + prevNum);
     console.log("progress " + progress);
     console.log("startTime " + startTime);
     console.log("timestamp " + timestamp);
     console.log("summand " + summand);
+    console.log("num " + num);
     console.log("-------------------------------");
     if (progress < 1) {
       window.requestAnimationFrame(step);
@@ -248,3 +249,8 @@ function animNumber(numObj, duration) {
   };
   window.requestAnimationFrame(step);
 }
+
+let numbers = document.querySelectorAll(".promo__statistics-description");
+numbers.forEach((num) => {
+  animNumber(num, 2000);
+});
