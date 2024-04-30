@@ -1,12 +1,27 @@
 import { getMainWidth } from "./index.js";
 if (getMainWidth() <= 1250) {
-  const burgerButton = document.querySelector(".page-header__burger-button"),
-    headerHeigth = document.querySelector(".page-header").offsetHeight;
+  const burgerButton = document.querySelector(".page-header__burger-button");
 
-  console.log("headerHeigth " + headerHeigth);
+  //console.log("headerHeigth " + headerHeigth);
 
   burgerButton.onclick = () => {
     burgerButton.classList.toggle("page-header__burger-button_open");
+    //const headerHeigth = document.querySelector(".page-header").offsetHeight;
+
+    function menuHandler(menuSelector) {
+      const menu = document.querySelector(`.${menuSelector}`);
+      menu.style.top = `${
+        document.querySelector(".page-header").offsetHeight
+      }px`;
+      menu.classList.toggle(`.${menuSelector}_open`); // todo отдельная функция close?
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.onclick = () => {
+          menu.classList.toggle(`.${menuSelector}_open`);
+          burgerButton.classList.toggle("page-header__burger-button_open");
+        };
+      });
+    }
 
     if (getMainWidth() <= 680) {
       const headerMenu = document.querySelector(".page-header__menu");
