@@ -225,24 +225,17 @@ if (mainWidth <= 1250) {
 
 function animNumber(numObj, duration) {
   const startTime = performance.now(),
-    num = parseInt(numObj.innerHTML, 10);
-  numObj.innerHTML = 0;
+    num = parseInt(numObj.innerHTML.replace(" ", ""), 10);
+
   const step = (timestamp) => {
-    const progress = Math.min((timestamp - startTime) / duration, 1);
-    console.log("progress " + progress);
-    console.log("startTime " + startTime);
-    console.log("timestamp " + timestamp);
-    let prevNum = parseInt(numObj.innerHTML, 10);
-    let summand = 0.7 * (timestamp - startTime) + 911;
-    //numObj.innerHTML = Math.floor(prevNum + summand);
-    numObj.innerHTML = Math.floor(progress * num) + "+";
-    console.log("prevNum " + prevNum);
-    console.log("progress " + progress);
-    console.log("startTime " + startTime);
-    console.log("timestamp " + timestamp);
-    console.log("summand " + summand);
-    console.log("num " + num);
-    console.log("-------------------------------");
+    const progress = parseFloat(
+      Math.min((timestamp - startTime) / duration, 1).toFixed(2)
+    );
+    numObj.innerHTML =
+      Math.floor(progress * num).toLocaleString("ru-RU", {
+        useGrouping: true,
+      }) + "+";
+
     if (progress < 1) {
       window.requestAnimationFrame(step);
     }
@@ -252,5 +245,5 @@ function animNumber(numObj, duration) {
 
 let numbers = document.querySelectorAll(".promo__statistics-description");
 numbers.forEach((num) => {
-  animNumber(num, 2000);
+  animNumber(num, 1500);
 });
