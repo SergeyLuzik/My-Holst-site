@@ -20,15 +20,16 @@ if (getMainWidth() <= 1250) {
       getMainWidth() <= 680
         ? document.querySelector(".page-header__menu")
         : document.querySelector(".page-header__nav");
-    e.stopPropagation(); // todo такое себе решение (при клике на кнопку вешать обработчик на document и уже в нем обрабатывать и кнопку и тап по ссылке и окну?)
+    menu.style.top = `${document.querySelector(".page-header").offsetHeight}px`;
+    /*e.stopPropagation(); // todo такое себе решение (при клике на кнопку вешать обработчик на document и уже в нем обрабатывать и кнопку и тап по ссылке и окну?)
     burgerButton.classList.toggle("page-header__burger-button_open"); // вынести в функцию menuToggle
     document.documentElement.classList.toggle("stop-scroll");
-    menu.style.top = `${document.querySelector(".page-header").offsetHeight}px`;
-    menu.classList.toggle(`${menu.classList[0]}_open`);
+    menu.classList.toggle(`${menu.classList[0]}_open`);*/
 
     document.addEventListener(
       "click",
       (e) => {
+        // todo при клике после открытия срабатывает со 2го раза
         burgerButton.classList.toggle("page-header__burger-button_open");
         document.documentElement.classList.toggle("stop-scroll");
         menu.classList.toggle(`${menu.classList[0]}_open`);
@@ -39,8 +40,8 @@ if (getMainWidth() <= 1250) {
             .querySelector(e.target.getAttribute("href"))
             .scrollIntoView({ behavior: "smooth" });
         }
-      },
-      { once: true }
+      }
+      //{ once: true }
     );
   };
 }
