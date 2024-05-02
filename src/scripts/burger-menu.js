@@ -51,15 +51,25 @@ if (getMainWidth() <= 1250) {
     // menu.classList.toggle(menu.className + "_open");
     menu.classList.toggle(`${menu.classList[0]}_open`);
 
-    document.addEventListener("click", (e) => {
-      burgerButton.classList.toggle("page-header__burger-button_open");
-      document.documentElement.classList.toggle("stop-scroll");
-      menu.classList.toggle(`${menu.classList[0]}_open`);
-      console.log("target: " + e.target);
-      /*if (e.target === "a") {
+    document.addEventListener(
+      "click",
+      (e) => {
+        burgerButton.classList.toggle("page-header__burger-button_open");
+        document.documentElement.classList.toggle("stop-scroll");
+        menu.classList.toggle(`${menu.classList[0]}_open`);
+        console.log(e.target.className);
+        /*if (e.target === "a") {
         console.log("target: " + e.target);
       }*/
-    });
+        if (toString(e.target.className) === "page-header__nav-link") {
+          /*document
+            .querySelector(e.target)
+            .scrollIntoView({ behavior: "smooth" });*/
+          console.log("target: " + e.target);
+        }
+      },
+      { once: true }
+    );
 
     /*if (getMainWidth() <= 680) {
       menuHandler("page-header__menu");
