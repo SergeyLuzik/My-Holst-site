@@ -1,5 +1,18 @@
 import { getMainWidth } from "./index.js";
 if (getMainWidth() <= 1250) {
+  console.log("crрипт сработал");
+  const headerHeight = `${
+    document.querySelector(".page-header").offsetHeight
+  }px`;
+  try {
+    document
+      .querySelector(":root")
+      .style.setProperty("--header-height", headerHeight);
+    console.log("добавил переменную");
+  } catch (error) {
+    console.log(error);
+  }
+
   const burgerButton = document.querySelector(".page-header__burger-button");
   function menuHandler(menuSelector) {
     menu.onclick = (e) => {
@@ -23,9 +36,7 @@ if (getMainWidth() <= 1250) {
         getMainWidth() <= 680
           ? document.querySelector(".page-header__menu")
           : document.querySelector(".page-header__nav");
-      menu.style.top = `${
-        document.querySelector(".page-header").offsetHeight
-      }px`;
+      //menu.style.top = headerHeight;
       /*e.stopPropagation(); // todo такое себе решение (при клике на кнопку вешать обработчик на document и уже в нем обрабатывать и кнопку и тап по ссылке и окну?)
     burgerButton.classList.toggle("page-header__burger-button_open"); // вынести в функцию menuToggle
     document.documentElement.classList.toggle("stop-scroll");

@@ -146,9 +146,11 @@
 
   .page-header__nav {
     position: fixed;
+    height: calc(100vh - var(--header-hight)); /*todo переписать на переменную*/
+    top: var(--header-hight);
     /*top: 124px;*/
     right: 0;
-    padding-bottom: 100vh;
+    padding: 2em;
     background-color: var(--white);
     z-index: 10;
     transform: translateX(100%);
@@ -404,8 +406,9 @@
 
   .page-header__menu {
     position: fixed;
-    height: calc(100vh - 66px); /*todo переписать на переменную*/
+    height: calc(100vh - var(--header-hight)); /*todo переписать на переменную*/
     right: 0;
+    top: var(--header-hight);
     /*padding: 2em 2em 100vh;*/
     padding: 2em;
     flex-direction: column-reverse;
