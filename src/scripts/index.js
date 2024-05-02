@@ -14,5 +14,5 @@ import "./feedback-slider.js";
 //console.log("feedback-slider.js");
 import "./burger-menu.js";
 //console.log("burger-menu.js");
-import "./initial-animations.js";
+//import "./initial-animations.js";
 //console.log("initial-animations.js");
