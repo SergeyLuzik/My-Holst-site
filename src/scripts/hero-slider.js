@@ -1,5 +1,5 @@
 import { getMainWidth } from "./index.js";
-console.log("mainWidth в hero-slider.js " + getMainWidth());
+//console.log("mainWidth в hero-slider.js " + getMainWidth());
 if (getMainWidth() > 800) {
   const slidesWrapper = document.querySelector(".slider__slides-list"),
     activSlideWidth = parseInt(
