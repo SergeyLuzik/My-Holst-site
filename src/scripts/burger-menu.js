@@ -33,7 +33,7 @@ if (getMainWidth() <= 1250) {
         document.documentElement.classList.toggle("stop-scroll");
         menu.classList.toggle(`${menu.classList[0]}_open`);
 
-        if (e.target.closest(".page-header__nav")) {
+        if (e.target.closest(".page-header__nav-list")) {
           e.preventDefault();
           document
             .querySelector(e.target.getAttribute("href"))
