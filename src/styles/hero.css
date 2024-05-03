@@ -270,6 +270,7 @@
 .slider__slide-item {
   width: var(--slide-width);
   aspect-ratio: 2 / 3;
+  position: relative; /*try to fix slide description on mobile*/
   /* 
   todo при включении вызывает сбои при нажатии на левую кнопку пролистывания
   transition: transform 0.3s ease;
@@ -293,9 +294,9 @@
   transform: translate(-12.5%, calc(12.5% - 16px)) scale(1.3) !important; /*Чтобы перебить стили из js*/
 }
 
-.slider__slide {
+/*.slider__slide {
   position: relative;
-}
+}*/
 .slider__slide-img {
   width: 100%;
   height: 100%;
@@ -330,8 +331,8 @@
 
 /*.slider__slide-item_active .slider__slide-img {
   /*transform: scale(1.129);*/
-  /*todo overflow-x?*/
-  /*width: 344px;
+/*todo overflow-x?*/
+/*width: 344px;
     height: 516px;*/
 /*}*/
 
