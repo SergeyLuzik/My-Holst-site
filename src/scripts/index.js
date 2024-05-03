@@ -11,8 +11,8 @@ window.onload = () => {
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("preloader_hide");
   preloader.addEventListener("transitionend", () => {
-    preloader.remove();
     document.documentElement.classList.remove("stop-scroll");
+    preloader.remove();
   });
 };
 /* todo прелоадер
