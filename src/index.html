@@ -72,7 +72,92 @@
   <!-- todo атрибуты картинок для оптимизации: https://doka.guide/html/img/?ysclid=lqbvly8aby140356245 -->
   <body>
     <div class="preloader">
-      <div class="preloader__spinner"></div>
+      <svg class="preloader__logo">
+        <g id="full-logo">
+          <symbol id="logo-img" viewBox="0 0 32 32">
+              <linearGradient id="a" x1="5.95" x2="26.05" y1="33.4" y2="-1.4" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#662483" />
+                  <stop offset="1" stop-color="#951b81" />
+              </linearGradient>
+              <linearGradient id="b" x1="12.66" x2="19.35" y1="7.2" y2="7.2" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#95c11f" />
+                  <stop offset="1" stop-color="#3aaa35" />
+              </linearGradient>
+              <linearGradient id="c" x1="3.98" x2="10.67" y1="7.2" y2="7.2" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#e6007e" />
+                  <stop offset="1" stop-color="#d60b52" />
+              </linearGradient>
+              <linearGradient id="d" x1="21.34" x2="28.02" y1="7.2" y2="7.2" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#f39200" />
+                  <stop offset="1" stop-color="#ea5b0c" />
+              </linearGradient>
+              <linearGradient id="e" x1="3.98" x2="10.67" y1="24.55" y2="24.55" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#951b81" />
+                  <stop offset="1" stop-color="#80166f" />
+              </linearGradient>
+              <linearGradient id="f" x1="3.98" x2="10.67" y1="15.88" y2="15.88" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#009fe3" />
+                  <stop offset="1" stop-color="#1d71b8" />
+              </linearGradient>
+              <linearGradient id="g" x1="12.66" x2="19.35" y1="15.88" y2="15.88" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#5b3173" />
+                  <stop offset="1" stop-color="#4f2963" />
+              </linearGradient>
+              <linearGradient id="h" x1="21.34" x2="28.02" y1="15.88" y2="15.88" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#e30613" />
+                  <stop offset="1" stop-color="#be1622" />
+              </linearGradient>
+              <path fill="url(#a)"
+                  d="M27.18 0H4.82A4.82 4.82 0 0 0 0 4.82v22.36A4.82 4.82 0 0 0 4.82 32h22.36A4.82 4.82 0 0 0 32 27.18V4.82A4.82 4.82 0 0 0 27.18 0Zm2.43 27.15a2.46 2.46 0 0 1-2.46 2.46H4.85a2.46 2.46 0 0 1-2.46-2.46V4.85a2.46 2.46 0 0 1 2.46-2.46h22.3a2.46 2.46 0 0 1 2.46 2.46Z" />
+              <rect width="6.7" height="6.69" x="12.66" y="3.85" fill="url(#b)" rx="1.8" />
+              <rect width="6.7" height="6.69" x="3.98" y="3.85" fill="url(#c)" rx="1.8" />
+              <rect width="6.69" height="6.69" x="21.34" y="3.85" fill="url(#d)" rx="1.8" />
+              <rect width="6.7" height="6.69" x="3.98" y="21.21" fill="url(#e)" rx="1.8" />
+              <rect width="6.7" height="6.69" x="3.98" y="12.53" fill="url(#f)" rx="1.8" />
+              <rect width="6.7" height="6.69" x="12.66" y="12.53" fill="url(#g)" rx="1.8" />
+              <rect width="6.69" height="6.69" x="21.34" y="12.53" fill="url(#h)" rx="1.8" />
+          </symbol>
+          <symbol id="logo-text" viewBox="0 0 60 14">
+              <linearGradient id="aa" x1="1.84" x2="9.32" y1="11.73" y2="-1.22" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#662483" />
+                  <stop offset="1" stop-color="#831f82" />
+              </linearGradient>
+              <linearGradient href="#aa" id="ac" x1="12.42" x2="18.54" y1="13.47" y2="2.87" />
+              <linearGradient href="#aa" id="ad" x1="20.05" x2="23.23" y1="5.37" y2="5.37" />
+              <linearGradient id="ab" x1="23.85" x2="31.79" y1="5.4" y2="5.4" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#5b3173" />
+                  <stop offset="1" stop-color="#4f2963" />
+              </linearGradient>
+              <linearGradient href="#ab" id="ae" x1="32.02" x2="38.89" y1="7.07" y2="7.07" />
+              <linearGradient href="#ab" id="af" x1="39.65" x2="42.9" y1="5.4" y2="5.4" />
+              <linearGradient href="#ab" id="ag" x1="43.1" x2="48.94" y1="7.08" y2="7.08" />
+              <linearGradient href="#ab" id="ah" x1="49.91" x2="54.21" y1="6.21" y2="6.21" />
+              <path fill="url(#aa)"
+                  d="M11.08 0H9.79a.43.43 0 0 0-.36.2L6.05 4.87c-.16.24-.33.23-.44 0L3.41.26A.4.4 0 0 0 3 0H.83C.61 0 .42 0 .4.37v.32c0 .18.12.28.3.29s.34.14.27.57L0 10.44a.29.29 0 0 0 .27.35H2a.3.3 0 0 0 .3-.26l.56-5.16c0-.22.27-.29.38-.06L4.45 8a1 1 0 0 0 1 .62A1.21 1.21 0 0 0 6.64 8l1.8-2.7c.13-.24.41-.15.38.09l-.55 5.07a.3.3 0 0 0 .3.33h1.67a.33.33 0 0 0 .36-.31l1-10c.05-.48-.05-.48-.52-.48Z" />
+              <path fill="url(#ac)"
+                  d="M19.29 3.35a.3.3 0 0 1 .3.33l-.85 8.23a2 2 0 0 1-1.06 1.47 4.1 4.1 0 0 1-2.24.62h-2a.3.3 0 0 1-.3-.33v-.38a.3.3 0 0 1 .3-.27H16a.3.3 0 0 0 .3-.27l.17-1.63a.3.3 0 0 0-.3-.33h-.44a4 4 0 0 1-2.22-.55 1.72 1.72 0 0 1-.83-1.7l.4-3.9a.28.28 0 0 0-.28-.31.27.27 0 0 1-.28-.3v-.41a.31.31 0 0 1 .3-.27h2.37a.3.3 0 0 1 .29.33L15 8.9c-.06.61.23.91.86.91h.5a.29.29 0 0 0 .29-.27l.63-5.92a.3.3 0 0 1 .3-.27Z" />
+              <path fill="url(#ad)"
+                  d="m23.23 5-.1.87a.3.3 0 0 1-.3.27h-2.48a.3.3 0 0 1-.3-.33l.09-.87a.31.31 0 0 1 .3-.27h2.49a.3.3 0 0 1 .3.33Z" />
+              <path fill="url(#ab)"
+                  d="M31.49 0a.3.3 0 0 1 .3.33l-.93 8.94a.41.41 0 0 0 .33.51.31.31 0 0 1 .21.34v.41a.3.3 0 0 1-.3.26h-.72A2.19 2.19 0 0 1 29 10.4a1.18 1.18 0 0 1-.43-1.13l.31-3a.3.3 0 0 0-.3-.33h-1.64a.29.29 0 0 0-.3.26l-.45 4.38a.3.3 0 0 1-.3.26h-1.74a.31.31 0 0 1-.3-.33l1-9.15a.3.3 0 0 0-.3-.33.29.29 0 0 1-.3-.32V.32a.31.31 0 0 1 .3-.27H27a.29.29 0 0 1 .29.33l-.43 4.25a.3.3 0 0 0 .3.33h1.54a.3.3 0 0 0 .3-.27l.45-4.42a.31.31 0 0 1 .3-.27Z" />
+              <path fill="url(#ae)"
+                  d="m38.88 5.43-.35 3.28a2 2 0 0 1-1.05 1.48 4.15 4.15 0 0 1-2.24.6h-.35a3.77 3.77 0 0 1-2-.52A1.55 1.55 0 0 1 32 8.71l.35-3.28a2 2 0 0 1 1.15-1.55 4.26 4.26 0 0 1 2.13-.53H36a3.76 3.76 0 0 1 2 .53 1.58 1.58 0 0 1 .88 1.55Zm-2.34 0a1 1 0 0 0-.19-.8.75.75 0 0 0-.62-.28 1 1 0 0 0-.66.26 1.33 1.33 0 0 0-.37.82l-.33 3.28a1 1 0 0 0 .19.79.81.81 0 0 0 .61.31.93.93 0 0 0 .68-.27 1.25 1.25 0 0 0 .35-.83Z" />
+              <path fill="url(#af)"
+                  d="M42.6 0a.31.31 0 0 1 .3.33L42 9c0 .44.11.71.47.81a.31.31 0 0 1 .23.31l-.07.71h-.38a3.41 3.41 0 0 1-2-.49A1.36 1.36 0 0 1 39.66 9l.81-7.67a.28.28 0 0 0-.28-.33.27.27 0 0 1-.27-.31v-.4a.3.3 0 0 1 .3-.27Z" />
+              <path fill="url(#ag)"
+                  d="M48 10.28a4.07 4.07 0 0 1-2.11.51h-2.45a.31.31 0 0 1-.3-.33v-.4a.29.29 0 0 1 .29-.27H45c.72 0 1.09-.29 1.09-.86a1.13 1.13 0 0 0-.39-.85l-1.4-1.33a2 2 0 0 1-.68-1.42 1.66 1.66 0 0 1 1-1.51 3.94 3.94 0 0 1 2-.49h1.59a.31.31 0 0 1 .3.33v.39a.28.28 0 0 1-.29.26h-1.13c-.59 0-.88.15-.88.44a.68.68 0 0 0 .23.47L48.15 7a2.43 2.43 0 0 1 .79 1.69 1.79 1.79 0 0 1-.94 1.59Z" />
+              <path fill="url(#ah)"
+                  d="M54.21 3.68v.39a.29.29 0 0 1-.3.26h-.45a.3.3 0 0 0-.3.27l-.5 4.4a.62.62 0 0 0 .46.77.31.31 0 0 1 .23.32l-.05.46a.3.3 0 0 1-.3.26h-.55a2.51 2.51 0 0 1-1.59-.45A1.42 1.42 0 0 1 50.32 9l.45-4.32a.3.3 0 0 0-.3-.33h-.26a.29.29 0 0 1-.29-.35v-.39a.3.3 0 0 1 .3-.27h.38a.3.3 0 0 0 .3-.26l.12-1.2a.29.29 0 0 1 .3-.26h1.73a.3.3 0 0 1 .3.33L53.27 3a.3.3 0 0 0 .3.33h.34a.3.3 0 0 1 .3.35Z" />
+              <path fill="#454444"
+                  d="M54.59 10.43a.37.37 0 0 1-.11.28.41.41 0 0 1-.28.11.37.37 0 0 1-.27-.11.38.38 0 0 1-.12-.28.39.39 0 0 1 .11-.27.39.39 0 0 1 .56 0 .35.35 0 0 1 .11.27ZM57.24 7.59l-.06.61a.3.3 0 0 1-.3.27h-.19v-.42a1 1 0 0 0-.49.39A1.18 1.18 0 0 0 56 9l-.13 1.48a.29.29 0 0 1-.3.27h-.25a.31.31 0 0 1-.3-.32L55.24 8H55v-.14a.31.31 0 0 1 .3-.27h.82v.27a1.28 1.28 0 0 1 .88-.27ZM60 10.37v.15a.3.3 0 0 1-.3.27h-1.26a1.09 1.09 0 0 1-.75-.24.79.79 0 0 1-.25-.73L57.6 8h-.23v-.15a.3.3 0 0 1 .3-.27h.46a.29.29 0 0 1 .3.32l-.17 2a.53.53 0 0 0 .07.31.28.28 0 0 0 .25.13.31.31 0 0 0 .3-.27l.2-2.24a.3.3 0 0 1 .3-.27h.25a.31.31 0 0 1 .3.32l-.22 2.46Z" />
+          </symbol>
+          <symbol id="full-logo-img" viewBox="0 0 60 50">
+              <use href="#logo-img" x="14" y="-9" width="32" />
+              <use href="#logo-text" y="18" />
+          </symbol>
+          <use href="#full-logo-img" />
+      </g>
+      </svg>
     </div>
     <header class="page-header">
       <img
