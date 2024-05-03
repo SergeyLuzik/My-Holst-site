@@ -7,32 +7,17 @@ function getMainWidth() {
 
 export { getMainWidth };
 
-/*прелоадер
-
+window.onload = () => {
+  const preloader = document.querySelector(".preloader");
+  preloader.classList.add("preloader_hide");
+  preloader.addEventListener("transitionend", () => {
+    preloader.remove();
+    document.documentElement.classList.remove("stop-scroll");
+  });
+};
+/* todo прелоадер
 отключать обработку события скролл?
 или просто по умолчанию вешать в html класс stop-scroll?
-
-
-CSS оформление: 
-.preloader {
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 1;
-  visibility: visible;
-}
-
-.preloader-hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-закрывать прелоадер по transition end
-
- preloader.addEventListener('transitionend', function() {
-      preloader.remove();
-      // Восстанавливаем прокрутку страницы
-      body.classList.remove('no-scroll');
-    });
-
 */
 
 //console.log("mainWidth в index.js " + getMainWidth());
