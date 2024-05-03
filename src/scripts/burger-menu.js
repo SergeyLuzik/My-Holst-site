@@ -1,17 +1,11 @@
 import { getMainWidth } from "./index.js";
 if (getMainWidth() <= 1250) {
-  console.log("crрипт сработал");
   const headerHeight = `${
     document.querySelector(".page-header").offsetHeight
   }px`;
-  try {
-    document
-      .querySelector(":root")
-      .style.setProperty("--header-height", headerHeight);
-    console.log("добавил переменную");
-  } catch (error) {
-    console.log(error);
-  }
+  document
+    .querySelector(":root")
+    .style.setProperty("--header-hight", `${headerHeight}`);
 
   const burgerButton = document.querySelector(".page-header__burger-button");
   function menuHandler(menuSelector) {
