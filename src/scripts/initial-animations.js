@@ -19,6 +19,9 @@ window.onload = () => {
     document.querySelector(".promo__statistics").classList.remove("hide");
     document.querySelector(".promo_footer").classList.remove("hide");
     document.querySelector(".hero__slider").classList.remove("hide");
+    document
+      .querySelector(".hero__slider")
+      .classList.remove("translate-right-110");
 
     let numbers = document.querySelectorAll(".promo__statistics-description");
     numbers.forEach((num) => {

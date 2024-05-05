@@ -27,6 +27,10 @@
 .translate-left-20 {
   transform: translateX(-20%);
 }
+
+.translate-right-110 {
+  transform: translateX(110%);
+}
 .translate-up-20 {
   transform: translateY(-20%);
 }
