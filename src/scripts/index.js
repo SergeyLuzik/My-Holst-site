@@ -7,14 +7,6 @@ function getMainWidth() {
 
 export { getMainWidth };
 
-window.onload = () => {
-  const preloader = document.querySelector(".preloader");
-  preloader.classList.add("preloader_hide");
-  preloader.addEventListener("transitionend", () => {
-    document.documentElement.classList.remove("stop-scroll");
-    preloader.remove();
-  });
-};
 /* todo прелоадер
 отключать обработку события скролл?
 или просто по умолчанию вешать в html класс stop-scroll?
@@ -27,5 +19,5 @@ import "./feedback-slider.js";
 //console.log("feedback-slider.js");
 import "./burger-menu.js";
 //console.log("burger-menu.js");
-//import "./initial-animations.js";
+import "./initial-animations.js";
 //console.log("initial-animations.js");
