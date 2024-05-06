@@ -7,6 +7,8 @@ window.onload = () => {
     // Инициализация анимаций
     // document.querySelector(".page-header").classList.add("hide");
     document.querySelector(".page-header").classList.remove("hide");
+    document.querySelector(".page-header").classList.remove("translate-up-20");
+
     document.querySelector(".promo__header").classList.remove("hide");
     const services = document.querySelectorAll(".promo__services-item");
     services.forEach((service, index) => {
