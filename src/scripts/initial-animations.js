@@ -36,6 +36,16 @@ window.onload = () => {
         advantage.classList.remove("translate-up-20");
       }, index * 200);
     });
+    const animatedElements = document.querySelectorAll(".js-scroll");
+    window.addEventListener("scroll", () => {
+      animatedElements.forEach((element) => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        if (elementPosition < screenPosition) {
+          element.classList.add("scrolled-in");
+        }
+      });
+    });
   });
 };
 function animNumber(numObj, duration) {

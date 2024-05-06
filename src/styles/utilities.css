@@ -37,3 +37,20 @@
 .show {
   opacity: 1;
 }
+
+.js-scroll {
+  opacity: 0;
+}
+
+.scrolled-in.show-in {
+  animation: show-in 1s ease-in-out both;
+}
+
+@keyframes show-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
