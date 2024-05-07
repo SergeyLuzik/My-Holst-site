@@ -6,7 +6,7 @@ window.onload = () => {
     preloader.remove();
     // Инициализация анимаций
     // document.querySelector(".page-header").classList.add("hide");
-    document.querySelector(".page-header").classList.remove("hide");
+    /*document.querySelector(".page-header").classList.remove("hide");
     document.querySelector(".page-header").classList.remove("translate-up-20");
 
     document.querySelector(".promo__header").classList.remove("hide");
@@ -35,13 +35,13 @@ window.onload = () => {
         advantage.classList.remove("hide");
         advantage.classList.remove("translate-up-20");
       }, index * 200);
-    });
-    const animatedElements = document.querySelectorAll(".js-scroll");
+    });*/
+    const animatedElements = document.querySelectorAll(".animate");
     window.addEventListener("scroll", () => {
       animatedElements.forEach((element) => {
         const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-        if (elementPosition < screenPosition) {
+        const targetPosition = window.innerHeight / 1.3;
+        if (elementPosition < targetPosition) {
           element.classList.add("scrolled-in");
         }
       });

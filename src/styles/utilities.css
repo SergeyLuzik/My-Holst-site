@@ -16,14 +16,15 @@
 }
 
 .animate {
-  transition: opacity 1.9s, transform 1.9s;
+  opacity: 0;
+  /*transition: opacity 1.9s, transform 1.9s;*/
 }
 
-.hide {
+/*.hide {
   opacity: 0;
   /* transition: opacity, transform 0.9s ease;*/
-}
-
+/*}
+/*
 .translate-left-20 {
   transform: translateX(-20%);
 }
@@ -40,17 +41,56 @@
 
 .js-scroll {
   opacity: 0;
+}*/
+
+.scrolled-in.show {
+  animation: show 1s ease-in-out both;
 }
 
-.scrolled-in.show-in {
-  animation: show-in 1s ease-in-out both;
-}
-
-@keyframes show-in {
+@keyframes show {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+.scrolled-in.show-from-up {
+  animation: show-from-up 1s ease-in-out both;
+}
+
+@keyframes show-from-up {
+  from {
+    transform: translateY(-20%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.scrolled-in.show-from-left {
+  animation: show-from-left 1s ease-in-out both;
+}
+
+@keyframes show-from-left {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.scrolled-in.roll-from-right {
+  animation: roll-from-right 1s ease-in-out both;
+}
+
+@keyframes roll-from-right {
+  from {
+    transform: translateX(110%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
