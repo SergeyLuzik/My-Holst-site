@@ -40,7 +40,7 @@ window.onload = () => {
     window.addEventListener("scroll", () => {
       animatedElements.forEach((element) => {
         const elementPosition = element.getBoundingClientRect().top;
-        const targetPosition = window.innerHeight / 1.3;
+        const targetPosition = window.innerHeight * 0.8;
         if (elementPosition < targetPosition) {
           element.classList.add("scrolled-in");
         }
