@@ -416,7 +416,7 @@
       <section class="hero">
         <section class="hero__promo promo">
           <!-- Ярлык со звездами и ссылкой на накрту -->
-          <header class="promo__header animate">
+          <header class="promo__header animate show">
             <a
               class="promo__yandex-maps-rating"
               href="https://yandex.ru/maps/org/my_holst/238731789792/reviews/?ll=34.306535%2C53.286342&z=17"
@@ -444,8 +444,8 @@
               модульные картины
             </li>
           </ul>
-          <p class="promo__advantage animate">собственное производство</p>
-          <dl class="promo__statistics animate">
+          <p class="promo__advantage animate show">собственное производство</p>
+          <dl class="promo__statistics animate show">
             <div class="promo__statistics-item">
               <dt class="promo__statistics-title">изготовленных картин</dt>
               <dd class="promo__statistics-description">20 000+</dd>
@@ -459,7 +459,7 @@
               <dd class="promo__statistics-description">1 300+</dd>
             </div>
           </dl>
-          <div class="promo_footer animate">
+          <div class="promo_footer animate show">
             <a
               class="order-button"
               href="https://vk.com/im?media=&sel=-44153834"
@@ -740,13 +740,13 @@
         </ul>
       </section>
       <section class="steps">
-        <h2 class="section-title steps__title js-scroll show-in">
+        <h2 class="section-title steps__title animate show">
           Как подарить счастье
         </h2>
         <ol class="steps__list">
           <li class="steps__item">
             <!-- todo убрать лишние обертки при оформлении grid -->
-            <div class="steps__img-group">
+            <div class="steps__img-group animate roll-from-left">
               <img
                 class="steps__img"
                 width="584"
@@ -764,8 +764,8 @@
                 alt="Смартфон с открытым диалогом Вконтакте"
               />
             </div>
-            <div class="marker">1</div>
-            <div class="steps__text-group">
+            <div class="marker animate show">1</div>
+            <div class="steps__text-group animate roll-from-right">
               <h3 class="steps__item-title steps__item-title_color_primary">
                 Предоставить оригинал фото
               </h3>
@@ -805,7 +805,7 @@
             </div>
           </li>
           <li class="steps__item">
-            <ul class="services-list">
+            <ul class="services-list animate roll-from-right">
               <li class="services-list__item">
                 <article class="card">
                   <img
@@ -878,8 +878,8 @@
                 </article>
               </li>
             </ul>
-            <div class="marker">2</div>
-            <div class="steps__text-group">
+            <div class="marker animate show">2</div>
+            <div class="steps__text-group animate roll-from-left">
               <h3 class="steps__item-title steps__item-title_color_primary">
                 Согласовать вид обработки и макет
               </h3>
@@ -890,7 +890,7 @@
             </div>
           </li>
           <li class="steps__item">
-            <ul class="services-list">
+            <ul class="services-list animate roll-from-left">
               <li class="services-list__item">
                 <article class="card">
                   <img
@@ -955,8 +955,8 @@
                 </article>
               </li>
             </ul>
-            <div class="marker">3</div>
-            <div class="steps__text-group">
+            <div class="marker animate show">3</div>
+            <div class="steps__text-group animate roll-from-right">
               <h3 class="steps__item-title steps__item-title_color_primary">
                 Выбрать дополнительные опции
               </h3>
@@ -966,7 +966,7 @@
             </div>
           </li>
           <li class="steps__item">
-            <div class="steps__img-group">
+            <div class="steps__img-group animate roll-from-right">
               <img
                 class="steps__img"
                 width="547"
@@ -984,8 +984,8 @@
                 alt="Печать на холсте"
               />
             </div>
-            <div class="marker">4</div>
-            <div class="steps__text-group">
+            <div class="marker animate show">4</div>
+            <div class="steps__text-group animate roll-from-left">
               <h3 class="steps__item-title steps__item-title_color_primary">
                 Немного подождать
               </h3>
@@ -1001,7 +1001,7 @@
             </div>
           </li>
           <li class="steps__item">
-            <div class="steps__img-group">
+            <div class="steps__img-group animate roll-from-left">
               <img
                 class="steps__img"
                 width="450"
@@ -1035,8 +1035,8 @@
                 alt="Логотип Яндекс такси"
               />
             </div>
-            <div class="marker">5</div>
-            <div class="steps__text-group">
+            <div class="marker animate show">5</div>
+            <div class="steps__text-group animate roll-from-right">
               <h3 class="steps__item-title steps__item-title_color_primary">
                 Получить в удобное время
               </h3>
@@ -1056,8 +1056,10 @@
         >
       </section>
       <section class="popular-sizes" id="popular-sizes">
-        <h2 class="section-title popular-sizes__title">Популярные размеры</h2>
-        <ul class="popular-sizes__list">
+        <h2 class="section-title popular-sizes__title animate show">
+          Популярные размеры
+        </h2>
+        <ul class="popular-sizes__list animate show-from-up">
           <li class="popular-sizes__item">
             <img
               class="popular-sizes__img"
@@ -1127,10 +1129,12 @@
         </ul>
       </section>
       <section class="works" id="works">
-        <h2 class="section-title works__title">Наши работы</h2>
+        <h2 class="section-title works__title animate show">Наши работы</h2>
         <div class="works__wrapper">
           <ul class="works__list">
-            <li class="works__item works__item_cols_4 works__item_rows_5">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_5"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1140,7 +1144,9 @@
                 alt="Фото пары в стиле лав ис"
               />
             </li>
-            <li class="works__item works__item_cols_2 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_2 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="118"
@@ -1150,7 +1156,9 @@
                 alt="Фото семьи в стиле масло"
               />
             </li>
-            <li class="works__item works__item_cols_4 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1160,7 +1168,9 @@
                 alt="Коллаж из семейных фото"
               />
             </li>
-            <li class="works__item works__item_cols_3 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_3 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="177"
@@ -1170,7 +1180,9 @@
                 alt="Женщина с цветами в стиле масло"
               />
             </li>
-            <li class="works__item works__item_cols_6 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_6 works__item_rows_4"
+            >
               <img
                 class="works__img"
                 width="354"
@@ -1180,7 +1192,9 @@
                 alt="Коллаж"
               />
             </li>
-            <li class="works__item works__item_cols_4 works__item_rows_5">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_5"
+            >
               <img
                 class="works__img works__img_border"
                 width="236"
@@ -1190,7 +1204,9 @@
                 alt="Мужчина в историческом стиле"
               />
             </li>
-            <li class="works__item works__item_cols_3 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_3 works__item_rows_4"
+            >
               <img
                 class="works__img"
                 width="177"
@@ -1200,7 +1216,9 @@
                 alt="Индивидуальный коллаж мужчина на 90 лет"
               />
             </li>
-            <li class="works__item works__item_cols_6 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_6 works__item_rows_4"
+            >
               <img
                 class="works__img"
                 width="354"
@@ -1212,7 +1230,9 @@
             </li>
             <!-- Second line -->
 
-            <li class="works__item works__item_cols_4 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1222,7 +1242,9 @@
                 alt="Индивидуальный коллаж пары"
               />
             </li>
-            <li class="works__item works__item_cols_5 works__item_rows_5">
+            <li
+              class="works__item animate show works__item_cols_5 works__item_rows_5"
+            >
               <img
                 class="works__img"
                 width="295"
@@ -1232,7 +1254,9 @@
                 alt="Пара в возрасте в обработке Дрим"
               />
             </li>
-            <li class="works__item works__item_cols_4 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_4"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1242,7 +1266,9 @@
                 alt="Маленькая девочка веозле новогодней елки"
               />
             </li>
-            <li class="works__item works__item_cols_2 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_2 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="118"
@@ -1252,7 +1278,9 @@
                 alt="Мужчина с большой рыбой"
               />
             </li>
-            <li class="works__item works__item_cols_4 works__item_rows_6">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_6"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1262,7 +1290,9 @@
                 alt="Девушка в обрбаотке Дрим"
               />
             </li>
-            <li class="works__item works__item_cols_4 works__item_rows_6">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_6"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1272,7 +1302,9 @@
                 alt="Пара на закате"
               />
             </li>
-            <li class="works__item works__item_cols_6 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_6 works__item_rows_4"
+            >
               <img
                 class="works__img works__img_border"
                 width="354"
@@ -1282,7 +1314,9 @@
                 alt="Взрослая пара в обработке Масло"
               />
             </li>
-            <li class="works__item works__item_cols_3 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_3 works__item_rows_4"
+            >
               <img
                 class="works__img"
                 width="177"
@@ -1294,7 +1328,9 @@
             </li>
             <!-- third line -->
 
-            <li class="works__item works__item_cols_9 works__item_rows_6">
+            <li
+              class="works__item animate show works__item_cols_9 works__item_rows_6"
+            >
               <img
                 class="works__img"
                 width="531"
@@ -1304,7 +1340,9 @@
                 alt="Мужчина в обработке Масло"
               />
             </li>
-            <li class="works__item works__item_cols_6 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_6 works__item_rows_4"
+            >
               <img
                 class="works__img"
                 width="354"
@@ -1314,7 +1352,9 @@
                 alt="Мужчина в обработке Масло"
               />
             </li>
-            <li class="works__item works__item_cols_2 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_2 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="118"
@@ -1324,7 +1364,9 @@
                 alt="Женщина в обработке Масло"
               />
             </li>
-            <li class="works__item works__item_cols_4 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1335,7 +1377,9 @@
               />
             </li>
 
-            <li class="works__item works__item_cols_4 works__item_rows_4">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_4"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1345,7 +1389,9 @@
                 alt="Маленькая девочка веозле новогодней елки"
               />
             </li>
-            <li class="works__item works__item_cols_4 works__item_rows_3">
+            <li
+              class="works__item animate show works__item_cols_4 works__item_rows_3"
+            >
               <img
                 class="works__img"
                 width="236"
@@ -1355,7 +1401,9 @@
                 alt="Индивидуальный коллаж пары"
               />
             </li>
-            <li class="works__item works__item_cols_9 works__item_rows_6">
+            <li
+              class="works__item animate show works__item_cols_9 works__item_rows_6"
+            >
               <img
                 class="works__img"
                 width="531"
@@ -1369,12 +1417,15 @@
         </div>
       </section>
       <section class="feedback" id="feedback">
-        <h2 class="section-title feedback__title">Отзывы</h2>
-        <button class="slider-button slider-button_left" type="button">
+        <h2 class="section-title feedback__title animate show">Отзывы</h2>
+        <button
+          class="slider-button slider-button_left animate show"
+          type="button"
+        >
           <span class="visually-hidden">Влево</span>
         </button>
         <div class="feedback__list-wrapper">
-          <ul class="feedback__list">
+          <ul class="feedback__list animate show">
             <li class="feedback__item">
               <article class="feedback-card">
                 <img
@@ -1921,19 +1972,24 @@
             </li>
           </ul>
         </div>
-        <button class="slider-button slider-button_right" type="button">
+        <button
+          class="slider-button slider-button_right animate show"
+          type="button"
+        >
           <span class="visually-hidden">Вправо</span>
         </button>
         <a
-          class="order-button feedback__order-button"
+          class="order-button feedback__order-button animate show"
           href="https://vk.com/im?media=&sel=-44153834"
           >Заказать</a
         >
       </section>
       <!-- todo добавить datetime и обертку header? -->
       <section class="contacts" id="contacts">
-        <h2 class="section-title contacts__title">Как нас найти</h2>
-        <div class="contacts__map">
+        <h2 class="section-title contacts__title animate show">
+          Как нас найти
+        </h2>
+        <div class="contacts__map animate roll-from-left">
           <!-- <img
             class="contacts__map-img"
             width="696"
@@ -1942,7 +1998,7 @@
             loading="lazy" alt="Расположение студии на карте"
           />-->
         </div>
-        <ul class="contacts__list">
+        <ul class="contacts__list animate roll-from-right">
           <li class="contacts__list-item">
             <h3 class="contacts__item-title visually-hidden">Местоположение</h3>
             <address class="contacts__item-text">
@@ -2008,7 +2064,7 @@
         </ul>
       </section>
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer animate show-from-down">
       <img
         class="page-footer__logo"
         width="36"

@@ -63,9 +63,11 @@
 @keyframes show-from-up {
   from {
     transform: translateY(-20%);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -76,9 +78,41 @@
 @keyframes show-from-left {
   from {
     transform: translateX(-20%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.show-from-down {
+  animation: show-from-down 1s ease-in-out both;
+}
+
+@keyframes show-from-down {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.roll-from-left {
+  animation: roll-from-left 1s ease-in-out both;
+}
+
+@keyframes roll-from-left {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -89,8 +123,10 @@
 @keyframes roll-from-right {
   from {
     transform: translateX(110%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
