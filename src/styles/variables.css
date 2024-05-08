@@ -192,6 +192,8 @@ clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)
   --slide-height: calc(var(--slide-width) / (2 / 3));
   --active-slide-width: clamp(250px, 18.75vw, 360px);
   --active-slide-height: calc(var(--active-slide-width) / (2 / 3));
+
+  --animation-time: 1s;
 }
 /*Загрузка вариативных шрифтов 
   
