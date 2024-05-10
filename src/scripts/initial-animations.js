@@ -12,14 +12,12 @@ window.onload = () => {
     let lastScrollPosition = 0;
     let throttledAnimateElements = throttle(animateElements, 200);
     window.addEventListener("scroll", () => {
-      animateElements();
-      /* animatedElements.forEach((element) => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const targetPosition = window.innerHeight * 0.8;
-        if (elementPosition < targetPosition) {
-          element.classList.add("scrolled-in");
-        }
-      });*/
+      const currentScrollPosition = window.scrollY;
+      if (currentScrollPosition > lastScrollPosition) {
+        throttledAnimateElements(animationElements);
+      }
+
+      lastScrollPosition = currentScrollPosition;
     });
   });
 };
