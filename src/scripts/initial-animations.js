@@ -22,9 +22,7 @@ window.onload = () => {
   });
 };
 
-function animateElements() {
-  const elements = document.querySelectorAll(".animate:not(.scrolled-in)");
-  // todo при каждом вызове заново ищутся элементы (обьявить до и передавать, потом проверять в forEach есть ли класс scrolled-in?)
+function animateElements(elements) {
   elements.forEach((element) => {
     const elementPosition = element.getBoundingClientRect().top;
     const targetPosition = window.innerHeight * 0.8;
