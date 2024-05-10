@@ -31,6 +31,13 @@ function animateElements(elements) {
     const targetPosition = window.innerHeight * 0.8;
     if (elementPosition < targetPosition) {
       element.classList.add("scrolled-in");
+      if (element.classList.contains("promo__statistics")) {
+        element
+          .querySelectorAll(".promo__statistics-description")
+          .forEach((el) => {
+            animNumber(el, 2500);
+          });
+      }
     }
   });
 }
