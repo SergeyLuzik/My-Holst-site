@@ -24,6 +24,9 @@ window.onload = () => {
 
 function animateElements(elements) {
   elements.forEach((element) => {
+    if (element.classList.contains("scrolled-in")) {
+      return;
+    }
     const elementPosition = element.getBoundingClientRect().top;
     const targetPosition = window.innerHeight * 0.8;
     if (elementPosition < targetPosition) {
