@@ -5,40 +5,12 @@ window.onload = () => {
     document.documentElement.classList.remove("stop-scroll");
     preloader.remove();
     // Инициализация анимаций
-    // document.querySelector(".page-header").classList.add("hide");
-    /*document.querySelector(".page-header").classList.remove("hide");
-    document.querySelector(".page-header").classList.remove("translate-up-20");
+    const animationElements = document.querySelectorAll(".animate");
 
-    document.querySelector(".promo__header").classList.remove("hide");
-    const services = document.querySelectorAll(".promo__services-item");
-    services.forEach((service, index) => {
-      setTimeout(() => {
-        service.classList.remove("hide");
-        service.classList.remove("translate-left-20");
-      }, index * 200);
-    });
-    document.querySelector(".promo__advantage").classList.remove("hide");
-    document.querySelector(".promo__statistics").classList.remove("hide");
-    document.querySelector(".promo_footer").classList.remove("hide");
-    document.querySelector(".hero__slider").classList.remove("hide");
-    document
-      .querySelector(".hero__slider")
-      .classList.remove("translate-right-110");
+    animateElements(animationElements);
 
-    let numbers = document.querySelectorAll(".promo__statistics-description");
-    numbers.forEach((num) => {
-      animNumber(num, 1500);
-    });
-    const advantages = document.querySelectorAll(".advantages__item");
-    advantages.forEach((advantage, index) => {
-      setTimeout(() => {
-        advantage.classList.remove("hide");
-        advantage.classList.remove("translate-up-20");
-      }, index * 200);
-    });*/
-    //const animatedElements = document.querySelectorAll(".animate");
-
-    animateElements();
+    let lastScrollPosition = 0;
+    let throttledAnimateElements = throttle(animateElements, 200);
     window.addEventListener("scroll", () => {
       animateElements();
       /* animatedElements.forEach((element) => {
