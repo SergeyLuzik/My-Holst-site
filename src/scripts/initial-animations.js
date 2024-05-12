@@ -8,11 +8,12 @@ window.onload = () => {
     const animationElements = document.querySelectorAll(".animate");
 
     animateElements(animationElements);
-
+    //console.log(document.body.scrollHeight);
     let lastScrollPosition = 0;
     let throttledAnimateElements = throttle(animateElements, 200);
     window.addEventListener("scroll", () => {
       const currentScrollPosition = window.scrollY;
+      //console.log(currentScrollPosition);
       if (currentScrollPosition > lastScrollPosition) {
         throttledAnimateElements(animationElements);
       }
@@ -90,3 +91,53 @@ function throttle(func, ms) {
 
   return wrapper;
 }
+
+/*
+svg в html должен появляться только на разрешении где он нужен (добавлять тег с классом через js, класс и стиль для секции оставить в разметке?)
+  создать объект svg 
+  отрисовать линию (начальная точка --> циклы из кривых)
+  при скролле анимировать ее
+  добавить треугольник
+
+на меньших разрешениях там просто стрелочки после каждого блока одинаковые (как их при скроле анимировать?)
+
+
+*/
+
+function drawStepsTrack() {
+  const stepsSection = document.querySelector(".steps");
+  const initialX = stepsSection.getBoundingClientRect().x;
+  const initialY = stepsSection.getBoundingClientRect().y + window.scrollY;
+  const controlPointOffsetY = 533;
+  const markers = document.querySelectorAll(".marker");
+  const markersCenterCoords = [];
+
+  markers.forEach((marker) => {
+    const markerRect = marker.getBoundingClientRect();
+    let centerCoords = {};
+
+    centerCoords.x = markerRect.x - initialX + markerRect.width / 2;
+    centerCoords.y = markerRect.y - initialY + markerRect.height / 2;
+
+    markersCenterCoords.push(centerCoords);
+  });
+
+  const NSstring = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NSstring, "svg");
+  svg.setAttribute("class", "steps__track");
+  const path = document.createElementNS(NSstring, "path");
+  let d = `M ${markersCenterCoords[0].x} ${markersCenterCoords[0].y}`;
+  for (let i = 1; i < markersCenterCoords.length; i++) {
+    d += `C${markersCenterCoords[i - 1].x} ${
+      markersCenterCoords[i - 1].y + controlPointOffsetY
+    } ${markersCenterCoords[i].x} ${
+      markersCenterCoords[i].y - controlPointOffsetY
+    } ${markersCenterCoords[i].x} ${markersCenterCoords[i].y}`;
+  }
+  path.setAttribute("d", d);
+  path.setAttribute("fill", "none");
+  svg.appendChild(path);
+  stepsSection.appendChild(svg);
+}
+
+drawStepsTrack();
