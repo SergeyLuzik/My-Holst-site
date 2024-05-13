@@ -136,7 +136,11 @@ function drawStepsTrack() {
   }
   path.setAttribute("d", d);
   path.setAttribute("fill", "none");
+  const pathLength = Math.round(path.getTotalLength());
+  path.setAttribute("stroke-dasharray", pathLength);
+  path.setAttribute("stroke-dashoffset", pathLength);
   svg.appendChild(path);
+
   stepsSection.appendChild(svg);
 }
 
