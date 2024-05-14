@@ -16,6 +16,12 @@ window.onload = () => {
       //console.log(currentScrollPosition);
       if (currentScrollPosition > lastScrollPosition) {
         throttledAnimateElements(animationElements);
+        console.log(window.scrollY);
+        console.log(
+          document
+            .querySelector(".steps__item:last-child> .marker")
+            .getBoundingClientRect().top + window.scrollY
+        );
       }
 
       lastScrollPosition = currentScrollPosition;
@@ -38,6 +44,12 @@ function animateElements(elements) {
           .forEach((el) => {
             animNumber(el, 2500);
           });
+      }
+      if (
+        element.classList.contains("marker") &&
+        element.closest(".steps__item:first-child")
+      ) {
+        console.log("first child");
       }
     }
   });
