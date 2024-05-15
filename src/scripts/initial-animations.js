@@ -17,11 +17,6 @@ window.onload = () => {
       if (currentScrollPosition > lastScrollPosition) {
         throttledAnimateElements(animationElements);
         console.log(window.scrollY);
-        console.log(
-          document
-            .querySelector(".steps__item:last-child> .marker")
-            .getBoundingClientRect().top + window.scrollY
-        );
       }
 
       lastScrollPosition = currentScrollPosition;
@@ -50,6 +45,21 @@ function animateElements(elements) {
         element.closest(".steps__item:first-child")
       ) {
         console.log("first child");
+        const start =
+          element.getBoundingClientRect().x +
+          element.getBoundingClientRect().height / 2;
+        const end =
+          document
+            .querySelector(".steps__item:last-child> .marker")
+            .getBoundingClientRect().top +
+          window.scrollY +
+          document
+            .querySelector(".steps__item:last-child> .marker")
+            .getBoundingClientRect().height /
+            2;
+        window.addEventListener("scroll", () => {
+          animateStepsTrack(start, end);
+        });
       }
     }
   });
@@ -157,3 +167,14 @@ function drawStepsTrack() {
 }
 
 drawStepsTrack();
+
+function animateStepsTrack(startPoint, endPoint) {
+  const trackPath = document.querySelector(".steps__track > path");
+  const pathLenght = Math.ceil(trackPath.getTotalLength());
+  const lineHeight = endPoint - startPoint;
+  const lineScrollProgres =
+    (window.scrollY - startPoint) /
+    (lineHeight - document.documentElement.clientHeight);
+  const scrollMultiplier = 1 - lineScrollProgres;
+  trackPath.setAttribute("stroke-dashoffset", pathLenght * scrollMultiplier);
+}
