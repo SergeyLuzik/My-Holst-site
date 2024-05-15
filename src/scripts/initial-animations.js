@@ -5,10 +5,14 @@ window.onload = () => {
     document.documentElement.classList.remove("stop-scroll");
     preloader.remove();
     // Инициализация анимаций
-    const animationElements = document.querySelectorAll(".animate");
+    const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
 
     animateElements(animationElements);
-    //console.log(document.body.scrollHeight);
+
+    let lineStertCoords, lineEndCoords;
+    //todo? передать их из drawTrack в заранее обьявленные пустые переменные
+    drawStepsTrack();
+
     let lastScrollPosition = 0;
     let throttledAnimateElements = throttle(animateElements, 200);
     window.addEventListener("scroll", () => {
@@ -40,10 +44,7 @@ function animateElements(elements) {
             animNumber(el, 2500);
           });
       }
-      if (
-        element.classList.contains("marker") &&
-        element.closest(".steps__item:first-child")
-      ) {
+      if (element.classList.contains("line-start")) {
         console.log("first child");
         const start =
           element.getBoundingClientRect().x +
@@ -165,8 +166,6 @@ function drawStepsTrack() {
 
   stepsSection.appendChild(svg);
 }
-
-drawStepsTrack();
 
 function animateStepsTrack(startPoint, endPoint) {
   const trackPath = document.querySelector(".steps__track > path");
