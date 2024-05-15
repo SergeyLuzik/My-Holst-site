@@ -30,7 +30,7 @@ function animateElements(elements) {
       return;
     }
     const elementPosition = element.getBoundingClientRect().top;
-    const targetPosition = window.innerHeight * 0.8;
+    const targetPosition = document.documentElement.clientHeight * 0.8;
     if (elementPosition < targetPosition) {
       element.classList.add("scrolled-in");
       if (element.classList.contains("promo__statistics")) {
