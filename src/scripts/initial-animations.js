@@ -1,3 +1,4 @@
+let stepsLineStartY, stepsLineEndY, stepsLinePathLength;
 window.onload = () => {
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("preloader_hide");
@@ -9,10 +10,9 @@ window.onload = () => {
 
     animateElements(animationElements);
 
-    let lineStertCoords, lineEndCoords;
-    //todo? передать их из drawTrack в заранее обьявленные пустые переменные
     drawStepsTrack();
-
+    // stepsLinePathLength = Math.round(path.getTotalLength());
+    console.log(stepsLinePathLength);
     let lastScrollPosition = 0;
     let throttledAnimateElements = throttle(animateElements, 200);
     window.addEventListener("scroll", () => {
@@ -20,7 +20,7 @@ window.onload = () => {
       //console.log(currentScrollPosition);
       if (currentScrollPosition > lastScrollPosition) {
         throttledAnimateElements(animationElements);
-        console.log(window.scrollY);
+        //console.log(window.scrollY);
       }
 
       lastScrollPosition = currentScrollPosition;
@@ -46,20 +46,13 @@ function animateElements(elements) {
       }
       if (element.classList.contains("line-start")) {
         console.log("first child");
-        const start =
-          element.getBoundingClientRect().x +
-          element.getBoundingClientRect().height / 2;
-        const end =
-          document
-            .querySelector(".steps__item:last-child> .marker")
-            .getBoundingClientRect().top +
-          window.scrollY +
-          document
-            .querySelector(".steps__item:last-child> .marker")
-            .getBoundingClientRect().height /
-            2;
         window.addEventListener("scroll", () => {
-          animateStepsTrack(start, end);
+          animateStepsTrack(
+            stepsLineStartY,
+            stepsLineEndY,
+            stepsLinePathLength
+          );
+          console.log("stepsLinePathLength: " + stepsLinePathLength);
         });
       }
     }
@@ -130,7 +123,7 @@ svg в html должен появляться только на разрешен
 function drawStepsTrack() {
   const stepsSection = document.querySelector(".steps");
   const initialX = stepsSection.getBoundingClientRect().x;
-  const initialY = stepsSection.getBoundingClientRect().y + window.scrollY;
+  const initialY = stepsSection.getBoundingClientRect().y; /* + window.scrollY*/
   const controlPointOffsetY = 533;
   const markers = document.querySelectorAll(".marker");
   const markersCenterCoords = [];
@@ -144,6 +137,9 @@ function drawStepsTrack() {
 
     markersCenterCoords.push(centerCoords);
   });
+  //console.log(markersCenterCoords);
+  stepsLineStartY = markersCenterCoords[0].y;
+  stepsLineEndY = markersCenterCoords[4].y;
 
   const NSstring = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(NSstring, "svg");
@@ -159,21 +155,22 @@ function drawStepsTrack() {
   }
   path.setAttribute("d", d);
   path.setAttribute("fill", "none");
-  const pathLength = Math.round(path.getTotalLength());
-  path.setAttribute("stroke-dasharray", pathLength);
-  path.setAttribute("stroke-dashoffset", pathLength);
+  stepsLinePathLength = Math.round(path.getTotalLength());
+  path.setAttribute("stroke-dasharray", stepsLinePathLength);
+  path.setAttribute("stroke-dashoffset", stepsLinePathLength);
   svg.appendChild(path);
 
   stepsSection.appendChild(svg);
 }
 
-function animateStepsTrack(startPoint, endPoint) {
+function animateStepsTrack(startPoint, endPoint, pathLenght) {
   const trackPath = document.querySelector(".steps__track > path");
-  const pathLenght = Math.ceil(trackPath.getTotalLength());
+  // const pathLenght = Math.ceil(trackPath.getTotalLength());
   const lineHeight = endPoint - startPoint;
   const lineScrollProgres =
     (window.scrollY - startPoint) /
     (lineHeight - document.documentElement.clientHeight);
   const scrollMultiplier = 1 - lineScrollProgres;
   trackPath.setAttribute("stroke-dashoffset", pathLenght * scrollMultiplier);
+  console.log(pathLenght * scrollMultiplier);
 }
