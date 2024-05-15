@@ -137,9 +137,9 @@ function drawStepsTrack() {
 
     markersCenterCoords.push(centerCoords);
   });
-  //console.log(markersCenterCoords);
-  stepsLineStartY = markersCenterCoords[0].y;
-  stepsLineEndY = markersCenterCoords[4].y;
+  console.log(markersCenterCoords);
+  stepsLineStartY = markersCenterCoords[0].y + initialY;
+  stepsLineEndY = markersCenterCoords[4].y + initialY;
 
   const NSstring = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(NSstring, "svg");
@@ -164,13 +164,21 @@ function drawStepsTrack() {
 }
 
 function animateStepsTrack(startPoint, endPoint, pathLenght) {
+  console.log("startPoint: ", startPoint);
+  console.log("endPoint: ", endPoint);
+  console.log("pathLenght: ", pathLenght);
   const trackPath = document.querySelector(".steps__track > path");
-  // const pathLenght = Math.ceil(trackPath.getTotalLength());
   const lineHeight = endPoint - startPoint;
+
+  console.log("lineHeight: ", lineHeight);
   const lineScrollProgres =
     (window.scrollY - startPoint) /
     (lineHeight - document.documentElement.clientHeight);
+  console.log("lineScrollProgres: ", lineScrollProgres);
   const scrollMultiplier = 1 - lineScrollProgres;
-  trackPath.setAttribute("stroke-dashoffset", pathLenght * scrollMultiplier);
-  console.log(pathLenght * scrollMultiplier);
+  console.log("scrollMultiplier: ", scrollMultiplier);
+  const offset = pathLenght * scrollMultiplier;
+  console.log("offset", offset);
+  trackPath.setAttribute("stroke-dashoffset", offset);
+  console.log(offset);
 }
