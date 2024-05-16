@@ -46,7 +46,7 @@ function animateElements(elements, targetPosition) {
       if (elementClass in elementsClassesCount) {
         setTimeout(() => {
           element.classList.add("scrolled-in");
-        }, 200 * elementsClassesCount[elementClass]);
+        }, 100 * elementsClassesCount[elementClass]);
         elementsClassesCount[elementClass] += 1;
       } else {
         elementsClassesCount[elementClass] = 1;

@@ -130,3 +130,18 @@
     opacity: 1;
   }
 }
+
+.scrolled-in.zoom-in {
+  animation: zoom-in var(--animation-time) ease-in-out both;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
