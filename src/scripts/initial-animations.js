@@ -44,11 +44,15 @@ function animateElements(elements, targetPosition) {
       //console.log("elementClass: " + elementClass);
       //todo реализовать через тернарник?
       if (elementClass in elementsClassesCount) {
+        setTimeout(() => {
+          element.classList.add("scrolled-in");
+        }, 200 * elementsClassesCount[elementClass]);
         elementsClassesCount[elementClass] += 1;
       } else {
         elementsClassesCount[elementClass] = 1;
+        element.classList.add("scrolled-in");
       }
-      element.classList.add("scrolled-in");
+      // element.classList.add("scrolled-in");
       if (element.classList.contains("promo__statistics")) {
         element
           .querySelectorAll(".promo__statistics-description")
