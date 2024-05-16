@@ -1,20 +1,22 @@
 let stepsLineStartY, stepsLineEndY, stepsLinePathLength;
 window.onload = () => {
+  drawStepsTrack();
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("preloader_hide");
   preloader.addEventListener("transitionend", () => {
     document.documentElement.classList.remove("stop-scroll");
     preloader.remove();
+
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
 
     animateElements(animationElements);
 
-    drawStepsTrack();
     // stepsLinePathLength = Math.round(path.getTotalLength());
-    console.log(stepsLinePathLength);
+    console.log("stepsLinePathLength: " + stepsLinePathLength);
     let lastScrollPosition = 0;
-    let throttledAnimateElements = throttle(animateElements, 200);
+    const throttledAnimateElements = throttle(animateElements, 200);
+
     window.addEventListener("scroll", () => {
       const currentScrollPosition = window.scrollY;
       //console.log(currentScrollPosition);
@@ -45,14 +47,20 @@ function animateElements(elements) {
           });
       }
       if (element.classList.contains("line-start")) {
-        console.log("first child");
+        const throttledAnimateStepsTrack = throttle(animateStepsTrack, 50);
+        const currentScrollPosition = window.scrollY;
+
+        console.log("startPoint: ", stepsLineStartY);
+        console.log("endPoint: ", stepsLineEndY);
+        console.log("lineHeight: ", stepsLineEndY - stepsLineStartY);
+
         window.addEventListener("scroll", () => {
-          animateStepsTrack(
+          throttledAnimateStepsTrack(
+            currentScrollPosition,
             stepsLineStartY,
             stepsLineEndY,
             stepsLinePathLength
           );
-          console.log("stepsLinePathLength: " + stepsLinePathLength);
         });
       }
     }
@@ -163,22 +171,22 @@ function drawStepsTrack() {
   stepsSection.appendChild(svg);
 }
 
-function animateStepsTrack(startPoint, endPoint, pathLenght) {
-  console.log("startPoint: ", startPoint);
-  console.log("endPoint: ", endPoint);
-  console.log("pathLenght: ", pathLenght);
+function animateStepsTrack(
+  startScrollPosition,
+  startPoint,
+  endPoint,
+  pathLenght
+) {
   const trackPath = document.querySelector(".steps__track > path");
   const lineHeight = endPoint - startPoint;
-
-  console.log("lineHeight: ", lineHeight);
+  console.log("scrollY: " + window.scrollY);
   const lineScrollProgres =
-    (window.scrollY - startPoint) /
-    (lineHeight - document.documentElement.clientHeight);
+    (window.scrollY - startScrollPosition) /
+    lineHeight /*- document.documentElement.clientHeight*/;
   console.log("lineScrollProgres: ", lineScrollProgres);
   const scrollMultiplier = 1 - lineScrollProgres;
   console.log("scrollMultiplier: ", scrollMultiplier);
   const offset = pathLenght * scrollMultiplier;
   console.log("offset", offset);
   trackPath.setAttribute("stroke-dashoffset", offset);
-  console.log(offset);
 }
