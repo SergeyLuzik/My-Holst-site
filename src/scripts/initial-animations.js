@@ -9,8 +9,8 @@ window.onload = () => {
 
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
-
-    animateElements(animationElements);
+    const targetPosition = document.documentElement.clientHeight * 0.8;
+    animateElements(animationElements, targetPosition);
 
     // stepsLinePathLength = Math.round(path.getTotalLength());
     console.log("stepsLinePathLength: " + stepsLinePathLength);
@@ -21,7 +21,7 @@ window.onload = () => {
       const currentScrollPosition = window.scrollY;
       //console.log(currentScrollPosition);
       if (currentScrollPosition > lastScrollPosition) {
-        throttledAnimateElements(animationElements);
+        throttledAnimateElements(animationElements, targetPosition);
         //console.log(window.scrollY);
       }
 
@@ -30,13 +30,12 @@ window.onload = () => {
   });
 };
 
-function animateElements(elements) {
+function animateElements(elements, targetPosition) {
   elements.forEach((element) => {
     if (element.classList.contains("scrolled-in")) {
       return;
     }
     const elementPosition = element.getBoundingClientRect().top;
-    const targetPosition = document.documentElement.clientHeight * 0.8;
     if (elementPosition < targetPosition) {
       element.classList.add("scrolled-in");
       if (element.classList.contains("promo__statistics")) {
@@ -182,7 +181,7 @@ function animateStepsTrack(
   console.log("scrollY: " + window.scrollY);
   const lineScrollProgres =
     (window.scrollY - startScrollPosition) /
-    lineHeight /*- document.documentElement.clientHeight*/;
+    lineHeight; /*- document.documentElement.clientHeight*/
   console.log("lineScrollProgres: ", lineScrollProgres);
   const scrollMultiplier = 1 - lineScrollProgres;
   console.log("scrollMultiplier: ", scrollMultiplier);
