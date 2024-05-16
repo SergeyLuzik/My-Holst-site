@@ -10,11 +10,8 @@ window.onload = () => {
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
     const targetPosition = document.documentElement.clientHeight * 0.8;
-    let elementsClassesCount = {};
-    animateElements(animationElements, targetPosition, elementsClassesCount);
-
-    console.log("Содержимое elementsClassesCount");
-    console.log(elementsClassesCount);
+    //let elementsClassesCount = {};
+    animateElements(animationElements, targetPosition);
 
     // stepsLinePathLength = Math.round(path.getTotalLength());
     //console.log("stepsLinePathLength: " + stepsLinePathLength);
@@ -25,11 +22,7 @@ window.onload = () => {
       const currentScrollPosition = window.scrollY;
       //console.log(currentScrollPosition);
       if (currentScrollPosition > lastScrollPosition) {
-        throttledAnimateElements(
-          animationElements,
-          targetPosition,
-          elementsClassesCount
-        );
+        throttledAnimateElements(animationElements, targetPosition);
         //console.log(window.scrollY);
       }
 
@@ -38,7 +31,8 @@ window.onload = () => {
   });
 };
 
-function animateElements(elements, targetPosition, elementsClassesCount) {
+function animateElements(elements, targetPosition) {
+  let elementsClassesCount = {};
   elements.forEach((element) => {
     if (element.classList.contains("scrolled-in")) {
       return;
@@ -66,9 +60,9 @@ function animateElements(elements, targetPosition, elementsClassesCount) {
         const throttledAnimateStepsTrack = throttle(animateStepsTrack, 50);
         const currentScrollPosition = window.scrollY;
 
-        console.log("startPoint: ", stepsLineStartY);
-        console.log("endPoint: ", stepsLineEndY);
-        console.log("lineHeight: ", stepsLineEndY - stepsLineStartY);
+        //console.log("startPoint: ", stepsLineStartY);
+        //console.log("endPoint: ", stepsLineEndY);
+        //console.log("lineHeight: ", stepsLineEndY - stepsLineStartY);
 
         window.addEventListener("scroll", () => {
           throttledAnimateStepsTrack(
@@ -81,8 +75,11 @@ function animateElements(elements, targetPosition, elementsClassesCount) {
       }
     }
   });
+
+  console.log("Содержимое elementsClassesCount");
   console.log(elementsClassesCount);
 }
+
 function animNumber(numObj, duration) {
   //const startTime = performance.now(),
   const num = parseInt(numObj.innerHTML.replace(" ", ""), 10);
