@@ -9,7 +9,7 @@ window.onload = () => {
 
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
-    const targetPosition = document.documentElement.clientHeight * 0.8;
+    const targetPosition = document.documentElement.clientHeight; /* * 0.8*/
     //let elementsClassesCount = {};
     animateElements(animationElements, targetPosition);
 

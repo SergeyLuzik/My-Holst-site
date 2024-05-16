@@ -86,6 +86,21 @@
   }
 }
 
+.scrolled-in.show-from-right {
+  animation: show-from-right var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-from-right {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .scrolled-in.show-from-down {
   animation: show-from-down var(--animation-time) ease-in-out both;
 }
