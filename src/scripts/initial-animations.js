@@ -10,10 +10,14 @@ window.onload = () => {
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
     const targetPosition = document.documentElement.clientHeight * 0.8;
-    animateElements(animationElements, targetPosition);
+    let elementsClassesCount = {};
+    animateElements(animationElements, targetPosition, elementsClassesCount);
+
+    console.log("Содержимое elementsClassesCount");
+    console.log(elementsClassesCount);
 
     // stepsLinePathLength = Math.round(path.getTotalLength());
-    console.log("stepsLinePathLength: " + stepsLinePathLength);
+    //console.log("stepsLinePathLength: " + stepsLinePathLength);
     let lastScrollPosition = 0;
     const throttledAnimateElements = throttle(animateElements, 200);
 
@@ -21,7 +25,11 @@ window.onload = () => {
       const currentScrollPosition = window.scrollY;
       //console.log(currentScrollPosition);
       if (currentScrollPosition > lastScrollPosition) {
-        throttledAnimateElements(animationElements, targetPosition);
+        throttledAnimateElements(
+          animationElements,
+          targetPosition,
+          elementsClassesCount
+        );
         //console.log(window.scrollY);
       }
 
@@ -30,8 +38,7 @@ window.onload = () => {
   });
 };
 
-function animateElements(elements, targetPosition) {
-  let elementsClasses = {};
+function animateElements(elements, targetPosition, elementsClassesCount) {
   elements.forEach((element) => {
     if (element.classList.contains("scrolled-in")) {
       return;
@@ -39,8 +46,13 @@ function animateElements(elements, targetPosition) {
     const elementPosition = element.getBoundingClientRect().top;
     if (elementPosition < targetPosition) {
       const elementClass = element.classList[0];
-      if (elementsClasses.elementClass === undefined) {
-        elementsClasses.elementClass += 1;
+
+      //console.log("elementClass: " + elementClass);
+      //todo реализовать через тернарник?
+      if (elementClass in elementsClassesCount) {
+        elementsClassesCount[elementClass] += 1;
+      } else {
+        elementsClassesCount[elementClass] = 1;
       }
       element.classList.add("scrolled-in");
       if (element.classList.contains("promo__statistics")) {
@@ -69,7 +81,7 @@ function animateElements(elements, targetPosition) {
       }
     }
   });
-  console.log(elementsClasses);
+  console.log(elementsClassesCount);
 }
 function animNumber(numObj, duration) {
   //const startTime = performance.now(),
@@ -150,7 +162,7 @@ function drawStepsTrack() {
 
     markersCenterCoords.push(centerCoords);
   });
-  console.log(markersCenterCoords);
+  //console.log(markersCenterCoords);
   stepsLineStartY = markersCenterCoords[0].y + initialY;
   stepsLineEndY = markersCenterCoords[4].y + initialY;
 
@@ -184,14 +196,14 @@ function animateStepsTrack(
 ) {
   const trackPath = document.querySelector(".steps__track > path");
   const lineHeight = endPoint - startPoint;
-  console.log("scrollY: " + window.scrollY);
+  //console.log("scrollY: " + window.scrollY);
   const lineScrollProgres =
     (window.scrollY - startScrollPosition) /
     lineHeight; /*- document.documentElement.clientHeight*/
-  console.log("lineScrollProgres: ", lineScrollProgres);
+  //console.log("lineScrollProgres: ", lineScrollProgres);
   const scrollMultiplier = 1 - lineScrollProgres;
-  console.log("scrollMultiplier: ", scrollMultiplier);
+  //console.log("scrollMultiplier: ", scrollMultiplier);
   const offset = pathLenght * scrollMultiplier;
-  console.log("offset", offset);
+  //console.log("offset", offset);
   trackPath.setAttribute("stroke-dashoffset", offset);
 }
