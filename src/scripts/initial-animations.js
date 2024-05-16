@@ -31,12 +31,17 @@ window.onload = () => {
 };
 
 function animateElements(elements, targetPosition) {
+  let elementsClasses = {};
   elements.forEach((element) => {
     if (element.classList.contains("scrolled-in")) {
       return;
     }
     const elementPosition = element.getBoundingClientRect().top;
     if (elementPosition < targetPosition) {
+      const elementClass = element.classList[0];
+      if (elementsClasses.elementClass === undefined) {
+        elementsClasses.elementClass += 1;
+      }
       element.classList.add("scrolled-in");
       if (element.classList.contains("promo__statistics")) {
         element
@@ -64,6 +69,7 @@ function animateElements(elements, targetPosition) {
       }
     }
   });
+  console.log(elementsClasses);
 }
 function animNumber(numObj, duration) {
   //const startTime = performance.now(),
