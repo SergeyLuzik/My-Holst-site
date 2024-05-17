@@ -60,22 +60,28 @@ function animateElements(elements, targetPosition) {
             animNumber(el, 2500);
           });
       }
-      if (element.classList.contains("line-start")) {
-        const throttledAnimateStepsTrack = throttle(animateStepsTrack, 50);
-        const currentScrollPosition = window.scrollY;
+      if (element.classList.contains("animate-childs")) {
+        const children = element.children;
+        for (let child of children) {
+          if (child.classList.contains("line-start")) {
+            const throttledAnimateStepsTrack = throttle(animateStepsTrack, 50);
+            const currentScrollPosition = window.scrollY;
 
-        //console.log("startPoint: ", stepsLineStartY);
-        //console.log("endPoint: ", stepsLineEndY);
-        //console.log("lineHeight: ", stepsLineEndY - stepsLineStartY);
+            //console.log("startPoint: ", stepsLineStartY);
+            //console.log("endPoint: ", stepsLineEndY);
+            //console.log("lineHeight: ", stepsLineEndY - stepsLineStartY);
 
-        window.addEventListener("scroll", () => {
-          throttledAnimateStepsTrack(
-            currentScrollPosition,
-            stepsLineStartY,
-            stepsLineEndY,
-            stepsLinePathLength
-          );
-        });
+            window.addEventListener("scroll", () => {
+              throttledAnimateStepsTrack(
+                currentScrollPosition,
+                stepsLineStartY,
+                stepsLineEndY,
+                stepsLinePathLength
+              );
+            });
+          }
+          child.classList.add("scrolled-in");
+        }
       }
     }
   });
