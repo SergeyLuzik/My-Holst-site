@@ -146,16 +146,32 @@
   }
 }
 
-.scrolled-in.zoom-in {
-  animation: zoom-in var(--animation-time) ease-in-out both;
+.scrolled-in.show-zoom-in {
+  animation: show-zoom-in var(--animation-time) ease-in-out both;
 }
 
-@keyframes zoom-in {
+@keyframes show-zoom-in {
   from {
     transform: scale(0.9);
     opacity: 0;
   }
   to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.zoom-in {
+  animation: zoom-in var(--animation-time) ease-in-out both;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  100% {
     transform: scale(1);
     opacity: 1;
   }
