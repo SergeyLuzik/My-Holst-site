@@ -84,10 +84,14 @@ function animateElements(elements, targetPosition) {
         }
       }
     }
+    if (
+      window.scrollY >
+      document.documentElement.scrollHeight -
+        document.documentElement.clientHeight * 1.2
+    ) {
+      elements[elements.length - 1].classList.add("scrolled-in");
+    }
   });
-
-  console.log("Содержимое elementsClassesCount");
-  console.log(elementsClassesCount);
 }
 
 function animNumber(numObj, duration) {
