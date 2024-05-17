@@ -56,6 +56,22 @@
   }
 }
 
+.scrolled-in.show-faster {
+  animation: show-faster var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-faster {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .scrolled-in.show-from-up {
   animation: show-from-up var(--animation-time) ease-in-out both;
 }
