@@ -10,22 +10,17 @@ window.onload = () => {
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
     const targetPosition = document.documentElement.clientHeight * 0.8;
-    //let elementsClassesCount = {};
+
     animateElements(animationElements, targetPosition);
 
-    // stepsLinePathLength = Math.round(path.getTotalLength());
-    //console.log("stepsLinePathLength: " + stepsLinePathLength);
     let lastScrollPosition = 0;
     const throttledAnimateElements = throttle(animateElements, 200);
 
     window.addEventListener("scroll", () => {
       const currentScrollPosition = window.scrollY;
-      //console.log(currentScrollPosition);
       if (currentScrollPosition > lastScrollPosition) {
         throttledAnimateElements(animationElements, targetPosition);
-        //console.log(window.scrollY);
       }
-
       lastScrollPosition = currentScrollPosition;
     });
   });
@@ -41,7 +36,6 @@ function animateElements(elements, targetPosition) {
     if (elementPosition < targetPosition) {
       const elementClass = element.classList[0];
 
-      //console.log("elementClass: " + elementClass);
       //todo реализовать через тернарник?
       if (elementClass in elementsClassesCount) {
         setTimeout(() => {
@@ -52,7 +46,7 @@ function animateElements(elements, targetPosition) {
         elementsClassesCount[elementClass] = 1;
         element.classList.add("scrolled-in");
       }
-      // element.classList.add("scrolled-in");
+
       if (element.classList.contains("promo__statistics")) {
         element
           .querySelectorAll(".promo__statistics-description")
@@ -66,10 +60,6 @@ function animateElements(elements, targetPosition) {
           if (child.classList.contains("line-start")) {
             const throttledAnimateStepsTrack = throttle(animateStepsTrack, 50);
             const currentScrollPosition = window.scrollY;
-
-            //console.log("startPoint: ", stepsLineStartY);
-            //console.log("endPoint: ", stepsLineEndY);
-            //console.log("lineHeight: ", stepsLineEndY - stepsLineStartY);
 
             window.addEventListener("scroll", () => {
               throttledAnimateStepsTrack(
@@ -95,7 +85,6 @@ function animateElements(elements, targetPosition) {
 }
 
 function animNumber(numObj, duration) {
-  //const startTime = performance.now(),
   const num = parseInt(numObj.innerHTML.replace(" ", ""), 10);
   let startTime;
 
@@ -144,18 +133,6 @@ function throttle(func, ms) {
   return wrapper;
 }
 
-/*
-svg в html должен появляться только на разрешении где он нужен (добавлять тег с классом через js, класс и стиль для секции оставить в разметке?)
-  создать объект svg 
-  отрисовать линию (начальная точка --> циклы из кривых)
-  при скролле анимировать ее
-  добавить треугольник
-
-на меньших разрешениях там просто стрелочки после каждого блока одинаковые (как их при скроле анимировать?)
-
-
-*/
-
 function drawStepsTrack() {
   const stepsSection = document.querySelector(".steps");
   const initialX = stepsSection.getBoundingClientRect().x;
@@ -173,7 +150,6 @@ function drawStepsTrack() {
 
     markersCenterCoords.push(centerCoords);
   });
-  //console.log(markersCenterCoords);
   stepsLineStartY = markersCenterCoords[0].y + initialY;
   stepsLineEndY = markersCenterCoords[4].y + initialY;
 
@@ -207,14 +183,9 @@ function animateStepsTrack(
 ) {
   const trackPath = document.querySelector(".steps__track > path");
   const lineHeight = endPoint - startPoint;
-  //console.log("scrollY: " + window.scrollY);
-  const lineScrollProgres =
-    (window.scrollY - startScrollPosition) /
-    lineHeight; /*- document.documentElement.clientHeight*/
-  //console.log("lineScrollProgres: ", lineScrollProgres);
+  const lineScrollProgres = (window.scrollY - startScrollPosition) / lineHeight;
   const scrollMultiplier = 1 - lineScrollProgres;
-  //console.log("scrollMultiplier: ", scrollMultiplier);
   const offset = pathLenght * scrollMultiplier;
-  //console.log("offset", offset);
+
   trackPath.setAttribute("stroke-dashoffset", offset);
 }
