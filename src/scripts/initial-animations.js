@@ -15,19 +15,25 @@ window.onload = () => {
     animateElements(animationElements, targetPosition);
 
     let lastScrollPosition = 0;
-    const throttledAnimateElements = throttle(animateElements, 200);
+    /*const throttledAnimateElements = throttle(animateElements, 200);*/
 
-    window.addEventListener("scroll", () => {
+    const throttledAnimateElements = throttle(() => {
       const currentScrollPosition = window.scrollY;
       if (currentScrollPosition > lastScrollPosition) {
-        throttledAnimateElements(animationElements, targetPosition);
+        animateElements(
+          animationElements,
+          targetPosition,
+          throttledAnimateElements
+        );
       }
       lastScrollPosition = currentScrollPosition;
-    });
+    }, 200);
+
+    window.addEventListener("scroll", throttledAnimateElements);
   });
 };
 
-function animateElements(elements, targetPosition) {
+function animateElements(elements, targetPosition, handlerFunc) {
   let elementsClassesCount = {};
   elements.forEach((element) => {
     if (element.classList.contains("scrolled-in")) {
@@ -82,6 +88,8 @@ function animateElements(elements, targetPosition) {
         document.documentElement.clientHeight * 1.2
     ) {
       elements[elements.length - 1].classList.add("scrolled-in");
+
+      window.removeEventListener("scroll", handlerFunc);
     }
   });
 }
