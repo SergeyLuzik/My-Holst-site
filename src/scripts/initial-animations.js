@@ -4,6 +4,7 @@ window.onload = () => {
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("preloader_hide");
   preloader.addEventListener("transitionend", () => {
+    // todo тоже бы убирать когда все установлено добавить все в функцию initAnimation?
     document.documentElement.classList.remove("stop-scroll");
     preloader.remove();
 
@@ -58,17 +59,18 @@ function animateElements(elements, targetPosition) {
         const children = element.children;
         for (let child of children) {
           if (child.classList.contains("line-start")) {
-            const throttledAnimateStepsTrack = throttle(animateStepsTrack, 50);
             const currentScrollPosition = window.scrollY;
-
-            window.addEventListener("scroll", () => {
-              throttledAnimateStepsTrack(
+            const throttledAnimateStepsTrack = throttle(() => {
+              animateStepsTrack(
                 currentScrollPosition,
                 stepsLineStartY,
                 stepsLineEndY,
-                stepsLinePathLength
+                stepsLinePathLength,
+                throttledAnimateStepsTrack
               );
-            });
+            }, 50);
+
+            window.addEventListener("scroll", throttledAnimateStepsTrack);
           }
           child.classList.add("scrolled-in");
         }
@@ -179,13 +181,17 @@ function animateStepsTrack(
   startScrollPosition,
   startPoint,
   endPoint,
-  pathLenght
+  pathLenght,
+  handlerFunc
 ) {
   const trackPath = document.querySelector(".steps__track > path");
   const lineHeight = endPoint - startPoint;
   const lineScrollProgres = (window.scrollY - startScrollPosition) / lineHeight;
-  const scrollMultiplier = 1 - lineScrollProgres;
-  const offset = pathLenght * scrollMultiplier;
+  let offset = pathLenght * (1 - lineScrollProgres);
 
+  if (offset < 0) {
+    offset = 0;
+    window.removeEventListener("scroll", handlerFunc);
+  }
   trackPath.setAttribute("stroke-dashoffset", offset);
 }
