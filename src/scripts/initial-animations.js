@@ -1,6 +1,12 @@
+import { getMainWidth } from "./index.js";
 let stepsLineStartY, stepsLineEndY, stepsLinePathLength;
 window.onload = () => {
-  drawStepsTrack();
+  if (getMainWidth() < 1300) {
+    drawStraightTrack();
+  } else {
+    drawCurvedTrack();
+  }
+
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("preloader_hide");
   preloader.addEventListener("transitionend", () => {
@@ -143,7 +149,73 @@ function throttle(func, ms) {
   return wrapper;
 }
 
-function drawStepsTrack() {
+function drawStraightTrack() {
+  const stepsSection = document.querySelector(".steps");
+  const initialX = stepsSection.getBoundingClientRect().x;
+  const initialY = stepsSection.getBoundingClientRect().y; /* + window.scrollY*/
+  let markersRect = [];
+  const markersCoords = [];
+
+  const firstMarkerRect = document
+    .querySelector(".marker")
+    .getBoundingClientRect();
+  markersRect.push(firstMarkerRect);
+
+  /*const firstMarkerCoords = {
+    x: firstMarkerRect.x - initialX + firstMarkerRect.width / 2,
+    y: firstMarkerRect.y - initialY,
+  };
+  firstMarkerCoords.push(markersCoords);*/
+
+  const lastMarkerRect = document
+    .querySelector(".steps__item:last-child >.marker")
+    .getBoundingClientRect();
+  markersRect.push(lastMarkerRect);
+
+  /* const lastMarkerCoords = {
+    x: lastMarkerRect.x - initialX + lastMarkerRect.width / 2,
+    y: lastMarkerRect.y - initialY,
+  };
+  lastMarkerCoords.push(markersCoords);*/
+
+  markersRect.forEach((markerRect) => {
+    /*const markerRect = marker.getBoundingClientRect();
+    let centerCoords = {};
+
+    centerCoords.x = markerRect.x - initialX + markerRect.width / 2;
+    centerCoords.y = markerRect.y - initialY + markerRect.height / 2;
+*/
+    markersCoords.push({
+      x: markerRect.x - initialX + firstMarkerRect.width / 2,
+      y: markerRect.y - initialY,
+    });
+  });
+  stepsLineStartY = markersCoords[0].y + initialY;
+  stepsLineEndY = markersCoords[markersCoords.length - 1].y + initialY;
+
+  const NSstring = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NSstring, "svg");
+  svg.setAttribute("class", "steps__track");
+  const path = document.createElementNS(NSstring, "path");
+  let d = `M ${markersCoords[0].x} ${markersCoords[0].y} L ${markersCoords[1].x} ${markersCoords[1].y}`;
+  /* for (let i = 1; i < markersCoords.length; i++) {
+    d += `C${markersCoords[i - 1].x} ${
+      markersCoords[i - 1].y + controlPointOffsetY
+    } ${markersCoords[i].x} ${
+      markersCoords[i].y - controlPointOffsetY
+    } ${markersCoords[i].x} ${markersCoords[i].y}`;
+  }*/
+  path.setAttribute("d", d);
+  path.setAttribute("fill", "none");
+  stepsLinePathLength = Math.round(path.getTotalLength());
+  // path.setAttribute("stroke-dasharray", stepsLinePathLength);
+  // path.setAttribute("stroke-dashoffset", stepsLinePathLength);
+  svg.appendChild(path);
+
+  stepsSection.appendChild(svg);
+}
+
+function drawCurvedTrack() {
   const stepsSection = document.querySelector(".steps");
   const initialX = stepsSection.getBoundingClientRect().x;
   const initialY = stepsSection.getBoundingClientRect().y; /* + window.scrollY*/
@@ -152,16 +224,18 @@ function drawStepsTrack() {
   const markersCenterCoords = [];
 
   markers.forEach((marker) => {
+    // todo передавать уже getBoundingClientRect чтобы каждый раз не вызывать
     const markerRect = marker.getBoundingClientRect();
     let centerCoords = {};
 
     centerCoords.x = markerRect.x - initialX + markerRect.width / 2;
     centerCoords.y = markerRect.y - initialY + markerRect.height / 2;
 
-    markersCenterCoords.push(centerCoords);
+    markersCenterCoords.push(centerCoords); // todo пушить сразу {} без создания переменных
   });
   stepsLineStartY = markersCenterCoords[0].y + initialY;
-  stepsLineEndY = markersCenterCoords[4].y + initialY;
+  stepsLineEndY =
+    markersCenterCoords[markersCenterCoords.length - 1].y + initialY;
 
   const NSstring = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(NSstring, "svg");
