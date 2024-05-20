@@ -151,6 +151,11 @@ function throttle(func, ms) {
 
 function drawStraightTrack() {
   const stepsSection = document.querySelector(".steps");
+  const gap = parseInt(
+    window
+      .getComputedStyle(stepsSection.querySelector(".steps__list"))
+      .getPropertyValue("gap")
+  );
   const initialX = stepsSection.getBoundingClientRect().x;
   const initialY = stepsSection.getBoundingClientRect().y; /* + window.scrollY*/
   let markersRect = [];
@@ -160,6 +165,8 @@ function drawStraightTrack() {
     .querySelector(".marker")
     .getBoundingClientRect();
   markersRect.push(firstMarkerRect);
+
+  const linePadding = firstMarkerRect.height / 2;
 
   /*const firstMarkerCoords = {
     x: firstMarkerRect.x - initialX + firstMarkerRect.width / 2,
@@ -187,7 +194,7 @@ function drawStraightTrack() {
 */
     markersCoords.push({
       x: markerRect.x - initialX + firstMarkerRect.width / 2,
-      y: markerRect.y - initialY,
+      y: markerRect.y - initialY + firstMarkerRect.height / 2,
     });
   });
   stepsLineStartY = markersCoords[0].y + initialY;
@@ -205,10 +212,25 @@ function drawStraightTrack() {
       markersCoords[i].y - controlPointOffsetY
     } ${markersCoords[i].x} ${markersCoords[i].y}`;
   }*/
+  const stepsItems = document.querySelectorAll(".steps__item");
+  let offsetArray = [0];
+  const dashLenght = gap - linePadding;
+  // todo округлять значения dashLenght и itemHeight в большую сторону?
+  stepsItems.forEach((item, i) => {
+    const itemHeight = parseInt(
+      window.getComputedStyle(item).getPropertyValue("height")
+    );
+    if (i === 0) {
+      offsetArray.push(itemHeight);
+    } else {
+      offsetArray.push(itemHeight + linePadding);
+    }
+    offsetArray.push(dashLenght);
+  });
   path.setAttribute("d", d);
   path.setAttribute("fill", "none");
   stepsLinePathLength = Math.round(path.getTotalLength());
-  // path.setAttribute("stroke-dasharray", stepsLinePathLength);
+  path.setAttribute("stroke-dasharray", offsetArray.join(" "));
   // path.setAttribute("stroke-dashoffset", stepsLinePathLength);
   svg.appendChild(path);
 
