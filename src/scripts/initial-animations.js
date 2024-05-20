@@ -228,11 +228,19 @@ function drawStraightTrack() {
     offsetArray.push(dashLenght);
   });
   path.setAttribute("d", d);
+  path.setAttribute("id", "line");
   path.setAttribute("fill", "none");
   stepsLinePathLength = Math.round(path.getTotalLength());
   path.setAttribute("stroke-dasharray", offsetArray.join(" "));
   // path.setAttribute("stroke-dashoffset", stepsLinePathLength);
   svg.appendChild(path);
+
+  const use = document.createElementNS(NSstring, "use");
+  use.setAttribute("href", "#line");
+  use.setAttribute("class", "steps__track--mask");
+  use.setAttribute("stroke-dasharray", stepsLinePathLength);
+  use.setAttribute("stroke-dashoffset", 0);
+  svg.appendChild(use);
 
   stepsSection.appendChild(svg);
 }
