@@ -1,18 +1,18 @@
 import { getMainWidth } from "./index.js";
 let stepsLineStartY, stepsLineEndY, stepsLinePathLength;
 window.onload = () => {
-  if (getMainWidth() <= 1300) {
-    drawStraightTrack();
-  } else {
-    drawCurvedTrack();
-  }
-
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("preloader_hide");
   preloader.addEventListener("transitionend", () => {
     // todo тоже бы убирать когда все установлено добавить все в функцию initAnimation?
     document.documentElement.classList.remove("stop-scroll");
     preloader.remove();
+
+    if (getMainWidth() <= 1300) {
+      drawStraightTrack();
+    } else {
+      drawCurvedTrack();
+    }
 
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
@@ -173,7 +173,9 @@ function drawStraightTrack() {
       .getPropertyValue("gap")
   );
   const initialX = stepsSection.getBoundingClientRect().x;
-  const initialY = stepsSection.getBoundingClientRect().y; /* + window.scrollY*/
+  console.log("initialX " + initialX);
+  const initialY = stepsSection.getBoundingClientRect().y + window.scrollY;
+  console.log("initialY " + initialY);
   let markersRect = [];
   const markersCoords = [];
 
@@ -195,6 +197,9 @@ function drawStraightTrack() {
     .getBoundingClientRect();
   markersRect.push(lastMarkerRect);
 
+  console.log("markersRect ");
+  console.log(markersRect);
+
   /* const lastMarkerCoords = {
     x: lastMarkerRect.x - initialX + lastMarkerRect.width / 2,
     y: lastMarkerRect.y - initialY,
@@ -209,10 +214,12 @@ function drawStraightTrack() {
     centerCoords.y = markerRect.y - initialY + markerRect.height / 2;
 */
     markersCoords.push({
-      x: markerRect.x - initialX + firstMarkerRect.width / 2,
-      y: markerRect.y - initialY + firstMarkerRect.height / 2,
+      x: markerRect.x - initialX + markerRect.width / 2,
+      y: markerRect.y - initialY + markerRect.height / 2 + window.scrollY,
     });
   });
+  console.log("markersCoords ");
+  console.log(markersCoords);
   stepsLineStartY = markersCoords[0].y + initialY;
   stepsLineEndY = markersCoords[markersCoords.length - 1].y + initialY;
 
@@ -270,7 +277,7 @@ function drawStraightTrack() {
 function drawCurvedTrack() {
   const stepsSection = document.querySelector(".steps");
   const initialX = stepsSection.getBoundingClientRect().x;
-  const initialY = stepsSection.getBoundingClientRect().y; /* + window.scrollY*/
+  const initialY = stepsSection.getBoundingClientRect().y + window.scrollY;
   const controlPointOffsetY = 533;
   const markers = document.querySelectorAll(".marker");
   const markersCenterCoords = [];
@@ -281,7 +288,8 @@ function drawCurvedTrack() {
     let centerCoords = {};
 
     centerCoords.x = markerRect.x - initialX + markerRect.width / 2;
-    centerCoords.y = markerRect.y - initialY + markerRect.height / 2;
+    centerCoords.y =
+      markerRect.y - initialY + markerRect.height / 2 + window.scrollY;
 
     markersCenterCoords.push(centerCoords); // todo пушить сразу {} без создания переменных
   });
