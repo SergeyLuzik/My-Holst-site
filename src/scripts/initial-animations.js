@@ -1,7 +1,7 @@
 import { getMainWidth } from "./index.js";
 let stepsLineStartY, stepsLineEndY, stepsLinePathLength;
 window.onload = () => {
-  if (getMainWidth() < 1300) {
+  if (getMainWidth() <= 1300) {
     drawStraightTrack();
   } else {
     drawCurvedTrack();
@@ -80,7 +80,7 @@ function animateElements(elements, targetPosition, handlerFunc) {
               stepsLinePathLength,
             ];
             const animateFunction =
-              getMainWidth() < 1300
+              getMainWidth() <= 1300
                 ? animateStraightStepsTrack
                 : animateStepsTrack;
 
