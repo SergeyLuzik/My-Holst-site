@@ -316,7 +316,14 @@ x = 1045302.150 / (4496.413 - y)
   /* border: 1px solid black;*/
 }
 
+.steps__track > path {
+  stroke-width: 4px;
+}
+
 .steps__track > .steps__main-track {
   stroke: var(--primary-light);
-  stroke-width: 4px;
+}
+
+.steps__track-mask {
+  stroke: var(--white);
 }

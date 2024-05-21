@@ -254,7 +254,6 @@ function drawStraightTrack() {
   trackMask.setAttribute("class", "steps__track-mask");
   trackMask.setAttribute("d", d);
   trackMask.setAttribute("fill", "none");
-  trackMask.setAttribute("stroke", "white");
   trackMask.setAttribute("stroke-dasharray", stepsLinePathLength);
   trackMask.setAttribute("stroke-dashoffset", 0);
 
