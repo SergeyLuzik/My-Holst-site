@@ -184,7 +184,7 @@ function drawStraightTrack() {
     .getBoundingClientRect();
   markersRect.push(firstMarkerRect);
 
-  const linePadding = firstMarkerRect.height / 2;
+  const linePadding = firstMarkerRect.height / 2 - 5; // todo отнимание 5 убирает зазор между линией и маркером (костыльно)
 
   /*const firstMarkerCoords = {
     x: firstMarkerRect.x - initialX + firstMarkerRect.width / 2,
