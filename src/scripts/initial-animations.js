@@ -24,6 +24,7 @@ window.onload = () => {
     /*const throttledAnimateElements = throttle(animateElements, 200);*/
 
     const throttledAnimateElements = throttle(() => {
+      // todo вынести проверку направления скролла, тут должна быть только функция
       const currentScrollPosition = window.scrollY;
       if (currentScrollPosition > lastScrollPosition) {
         animateElements(
@@ -72,7 +73,22 @@ function animateElements(elements, targetPosition, handlerFunc) {
         for (let child of children) {
           if (child.classList.contains("line-start")) {
             const currentScrollPosition = window.scrollY;
+            const animateArguments = [
+              currentScrollPosition,
+              stepsLineStartY,
+              stepsLineEndY,
+              stepsLinePathLength,
+            ];
+            const animateFunction =
+              getMainWidth() < 1300
+                ? animateStraightStepsTrack
+                : animateStepsTrack;
+
             const throttledAnimateStepsTrack = throttle(() => {
+              animateFunction(...animateArguments, throttledAnimateStepsTrack);
+            }, 50);
+
+            /*  const throttledAnimateStepsTrack = throttle(() => {
               animateStepsTrack(
                 currentScrollPosition,
                 stepsLineStartY,
@@ -80,7 +96,7 @@ function animateElements(elements, targetPosition, handlerFunc) {
                 stepsLinePathLength,
                 throttledAnimateStepsTrack
               );
-            }, 50);
+            }, 50);*/
 
             window.addEventListener("scroll", throttledAnimateStepsTrack);
           }
@@ -203,7 +219,7 @@ function drawStraightTrack() {
   const NSstring = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(NSstring, "svg");
   svg.setAttribute("class", "steps__track");
-  const path = document.createElementNS(NSstring, "path");
+  const mainTrack = document.createElementNS(NSstring, "path");
   let d = `M ${markersCoords[0].x} ${markersCoords[0].y} L ${markersCoords[1].x} ${markersCoords[1].y}`;
   /* for (let i = 1; i < markersCoords.length; i++) {
     d += `C${markersCoords[i - 1].x} ${
@@ -227,20 +243,27 @@ function drawStraightTrack() {
     }
     offsetArray.push(dashLenght);
   });
-  path.setAttribute("d", d);
-  path.setAttribute("id", "line");
-  path.setAttribute("fill", "none");
-  stepsLinePathLength = Math.round(path.getTotalLength());
-  path.setAttribute("stroke-dasharray", offsetArray.join(" "));
+  mainTrack.setAttribute("class", "steps__main-track");
+  mainTrack.setAttribute("d", d);
+  mainTrack.setAttribute("fill", "none");
+  stepsLinePathLength = Math.round(mainTrack.getTotalLength());
+  mainTrack.setAttribute("stroke-dasharray", offsetArray.join(" "));
   // path.setAttribute("stroke-dashoffset", stepsLinePathLength);
-  svg.appendChild(path);
+  svg.appendChild(mainTrack);
+  const trackMask = document.createElementNS(NSstring, "path");
+  trackMask.setAttribute("class", "steps__track-mask");
+  trackMask.setAttribute("d", d);
+  trackMask.setAttribute("fill", "none");
+  trackMask.setAttribute("stroke", "white");
+  trackMask.setAttribute("stroke-dasharray", stepsLinePathLength);
+  trackMask.setAttribute("stroke-dashoffset", 0);
 
-  const use = document.createElementNS(NSstring, "use");
-  use.setAttribute("href", "#line");
-  use.setAttribute("class", "steps__track--mask");
+  svg.appendChild(trackMask);
+
+  /*use.setAttribute("class", "steps__track--mask");
   use.setAttribute("stroke-dasharray", stepsLinePathLength);
   use.setAttribute("stroke-dashoffset", 0);
-  svg.appendChild(use);
+  svg.appendChild(use);*/
 
   stepsSection.appendChild(svg);
 }
@@ -306,4 +329,24 @@ function animateStepsTrack(
     window.removeEventListener("scroll", handlerFunc);
   }
   trackPath.setAttribute("stroke-dashoffset", offset);
+}
+
+function animateStraightStepsTrack(
+  startScrollPosition,
+  startPoint,
+  endPoint,
+  pathLenght,
+  handlerFunc
+) {
+  const trackPath = document.querySelector(".steps__track-mask");
+  const lineHeight = endPoint - startPoint;
+  const lineScrollProgres = (window.scrollY - startScrollPosition) / lineHeight;
+  let offset = -pathLenght * lineScrollProgres;
+
+  if (offset < -pathLenght) {
+    offset = -pathLenght;
+    window.removeEventListener("scroll", handlerFunc);
+  }
+  trackPath.setAttribute("stroke-dashoffset", offset);
+  console.log("offset " + offset);
 }
