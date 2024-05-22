@@ -324,3 +324,10 @@ x = 1045302.150 / (4496.413 - y)
   stroke: var(--white);
   stroke-width: 5px;
 }
+
+.steps__track-arrow {
+  fill: var(--primary-light);
+  stroke-linejoin: round;
+  stroke: var(--primary-light);
+  stroke-width: 5px;
+}

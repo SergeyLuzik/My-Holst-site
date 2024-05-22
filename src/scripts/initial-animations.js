@@ -270,6 +270,7 @@ function drawStraightTrack() {
   use.setAttribute("stroke-dasharray", stepsLinePathLength);
   use.setAttribute("stroke-dashoffset", 0);
   svg.appendChild(use);*/
+  drawTriangle(markersCoords[0].x, markersCoords[0].y, 15, svg);
 
   stepsSection.appendChild(svg);
 }
@@ -315,6 +316,7 @@ function drawCurvedTrack() {
   path.setAttribute("stroke-dasharray", stepsLinePathLength);
   path.setAttribute("stroke-dashoffset", stepsLinePathLength);
   svg.appendChild(path);
+  drawTriangle(markersCenterCoords[0].x, markersCenterCoords[0].y, 15, svg);
 
   stepsSection.appendChild(svg);
 }
@@ -356,4 +358,49 @@ function animateStraightStepsTrack(
   }
   trackPath.setAttribute("stroke-dashoffset", offset);
   console.log("offset " + offset);
+}
+
+function translateAlong(path) {
+  var l = path.getTotalLength();
+  var t0 = 0;
+  return function (i) {
+    return function (t) {
+      var p0 = path.getPointAtLength(t0 * l); //previous point
+      var p = path.getPointAtLength(t * l); ////current point
+      var angle = (Math.atan2(p.y - p0.y, p.x - p0.x) * 180) / Math.PI; //angle for tangent
+      t0 = t;
+      //Shifting center to center of rocket
+      var centerX = p.x - 24,
+        centerY = p.y - 12;
+      return (
+        "translate(" +
+        centerX +
+        "," +
+        centerY +
+        ")rotate(" +
+        angle +
+        " 24" +
+        " 12" +
+        ")"
+      );
+    };
+  };
+}
+
+//console.log(translateAlong(document.querySelector(".steps__main-track")));
+
+function drawTriangle(initialX, initialY, sideLenght, parentNode) {
+  const triangle = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "polygon"
+  );
+  triangle.setAttribute("class", "steps__track-arrow");
+  //(Math.sqrt(3) / 2) = 0,866
+  triangle.setAttribute(
+    "points",
+    `${initialX - sideLenght / 2},${initialY} ${initialX},${
+      initialY + (Math.sqrt(3) / 2) * sideLenght
+    } ${initialX + sideLenght / 2},${initialY}`
+  );
+  parentNode.appendChild(triangle);
 }
