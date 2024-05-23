@@ -414,10 +414,10 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
 
 function moveTriangle(triangle, path, totalPathLenght, offset) {
   console.log(path);
-  const initialPoint = path.getPointAtLanght(0);
+  const initialPoint = path.getPointAtLength(0);
   console.log(totalPathLenght);
   console.log(offset);
-  const currentPoint = path.getPointAtLanght(totalPathLenght - offset);
+  const currentPoint = path.getPointAtLength(totalPathLenght - offset);
   triangle.setAttribute(
     "transform",
     `translate(${currentPoint.x - initialPoint.x}, ${
