@@ -302,6 +302,7 @@ function drawCurvedTrack() {
   const svg = document.createElementNS(NSstring, "svg");
   svg.setAttribute("class", "steps__track");
   const path = document.createElementNS(NSstring, "path");
+  path.setAttribute("class", "steps__main-track");
   let d = `M ${markersCenterCoords[0].x} ${markersCenterCoords[0].y}`;
   for (let i = 1; i < markersCenterCoords.length; i++) {
     d += `C${markersCenterCoords[i - 1].x} ${
