@@ -405,3 +405,5 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
   );
   parentNode.appendChild(triangle);
 }
+
+function moveTriangle(triangle, path) {}
