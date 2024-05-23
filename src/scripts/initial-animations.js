@@ -329,7 +329,7 @@ function animateStepsTrack(
   pathLenght,
   handlerFunc
 ) {
-  const trackPath = document.querySelector(".steps__track > path");
+  const trackPath = document.querySelector(".steps__main-track");
   const lineHeight = endPoint - startPoint;
   const lineScrollProgres = (window.scrollY - startScrollPosition) / lineHeight;
   let offset = pathLenght * (1 - lineScrollProgres);
@@ -339,6 +339,12 @@ function animateStepsTrack(
     window.removeEventListener("scroll", handlerFunc);
   }
   trackPath.setAttribute("stroke-dashoffset", offset);
+  moveTriangle(
+    document.querySelector(".steps__track-arrow"),
+    trackPath,
+    pathLenght,
+    offset
+  );
 }
 
 function animateStraightStepsTrack(
@@ -406,4 +412,16 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
   parentNode.appendChild(triangle);
 }
 
-function moveTriangle(triangle, path) {}
+function moveTriangle(triangle, path, totalPathLenght, offset) {
+  console.log(path);
+  const initialPoint = path.getPointAtLanght(0);
+  console.log(totalPathLenght);
+  console.log(offset);
+  const currentPoint = path.getPointAtLanght(totalPathLenght - offset);
+  triangle.setAttribute(
+    "transform",
+    `translate(${currentPoint.x - initialPoint.x}, ${
+      currentPoint.y - initialPoint.y
+    })`
+  );
+}
