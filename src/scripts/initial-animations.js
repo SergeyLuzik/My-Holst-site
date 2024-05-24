@@ -365,6 +365,13 @@ function animateStraightStepsTrack(
   }
   trackPath.setAttribute("stroke-dashoffset", offset);
   console.log("offset " + offset);
+  moveTriangle(
+    document.querySelector(".steps__track-arrow"),
+    trackPath,
+    pathLenght,
+    pathLenght - (pathLenght - (pathLenght + offset))
+  );
+  console.log(pathLenght - (pathLenght - (pathLenght + offset)));
 }
 
 function translateAlong(path) {
@@ -413,15 +420,18 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
 }
 
 function moveTriangle(triangle, path, totalPathLenght, offset) {
-  console.log(path);
   const initialPoint = path.getPointAtLength(0);
-  console.log(totalPathLenght);
-  console.log(offset);
   const currentPoint = path.getPointAtLength(totalPathLenght - offset);
+  console.log("totalPathLenght - offset ");
+  console.log(totalPathLenght - offset);
+  console.log(initialPoint);
+  console.log(currentPoint);
+
+  const angle = Math.atan2(currentPoint.y, currentPoint.x) * (180 / Math.PI);
   triangle.setAttribute(
     "transform",
     `translate(${currentPoint.x - initialPoint.x}, ${
       currentPoint.y - initialPoint.y
-    })`
+    }) rotate(${angle} ${initialPoint.x} ${initialPoint.y})`
   );
 }
