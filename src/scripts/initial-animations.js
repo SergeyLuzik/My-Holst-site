@@ -420,14 +420,24 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
 }
 
 function moveTriangle(triangle, path, totalPathLenght, offset) {
+  const currentLenght = totalPathLenght - offset;
   const initialPoint = path.getPointAtLength(0);
-  const currentPoint = path.getPointAtLength(totalPathLenght - offset);
-  console.log("totalPathLenght - offset ");
-  console.log(totalPathLenght - offset);
-  console.log(initialPoint);
-  console.log(currentPoint);
+  const currentPoint = path.getPointAtLength(currentLenght);
+  const triangleHeightPoints = triangle
+    .getAttribute("points")
+    .match(/\S+,(\S+)\s.\S+,(\S+)/);
+  const futurePoint = path.getPointAtLength(
+    currentLenght + (triangleHeightPoints[2] - triangleHeightPoints[1])
+  );
+  const angle =
+    (Math.atan2(
+      futurePoint.y - currentPoint.y,
+      futurePoint.x - currentPoint.x
+    ) -
+      Math.atan2(0, currentPoint.x + 1)) *
+      (180 / Math.PI) -
+    90;
 
-  const angle = Math.atan2(currentPoint.y, currentPoint.x) * (180 / Math.PI);
   triangle.setAttribute(
     "transform",
     `translate(${currentPoint.x - initialPoint.x}, ${
