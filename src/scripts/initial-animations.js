@@ -374,35 +374,6 @@ function animateStraightStepsTrack(
   console.log(pathLenght - (pathLenght - (pathLenght + offset)));
 }
 
-function translateAlong(path) {
-  var l = path.getTotalLength();
-  var t0 = 0;
-  return function (i) {
-    return function (t) {
-      var p0 = path.getPointAtLength(t0 * l); //previous point
-      var p = path.getPointAtLength(t * l); ////current point
-      var angle = (Math.atan2(p.y - p0.y, p.x - p0.x) * 180) / Math.PI; //angle for tangent
-      t0 = t;
-      //Shifting center to center of rocket
-      var centerX = p.x - 24,
-        centerY = p.y - 12;
-      return (
-        "translate(" +
-        centerX +
-        "," +
-        centerY +
-        ")rotate(" +
-        angle +
-        " 24" +
-        " 12" +
-        ")"
-      );
-    };
-  };
-}
-
-//console.log(translateAlong(document.querySelector(".steps__main-track")));
-
 function drawTriangle(initialX, initialY, sideLenght, parentNode) {
   const triangle = document.createElementNS(
     "http://www.w3.org/2000/svg",
