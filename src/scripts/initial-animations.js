@@ -339,7 +339,7 @@ function animateStepsTrack(
     window.removeEventListener("scroll", handlerFunc);
   }
   trackPath.setAttribute("stroke-dashoffset", offset);
-  moveTriangle(
+  moveTriangleAlongCurve(
     document.querySelector(".steps__track-arrow"),
     trackPath,
     pathLenght,
@@ -419,7 +419,7 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
   parentNode.appendChild(triangle);
 }
 
-function moveTriangle(triangle, path, totalPathLenght, offset) {
+function moveTriangleAlongCurve(triangle, path, totalPathLenght, offset) {
   const currentLenght = totalPathLenght - offset;
   const initialPoint = path.getPointAtLength(0);
   const currentPoint = path.getPointAtLength(currentLenght);
