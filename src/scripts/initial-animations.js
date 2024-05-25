@@ -379,7 +379,7 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
     "http://www.w3.org/2000/svg",
     "polygon"
   );
-  triangle.setAttribute("class", "steps__track-arrow animate show-faster");
+  triangle.setAttribute("class", "steps__track-arrow animate show");
   //(Math.sqrt(3) / 2) = 0,866
   triangle.setAttribute(
     "points",
