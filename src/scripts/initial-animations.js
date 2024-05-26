@@ -173,9 +173,7 @@ function drawStraightTrack() {
       .getPropertyValue("gap")
   );
   const initialX = stepsSection.getBoundingClientRect().x;
-  console.log("initialX " + initialX);
   const initialY = stepsSection.getBoundingClientRect().y + window.scrollY;
-  console.log("initialY " + initialY);
   let markersRect = [];
   const markersCoords = [];
 
@@ -197,9 +195,6 @@ function drawStraightTrack() {
     .getBoundingClientRect();
   markersRect.push(lastMarkerRect);
 
-  console.log("markersRect ");
-  console.log(markersRect);
-
   /* const lastMarkerCoords = {
     x: lastMarkerRect.x - initialX + lastMarkerRect.width / 2,
     y: lastMarkerRect.y - initialY,
@@ -218,8 +213,6 @@ function drawStraightTrack() {
       y: markerRect.y - initialY + markerRect.height / 2 + window.scrollY,
     });
   });
-  console.log("markersCoords ");
-  console.log(markersCoords);
   stepsLineStartY = markersCoords[0].y + initialY;
   stepsLineEndY = markersCoords[markersCoords.length - 1].y + initialY;
 
@@ -270,7 +263,20 @@ function drawStraightTrack() {
   use.setAttribute("stroke-dasharray", stepsLinePathLength);
   use.setAttribute("stroke-dashoffset", 0);
   svg.appendChild(use);*/
-  drawTriangle(markersCoords[0].x, markersCoords[0].y, 15, svg);
+  svg.appendChild(
+    setTriangle(markersCoords[0].x, markersCoords[0].y, 15 /*, svg*/)
+  );
+  const triangleMask = document.createElementNS(NSstring, "path");
+  triangleMask.setAttribute("class", "steps__triangle-mask");
+  triangleMask.setAttribute("d", d);
+  triangleMask.setAttribute("fill", "none");
+  triangleMask.setAttribute(
+    "stroke-width",
+    "20px"
+  ); /* 20px для перекрытия треугольника в 15px */
+  triangleMask.setAttribute("stroke-dasharray", offsetArray.slice(1).join(" "));
+  triangleMask.setAttribute("stroke-dashoffset", 0);
+  svg.appendChild(triangleMask);
 
   stepsSection.appendChild(svg);
 }
@@ -317,7 +323,13 @@ function drawCurvedTrack() {
   path.setAttribute("stroke-dasharray", stepsLinePathLength);
   path.setAttribute("stroke-dashoffset", stepsLinePathLength);
   svg.appendChild(path);
-  drawTriangle(markersCenterCoords[0].x, markersCenterCoords[0].y, 15, svg);
+  svg.appendChild(
+    setTriangle(
+      markersCenterCoords[0].x,
+      markersCenterCoords[0].y,
+      15 /*, svg*/
+    )
+  );
 
   stepsSection.appendChild(svg);
 }
@@ -364,17 +376,15 @@ function animateStraightStepsTrack(
     window.removeEventListener("scroll", handlerFunc);
   }
   trackPath.setAttribute("stroke-dashoffset", offset);
-  console.log("offset " + offset);
-  moveTriangle(
+  moveTriangleAlongStraight(
     document.querySelector(".steps__track-arrow"),
     trackPath,
-    pathLenght,
-    pathLenght - (pathLenght - (pathLenght + offset))
+    offset,
+    document.querySelector(".steps__main-track")
   );
-  console.log(pathLenght - (pathLenght - (pathLenght + offset)));
 }
 
-function drawTriangle(initialX, initialY, sideLenght, parentNode) {
+function setTriangle(initialX, initialY, sideLenght /*, parentNode*/) {
   const triangle = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "polygon"
@@ -387,7 +397,8 @@ function drawTriangle(initialX, initialY, sideLenght, parentNode) {
       initialY + (Math.sqrt(3) / 2) * sideLenght
     } ${initialX + sideLenght / 2},${initialY}`
   );
-  parentNode.appendChild(triangle);
+  //  parentNode.appendChild(triangle);
+  return triangle;
 }
 
 function moveTriangleAlongCurve(triangle, path, totalPathLenght, offset) {
@@ -414,5 +425,34 @@ function moveTriangleAlongCurve(triangle, path, totalPathLenght, offset) {
     `translate(${currentPoint.x - initialPoint.x}, ${
       currentPoint.y - initialPoint.y
     }) rotate(${angle} ${initialPoint.x} ${initialPoint.y})`
+  );
+}
+
+function moveTriangleAlongStraight(triangle, maskTrack, offset, mainTrack) {
+  const currentLenght = -offset;
+  const initialPoint = maskTrack.getPointAtLength(0);
+  const currentPoint = maskTrack.getPointAtLength(currentLenght);
+  //const dashesArray = mainTrack.getAttribute("stroke-dasharray").split(" ");
+  /* console.log(currentLenght);
+  let sum = 0;
+  let i = 0;
+  while (sum < currentLenght) {
+    i++;
+    sum += Number(dashesArray[i]);
+    console.log(i, sum);
+  }
+  if (i % 2 === 0) {
+    triangle.setAttribute(
+      "transform",
+      `translate(${currentPoint.x - initialPoint.x}, ${
+        currentPoint.y - initialPoint.y
+      })`
+    );
+  }*/
+  triangle.setAttribute(
+    "transform",
+    `translate(${currentPoint.x - initialPoint.x}, ${
+      currentPoint.y - initialPoint.y
+    })`
   );
 }
