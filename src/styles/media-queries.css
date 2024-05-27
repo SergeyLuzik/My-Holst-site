@@ -165,7 +165,6 @@
   ul.page-header__nav-list {
     flex-direction: column;
     align-items: center;
-    padding: 2em;
   }
 }
 
@@ -392,15 +391,16 @@
     grid-template-columns: repeat(2, auto);
   }
   .page-header__nav {
+    order: 1;
     position: static;
     background-color: unset;
-    padding-bottom: 0;
+    padding: 0;
     transform: none;
     transition: none;
   }
 
   ul.page-header__nav-list {
-    padding: 0;
+    /*padding: 0;*/
     align-items: start;
   }
 
@@ -411,9 +411,10 @@
     top: var(--header-hight);
     /*padding: 2em 2em 100vh;*/
     padding: 2em;
-    flex-direction: column-reverse;
+    /*flex-direction: column-reverse;
+    justify-content: end;*/
+    flex-direction: column;
     align-items: start;
-    justify-content: end;
     gap: 1em;
     background-color: var(--white);
     z-index: 10;

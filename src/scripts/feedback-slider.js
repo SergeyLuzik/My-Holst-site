@@ -1,5 +1,5 @@
 import { getMainWidth } from "./index.js";
-if (getMainWidth() > 1200) {
+if (getMainWidth() >= 1200) {
   const slidesWrapper = document.querySelector(".feedback__list"),
     slides = slidesWrapper.children,
     slideWidth = slides[0].offsetWidth,
