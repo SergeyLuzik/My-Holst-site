@@ -174,6 +174,7 @@ function drawStraightTrack() {
   );
   const initialX = stepsSection.getBoundingClientRect().x;
   const initialY = stepsSection.getBoundingClientRect().y + window.scrollY;
+  console.log(stepsSection.getBoundingClientRect(), window.scrollY);
   let markersRect = [];
   const markersCoords = [];
 
@@ -215,7 +216,7 @@ function drawStraightTrack() {
   });
   stepsLineStartY = markersCoords[0].y + initialY;
   stepsLineEndY = markersCoords[markersCoords.length - 1].y + initialY;
-
+  console.log(initialX, initialY, markersRect, markersCoords);
   const NSstring = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(NSstring, "svg");
   svg.setAttribute("class", "steps__track");
