@@ -6,10 +6,10 @@ export default merge(common, {
   devtool: "inline-source-map",
   cache: true,
 
-  devServer: {
+  /* devServer: {
     allowedHosts: "all",
     open: true,
     hot: true,
     historyApiFallback: true,
-  },
+  },*/
 });

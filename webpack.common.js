@@ -25,7 +25,27 @@ export default {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        use: [
+          { loader: "html-loader" },
+          {
+            loader: "@dreamonkey/responsive-image-loader",
+            options: {
+              /* viewportAliases: {
+                xs: "699", // 0-699
+                sm: "1023", // 700-1023
+                md: "1439", // 1024-1439
+                lg: "1919", // 1440-1919
+                xl: "3400", // 1920-3400
+              },*/
+              paths: {
+                outputDir: "assets/images/",
+                aliases: {
+                  "~": "src/",
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/i,
@@ -52,13 +72,13 @@ export default {
           },
         ],
       },
-      {
+      /*{
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
         generator: {
           filename: "assets/images/[name].[contenthash][ext]",
         },
-      },
+      },*/
       {
         test: /favicon|apple-touch|safari-pinned-tab*/i,
         type: "asset/resource",
