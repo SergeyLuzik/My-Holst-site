@@ -12,9 +12,57 @@ import Image from "@11ty/eleventy-img";
 import { readdir } from "fs/promises";
 import { parse } from "path";
 
+import fs from "fs";
+const htmlPath = "./src/index.html";
+const imageFormats = [".jpg", ".png", ".jpeg"];
+fs.readFile(htmlPath, "utf8", (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  //const updatedData = data.replace(/<img/g, "<picture$1></picture>");
+
+  data.replace(/<img([^>]*)>/, (match, attributes) => {
+    /* let img = {};
+     img.className = attributes.match(/class="([^"]*)"/)[1];
+      img.src = attributes.match(/src="([^"]*)"/)[1];
+      img.width = attributes.match(/width="([^"]*)"/)[1];
+      img.alt = attributes.match(/alt="([^"]*)"/)[1];*/
+    let img = {
+      className: attributes.match(/class="([^"]*)"/)[1],
+      src: attributes.match(/src="([^"]*)"/)[1],
+      width: attributes.match(/width="([^"]*)"/)[1],
+      alt: attributes.match(/alt="([^"]*)"/)[1],
+    };
+
+    if (
+      imageFormats.includes(img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()) //проверяет есть ли расширение в списке убирая их src возмонжые #,? после расширения файла
+    ) {
+    }
+
+    /* 
+    return `<picture>
+      <source srcset="${src}" media="${sizes}">
+      <img src="${src}" alt="${alt}" title="${title}"${attributes.replace(
+      /src="[^"]*"|alt="[^"]*"|title="[^"]*"|sizes="[^"]*"/g,
+      ""
+    )}>
+    </picture>`;*/
+  });
+
+  /*fs.writeFile("./src/new.html", updatedData, "utf8", (err) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+
+    console.log("HTML file updated successfully!");
+  });*/
+});
+
 const imagesDir = "./src/assets/images/steps/4/"; //path.resolve("src", "assets", "images", "steps", "4"); //"./public/";
 // all the image formats we're willing to optimize
-const imageFormats = [".jpg", ".png", ".jpeg"];
 
 async function optimizeImage(file) {
   const stats = await Image(imagesDir + file, {
@@ -30,7 +78,7 @@ async function optimizeImage(file) {
   console.log(stats); // remove this if you don't want the logs
 }
 
-(async () => {
+/*(async () => {
   const files = await readdir(imagesDir);
   for (const file of files) {
     const fileExtension = parse(file).ext.toLowerCase();
@@ -38,7 +86,7 @@ async function optimizeImage(file) {
       await optimizeImage(file);
     }
   }
-})();
+})();*/
 
 // in development, let's watch for any new image files in our assets directory
 /*if (process.env.ENV === "dev") {
