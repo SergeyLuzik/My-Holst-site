@@ -11,8 +11,8 @@ import Image from "@11ty/eleventy-img";
 //import { watch, existsSync } from "fs";
 import { readdir } from "fs/promises";
 import { parse } from "path";
-
 import fs from "fs";
+
 const settings = {
   htmlPath: "./src/index.html",
   imagesDir: "./src/",
@@ -28,6 +28,14 @@ function getWidthArr(initialWidth) {
   return widthArr;
 }
 
+function getImgAttribures(attributesString) {
+  return {
+    className: attributesString.match(/class="([^"]*)"/)[1],
+    src: attributesString.match(/src="([^"]*)"/)[1],
+    width: parseInt(attributesString.match(/width="([^"]*)"/)[1]),
+    alt: attributesString.match(/alt="([^"]*)"/)[1],
+  };
+}
 fs.readFile(settings.htmlPath, "utf8", (err, data) => {
   if (err) {
     console.error(err);
@@ -37,12 +45,12 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     /<img([^>]*class="slider__slide-img"[^>]*)>/,
     (match, attributes) => {
       //  <img([^>]*)>
-      const img = {
+      const img = getImgAttribures(attributes); /*{
         className: attributes.match(/class="([^"]*)"/)[1],
         src: attributes.match(/src="([^"]*)"/)[1],
         width: parseInt(attributes.match(/width="([^"]*)"/)[1]),
         alt: attributes.match(/alt="([^"]*)"/)[1],
-      };
+      };*/
 
       console.log(
         settings.imageFormats.includes(
