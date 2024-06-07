@@ -68,6 +68,7 @@ async function optimizeImage(file) {
   const stats = await Image(imagesDir + file, {
     widths: [null, 600], // edit to your heart's content
     outputDir: imagesDir + "img",
+    dryRun: true,
     filenameFormat: (id, src, width, format) => {
       // make the filename something we can recognize.
       // in this case, it's just:
