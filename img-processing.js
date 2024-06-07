@@ -13,35 +13,58 @@ import { readdir } from "fs/promises";
 import { parse } from "path";
 
 import fs from "fs";
-const htmlPath = "./src/index.html";
-const imageFormats = [".jpg", ".png", ".jpeg"];
-fs.readFile(htmlPath, "utf8", (err, data) => {
+const settings = {
+  htmlPath: "./src/index.html",
+  imagesDir: "./src/",
+  imageFormats: ["jpg", "png", "jpeg"],
+  placeholderWidth: 24,
+  dpiValues: [1, 1.5, 2, 2.5, 3],
+};
+function getWidthArr(initialWidth) {
+  let widthArr = [];
+  settings.dpiValues.forEach((dpi) => {
+    widthArr.push(initialWidth * dpi);
+  });
+  return widthArr;
+}
+
+fs.readFile(settings.htmlPath, "utf8", (err, data) => {
   if (err) {
     console.error(err);
     return;
   }
+  const updatedData = data.replace(
+    /<img([^>]*class="slider__slide-img"[^>]*)>/,
+    (match, attributes) => {
+      //  <img([^>]*)>
+      const img = {
+        className: attributes.match(/class="([^"]*)"/)[1],
+        src: attributes.match(/src="([^"]*)"/)[1],
+        width: parseInt(attributes.match(/width="([^"]*)"/)[1]),
+        alt: attributes.match(/alt="([^"]*)"/)[1],
+      };
 
-  //const updatedData = data.replace(/<img/g, "<picture$1></picture>");
+      console.log(
+        settings.imageFormats.includes(
+          img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
+        )
+      );
 
-  data.replace(/<img([^>]*)>/, (match, attributes) => {
-    /* let img = {};
-     img.className = attributes.match(/class="([^"]*)"/)[1];
-      img.src = attributes.match(/src="([^"]*)"/)[1];
-      img.width = attributes.match(/width="([^"]*)"/)[1];
-      img.alt = attributes.match(/alt="([^"]*)"/)[1];*/
-    let img = {
-      className: attributes.match(/class="([^"]*)"/)[1],
-      src: attributes.match(/src="([^"]*)"/)[1],
-      width: attributes.match(/width="([^"]*)"/)[1],
-      alt: attributes.match(/alt="([^"]*)"/)[1],
-    };
+      if (
+        settings.imageFormats.includes(
+          img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
+        ) //проверяет есть ли расширение в списке, убирая из расширения файла в src возмонжые #,?
+      ) {
+        const replasment = optimizeImage(
+          settings.imagesDir + img.src,
+          getWidthArr(img.width)
+        );
+        console.log("replasment");
+        console.log(replasment);
+        return replasment;
+      }
 
-    if (
-      imageFormats.includes(img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()) //проверяет есть ли расширение в списке убирая их src возмонжые #,? после расширения файла
-    ) {
-    }
-
-    /* 
+      /* 
     return `<picture>
       <source srcset="${src}" media="${sizes}">
       <img src="${src}" alt="${alt}" title="${title}"${attributes.replace(
@@ -49,25 +72,50 @@ fs.readFile(htmlPath, "utf8", (err, data) => {
       ""
     )}>
     </picture>`;*/
-  });
+    }
+  );
 
-  /*fs.writeFile("./src/new.html", updatedData, "utf8", (err) => {
+  fs.writeFile("./src/new.html", updatedData, "utf8", (err) => {
     if (err) {
       console.error(err);
       return;
     }
 
     console.log("HTML file updated successfully!");
-  });*/
+  });
 });
 
-const imagesDir = "./src/assets/images/steps/4/"; //path.resolve("src", "assets", "images", "steps", "4"); //"./public/";
-// all the image formats we're willing to optimize
+async function optimizeImage(src, widthArr) {
+  const stats = await Image(src, {
+    formats: ["avif", "webp", "jpeg"],
+    widths: [settings.placeholderWidth, ...widthArr],
+    // outputDir: settings.imagesDir + "img",
+    dryRun: true,
+    filenameFormat: (id, src, width, format) => {
+      //console.log(id, src, width, format);
+      return `${parse(src).name}-${width}.${format}`; //todo id это hash можно добавить его если не получится через webpack
+    },
+  });
+  // console.log(stats);
+  const html = Image.generateHTML(stats, {
+    alt: "A blue and purple galaxy of stars", // alt text is required!
+    sizes: "100vw",
+  });
+  //console.log(html);
+  return html
+    .replaceAll("sizes", "data-sizes")
+    .replaceAll(
+      /srcset="(.*?), (.*?)"/g,
+      (match, placeholder, restImgVersions) => {
+        return `srcset="${placeholder}" data-srcset="${restImgVersions}"`;
+      }
+    );
+}
 
-async function optimizeImage(file) {
-  const stats = await Image(imagesDir + file, {
+async function OLDoptimizeImage(file) {
+  const stats = await Image(settings.imagesDir + file, {
     widths: [null, 600], // edit to your heart's content
-    outputDir: imagesDir + "img",
+    outputDir: settings.imagesDir + "img",
     dryRun: true,
     filenameFormat: (id, src, width, format) => {
       // make the filename something we can recognize.
@@ -80,7 +128,7 @@ async function optimizeImage(file) {
 }
 
 /*(async () => {
-  const files = await readdir(imagesDir);
+  const files = await readdir(settings.imagesDir);
   for (const file of files) {
     const fileExtension = parse(file).ext.toLowerCase();
     if (imageFormats.includes(fileExtension)) {
@@ -91,12 +139,36 @@ async function optimizeImage(file) {
 
 // in development, let's watch for any new image files in our assets directory
 /*if (process.env.ENV === "dev") {
-  watch(imagesDir, async (event, file) => {
+  watch(settings.imagesDir, async (event, file) => {
     const fileExtension = parse(file).ext.toLowerCase();
     // the watcher fires for file deletion events too. We need to filter those out
-    const fileWasNotDeleted = existsSync(imagesDir + file);
+    const fileWasNotDeleted = existsSync(settings.imagesDir + file);
     if (imageFormats.includes(fileExtension) && fileWasNotDeleted) {
       await optimizeImage(file);
     }
   });
 }*/
+
+/*
+  Заменить sizes на data-sizes
+  заменить в sourse srсSet на data, но в img что делать с srcset?
+
+<picture
+  ><source
+    type="image/avif"
+    srcset="/img/dream-24.avif 24w, /img/dream-288.avif 288w, /img/dream-400.avif 400w"
+    sizes="100vw" />
+  <source
+    type="image/webp"
+    srcset="/img/dream-24.webp 24w, /img/dream-288.webp 288w, /img/dream-400.webp 400w"
+    sizes="100vw" />
+  <img
+    alt="A blue and purple galaxy of stars"
+    src="/img/dream-24.jpeg"
+    width="400"
+    height="600"
+    srcset="/img/dream-24.jpeg 24w, /img/dream-288.jpeg 288w, /img/dream-400.jpeg 400w"
+    sizes="100vw"
+/></picture>
+
+*/
