@@ -36,6 +36,8 @@ function getImgAttribures(attributesString) {
     alt: attributesString.match(/alt="([^"]*)"/)[1],
   };
 }
+
+//https://dev.to/ycmjason/stringprototypereplace-asynchronously-28k9 async replase
 fs.readFile(settings.htmlPath, "utf8", (err, data) => {
   if (err) {
     console.error(err);
@@ -45,13 +47,7 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     /<img([^>]*class="slider__slide-img"[^>]*)>/,
     (match, attributes) => {
       //  <img([^>]*)>
-      const img = getImgAttribures(attributes); /*{
-        className: attributes.match(/class="([^"]*)"/)[1],
-        src: attributes.match(/src="([^"]*)"/)[1],
-        width: parseInt(attributes.match(/width="([^"]*)"/)[1]),
-        alt: attributes.match(/alt="([^"]*)"/)[1],
-      };*/
-
+      const img = getImgAttribures(attributes);
       console.log(
         settings.imageFormats.includes(
           img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
@@ -63,13 +59,15 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
           img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
         ) //проверяет есть ли расширение в списке, убирая из расширения файла в src возмонжые #,?
       ) {
-        const replasment = optimizeImage(
+        return optimizeImage(
           settings.imagesDir + img.src,
-          getWidthArr(img.width)
+          getWidthArr(img.width),
+          img.className,
+          img.alt
         );
-        console.log("replasment");
+        /*console.log("replasment");
         console.log(replasment);
-        return replasment;
+        return replasment;*/
       }
 
       /* 
@@ -92,21 +90,26 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     console.log("HTML file updated successfully!");
   });
 });
-
-async function optimizeImage(src, widthArr) {
-  const stats = await Image(src, {
+// todo переписать на asinc? надо оно, работает все в синхронном режиме
+// todo как поставить класс в picture
+/*async*/ function optimizeImage(src, widthArr, imgClass, imgAlt) {
+  const options = {
+    class: imgClass,
     formats: ["avif", "webp", "jpeg"],
     widths: [settings.placeholderWidth, ...widthArr],
-    // outputDir: settings.imagesDir + "img",
+    //outputDir: settings.imagesDir + "img",
     dryRun: true,
     filenameFormat: (id, src, width, format) => {
       //console.log(id, src, width, format);
       return `${parse(src).name}-${width}.${format}`; //todo id это hash можно добавить его если не получится через webpack
     },
-  });
+  };
+  const stats = Image.statsSync(src, options);
+  /*await*/ Image(src, options);
   // console.log(stats);
   const html = Image.generateHTML(stats, {
-    alt: "A blue and purple galaxy of stars", // alt text is required!
+    class: imgClass,
+    alt: imgAlt,
     sizes: "100vw",
   });
   //console.log(html);
