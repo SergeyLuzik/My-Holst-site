@@ -1,12 +1,3 @@
-// Реализация
-/*
-1) Получить файл HTML
-2) Забрать тег img 
-3) Собрать из него атрибуты
-4) получить из 11ty готовые фото
-5) заменить img на picture
-*/
-
 import Image from "@11ty/eleventy-img";
 //import { watch, existsSync } from "fs";
 import { readdir } from "fs/promises";
@@ -28,7 +19,7 @@ function getWidthArr(initialWidth) {
   return widthArr;
 }
 
-function getImgAttribures(attributesString) {
+function getImgAttributes(attributesString) {
   return {
     className: attributesString.match(/class="([^"]*)"/)[1],
     src: attributesString.match(/src="([^"]*)"/)[1],
@@ -47,7 +38,7 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     /<img([^>]*class="slider__slide-img"[^>]*)>/,
     (match, attributes) => {
       //  <img([^>]*)>
-      const img = getImgAttribures(attributes);
+      const img = getImgAttributes(attributes);
       console.log(
         settings.imageFormats.includes(
           img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
