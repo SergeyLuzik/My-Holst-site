@@ -10,7 +10,8 @@
     "prod": "webpack --config webpack.prod.js",
     "watch": "webpack --mode development --watch",
     "server": "node server.js",
-    "11ty": "node img-processing/pre-build.js"
+    "11ty": "node img-processing/pre-build.js",
+    "P11ty": "node img-processing/post-build.js"
   },
   "keywords": [],
   "author": "Sergey Luzik",

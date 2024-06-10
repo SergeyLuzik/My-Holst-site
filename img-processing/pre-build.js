@@ -57,7 +57,7 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
       console.error(err);
       return;
     }
-    console.log("HTML file updated successfully!");
+    console.log("Picture tags generated successfully!");
   });
 });
 // todo переписать на asinc? надо оно, работает все в синхронном режиме
@@ -67,10 +67,10 @@ function optimizeImage(src, widthArr, imgClass, imgAlt) {
     class: imgClass,
     formats: ["avif", "webp", "jpeg"],
     widths: [settings.placeholderWidth, ...widthArr],
-    //outputDir: settings.imagesDir + "img",
+    outputDir: settings.imagesDir + "img",
     dryRun: true,
     filenameFormat: (id, src, width, format) => {
-      //console.log(id, src, width, format);
+      console.log(id, src, width, format);
       return `${parse(src).name}-${width}.${format}`; //todo id это hash можно добавить его если не получится через webpack
     },
   };
@@ -83,12 +83,12 @@ function optimizeImage(src, widthArr, imgClass, imgAlt) {
     alt: imgAlt,
     sizes: "100vw",
   });
-  return html
+  return html/*
     .replaceAll("sizes", "data-sizes")
     .replaceAll(
       /srcset="(.*?), (.*?)"/g,
       (match, placeholder, restImgVersions) => {
         return `srcset="${placeholder}" data-srcset="${restImgVersions}"`;
       }
-    );
+    );*/
 }
