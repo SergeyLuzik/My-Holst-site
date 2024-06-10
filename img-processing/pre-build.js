@@ -5,6 +5,7 @@ import fs from "fs";
 const settings = {
   htmlPath: "./src/index.html",
   imagesDir: "./src/",
+  outputDir: "./src/assets/optimized-images/",
   imageFormats: ["jpg", "png", "jpeg"],
   placeholderWidth: 24,
   dpiValues: [1, 1.5, 2, 2.5, 3],
@@ -67,17 +68,18 @@ function optimizeImage(src, widthArr, imgClass, imgAlt) {
     class: imgClass,
     formats: ["avif", "webp", "jpeg"],
     widths: [settings.placeholderWidth, ...widthArr],
-    outputDir: settings.imagesDir + "assets/optimized-images/",
+    urlPath: settings.outputDir,
+   // outputDir: settings.outputDir,
     dryRun: true,
     filenameFormat: (id, src, width, format) => {
-      console.log(id, src, width, format);
+     // console.log(id, src, width, format);
       return `${parse(src).name}-${width}.${format}`; //todo id это hash можно добавить его если не получится через webpack
     },
   };
 
   Image(src, options); // создаем изображения
   const stats = Image.statsSync(src, options); // собираем о них данные
-
+console.log(stats);
   const html = Image.generateHTML(stats, {
     class: imgClass,
     alt: imgAlt,
