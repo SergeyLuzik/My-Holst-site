@@ -1,6 +1,4 @@
 import Image from "@11ty/eleventy-img";
-//import { watch, existsSync } from "fs";
-import { readdir } from "fs/promises";
 import { parse } from "path";
 import fs from "fs";
 
