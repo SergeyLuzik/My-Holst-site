@@ -67,7 +67,7 @@ function optimizeImage(src, widthArr, imgClass, imgAlt) {
     class: imgClass,
     formats: ["avif", "webp", "jpeg"],
     widths: [settings.placeholderWidth, ...widthArr],
-    outputDir: settings.imagesDir + "img",
+    outputDir: settings.imagesDir + "assets/optimized-images/",
     dryRun: true,
     filenameFormat: (id, src, width, format) => {
       console.log(id, src, width, format);
@@ -83,12 +83,5 @@ function optimizeImage(src, widthArr, imgClass, imgAlt) {
     alt: imgAlt,
     sizes: "100vw",
   });
-  return html/*
-    .replaceAll("sizes", "data-sizes")
-    .replaceAll(
-      /srcset="(.*?), (.*?)"/g,
-      (match, placeholder, restImgVersions) => {
-        return `srcset="${placeholder}" data-srcset="${restImgVersions}"`;
-      }
-    );*/
+  return html;
 }
