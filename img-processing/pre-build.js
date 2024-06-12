@@ -5,11 +5,13 @@ import fs from "fs";
 const settings = {
   htmlPath: "./src/index.html",
   imagesDir: "./src/",
-  outputDir: "./src/assets/optimized-images/",
-  imageFormats: ["jpg", "png", "jpeg"],
+  urlPath: "assets/optimized-images/",
+  imageFormats: ["jpg", "png", "jpeg", "webp"],
   placeholderWidth: 24,
   dpiValues: [1, 1.5, 2, 2.5, 3],
 };
+
+export { settings }; 
 function getWidthArr(initialWidth) {
   let widthArr = [];
   settings.dpiValues.forEach((dpi) => {
@@ -32,10 +34,10 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     console.error(err);
     return;
   }
-  const updatedHtml = data.replace(
-    /<img([^>]*class="slider__slide-img"[^>]*)>/,
+  const updatedHtml = data.replaceAll(
+    /<img([^>]*)>/g,
     (match, attributes) => {
-      //  <img([^>]*)>
+      //   <img([^>]*class="slider__slide-img"[^>]*)>
       const img = getImgAttributes(attributes);
 
       if (
@@ -53,7 +55,7 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     }
   );
 
-  fs.writeFile("./src/new.html", updatedHtml, "utf8", (err) => {
+  fs.writeFile(/*"./src/new.html"*/settings.htmlPath, updatedHtml, "utf8", (err) => {
     if (err) {
       console.error(err);
       return;
@@ -68,9 +70,9 @@ function optimizeImage(src, widthArr, imgClass, imgAlt) {
     class: imgClass,
     formats: ["avif", "webp", "jpeg"],
     widths: [settings.placeholderWidth, ...widthArr],
-    urlPath: settings.outputDir,
-   // outputDir: settings.outputDir,
-    dryRun: true,
+    urlPath: settings.urlPath,
+   outputDir: settings.imagesDir + settings.urlPath,
+    //dryRun: true,
     filenameFormat: (id, src, width, format) => {
      // console.log(id, src, width, format);
       return `${parse(src).name}-${width}.${format}`; //todo id это hash можно добавить его если не получится через webpack
