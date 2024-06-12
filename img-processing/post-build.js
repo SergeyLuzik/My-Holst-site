@@ -1,6 +1,7 @@
 import fs from "fs";
+import { settings } from './pre-build.js';
 
-fs.readFile(/*settings.htmlPath*/"./src/new.html", "utf8", (err, data) => {
+fs.readFile(/*"./src/new.html"*/settings.htmlPath, "utf8", (err, data) => {
     if (err) {
       console.error(err);
       return;
@@ -13,7 +14,7 @@ fs.readFile(/*settings.htmlPath*/"./src/new.html", "utf8", (err, data) => {
       }
     );
   
-    fs.writeFile("./src/new.html", updatedHtml, "utf8", (err) => {
+    fs.writeFile(/*"./src/new.html"*/settings.htmlPath, updatedHtml, "utf8", (err) => {
       if (err) {
         console.error(err);
         return;
