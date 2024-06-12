@@ -52,13 +52,13 @@ export default {
           },
         ],
       },
-      /*{
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|webp|avif)$/i,
         type: "asset/resource",
         generator: {
           filename: "assets/images/[name].[contenthash][ext]",
         },
-      },*/
+      },
       {
         test: /favicon|apple-touch|safari-pinned-tab*/i,
         type: "asset/resource",
