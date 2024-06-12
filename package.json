@@ -11,7 +11,8 @@
     "watch": "webpack --mode development --watch",
     "server": "node server.js",
     "11ty": "node img-processing/pre-build.js",
-    "P11ty": "node img-processing/post-build.js"
+    "P11ty": "node img-processing/post-build.js",
+    "test11ty": "node img-processing/pre-build.js && webpack --config webpack.common.js && node img-processing/post-build.js"
   },
   "keywords": [],
   "author": "Sergey Luzik",
