@@ -51,6 +51,8 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
           img.className,
           img.alt
         );
+      } else {
+        return match;
       }
     }
   );
@@ -87,5 +89,5 @@ console.log(stats);
     alt: imgAlt,
     sizes: "100vw",
   });
-  return html;
+  return html.replace(/<picture/g, `<picture class="${imgClass}"`);
 }
