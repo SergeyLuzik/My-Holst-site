@@ -25,6 +25,7 @@ function getImgAttributes(attributesString) {
     className: attributesString.match(/class="([^"]*)"/)[1],
     src: attributesString.match(/src="([^"]*)"/)[1],
     width: parseInt(attributesString.match(/width="([^"]*)"/)[1]),
+    height: parseInt(attributesString.match(/height="([^"]*)"/)[1]),
     alt: attributesString.match(/alt="([^"]*)"/)[1],
   };
 }
@@ -38,18 +39,17 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     /<img([^>]*)>/g,
     (match, attributes) => {
       //   <img([^>]*class="slider__slide-img"[^>]*)>
-      const img = getImgAttributes(attributes);
+      const imgAttributes = getImgAttributes(attributes);
 
       if (
         settings.imageFormats.includes(
-          img.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
+          imgAttributes.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
         ) //проверяет есть ли расширение в списке, убирая из расширения файла в src возмонжые #,?
       ) {
         return optimizeImage(
-          settings.imagesDir + img.src,
-          getWidthArr(img.width),
-          img.className,
-          img.alt
+          settings.imagesDir + imgAttributes.src,
+          getWidthArr(imgAttributes.width),
+          imgAttributes
         );
       } else {
         return match;
@@ -67,9 +67,8 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
 });
 // todo переписать на asinc? надо оно, работает все в синхронном режиме
 // todo как поставить класс в picture
-function optimizeImage(src, widthArr, imgClass, imgAlt) {
+function optimizeImage(src, widthArr, imgAttributes) {
   const options = {
-    class: imgClass,
     formats: ["avif", "webp", "jpeg"],
     widths: [settings.placeholderWidth, ...widthArr],
     urlPath: settings.urlPath,
@@ -85,9 +84,12 @@ function optimizeImage(src, widthArr, imgClass, imgAlt) {
   const stats = Image.statsSync(src, options); // собираем о них данные
 console.log(stats);
   const html = Image.generateHTML(stats, {
-    class: imgClass,
-    alt: imgAlt,
+    class: imgAttributes.className,
+    alt: imgAttributes.alt,
     sizes: "100vw",
   });
-  return html.replace(/<picture/g, `<picture class="${imgClass}"`);
+  return html.replaceAll(/(<picture)(.*width=")\d*(" height=")\d*(".*>)/g, `$1 class="${imgAttributes.className}"$2${imgAttributes.width}$3${imgAttributes.height}$4`);
 }
+
+
+//<(picture).*width="(\d*)" height="(\d*)".*>
