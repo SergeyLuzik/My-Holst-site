@@ -1,17 +1,8 @@
 import Image from "@11ty/eleventy-img";
 import { parse } from "path";
 import fs from "fs";
+import { settings } from './settings.js';
 
-const settings = {
-  htmlPath: "./src/index.html",
-  imagesDir: "./src/",
-  urlPath: "assets/optimized-images/",
-  imageFormats: ["jpg", "png", "jpeg", "webp"],
-  placeholderWidth: 24,
-  dpiValues: [1, 1.5, 2, 2.5, 3],
-};
-
-export { settings }; 
 function getWidthArr(initialWidth) {
   let widthArr = [];
   settings.dpiValues.forEach((dpi) => {
@@ -38,7 +29,6 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
   const updatedHtml = data.replaceAll(
     /<img([^>]*)>/g,
     (match, attributes) => {
-      //   <img([^>]*class="slider__slide-img"[^>]*)>
       const imgAttributes = getImgAttributes(attributes);
 
       if (
@@ -57,7 +47,7 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     }
   );
 
-  fs.writeFile(/*"./src/new.html"*/settings.htmlPath, updatedHtml, "utf8", (err) => {
+  fs.writeFile(settings.htmlPath, updatedHtml, "utf8", (err) => {
     if (err) {
       console.error(err);
       return;
@@ -66,7 +56,7 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
   });
 });
 // todo переписать на asinc? надо оно, работает все в синхронном режиме
-// todo как поставить класс в picture
+
 function optimizeImage(src, widthArr, imgAttributes) {
   const options = {
     formats: ["avif", "webp", "jpeg"],
@@ -90,6 +80,3 @@ console.log(stats);
   });
   return html.replaceAll(/(<picture)(.*width=")\d*(" height=")\d*(".*>)/g, `$1 class="${imgAttributes.className}"$2${imgAttributes.width}$3${imgAttributes.height}$4`);
 }
-
-
-//<(picture).*width="(\d*)" height="(\d*)".*>
