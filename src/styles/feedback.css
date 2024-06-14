@@ -82,7 +82,8 @@
   margin-block: 0;
 }
 
-.feedback-card__avatar {
+img.feedback-card__avatar {
+  /*img добавил чтобы убрать дублирование обводки в аватарке*/
   position: relative;
   z-index: 2;
   width: 100%;
