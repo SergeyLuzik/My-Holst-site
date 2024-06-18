@@ -56,7 +56,7 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif|webp|avif)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/images/[name].[contenthash][ext]",
+          filename: "assets/images/[name].[contenthash:8][ext]",
         },
       },
       {
@@ -105,6 +105,10 @@ export default {
     }),
     new CopyPlugin({
       patterns: [
+        /*{
+          from: path.resolve("src", "assets", "optimized-images"),
+          to: path.resolve("docs", "assets", "optimized-images", "[base]"),
+        },*/
         {
           from: path.resolve(
             "src",
