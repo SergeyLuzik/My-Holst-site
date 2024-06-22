@@ -102,6 +102,7 @@ export default {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve("src", "index.html"),
+      minify: true,
     }),
     new CopyPlugin({
       patterns: [
