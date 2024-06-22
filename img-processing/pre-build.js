@@ -21,7 +21,7 @@ function getImgAttributes(attributesString) {
   };
 }
 
-fs.readFile(settings.htmlPath, "utf8", (err, data) => {
+fs.readFile(settings.preHtmlPath, "utf8", (err, data) => {
   if (err) {
     console.error(err);
     return;
@@ -44,7 +44,7 @@ fs.readFile(settings.htmlPath, "utf8", (err, data) => {
     }
   });
 
-  fs.writeFile(settings.htmlPath, updatedHtml, "utf8", (err) => {
+  fs.writeFile(settings.preHtmlPath, updatedHtml, "utf8", (err) => {
     if (err) {
       console.error(err);
       return;

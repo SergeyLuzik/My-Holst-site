@@ -1,6 +1,6 @@
 export const settings = {
-  htmlPath: "./src/index.html",
-  /*htmlPath: "./docs/index.html",*/
+  preHtmlPath: "./src/index.html",
+  postHtmlPath: "./docs/index.html",
   imagesDir: "./src/",
   urlPath: "assets/optimized-images/",
   imageFormats: ["jpg", "png", "jpeg", "webp"],
