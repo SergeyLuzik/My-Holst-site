@@ -11,5 +11,8 @@ export default merge(common, {
     open: true,
     hot: true,
     historyApiFallback: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
 });
