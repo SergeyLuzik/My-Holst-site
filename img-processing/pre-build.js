@@ -63,7 +63,7 @@ function optimizeImage(src, widthArr, imgAttributes) {
     //dryRun: true,
     filenameFormat: (id, src, width, format) => {
       // console.log(id, src, width, format);
-      return `${parse(src).name}-${width}.${format}`; //todo id это hash можно добавить его если не получится через webpack
+      return `${parse(src).name}-${width}.${id}.${format}`; //todo id это hash можно добавить его если не получится через webpack
     },
   };
 
