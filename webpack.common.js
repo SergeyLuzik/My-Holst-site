@@ -56,7 +56,7 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif|webp|avif)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/images/[name].[contenthash:8][ext]",
+          filename: "assets/images/[name][ext]" /*.[contenthash:8] */,
         },
       },
       {
