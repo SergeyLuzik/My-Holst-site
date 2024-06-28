@@ -13,6 +13,7 @@ export default {
     path: path.resolve("docs"),
     //clean: true,
   },
+  target: "web",
   stats: {
     depth: true,
     children: true,
