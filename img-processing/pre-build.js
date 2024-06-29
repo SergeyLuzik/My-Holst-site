@@ -2,8 +2,9 @@ import Image from "@11ty/eleventy-img";
 import { parse } from "path";
 import fs from "fs";
 import { settings } from "./settings.js";
+import { log } from "console";
 
-function getWidthArr(initialWidth) {
+function calcWidthArr(initialWidth) {
   let widthArr = [];
   settings.dpiValues.forEach((dpi) => {
     widthArr.push(initialWidth * dpi);
@@ -11,14 +12,15 @@ function getWidthArr(initialWidth) {
   return widthArr;
 }
 
-function getImgAttributes(attributesString) {
-  return {
-    className: attributesString.match(/class="([^"]*)"/)[1],
-    src: attributesString.match(/src="([^"]*)"/)[1],
-    width: parseInt(attributesString.match(/width="([^"]*)"/)[1]),
-    height: parseInt(attributesString.match(/height="([^"]*)"/)[1]),
-    alt: attributesString.match(/alt="([^"]*)"/)[1],
-  };
+function getImageAttribute(attributeName, attributeString, returnType) {
+  console.log(attributeName);
+  console.log(attributeString);
+  const attribute = attributeString.match(
+    new RegExp(`${attributeName}="([^"]*)"`)
+  )[1];
+  if (returnType === "number") {
+    return parseInt(attribute);
+  } else return attribute;
 }
 
 fs.readFile(settings.preHtmlPath, "utf8", (err, data) => {
@@ -27,16 +29,23 @@ fs.readFile(settings.preHtmlPath, "utf8", (err, data) => {
     return;
   }
   const updatedHtml = data.replaceAll(/<img([^>]*)>/g, (match, attributes) => {
-    const imgAttributes = getImgAttributes(attributes);
-
+    const imgSrc = getImageAttribute("src", attributes);
     if (
       settings.imageFormats.includes(
-        imgAttributes.src.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
-      ) //проверяет есть ли расширение в списке, убирая из расширения файла в src возмонжые #,?
+        imgSrc.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
+      ) //проверяет есть ли расширение в списке, убирая из расширения файла в src возможные #,?
     ) {
+      const imgAttributes = {
+        className: getImageAttribute("class", attributes),
+        src: imgSrc,
+        width: getImageAttribute("width", attributes, "number"),
+        height: getImageAttribute("height", attributes, "number"),
+        sizes: getImageAttribute("sizes", attributes),
+        alt: getImageAttribute("alt", attributes),
+      };
       return optimizeImage(
         settings.imagesDir + imgAttributes.src,
-        getWidthArr(imgAttributes.width),
+        calcWidthArr(imgAttributes.width),
         imgAttributes
       );
     } else {
@@ -73,7 +82,7 @@ function optimizeImage(src, widthArr, imgAttributes) {
   const html = Image.generateHTML(stats, {
     class: imgAttributes.className,
     alt: imgAttributes.alt,
-    sizes: "100vw",
+    sizes: imgAttributes.sizes,
   });
   return html.replaceAll(
     /(<picture)(.*width=")\d*(" height=")\d*(".*>)/g,
