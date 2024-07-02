@@ -67,6 +67,7 @@ body {
 
 picture img {
   animation: 2s infinite pulse;
+  clip-path: inset(0);
 }
 picture[data-loaded] img {
   animation: unset;
