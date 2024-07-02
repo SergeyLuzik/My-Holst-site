@@ -65,6 +65,25 @@ body {
   opacity: 0;
 }
 
+picture img {
+  animation: 2s infinite pulse;
+}
+picture[data-loaded] img {
+  animation: unset;
+}
+
+@keyframes pulse {
+  0% {
+    filter: blur(4px) opacity(75%);
+  }
+  50% {
+    filter: blur(4px) opacity(100%);
+  }
+  100% {
+    filter: blur(4px) opacity(75%);
+  }
+}
+
 .section-title {
   width: calc(8vw + 216px);
   margin-inline: auto;
