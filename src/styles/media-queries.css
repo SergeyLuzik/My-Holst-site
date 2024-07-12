@@ -512,7 +512,7 @@
     text-align: center;
   }
 
-  .card__img {
+  picture.card__img {
     width: 60% /*145px*/;
   }
   .card__text {
