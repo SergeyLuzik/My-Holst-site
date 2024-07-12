@@ -34,7 +34,8 @@ todo: определять span с помощью ::nth-child по какому-
   gap: /*0.8vw*/ 12px;
 }
 
-[class*="_border"] {
+img[class*="_border"] {
+  /*img добавлен чтобы не задваивать обводки в галерее, т.к. у picture такой же класс*/
   border: 1px solid grey;
 }
 

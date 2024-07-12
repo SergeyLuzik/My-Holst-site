@@ -1,7 +1,7 @@
 import { merge } from "webpack-merge";
 import common from "./webpack.common.js";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
+//import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
 
 export default merge(common, {
   mode: "production",
@@ -14,7 +14,7 @@ export default merge(common, {
     minimizer: [
       `...`,
       new CssMinimizerPlugin(),
-      new ImageMinimizerPlugin({
+      /*new ImageMinimizerPlugin({
         minimizer: [
           {
             // `sharp` will handle all bitmap formats (JPG, PNG, GIF, ...)
@@ -61,7 +61,8 @@ export default merge(common, {
             },
           },
         ],
-      }),
+      })*/
+      ,
     ],
   },
 });

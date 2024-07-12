@@ -51,6 +51,7 @@
   /*grid-template-rows: 224px 80px /*36px 44px*/ /*68px 32px;*/
   grid-template-rows: 55.445% 19.801% 16.831% 7.92% /*170px 60px 52px 24px*/;
   aspect-ratio: 0.6214;
+  overflow: hidden;
 }
 
 .feedback-card__header {
@@ -82,7 +83,8 @@
   margin-block: 0;
 }
 
-.feedback-card__avatar {
+img.feedback-card__avatar {
+  /*img добавил чтобы убрать дублирование обводки в аватарке*/
   position: relative;
   z-index: 2;
   width: 100%;
@@ -110,6 +112,12 @@
   line-height: var(--lh-text-xs);
   margin-block: 0;
   padding-block-end: 4px;
+  mask-image: linear-gradient(
+    to bottom,
+    #000 50%,
+    transparent 90%,
+    transparent 100%
+  );
 }
 a.feedback-card__link {
   /*grid-row-start: 5;

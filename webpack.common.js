@@ -13,6 +13,7 @@ export default {
     path: path.resolve("docs"),
     //clean: true,
   },
+  target: "web",
   stats: {
     depth: true,
     children: true,
@@ -53,10 +54,10 @@ export default {
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp|avif)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/images/[name].[contenthash][ext]",
+          filename: "assets/images/[name][ext]" /*.[contenthash:8] */,
         },
       },
       {
@@ -102,9 +103,14 @@ export default {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve("src", "index.html"),
+      minify: true,
     }),
     new CopyPlugin({
       patterns: [
+        /*{
+          from: path.resolve("src", "assets", "optimized-images"),
+          to: path.resolve("docs", "assets", "optimized-images", "[base]"),
+        },*/
         {
           from: path.resolve(
             "src",
