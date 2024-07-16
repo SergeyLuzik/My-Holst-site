@@ -109,7 +109,7 @@ x = 1045302.150 / (4496.413 - y)
 img.steps__img {
   height: auto;
   width: 100%;
-  clip-path: inset(0);
+  /*clip-path: inset(0);*/
 }
 .steps__item:nth-child(1) .steps__img:first-child {
   grid-column: 1 / 3;
