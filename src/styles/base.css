@@ -69,7 +69,7 @@ picture img {
   animation: 2s infinite pulse;
 }
 picture[data-loaded] img {
-  /*animation: unset;*/
+  animation: unset;
 }
 
 @keyframes pulse {
