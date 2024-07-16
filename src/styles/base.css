@@ -74,13 +74,13 @@ picture[data-loaded] img {
 
 @keyframes pulse {
   0% {
-    filter: blur(25px) opacity(75%);
+    filter: blur(8px) opacity(75%);
   }
   50% {
-    filter: blur(25px) opacity(100%);
+    filter: blur(8px) opacity(100%);
   }
   100% {
-    filter: blur(25px) opacity(75%);
+    filter: blur(8px) opacity(75%);
   }
 }
 
