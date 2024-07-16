@@ -106,9 +106,10 @@ x = 1045302.150 / (4496.413 - y)
     grid-template-rows: 5vw 1fr;*/
 }
 
-.steps__img {
+img.steps__img {
   height: auto;
   width: 100%;
+  clip-path: inset(0);
 }
 .steps__item:nth-child(1) .steps__img:first-child {
   grid-column: 1 / 3;
@@ -205,7 +206,8 @@ x = 1045302.150 / (4496.413 - y)
 }
 .card__img {
   grid-area: img;
-  border-radius: 6.25%;
+  clip-path: inset(0 round 6.25%);
+  /*border-radius: 6.25%;*/
   width: 100%;
   height: auto;
 }
@@ -251,7 +253,8 @@ x = 1045302.150 / (4496.413 - y)
 }
 
 .steps__item:nth-child(4) .steps__img {
-  border-radius: 10px;
+  clip-path: inset(0 round 10px);
+  /* border-radius: 10px;*/
 }
 .steps__item:nth-child(4) .steps__img:first-child {
   grid-column: 2 / 4;
@@ -275,7 +278,8 @@ x = 1045302.150 / (4496.413 - y)
 }
 
 .steps__item:nth-child(5) .steps__img:nth-child(-n + 2) {
-  border-radius: 10px;
+  clip-path: inset(0 round 10px);
+  /* border-radius: 10px;*/
 }
 .steps__item:nth-child(5) .steps__img:first-child {
   grid-row: 1 / span 3;
