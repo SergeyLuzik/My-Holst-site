@@ -37,6 +37,7 @@ todo: определять span с помощью ::nth-child по какому-
 img[class*="_border"] {
   /*img добавлен чтобы не задваивать обводки в галерее, т.к. у picture такой же класс*/
   border: 1px solid grey;
+  border-radius: 15px;
 }
 
 [class*="_cols_2"] {
