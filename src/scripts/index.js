@@ -21,4 +21,4 @@ import "./burger-menu.js";
 //console.log("burger-menu.js");
 import "./initial-animations.js";
 //console.log("initial-animations.js");
-import "./placeholder.js";
+import "./img-thumbnails.js";
