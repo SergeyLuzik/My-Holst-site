@@ -146,8 +146,8 @@
 
   .page-header__nav {
     position: fixed;
-    height: calc(100vh - var(--header-hight)); /*todo переписать на переменную*/
-    top: var(--header-hight);
+    height: calc(100vh - var(--header-hight) + 2px); /*todo переписать на переменную*/
+    top: calc(var(--header-hight) - 2px);
     /*top: 124px;*/
     right: 0;
     padding: 2em;
