@@ -1,8 +1,9 @@
-import { getMainWidth } from "./index.js";
-if (getMainWidth() <= 1250) {
+  import {getMainWidth} from './utils.js'
+
   const headerHeight = `${
     document.querySelector(".page-header").offsetHeight
   }px`;
+  
   document
     .querySelector(":root")
     .style.setProperty("--header-hight", `${headerHeight}`);
@@ -22,6 +23,7 @@ if (getMainWidth() <= 1250) {
     };
   }
 
+  export function addBurgerMenu() {
   burgerButton.addEventListener(
     "click",
     (e) => {
@@ -65,4 +67,4 @@ if (getMainWidth() <= 1250) {
     },
     { once: true }
   );
-}
+ }
