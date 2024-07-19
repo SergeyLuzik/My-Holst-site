@@ -1,5 +1,3 @@
-  import {getMainWidth} from './utils.js'
-
   const headerHeight = `${
     document.querySelector(".page-header").offsetHeight
   }px`;
@@ -23,13 +21,13 @@
     };
   }
 
-  export function addBurgerMenu() {
+  export function burgerMenuHandler(mainWidth) {
   burgerButton.addEventListener(
     "click",
     (e) => {
       console.log("клик на кнопку в обработчике кнопки");
       const menu =
-        getMainWidth() <= 680
+      mainWidth <= 680
           ? document.querySelector(".page-header__menu")
           : document.querySelector(".page-header__nav");
       //menu.style.top = headerHeight;
