@@ -1,7 +1,10 @@
 import { getMainWidth } from "./utils.js";
 import { throttle } from "./utils.js";
+
 let stepsLineStartY, stepsLineEndY, stepsLinePathLength;
 window.onload = () => {
+  // todo вынести в index.js? т.к. запускает разные функции
+  // todo (разделить фун-ции на связанные модули - контроль скролла, анимации и т.д.)
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("preloader_hide");
   preloader.addEventListener("transitionend", () => {
