@@ -1,4 +1,4 @@
-import { getMainWidth } from "./index.js";
+import {getMainWidth} from './utils.js'
 let stepsLineStartY, stepsLineEndY, stepsLinePathLength;
 window.onload = () => {
   const preloader = document.querySelector(".preloader");

@@ -65,7 +65,7 @@ function movRight(slidesWrapper, offset) {
   slides[1].style.transitionTimingFunction = "cubic-bezier(0,.75,.02,1)"; //0,.75,.02,1  // 0,0,.02,1 // .75,0,1,.02
 }
 
-export function startHeroSlider() {
+export function heroSliderHandler() {
   // Initialize slider start position
   slidesWrapper.style.transform = `translateX(${-initialOffset}px)`;
   slides[0].style.opacity = 0;

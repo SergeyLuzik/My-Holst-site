@@ -1,5 +1,3 @@
-// Моя реализация //////////////////////////////////////////////
-
 function swapPlaceholder(picture) {
   const img = picture.querySelector("img");
   const sources = picture.querySelectorAll("source");
@@ -24,7 +22,6 @@ function swapPlaceholder(picture) {
 }
 
 const pictures = document.querySelectorAll("picture");
-console.log(pictures);
 
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
@@ -36,8 +33,10 @@ const callback = (entries, observer) => {
   });
 };
 
-const observer = new IntersectionObserver(callback);
+export function imgThumbnailsHandler() {
+  const observer = new IntersectionObserver(callback);
 
 pictures.forEach((picture) => {
   observer.observe(picture);
 });
+}

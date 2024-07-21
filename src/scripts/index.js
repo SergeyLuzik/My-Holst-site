@@ -1,24 +1,26 @@
-//import "../styles/index.css";
-//const mainWidth = document.querySelector(".page-main")?.offsetWidth;
-//export { mainWidth };
-function getMainWidth() {
-  return document.querySelector(".page-main").offsetWidth;
-}
-
-export { getMainWidth };
-
 /* todo прелоадер
 отключать обработку события скролл?
 или просто по умолчанию вешать в html класс stop-scroll?
 */
 
-//console.log("mainWidth в index.js " + getMainWidth());
-import "./hero-slider.js";
-//console.log("hero-slider.js");
-import "./feedback-slider.js";
-//console.log("feedback-slider.js");
-import "./burger-menu.js";
-//console.log("burger-menu.js");
 import "./initial-animations.js";
-//console.log("initial-animations.js");
-import "./img-thumbnails.js";
+
+import { getMainWidth } from "./utils.js";
+import { imgThumbnailsHandler } from "./img-thumbnails.js";
+import { burgerMenuHandler } from "./burger-menu.js";
+import { heroSliderHandler } from "./hero-slider.js";
+import { feedbackSliderHandler } from "./feedback-slider.js";
+
+imgThumbnailsHandler();
+
+const mainWidth = getMainWidth();
+
+if (mainWidth <= 1250) {
+  burgerMenuHandler(mainWidth);
+}
+if (mainWidth > 1200) {
+  feedbackSliderHandler();
+}
+if (mainWidth > 800) {
+  heroSliderHandler();
+}
