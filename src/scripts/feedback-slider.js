@@ -38,7 +38,8 @@ slidesList.style.transition = transitionTime;
 slidesList.style.transform = `translateX(${gapValue}px)`;
 }
 
-let MutObserver = new MutationObserver (() => {
+export function feedbackSliderHandler() {
+//let MutObserver = new MutationObserver (() => {
  const slideWidth = slides[0].offsetWidth,
   slidesListWidth = slidesList.offsetWidth,
   gapValue =
@@ -61,8 +62,8 @@ slidesList.style.transform = `translateX(${-offset}px)`;
     inAction = true;
     movRight(amountSlidesOnList, offset, gapValue);
   };
-  })
-  export function feedbackSliderHandler() {
-  MutObserver.observe(document.documentElement, {attributeFilter: ["class"]});
+  //})
+
+ // MutObserver.observe(document.documentElement, {attributeFilter: ["class"]});
 }
 

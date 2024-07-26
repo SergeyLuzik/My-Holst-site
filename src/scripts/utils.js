@@ -1,3 +1,21 @@
+let lastScrollPosition = 0;
+
+export function scrollData() {
+  let result = { position: window.scrollY, direction: "" };
+  result.direction = result.position > lastScrollPosition ? "down" : "up";
+  lastScrollPosition = result.position;
+  return result;
+}
+
+export function inTarget(element, target) {
+  const elementPosition = element.getBoundingClientRect().top;
+  if (elementPosition <= target) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export function getMainWidth() {
   return document.querySelector(".page-main").offsetWidth;
 }

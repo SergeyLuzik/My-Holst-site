@@ -19,7 +19,7 @@ const slidesWrapper = document.querySelector(".slider__slides-list"),
 let inAction = false;
 
 function movLeft(slidesWrapper, offset) {
-  slidesWrapper.ontransitionend = (_) => {
+  slidesWrapper.ontransitionend = () => {
     slidesWrapper.ontransitionend = null;
     slidesWrapper.style.transition = "none";
     slides[0].removeAttribute("style");
@@ -41,7 +41,7 @@ function movLeft(slidesWrapper, offset) {
   slides[2].style.transitionTimingFunction = "cubic-bezier(.72,.07,.95,.7)"; //.75,0,1,.02 ease-in
 }
 function movRight(slidesWrapper, offset) {
-  slidesWrapper.ontransitionend = (_) => {
+  slidesWrapper.ontransitionend = () => {
     slidesWrapper.ontransitionend = null;
     slidesWrapper.style.transition = "none";
     slides[1].removeAttribute("style");
@@ -71,12 +71,12 @@ export function heroSliderHandler() {
   slides[0].style.opacity = 0;
   slides[1].style.transform = slideScale;
 
-  left.onclick = (_) => {
+  left.onclick = () => {
     if (inAction) return;
     inAction = true;
     movRight(slidesWrapper, offset);
   };
-  right.onclick = (_) => {
+  right.onclick = () => {
     if (inAction) return;
     inAction = true;
     movLeft(slidesWrapper, offset);

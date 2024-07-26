@@ -131,7 +131,7 @@ export function addStraightTrack() {
   
     if (offset < -pathLenght) {
       offset = -pathLenght;
-      window.removeEventListener("scroll", handlerFunc);
+      //window.removeEventListener("scroll", handlerFunc);
     }
     trackPath.setAttribute("stroke-dashoffset", offset);
     moveTriangleAlongStraight(

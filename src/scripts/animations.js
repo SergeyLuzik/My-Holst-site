@@ -1,9 +1,10 @@
-import { getMainWidth } from "./utils.js";
+import { getMainWidth, inTarget } from "./utils.js";
 import { throttle } from "./utils.js";
 import { animateCurvedStepsTrack } from "./steps-track/curved-track.js";
 import { animateStraightStepsTrack } from "./steps-track/straight-track.js";
 import { stepsLine } from "./steps-track/steps-line-vars.js";
 //let stepsLine.startY, stepsLine.endY, stepsLine.pathLength;
+
 
 function animNumber(numObj, duration) {
   const num = parseInt(numObj.innerHTML.replace(" ", ""), 10);
@@ -32,8 +33,8 @@ export function animateElements(elements, targetPosition, handlerFunc) {
     if (element.classList.contains("scrolled-in")) {
       return;
     }
-    const elementPosition = element.getBoundingClientRect().top;
-    if (elementPosition < targetPosition) {
+   // const elementPosition = element.getBoundingClientRect().top;
+    if (inTarget(element, targetPosition)/*elementPosition <= targetPosition*/) {
       const elementClass = element.classList[0];
 
       if (elementClass in elementsClassesCount) {
@@ -56,7 +57,7 @@ export function animateElements(elements, targetPosition, handlerFunc) {
       if (element.classList.contains("animate-childs")) {
         const children = element.children;
         for (let child of children) {
-          if (child.classList.contains("line-start")) {
+          /*if (child.classList.contains("line-start")) {
             const currentScrollPosition = window.scrollY;
             const animateArguments = [
               currentScrollPosition,
@@ -73,18 +74,8 @@ export function animateElements(elements, targetPosition, handlerFunc) {
               animateFunction(...animateArguments, throttledAnimateStepsTrack);
             }, 50);
 
-            /*  const throttledAnimateStepsTrack = throttle(() => {
-              animateCurvedStepsTrack(
-                currentScrollPosition,
-                stepsLine.startY,
-                stepsLine.endY,
-                stepsLine.pathLength,
-                throttledAnimateStepsTrack
-              );
-            }, 50);*/
-
             window.addEventListener("scroll", throttledAnimateStepsTrack);
-          }
+          }*/
           child.classList.add("scrolled-in");
         }
       }
@@ -96,7 +87,7 @@ export function animateElements(elements, targetPosition, handlerFunc) {
     ) {
       elements[elements.length - 1].classList.add("scrolled-in");
 
-      window.removeEventListener("scroll", handlerFunc);
+      //window.removeEventListener("scroll", handlerFunc);
     }
   });
 }

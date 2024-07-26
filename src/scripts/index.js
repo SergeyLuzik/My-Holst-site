@@ -1,41 +1,25 @@
-/* todo прелоадер
-отключать обработку события скролл?
-или просто по умолчанию вешать в html класс stop-scroll?
-*/
-
-
-
-import { getMainWidth } from "./utils.js";
+import { getMainWidth, scrollData, inTarget } from "./utils.js";
+import { throttle } from "./utils.js";
+import { animateElements } from "./animations.js";
+import { addCurvedTrack } from "./steps-track/curved-track.js";
+import { addStraightTrack } from "./steps-track/straight-track.js";
 import { imgThumbnailsHandler } from "./img-thumbnails.js";
 import { burgerMenuHandler } from "./burger-menu.js";
 import { heroSliderHandler } from "./hero-slider.js";
 import { feedbackSliderHandler } from "./feedback-slider.js";
-import { animateElements } from "./animations.js";
-import { addCurvedTrack } from "./steps-track/curved-track.js";
-import { addStraightTrack } from "./steps-track/straight-track.js";
-import { throttle } from "./utils.js";
-
-imgThumbnailsHandler();
+import { stepsLine } from "./steps-track/steps-line-vars.js";
+import { animateCurvedStepsTrack } from "./steps-track/curved-track.js";
+import { animateStraightStepsTrack } from "./steps-track/straight-track.js";
 
 const mainWidth = getMainWidth();
 
-if (mainWidth <= 1250) {
-  burgerMenuHandler(mainWidth);
-}
-if (mainWidth > 1200) {
-  feedbackSliderHandler();
-}
-if (mainWidth > 800) {
-  heroSliderHandler();
-}
+imgThumbnailsHandler();
 
-window.onload = () => {
+window.addEventListener("load", () => {
   const preloader = document.querySelector(".preloader");
-  preloader.classList.add("preloader_hide"); //todo перенести после transitionend? потому что сначала запускаем анимацию а потом только добавляем событие?
 
-  preloader.addEventListener("transitionend", () => {// todo убрать слушатель когда все установлено
-    // todo тоже бы убирать когда все установлено добавить все в функцию initAnimation?
-
+  preloader.ontransitionend = () => {
+    preloader.ontransitionend = null;
     document.documentElement.classList.remove("stop-scroll");
     preloader.remove();
 
@@ -44,6 +28,23 @@ window.onload = () => {
     } else {
       addCurvedTrack();
     }
+    if (mainWidth <= 1250) {
+      burgerMenuHandler(mainWidth);
+    }
+    if (mainWidth > 1200) {
+      feedbackSliderHandler();
+    }
+    if (mainWidth > 800) {
+      heroSliderHandler();
+    }
+
+    /*const er = () => {
+      console.log("error");
+    };
+
+    window.addEventListener("scroll", () => {
+      er();
+    });*/
 
     // Инициализация анимаций
     const animationElements = document.querySelectorAll(".animate"); // todo? поменять на byclassname :not scrolled чтобы коллекция обновлялась сама?
@@ -51,10 +52,34 @@ window.onload = () => {
 
     animateElements(animationElements, targetPosition);
 
-    let lastScrollPosition = 0;
+    const stepsTrackAnimateFunction =
+    mainWidth <= 1300
+      ? animateStraightStepsTrack
+      : animateCurvedStepsTrack;
+
+    const throttledScrollAnimationHandler = throttle(() => {
+
+      const scroll = scrollData();
+      if(scroll.direction === "down"){
+        throttle(animateElements(
+          animationElements,
+          targetPosition), 100)
+      }
+      if(inTarget(document.querySelector(".line-start"), targetPosition)){
+        console.log("Сработал start-lite");
+        stepsTrackAnimateFunction(stepsLine.startY - targetPosition, stepsLine.startY,
+          stepsLine.endY,
+          stepsLine.pathLength);
+      }
+    }, 50);
+    
+      window.addEventListener("scroll", throttledScrollAnimationHandler);
+
+    //let lastScrollPosition = 0;
     /*const throttledAnimateElements = throttle(animateElements, 200);*/
 
-    const throttledAnimateElements = throttle(() => {
+    /*const throttledAnimateElements = throttle(() => {
+      console.log(scrollData());
       // todo вынести проверку направления скролла, тут должна быть только функция
       const currentScrollPosition = window.scrollY;
       if (currentScrollPosition > lastScrollPosition) {
@@ -65,8 +90,12 @@ window.onload = () => {
         );
       }
       lastScrollPosition = currentScrollPosition;
-    }, 200);
+    }, 100);
 
     window.addEventListener("scroll", throttledAnimateElements);
-  });
-};
+    */
+  };
+  preloader.classList.add("preloader_hide"); //todo перенести после transitionend? потому что сначала запускаем анимацию а потом только добавляем событие?
+});
+
+//window.onload = ;

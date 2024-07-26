@@ -63,9 +63,9 @@ fs.readFile(settings.preHtmlPath, "utf8", (err, data) => {
 });
 // todo переписать на asinc? надо оно, работает все в синхронном режиме
 
-function optimizeImage(src, widthArr, imgAttributes) {
+function optimizeImage(src, widthArr, imgAttributes) { // todo вынести выходные форматы в settings
   const options = {
-    formats: ["avif", "webp", "jpeg"],
+    formats: ["avif", "webp", "jpeg", "png"],
     widths: [settings.placeholderWidth, ...widthArr],
     urlPath: settings.urlPath,
     outputDir: settings.imagesDir + settings.urlPath,
