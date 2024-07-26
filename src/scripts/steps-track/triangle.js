@@ -3,8 +3,9 @@ export function addTriangle(initialX, initialY, sideLenght /*, parentNode*/) {
       "http://www.w3.org/2000/svg",
       "polygon"
     );
-    triangle.setAttribute("class", "steps__track-arrow animate show");
+    triangle.setAttribute("class", "steps__track-arrow"); //zoom-in show  animate show-faster
     //(Math.sqrt(3) / 2) = 0,866
+    triangle.setAttribute("style", "opacity: 0;");
     triangle.setAttribute(
       "points",
       `${initialX - sideLenght / 2},${initialY} ${initialX},${
@@ -40,6 +41,7 @@ export function addTriangle(initialX, initialY, sideLenght /*, parentNode*/) {
         currentPoint.y - initialPoint.y
       }) rotate(${angle} ${initialPoint.x} ${initialPoint.y})`
     );
+    triangle.setAttribute("style", "opacity: 1;");
   }
   
   export function moveTriangleAlongStraight(triangle, maskTrack, offset, mainTrack) {
@@ -69,4 +71,5 @@ export function addTriangle(initialX, initialY, sideLenght /*, parentNode*/) {
         currentPoint.y - initialPoint.y
       })`
     );
+    triangle.setAttribute("style", "opacity: 1;");
   }

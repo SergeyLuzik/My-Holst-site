@@ -63,11 +63,16 @@ export function addCurvedTrack() {
     const trackPath = document.querySelector(".steps__main-track");
     const lineHeight = endPoint - startPoint;
     const lineScrollProgres = (window.scrollY - startScrollPosition) / lineHeight;
+    
+    /*console.log("window.scrollY " + window.scrollY);
+    console.log("startScrollPosition " + startScrollPosition);
+    console.log("lineHeight " + lineHeight);
+    console.log("lineScrollProgres " + lineScrollProgres);
+    console.log("-------------------------------------");*/
     let offset = pathLenght * (1 - lineScrollProgres);
   
     if (offset < 0) {
       offset = 0;
-      window.removeEventListener("scroll", handlerFunc);
     }
     trackPath.setAttribute("stroke-dashoffset", offset);
     moveTriangleAlongCurve(

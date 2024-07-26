@@ -1,10 +1,4 @@
-import { getMainWidth } from "./utils.js";
-import { throttle } from "./utils.js";
-import { animateCurvedStepsTrack } from "./steps-track/curved-track.js";
-import { animateStraightStepsTrack } from "./steps-track/straight-track.js";
-import { stepsLine } from "./steps-track/steps-line-vars.js";
-//let stepsLine.startY, stepsLine.endY, stepsLine.pathLength;
-
+import { inTarget } from "./utils.js";
 function animNumber(numObj, duration) {
   const num = parseInt(numObj.innerHTML.replace(" ", ""), 10);
   let startTime;
@@ -26,14 +20,14 @@ function animNumber(numObj, duration) {
   window.requestAnimationFrame(step);
 }
 
-export function animateElements(elements, targetPosition, handlerFunc) {
+export function animateElements(elements, targetPosition) {
   let elementsClassesCount = {};
   elements.forEach((element) => {
     if (element.classList.contains("scrolled-in")) {
       return;
     }
-    const elementPosition = element.getBoundingClientRect().top;
-    if (elementPosition < targetPosition) {
+
+    if (inTarget(element, targetPosition)) {
       const elementClass = element.classList[0];
 
       if (elementClass in elementsClassesCount) {
@@ -56,35 +50,6 @@ export function animateElements(elements, targetPosition, handlerFunc) {
       if (element.classList.contains("animate-childs")) {
         const children = element.children;
         for (let child of children) {
-          if (child.classList.contains("line-start")) {
-            const currentScrollPosition = window.scrollY;
-            const animateArguments = [
-              currentScrollPosition,
-              stepsLine.startY,
-              stepsLine.endY,
-              stepsLine.pathLength,
-            ];
-            const animateFunction =
-              getMainWidth() <= 1300
-                ? animateStraightStepsTrack
-                : animateCurvedStepsTrack;
-
-            const throttledAnimateStepsTrack = throttle(() => {
-              animateFunction(...animateArguments, throttledAnimateStepsTrack);
-            }, 50);
-
-            /*  const throttledAnimateStepsTrack = throttle(() => {
-              animateCurvedStepsTrack(
-                currentScrollPosition,
-                stepsLine.startY,
-                stepsLine.endY,
-                stepsLine.pathLength,
-                throttledAnimateStepsTrack
-              );
-            }, 50);*/
-
-            window.addEventListener("scroll", throttledAnimateStepsTrack);
-          }
           child.classList.add("scrolled-in");
         }
       }
@@ -95,8 +60,6 @@ export function animateElements(elements, targetPosition, handlerFunc) {
         document.documentElement.clientHeight * 1.2
     ) {
       elements[elements.length - 1].classList.add("scrolled-in");
-
-      window.removeEventListener("scroll", handlerFunc);
     }
   });
 }
