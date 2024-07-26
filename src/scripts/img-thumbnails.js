@@ -4,7 +4,6 @@ function swapPlaceholder(picture) {
 
   img.onload = () => {
     picture.dataset.loaded = true;
-    //img. removeAttribute("")
   };
   img.onerror = () => {
     picture.dataset.loaded = false;
@@ -18,7 +17,6 @@ function swapPlaceholder(picture) {
   //img.src = img.dataset.srcset.match(/, (.*) .+$/)[1]; // todo при единственном варианте выбрасывает null
   const srcsetArr = img.dataset.srcset.split(" ");
   img.src = srcsetArr[srcsetArr.length - 2];
-  //console.log(srcsetArr, srcsetArr[srcsetArr.length - 2]);
 }
 
 const pictures = document.querySelectorAll("picture");
@@ -27,7 +25,6 @@ const callback = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       swapPlaceholder(entry.target);
-      //console.log(entry.target);
       observer.unobserve(entry.target);
     }
   });
