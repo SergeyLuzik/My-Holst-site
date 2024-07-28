@@ -2,7 +2,6 @@ import Image from "@11ty/eleventy-img";
 import { parse } from "path";
 import fs from "fs";
 import { settings } from "./settings.js";
-import { log } from "console";
 
 function calcWidthArr(initialWidth) {
   let widthArr = [];
@@ -31,7 +30,7 @@ fs.readFile(settings.preHtmlPath, "utf8", (err, data) => {
   const updatedHtml = data.replaceAll(/<img([^>]*)>/g, (match, attributes) => {
     const imgSrc = getImageAttribute("src", attributes);
     if (
-      settings.imageFormats.includes(
+      settings.workWithFormats.includes(
         imgSrc.match(/\.([a-z]*)[^\.]*$/)[1].toLowerCase()
       ) //проверяет есть ли расширение в списке, убирая из расширения файла в src возможные #,?
     ) {
@@ -65,14 +64,13 @@ fs.readFile(settings.preHtmlPath, "utf8", (err, data) => {
 
 function optimizeImage(src, widthArr, imgAttributes) {
   const options = {
-    formats: ["avif", "webp", "jpeg"],
+    formats: settings.convertToFormats,
     widths: [settings.placeholderWidth, ...widthArr],
     urlPath: settings.urlPath,
     outputDir: settings.imagesDir + settings.urlPath,
     //dryRun: true,
     filenameFormat: (id, src, width, format) => {
-      // console.log(id, src, width, format);
-      return `${parse(src).name}-${width}.${id}.${format}`; //todo id это hash можно добавить его если не получится через webpack
+      return `${parse(src).name}-${width}.${id}.${format}`;
     },
   };
 
