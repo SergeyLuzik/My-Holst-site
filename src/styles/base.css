@@ -117,10 +117,10 @@ picture[data-loaded] img {
   position: absolute;
   z-index: -1;
   content: "";
-  top: -10%;
+  top: -0.4vw;
   left: -17%;
   width: 137%;
-  height: 116%;
+  aspect-ratio: 10;
   background-image: url(../assets/background/ink-stroke-533.png);
   background-size: cover;
 }
