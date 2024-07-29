@@ -2,7 +2,6 @@ import { inTarget } from "./utils.js";
 function animNumber(numObj, duration) {
   const num = parseInt(numObj.innerHTML.replace(" ", ""), 10);
   let startTime;
-
   const step = (timestamp) => {
     if (startTime === undefined) startTime = timestamp;
     const progress = parseFloat(
@@ -20,7 +19,7 @@ function animNumber(numObj, duration) {
   window.requestAnimationFrame(step);
 }
 
-export function animateElements(elements, targetPosition) {
+export function animateElements(elements, targetPosition, scrollPosition) {
   let elementsClassesCount = {};
   elements.forEach((element) => {
     if (element.classList.contains("scrolled-in")) {
@@ -55,7 +54,7 @@ export function animateElements(elements, targetPosition) {
       }
     }
     if (
-      window.scrollY >
+      scrollPosition >
       document.documentElement.scrollHeight -
         document.documentElement.clientHeight * 1.2
     ) {

@@ -52,10 +52,11 @@ window.addEventListener("load", () => {
     const throttledScrollAnimationHandler = throttle(() => {
 
       const scroll = scrollData();
+
       if(scroll.direction === "down"){
         throttle(animateElements(
           animationElements,
-          targetPosition), 100)
+          targetPosition, scroll.position), 100)
       }
       if(inTarget(document.querySelector(".line-start"), targetPosition)){
         console.log("Сработал start-lite");
