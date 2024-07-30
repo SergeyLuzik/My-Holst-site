@@ -5,14 +5,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "img": "webpack --config webpack.common.js",
     "dev": "node --stack-size=32768 ./node_modules/webpack/bin/webpack serve --allowed-hosts all --config webpack.dev.js",
     "prod": "node --stack-size=32768 ./node_modules/webpack/bin/webpack --config webpack.prod.js && node img-processing/post-build.js",
-    "watch": "webpack --mode development --watch",
     "server": "node server.js",
     "11ty": "node img-processing/pre-build.js",
-    "P11ty": "node img-processing/post-build.js",
-    "test11ty": "node img-processing/pre-build.js && webpack --config webpack.common.js && node img-processing/post-build.js"
+    "P11ty": "node img-processing/post-build.js"
   },
   "keywords": [],
   "author": "Sergey Luzik",
