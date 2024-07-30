@@ -1,0 +1,1 @@
+export let stepsLine = {startY: "", endY:"", pathLength:""};

@@ -25,6 +25,23 @@ body {
   overflow-x: hidden;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.stop-scroll {
+  overflow-y: hidden;
+}
+
 .preloader {
   position: fixed;
   display: flex;
@@ -100,11 +117,11 @@ picture[data-loaded] img {
   position: absolute;
   z-index: -1;
   content: "";
-  top: -10%;
+  top: -0.4vw;
   left: -17%;
   width: 137%;
-  height: 116%;
-  background-image: url(../assets/images/ink-stroke.png);
+  aspect-ratio: 10;
+  background-image: url(../assets/background/ink-stroke-533.png);
   background-size: cover;
 }
 
@@ -179,4 +196,182 @@ a.order-button:hover {
 
 .slider-button:hover {
   background-color: var(--secondary-light);
+}
+
+.animate {
+  opacity: 0;
+  /*transition: opacity 1.9s, transform 1.9s;*/
+}
+
+/*.hide {
+  opacity: 0;
+  /* transition: opacity, transform 0.9s ease;*/
+/*}
+/*
+.translate-left-20 {
+  transform: translateX(-10%);
+}
+
+.translate-right-110 {
+  transform: translateX(110%);
+}
+.translate-up-20 {
+  transform: translateY(-10%);
+}
+.show {
+  opacity: 1;
+}
+
+.js-scroll {
+  opacity: 0;
+}*/
+
+.scrolled-in.show {
+  animation: show var(--animation-time) ease-in-out both;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.scrolled-in.show-faster {
+  animation: show-faster var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-faster {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scrolled-in.show-from-up {
+  animation: show-from-up var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-from-up {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.show-from-left {
+  animation: show-from-left var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-from-left {
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.show-from-right {
+  animation: show-from-right var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-from-right {
+  from {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.show-from-down {
+  animation: show-from-down var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-from-down {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.roll-from-left {
+  animation: roll-from-left var(--animation-time) ease-in-out both;
+}
+
+@keyframes roll-from-left {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.roll-from-right {
+  animation: roll-from-right var(--animation-time) ease-in-out both;
+}
+
+@keyframes roll-from-right {
+  from {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.show-zoom-in {
+  animation: show-zoom-in var(--animation-time) ease-in-out both;
+}
+
+@keyframes show-zoom-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scrolled-in.zoom-in {
+  animation: zoom-in var(--animation-time) ease-in-out both;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
