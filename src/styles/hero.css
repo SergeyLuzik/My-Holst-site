@@ -126,11 +126,14 @@
   left: -10%;
   width: 138%;
   height: 122%;*/
-  top: -10%;
-  left: -12%;
+  /*top: -10%;*/
+  top: -0.3vw;
+  /*left: -12%;*/
+  left: -9%;
   width: 124%;
-  height: 112%;
-  background-image: url("../assets/images/ink-stroke.png");
+  aspect-ratio: 10;
+  /*height: 112%;*/
+  background-image: url("../assets/background/ink-stroke-533.png");
   background-size: cover;
 }
 

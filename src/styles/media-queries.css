@@ -540,3 +540,31 @@
     width: 100%;
   }*/
 }
+@media (min-resolution: 1.5x){
+  .promo__advantage:before, .section-title:before {
+    background-image: url(../assets/background/ink-stroke-799.png);
+  }
+}
+
+@media (min-resolution: 2x){
+  .promo__advantage:before, .section-title:before {
+    background-image: url(../assets/background/ink-stroke-1066.png);
+  }
+}
+
+
+@media (min-resolution: 2.5x){
+  .promo__advantage:before, .section-title:before {
+    background-image: url(../assets/background/ink-stroke-1332.png);
+  }
+}
+
+@media (min-resolution: 3x){
+  .promo__advantage:before, .section-title:before {
+    background-image: url(../assets/background/ink-stroke-1599.png);
+  }
+}
+
+
+
+

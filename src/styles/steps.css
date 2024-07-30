@@ -326,7 +326,7 @@ img.steps__img {
 
 .steps__track-mask {
   stroke: var(--white);
-  stroke-width: 5px;
+  stroke-width: 10px;
 }
 
 .steps__triangle-mask {

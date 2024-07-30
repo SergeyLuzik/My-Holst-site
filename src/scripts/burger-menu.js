@@ -1,8 +1,7 @@
-import { getMainWidth } from "./index.js";
-if (getMainWidth() <= 1250) {
   const headerHeight = `${
     document.querySelector(".page-header").offsetHeight
   }px`;
+  
   document
     .querySelector(":root")
     .style.setProperty("--header-hight", `${headerHeight}`);
@@ -22,12 +21,13 @@ if (getMainWidth() <= 1250) {
     };
   }
 
+  export function burgerMenuHandler(mainWidth) {
   burgerButton.addEventListener(
     "click",
     (e) => {
       console.log("клик на кнопку в обработчике кнопки");
       const menu =
-        getMainWidth() <= 680
+      mainWidth <= 680
           ? document.querySelector(".page-header__menu")
           : document.querySelector(".page-header__nav");
       //menu.style.top = headerHeight;
@@ -65,4 +65,4 @@ if (getMainWidth() <= 1250) {
     },
     { once: true }
   );
-}
+ }
