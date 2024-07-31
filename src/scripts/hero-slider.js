@@ -1,5 +1,5 @@
 const slidesWrapper = document.querySelector(".slider__slides-list"),
-  activSlideWidth = parseInt(
+  activeSlideWidth = parseInt(
     getComputedStyle(
       document.querySelector(".hero__slider")
     ).gridTemplateColumns.split(" ")[0],
@@ -8,7 +8,7 @@ const slidesWrapper = document.querySelector(".slider__slides-list"),
   gapValue = parseInt(getComputedStyle(slidesWrapper).gap),
   slides = slidesWrapper.children,
   slideWidth = slides[0].offsetWidth,
-  initialOffset = slideWidth * 2 + gapValue - activSlideWidth,
+  initialOffset = slideWidth * 2 + gapValue - activeSlideWidth,
   offset = slideWidth + gapValue,
   transitionTime = "0.3s",
   slideScale =

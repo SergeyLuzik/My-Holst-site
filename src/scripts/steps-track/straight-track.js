@@ -1,5 +1,6 @@
 import { addTriangle, moveTriangleAlongStraight } from "./triangle.js";
 import { stepsLine } from "./steps-line-vars.js";
+
 export function addStraightTrack() {
     const stepsSection = document.querySelector(".steps");
     const gap = parseInt(
@@ -9,7 +10,6 @@ export function addStraightTrack() {
     );
     const initialX = stepsSection.getBoundingClientRect().x;
     const initialY = stepsSection.getBoundingClientRect().y + window.scrollY;
-    //console.log(stepsSection.getBoundingClientRect(), window.scrollY);
     let markersRect = [];
     const markersCoords = [];
   
@@ -51,19 +51,11 @@ export function addStraightTrack() {
     });
     stepsLine.startY = markersCoords[0].y + initialY;
     stepsLine.endY = markersCoords[markersCoords.length - 1].y + initialY;
-    console.log(initialX, initialY, markersRect, markersCoords);
     const NSstring = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(NSstring, "svg");
     svg.setAttribute("class", "steps__track");
     const mainTrack = document.createElementNS(NSstring, "path");
     let d = `M ${markersCoords[0].x} ${markersCoords[0].y} L ${markersCoords[1].x} ${markersCoords[1].y}`;
-    /* for (let i = 1; i < markersCoords.length; i++) {
-      d += `C${markersCoords[i - 1].x} ${
-        markersCoords[i - 1].y + controlPointOffsetY
-      } ${markersCoords[i].x} ${
-        markersCoords[i].y - controlPointOffsetY
-      } ${markersCoords[i].x} ${markersCoords[i].y}`;
-    }*/
     const stepsItems = document.querySelectorAll(".steps__item");
     let offsetArray = [0];
     const dashLenght = gap - linePadding;
@@ -121,17 +113,15 @@ export function addStraightTrack() {
     startScrollPosition,
     startPoint,
     endPoint,
-    pathLenght,
-    handlerFunc
+    pathLength
   ) {
     const trackPath = document.querySelector(".steps__track-mask");
     const lineHeight = endPoint - startPoint;
-    const lineScrollProgres = (window.scrollY - startScrollPosition) / lineHeight;
-    let offset = -pathLenght * lineScrollProgres;
+    const lineScrollProgress = (window.scrollY - startScrollPosition) / lineHeight;
+    let offset = -pathLength * lineScrollProgress;
   
-    if (offset < -pathLenght) {
-      offset = -pathLenght;
-      //window.removeEventListener("scroll", handlerFunc);
+    if (offset < -pathLength) {
+      offset = -pathLength;
     }
     trackPath.setAttribute("stroke-dashoffset", offset);
     moveTriangleAlongStraight(

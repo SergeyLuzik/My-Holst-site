@@ -51,12 +51,12 @@ export function feedbackSliderHandler() {
   // Initialize slider start position
 slidesList.style.transform = `translateX(${-offset}px)`;
 
-  rightButton.onclick = () => { // todo повторяется от hero slider? унифицировать через отдельный модуль?
+  rightButton.onclick = () => {
     if (inAction) return;
     inAction = true;
     movLeft(amountSlidesOnList, offset, gapValue);
   };
-  leftButton.onclick = () => { // todo повторяется от hero slider? унифицировать через отдельный модуль?
+  leftButton.onclick = () => {
     if (inAction) return;
     inAction = true;
     movRight(amountSlidesOnList, offset, gapValue);

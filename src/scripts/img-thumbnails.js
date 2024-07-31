@@ -14,7 +14,6 @@ function swapPlaceholder(picture) {
   });
   img.srcset = img.dataset.srcset;
   img.sizes = img.dataset.sizes;
-  //img.src = img.dataset.srcset.match(/, (.*) .+$/)[1]; // todo при единственном варианте выбрасывает null
   const srcsetArr = img.dataset.srcset.split(" ");
   img.src = srcsetArr[srcsetArr.length - 2];
 }
