@@ -72,11 +72,18 @@ page-header__contacts-list,
   background-color: currentColor;
 }
 
+.page-header__contacts-list-item:first-child {
+  gap: unset;
+}
+
 .page-header__contacts-list-item:first-child::before {
+  mask: url(../assets/icons.svg#whatsapp);
+}
+.page-header__contacts-list-item:nth-child(2)::before {
   mask: url(../assets/icons.svg#phone);
 }
 
-.page-header__contacts-list-item:nth-child(2)::before {
+.page-header__contacts-list-item:nth-child(3)::before {
   mask: url(../assets/icons.svg#clock-med);
 }
 
