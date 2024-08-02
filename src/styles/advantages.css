@@ -5,10 +5,6 @@
 }
 
 .advantages__list {
-  /* display: grid;
-  grid-auto-flow: column; /*todo почему без него выстраивается в стобик, для исправление width 100% на section*/
-  /* grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
-  gap: 35px;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,7 +13,7 @@
 
 .advantages__item {
   display: flex;
-  flex-basis: 317px; /*176px*/
+  flex-basis: 317px;
   flex-direction: column;
   text-align: center;
 }
@@ -56,14 +52,14 @@
 }
 
 .advantages__advantage-title {
-  font-size: var(--fs-md) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-md);
   font-weight: 700;
   line-height: var(--lh-title-bs);
   margin-block: 0 4px;
 }
 
 .advantages__advantage-description {
-  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.875rem)*/;
+  font-size: var(--fs-bs);
   font-weight: 400;
   line-height: var(--lh-text-sm);
   margin-block: 4px 0;

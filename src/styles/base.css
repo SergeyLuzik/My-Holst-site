@@ -51,8 +51,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  /*width: 100vw;
-  height: 100vh;*/
   background-color: white; /*для ускорения загрузки preloder?*/
   z-index: 10;
   transition: opacity 0.3s ease;
@@ -63,7 +61,6 @@ body {
   height: 10vh;
   min-height: 80px;
   min-width: 80px;
-  /* background-image: url(../assets/icons.svg#full-logo); /*logo-img-only  full-logo*/
   animation: preloader-bounce 3s infinite ease-in-out;
 }
 
