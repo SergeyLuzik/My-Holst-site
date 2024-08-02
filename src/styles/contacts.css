@@ -8,7 +8,6 @@
     "map contacts-list" auto
     "map contacts-list" 1fr
     / 696px 1fr;
-  /*todo как уменьшить высоту contacts-list (dd block - не работает grid) */
   margin-block-end: var(--section-margin-sm);
 }
 
@@ -46,15 +45,14 @@ ul.contacts__list {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  font-size: var(--fs-lg) /*clamp(0.75rem, 0.5rem + 2.5vw, 1.25rem)*/;
+  font-size: var(--fs-lg);
   line-height: var(--lh-title-xs);
   margin-block-start: 20px;
 }
 
 .contacts__item-title {
-  font-size: var(--fs-bs) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-bs);
   font-weight: 700;
-  /*line-height: 125%;*/
   margin-block: 0 8px;
 }
 
@@ -74,7 +72,6 @@ ul.contacts__list {
   align-items: center;
   gap: 12px;
   font-style: normal;
-  /*margin-block-end: 12px;*/
   font-weight: 600;
 }
 
@@ -97,7 +94,7 @@ ul.contacts__list {
 }
 
 a.contacts__route-button {
-  font-size: var(--fs-bs) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-bs);
   color: var(--white);
   font-weight: 700;
   line-height: var(--lh-zero);

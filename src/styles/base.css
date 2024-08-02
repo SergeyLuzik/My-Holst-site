@@ -103,7 +103,7 @@ picture[data-loaded] img {
   margin-inline: auto;
   position: relative;
   color: var(--white);
-  font-size: var(--fs-xxl) /*clamp(1.5rem, 0.5rem + 2.5vw, 2.25rem)*/;
+  font-size: var(--fs-xxl);
   font-weight: 700;
   line-height: var(--lh-title-bs);
   margin-block: 0 var(--section-title-margin);
@@ -125,7 +125,6 @@ picture[data-loaded] img {
 .page-header,
 .page-footer {
   max-width: var(--content-width);
-  /* height: 100px;*/
   padding-block: clamp(8px, 2vh, 36px);
   grid-column-start: 2;
 }
@@ -137,12 +136,8 @@ picture[data-loaded] img {
     minmax(16px, 1fr)
     repeat(2, minmax(150px, calc(var(--content-width) / 2)))
     minmax(16px, 1fr);
-  /*var(--content-width) / 2
-  repeat(2, minmax(min-content, 720px))*/
-  /*justify-items: start;*/
 }
 
-/* todo актуализировать */
 [class*="_color_primary"] {
   background: var(--primary);
   background-clip: text;
@@ -151,7 +146,7 @@ picture[data-loaded] img {
 
 a.order-button {
   display: inline-block;
-  font-size: var(--fs-md) /*clamp(0.5rem, 0.3rem + 1.5vw, 1.25rem)*/;
+  font-size: var(--fs-md);
   font-weight: 800;
   text-transform: uppercase;
   line-height: var(--lh-zero);
@@ -167,7 +162,6 @@ a.order-button:hover {
 }
 
 .slider-button {
-  /* width: 40px;*/
   width: var(--round-size);
   aspect-ratio: 1;
   background-color: var(--primary-light);
@@ -197,31 +191,7 @@ a.order-button:hover {
 
 .animate {
   opacity: 0;
-  /*transition: opacity 1.9s, transform 1.9s;*/
 }
-
-/*.hide {
-  opacity: 0;
-  /* transition: opacity, transform 0.9s ease;*/
-/*}
-/*
-.translate-left-20 {
-  transform: translateX(-10%);
-}
-
-.translate-right-110 {
-  transform: translateX(110%);
-}
-.translate-up-20 {
-  transform: translateY(-10%);
-}
-.show {
-  opacity: 1;
-}
-
-.js-scroll {
-  opacity: 0;
-}*/
 
 .scrolled-in.show {
   animation: show var(--animation-time) ease-in-out both;
