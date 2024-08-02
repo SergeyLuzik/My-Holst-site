@@ -1,16 +1,13 @@
 .page-footer {
-  display: grid /*flex*/;
+  display: grid;
   grid-template-columns: 1fr 48vw 1fr;
-
-  /*justify-content: space-between;*/
   align-items: center;
   text-align: center;
-  /* padding-block: 12px;*/
 }
 
 .page-footer__copyright {
   justify-self: center;
-  font-size: var(--fs-bs) /*clamp(0.5rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-bs);
   font-weight: 700;
   line-height: var(--lh-text-bs);
   margin-block: 0;
@@ -18,7 +15,7 @@
 
 a.page-footer__developer-link {
   justify-self: end;
-  font-size: var(--fs-xs) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-xs);
   font-weight: 400;
   line-height: var(--lh-text-xs);
   margin-block: 0;

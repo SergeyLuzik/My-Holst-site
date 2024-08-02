@@ -6,7 +6,6 @@
   align-items: center;
   color: var(--primary-light);
   gap: 4vw;
-  /* margin-block-end: 24px;*/
 }
 
 .page-header__menu {
@@ -34,18 +33,13 @@ page-header__contacts-list,
 
 .page-header__nav-link {
   transition: color 0.3s ease;
-  font-size: var(--fs-md) /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem)*/;
+  font-size: var(--fs-md);
   line-height: var(--lh-text-bs);
   font-weight: 700;
 }
 
 .page-header__nav-link:hover {
   color: var(--secondary-light);
-}
-
-.page-header__nav-list {
-  /*font-size: var(--fs-md)*/ /*clamp(0.75rem, 0.5rem + 2.5vw, 1rem);*/
-  /*font-weight: 700;*/
 }
 
 .page-header__contacts-list-item {
@@ -60,9 +54,6 @@ page-header__contacts-list,
 
 .page-header__contacts-list-item-wrap {
   flex-direction: column;
-
-  /*  todo для лого в псевдоэлементе задать current color - он ссылается на цвет контейнера
-   также для псевдо элемента  общие правила для позиционирования и отдельно каждому элементу картинку*/
 }
 .page-header__contacts-list-item::before {
   content: "";
@@ -94,7 +85,7 @@ page-header__contacts-list,
 
 .page-header__contacts-list-text {
   margin-block: 0;
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-sm);
   font-weight: 500;
   line-height: var(--lh-text-sm);
 }

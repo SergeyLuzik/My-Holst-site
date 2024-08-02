@@ -137,15 +137,12 @@ a.contacts__route-button {
 }
 
 .contacts__social-list {
-  /*grid-area: social-list;*/
   display: flex;
   gap: 8px;
 }
 
 .social-link {
   display: block;
-  /*width: 36px;
-  height: 36px;*/
   width: var(--round-size);
   aspect-ratio: 1;
   background: var(--primary);
