@@ -47,15 +47,16 @@ page-header__contacts-list,
   transition: color 0.3s ease;
 }
 
-.page-header__contacts-list-item:first-child:hover,
+.page-header__contacts-list-item:nth-child(2):hover,
 .page-header__contacts-list-item:last-child:hover {
   color: var(--secondary-light);
+  cursor: pointer;
 }
 
 .page-header__contacts-list-item-wrap {
   flex-direction: column;
 }
-.page-header__contacts-list-item::before {
+.page-header__contacts-list-item-link::before, .page-header__contacts-list-item:nth-child(n+2)::before {
   content: "";
   display: block;
   width: 28px;
@@ -67,13 +68,20 @@ page-header__contacts-list,
   gap: unset;
 }
 
-.page-header__contacts-list-item:first-child:hover {
-  background-color: #2cb742;
+.page-header__contacts-list-item-link {
+  width: 28px;
+  height: 28px;
 }
 
-.page-header__contacts-list-item:first-child::before {
-  mask: url(../assets/icons.svg#whatsapp);
+.page-header__contacts-list-item:first-child:hover {
+  color: #2cb742;
+  cursor: pointer;
 }
+
+.page-header__contacts-list-item-link::before {
+mask: url(../assets/icons.svg#whatsapp);
+}
+
 .page-header__contacts-list-item:nth-child(2)::before {
   mask: url(../assets/icons.svg#phone);
 }
