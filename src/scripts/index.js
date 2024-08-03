@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
     } else {
       addCurvedTrack();
     }
-    if (mainWidth <= 1250) {
+    if (mainWidth <= 1330) {
       burgerMenuHandler(mainWidth);
     }
     if (mainWidth > 1200) {
@@ -67,7 +67,9 @@ window.addEventListener("load", () => {
     }, 50);
     
       window.addEventListener("scroll", throttledScrollAnimationHandler);
-
+      const script = document.createElement('script');
+      script.textContent = `VK.Widgets.CommunityMessages("vk_community_messages", 44153834, {expandTimeout: "30000"})`;
+      document.body.appendChild(script);
   };
   preloader.classList.add("preloader_hide");
 });

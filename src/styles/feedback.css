@@ -2,9 +2,9 @@
   grid-column: 2 / span 2;
   width: 100%;
   display: grid;
-  grid-template-columns: min-content 1fr min-content; /*92.444%*/
-  grid-template-rows: repeat(3, min-content); /*min-content 1fr min-content;*/
-  column-gap: 1% /*72px*/;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: repeat(3, min-content);
+  column-gap: 1%;
   align-items: center;
   margin-block-end: var(--section-margin-bs);
 }
@@ -21,35 +21,18 @@
     #000 95%,
     transparent 100%
   );
-  /*border: 1px solid black;*/
 }
 
-/*todo исправить ширину, переситать ее в %, иначе шире заданного*/
 .feedback__list {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(4, 19.23%);
   grid-auto-columns: 19.23%;
-  /* display: flex;*/
   gap: 4.615%;
-  /*
-  grid-template-columns: repeat(4, 25%);
-  grid-auto-columns: 25%;
-
-  /* grid-template-columns: repeat(
-    auto-fit,
-    minmax(256px, 1fr)
-  ); repeat(4, 24.25%);
-  /*grid-auto-columns: 24.25%;
-  gap: 1%;
-  /*row-gap: 24px;*/
 }
 .feedback-card {
   display: grid;
-  /*grid-template-columns: 256px;*/
-  /* grid-template-columns: 80px 176px;*/
-  /*grid-template-rows: 224px 80px /*36px 44px*/ /*68px 32px;*/
-  grid-template-rows: 55.445% 19.801% 16.831% 7.92% /*170px 60px 52px 24px*/;
+  grid-template-rows: 55.445% 19.801% 16.831% 7.92%;
   aspect-ratio: 0.6214;
   overflow: hidden;
 }
@@ -58,18 +41,10 @@
   display: grid;
   grid-template-columns: 31.25% 68.75%;
   grid-template-rows: 35% 65%;
-  /*grid-template-rows: 67.496% 32.53%;*/
-  /*
-  grid-template-columns: 80px 176px;
-  grid-template-rows: 56px 27px;*/
-  /*display: flex;
-    margin-block-start: -32px;*/
 }
 
 img.feedback-card__img {
   clip-path: inset(0 round 7.81%);
-  /* border-radius: 7.81%;
-  /*grid-column: 1 / 3;*/
   width: 100%;
   height: auto;
 }
@@ -78,7 +53,7 @@ img.feedback-card__img {
   grid-row-start: 2;
   grid-column-start: 2;
   align-self: center;
-  font-size: var(--fs-bs) /*clamp(1rem, 0.5rem + 2.5vw, 0.875rem)*/;
+  font-size: var(--fs-bs);
   font-weight: 800;
   line-height: var(--lh-title-xs);
   margin-block: 0;
@@ -96,17 +71,8 @@ img.feedback-card__img {
 
 img.feedback-card__avatar {
   /*img добавил чтобы убрать дублирование обводки в аватарке*/
-  /* position: relative;
-  z-index: 2;*/
   width: 100%;
-  /*min-width: 100%;*/
   height: auto;
-  /*width: 80px;
-  height: 80px;
-  */
-  /* border: 8px solid var(--white);*/
-  /* border: max(5px, min(0.7vw, 8px)) solid var(--white);
-  border-radius: 50%;*/
   -webkit-clip-path: circle(50%);
   clip-path: circle(50%);
 }
@@ -118,14 +84,14 @@ picture.feedback-card__avatar {
 .feedback-card__date {
   grid-row-start: 2;
   grid-column-start: 2;
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-sm);
   font-weight: 600;
   line-height: 100%;
 }
 .feedback-card__text {
   /*grid-row-start: 4;
     grid-column: span 2;*/
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-sm);
   font-weight: 700;
   line-height: var(--lh-text-xs);
   margin-block: 0;
@@ -138,14 +104,12 @@ picture.feedback-card__avatar {
   );
 }
 a.feedback-card__link {
-  /*grid-row-start: 5;
-    grid-column: span 2;*/
   justify-self: end;
   display: flex;
   align-items: center;
   gap: 8px;
   /*todo занести общие св-ва в .button (color: white и пр. */
-  font-size: var(--fs-sm) /*clamp(0.5rem, 0.5rem + 2.5vw, 0.75rem)*/;
+  font-size: var(--fs-sm);
   font-weight: 700;
   line-height: var(--lh-zero);
   padding-block: 8px;

@@ -27,7 +27,7 @@
     (e) => {
       console.log("клик на кнопку в обработчике кнопки");
       const menu =
-      mainWidth <= 680
+      mainWidth <= 760
           ? document.querySelector(".page-header__menu")
           : document.querySelector(".page-header__nav");
       //menu.style.top = headerHeight;
