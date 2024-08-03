@@ -67,6 +67,10 @@ page-header__contacts-list,
   gap: unset;
 }
 
+.page-header__contacts-list-item:first-child:hover {
+  background-color: #2cb742;
+}
+
 .page-header__contacts-list-item:first-child::before {
   mask: url(../assets/icons.svg#whatsapp);
 }
