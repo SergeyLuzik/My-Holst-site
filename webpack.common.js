@@ -29,7 +29,7 @@ export default {
         loader: "html-loader",
       },
       {
-        test: /\.(scss | css)$/i,
+        test: /\.(scss|sass)$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
