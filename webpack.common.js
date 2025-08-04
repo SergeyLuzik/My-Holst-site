@@ -6,7 +6,7 @@ import CopyPlugin from "copy-webpack-plugin";
 export default {
   entry: [
     path.resolve("src", "scripts", "index.js"),
-    path.resolve("src", "styles", "index.css"),
+    path.resolve("src", "styles", "index.scss"),
   ],
   output: {
     filename: "build.[contenthash].js",
@@ -29,7 +29,7 @@ export default {
         loader: "html-loader",
       },
       {
-        test: /\.css$/i,
+        test: /\.(scss | css)$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -51,6 +51,7 @@ export default {
               },
             },
           },
+          "sass-loader",
         ],
       },
       {
