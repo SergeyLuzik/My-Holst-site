@@ -620,6 +620,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/portret-v-stile-sharzh-44153834-2788017"
               >
                 <img
@@ -637,6 +638,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/portret-v-stile-dream-art-drim-art-44153834-634745"
               >
                 <img
@@ -654,6 +656,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/portret-v-stile-oil-painting-maslo-44153834-1082453"
               >
                 <img
@@ -671,6 +674,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/portret-v-stile-luxury-art-laksheri-art-44153834-5498649"
               >
                 <img
@@ -689,6 +693,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/portret-v-stile-digital-art-didzhital-art-44153834-1748781"
               >
                 <img
@@ -706,6 +711,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/istoricheskiy-portret-44153834-1276198"
               >
                 <img
@@ -723,6 +729,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/portret-stile-neon-art-neon-art-44153834-5498650"
               >
                 <img
@@ -740,6 +747,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/portret-v-stile-painting-zhivopis-44153834-619114"
               >
                 <img
@@ -757,6 +765,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/zvezdnaya-karta-na-kholste-44153834-6199567"
               >
                 <img
@@ -774,6 +783,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/fotokollazh-klassichesky-44153834-612777"
               >
                 <img
@@ -791,6 +801,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/fotokollazh-individualny-44153834-1205506"
               >
                 <img
@@ -808,6 +819,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/detskaya-metrika-44153834-1345416"
               >
                 <img
@@ -825,6 +837,7 @@
             <li class="slider__slide-item">
               <a
                 class="slider__slide"
+                target="_blank"
                 href="https://vk.com/market/product/vzroslaya-metrika-pravila-doma-44153834-6199663"
               >
                 <img
@@ -6244,7 +6257,8 @@
         />
       </a>
       <p class="page-footer__copyright">
-        © 2015-2023 Студия печати “My&#8209;Holst”
+        © 2015-<span class="page-footer__current-year"></span> Студия печати
+        “My&#8209;Holst”
       </p>
       <a
         class="page-footer__developer-link"
@@ -6274,6 +6288,10 @@
         );
         myMap.geoObjects.add(myPlacemark);
       });
+    </script>
+    <script type="text/javascript">
+      document.querySelector(".page-footer__current-year").textContent =
+        new Date().getFullYear();
     </script>
   </body>
 </html>
